@@ -3,6 +3,7 @@ import arrow from '../../assets/home/Frame 42.svg'
 import reading from '../../assets/home/muslim woman writing something in a notebook 1.png'
 import Cards from '../../components/Home/cards/Cards'
 import { cardContent } from '../../components/Home/cards/cardContent'
+import ContactUs from '../../components/get-in-touch-button/ContactUs'
 
 const Home = () => {
   return (
@@ -39,7 +40,7 @@ const Home = () => {
 
               <div className="button-container">
 
-              <button>get in touch!</button>
+              <ContactUs/>
 
               </div>
               

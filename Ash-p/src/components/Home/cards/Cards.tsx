@@ -1,5 +1,5 @@
 import './cards.scss'
-import img from '../../../assets/home/Frame 21.svg'
+import img from '../../../assets/home/Learning-pana.svg'
 import { PropsWithChildren } from 'react';
 
 type Props = {

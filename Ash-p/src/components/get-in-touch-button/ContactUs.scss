@@ -1,0 +1,29 @@
+.navigate-button{
+    
+}
+
+.navigate-button button{
+    background: none; /* Removes default background */
+    border: none; /* Removes default border */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    outline: none; /* Removes default focus outline */
+    box-shadow: none; /* Removes any default shadows */
+    font: inherit; /* Ensures it inherits font styles from parent */
+    color: inherit; /* Ensures it inherits color from parent */
+    cursor: pointer; /* Ensures it still behaves like a button */
+}
+
+.navigate-button button{
+    width: max-content;
+    padding: 10px;
+    background: #D54974;
+    border: 1px solid #201D06;
+    box-shadow: 3px 6px 0px 1px black;
+    color: #FFFFFF;
+}
+
+.navigate-button button:hover{
+    box-shadow: 1px 3px 0px 1px black;
+    transform: translate3d(2px, 2px, 0px);
+}

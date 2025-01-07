@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './Header.scss'
+import ContactUs from '../get-in-touch-button/ContactUs';
 const Header: React.FC = () => {
   return (
     <header className="header">
@@ -23,12 +24,8 @@ const Header: React.FC = () => {
               Services
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? "header-active" : "")}>
-              <button>Contact</button>
-            </NavLink>
-          </li>
         </ul>
+        <ContactUs/>
       </nav>
     </header>
   );

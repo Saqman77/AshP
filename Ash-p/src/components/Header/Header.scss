@@ -6,13 +6,18 @@
     top: 0;
     left: 0;
     align-items: center;
+    padding-top: 37px;
 }
 nav{
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 nav ul{
     display: flex;
     list-style-type: none;
     width: 100%;
     justify-content: space-evenly;
+    margin-left: auto;
+    font-size: 20px;
 }
