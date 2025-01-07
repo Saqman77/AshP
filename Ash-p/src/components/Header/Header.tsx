@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-
+import './Header.scss'
 const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="logo">
-        <h1></h1>
+        <h1>logo</h1>
       </div>
       <nav className="nav">
         <ul>
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <NavLink to="/contact" className={({ isActive }) => (isActive ? "header-active" : "")}>
-              Contact
+              <button>Contact</button>
             </NavLink>
           </li>
         </ul>
