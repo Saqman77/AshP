@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import './Header.scss'
+import logo from '../../assets/header/Frame 9.png'
 import ContactUs from '../get-in-touch-button/ContactUs';
 const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="logo">
-        <h1>logo</h1>
+        <img src={logo} alt="" />
       </div>
       <nav className="nav">
         <ul>
