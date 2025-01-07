@@ -1,6 +1,8 @@
 import './Home.scss'
 import arrow from '../../assets/home/Frame 42.svg'
 import reading from '../../assets/home/muslim woman writing something in a notebook 1.png'
+import Cards from '../../components/Home/cards/Cards'
+import { cardContent } from '../../components/Home/cards/cardContent'
 
 const Home = () => {
   return (
@@ -57,7 +59,11 @@ const Home = () => {
         <div className="services-heading">
           <p>Our <span className='color-text'>Services</span></p>
         </div>
-        <div className="cards-wrapper"></div>
+        <div className="cards-wrapper">
+          {cardContent.map((card) => {
+            return <Cards key={card.id} head={card.heading} backGround={card.backgroundColor} cardImg={card.imgSrc} {...card} />
+          })}
+        </div>
       </div>
     </div>
   )

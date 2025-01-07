@@ -75,3 +75,10 @@
     display: flex;
     justify-content: center;
 }
+
+.cards-wrapper{
+    padding: 44px;
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-around;
+}

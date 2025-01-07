@@ -1,0 +1,29 @@
+.card-wrapper{
+    width: max-content;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    height: 479px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 16px 17px 0px 0px black;
+    flex: 1;
+    max-width: 320px;
+    // justify-content: space-around;
+    
+}
+
+.card-heading{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: auto;
+}
+
+.cards-img{
+    width: 240px;
+}
+
+.cardImg{
+    width: 100%;
+}
