@@ -2,7 +2,41 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    background: #C1BBF5;
+    border: 2px solid black;
+}
+
+.footer-container{
+    padding: 42px 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo{
+    width: 175px;
+}
+
+.logo{
+    width: 100%;
+}
+
+
+.footer-nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.footer-social ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
 }

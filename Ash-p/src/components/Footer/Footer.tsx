@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
-import './Footer.scss'
+import './Footer.scss';
+import logo from '../../assets/header/Frame 9.png';
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+        {/* Logo Section */}
         <div className="footer-logo">
-          <h2></h2>
+          <Link to="/">
+            <img src={logo} alt="main-logo" className="logo" />
+          </Link>
         </div>
+
+        {/* Navigation Links */}
         <nav className="footer-nav">
           <ul>
             <li>
@@ -21,9 +27,32 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </nav>
-      </div>
-      <div className="copyright">
-        <p>&copy; {new Date().getFullYear()} MyApp. All rights reserved.</p>
+
+        {/* Social Links */}
+        <div className="footer-social">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
