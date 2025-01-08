@@ -7,17 +7,21 @@ type Props = {
     head: string;
     backGround: string | number | undefined;
     cardImg: string;
+    desc: string;
 }
 
-const Cards = ({id, head, backGround, cardImg}: Props) => {
+const Cards = ({id, head, backGround, cardImg, desc}: Props) => {
   return (
     <div className='card-wrapper'
         id={id}
-        style={{
-            background: backGround
-        }}
+
     >
-        <div className="front">
+      <div className="card">
+        <div className="front"
+                style={{
+                  background: backGround
+              }}
+        >
             <div className="card-img">
                 <img src={cardImg} alt="" className='cardImg'/>
             </div>
@@ -28,11 +32,18 @@ const Cards = ({id, head, backGround, cardImg}: Props) => {
                 hover
             </div>
         </div>
-        <div className="back">
+        <div className="back"
+                style={{
+                  background: backGround
+              }}
+        >
           <div className="card-desc">
-            <p className='back-desc'></p>
+            <p className='back-desc'>
+              {desc}
+            </p>
           </div>
         </div>
+      </div>
     </div>
   )
 }

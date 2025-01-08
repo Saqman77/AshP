@@ -62,7 +62,7 @@ const Home = () => {
         </div>
         <div className="cards-wrapper">
           {cardContent.map((card) => {
-            return <Cards key={card.id} head={card.heading} backGround={card.backgroundColor} cardImg={card.imgSrc} {...card} />
+            return <Cards key={card.id} head={card.heading} backGround={card.backgroundColor} cardImg={card.imgSrc} desc={card.description} {...card} />
           })}
         </div>
       </div>
