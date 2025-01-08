@@ -37,6 +37,9 @@ const Cards = ({id, head, backGround, cardImg, desc}: Props) => {
                   background: backGround
               }}
         >
+          <div className="card-heading-back">
+              <p>{head}</p> 
+          </div>
           <div className="card-desc">
             <p className='back-desc'>
               {desc}

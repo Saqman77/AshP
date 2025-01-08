@@ -1,5 +1,5 @@
 .card-wrapper{
-
+    transition: box-shadow 0.3s ease-in-out;
     box-shadow: 16px 17px 0px 0px black;
     perspective: 1000px;
     display: flex;
@@ -20,7 +20,7 @@
     flex-direction: column;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out 0.1s;
+    transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
     width: 100%;
 }
 
@@ -47,17 +47,89 @@
 .back{
     display: flex;
     flex-direction: column;
+    // justify-content: space-around;
     transform: rotateY(180deg);
 }
 
 .card-wrapper .card:hover{
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
+}
+
+/* Reduce box shadow during the flip */
+.card-wrapper:hover {
+    transition: box-shadow 0.3s ;
+    animation: restoreShadow 0.6s forwards;
+  }
+.card-wrapper:not(:hover) {
+    transition: box-shadow 0.3s ;
+    animation: unHoverShadow 0.6s forwards;
+  }
+  
+  /* Restore box shadow after the flip is complete */
+//   .card-wrapper:hover .card {
+//     animation: restoreShadow 0.3s ease-in-out 0.3s forwards;
+//   }
+  
+  /* Keyframe to restore shadow after flip */
+  @keyframes restoreShadow {
+    0%{
+        box-shadow: 16px 17px 0px 0px black;
+    }
+
+    25%{
+        box-shadow: 5px 6px 0px 0px black;
+    }
+
+    50%{
+        box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.027);
+    }
+
+    75%{
+        box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.411);
+    }
+
+    100%{
+        box-shadow: 16px 17px 0px 0px black;
+    }
+  }
+  @keyframes unHoverShadow {
+    0%{
+        box-shadow: 16px 17px 0px 0px black;
+    }
+
+    25%{
+        box-shadow: 5px 6px 0px 0px black;
+    }
+
+    50%{
+        box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.027);
+    }
+
+    75%{
+        box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.411);
+    }
+
+    100%{
+        box-shadow: 16px 17px 0px 0px black;
+    }
+  }
+
+.card-desc{
+    margin-top: auto;
+    // margin-bottom: auto;
+    font-size: 20px;
 }
 
 .card-heading{
     font-size: 24px;
     font-weight: 600;
     margin-bottom: auto;
+    text-align: center;
+}
+
+.card-heading-back{
+    font-size: 24px;
+    font-weight: 600;
     text-align: center;
 }
 
