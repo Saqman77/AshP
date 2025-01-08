@@ -17,14 +17,21 @@ const Cards = ({id, head, backGround, cardImg}: Props) => {
             background: backGround
         }}
     >
-        <div className="card-img">
-            <img src={cardImg} alt="" className='cardImg'/>
+        <div className="front">
+            <div className="card-img">
+                <img src={cardImg} alt="" className='cardImg'/>
+            </div>
+            <div className="card-heading">
+              <p>{head}</p> 
+            </div>
+            <div className="flip-button">
+                hover
+            </div>
         </div>
-        <div className="card-heading">
-          <p>{head}</p> 
-        </div>
-        <div className="flip-button">
-            hover
+        <div className="back">
+          <div className="card-desc">
+            <p className='back-desc'></p>
+          </div>
         </div>
     </div>
   )

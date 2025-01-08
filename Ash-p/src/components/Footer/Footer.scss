@@ -25,6 +25,10 @@
     width: 100%;
 }
 
+.footer-nav{
+    height: 100%;
+}
+
 
 .footer-nav ul{
     display: flex;
@@ -32,6 +36,7 @@
     list-style-type: none;
     align-items: start;
     justify-content: space-between;
+    height: 100%;
 }
 
 .footer-social ul{
@@ -39,4 +44,21 @@
     list-style-type: none;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 144px;
+}
+
+.footer-social ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social{
+    width: 30.5px;
+    margin-right: 27px;
+}
+
+.social-img{
+    width: 100%;
 }

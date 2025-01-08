@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import './Footer.scss';
 import logo from '../../assets/header/Frame 9.png';
+import linkeding from '../../assets/footer/linkedin.png'
+import instagram from '../../assets/footer/instagram.png'
+import twitter from '../../assets/footer/twitter.png'
 
 const Footer: React.FC = () => {
   return (
@@ -32,23 +35,18 @@ const Footer: React.FC = () => {
         <div className="footer-social">
           <ul>
             <li>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                Facebook
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className='social'>
+                <img src={twitter} alt="twitter-logo" className='social-img' />
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                Twitter
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='social'>
+                <img src={instagram} alt="instagram-logo" className='social-img' />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                LinkedIn
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className='social'>
+                <img src={linkeding} alt="linkedin-logo" className='social-img' />
               </a>
             </li>
           </ul>
