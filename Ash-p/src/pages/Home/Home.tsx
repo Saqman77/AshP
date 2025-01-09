@@ -16,7 +16,7 @@ const Home = () => {
       const card = carousel.querySelector('.card'); // Assuming the class of each card is `.card`.
       if (card) {
         const cardWidth = (card as HTMLElement).offsetWidth;
-        carousel.scrollBy({ left: cardWidth  + 60, behavior: 'smooth' });
+        carousel.scrollBy({ left: cardWidth , behavior: 'smooth' });
       }
     }
   };
@@ -27,7 +27,7 @@ const Home = () => {
       const card = carousel.querySelector('.card-wrapper'); // Assuming the class of each card is `.card`.
       if (card) {
         const cardWidth = (card as HTMLElement).offsetWidth;
-        carousel.scrollBy({ left: -cardWidth  + 60, behavior: 'smooth' });
+        carousel.scrollBy({ left: -cardWidth , behavior: 'smooth' });
       }
     }
   };

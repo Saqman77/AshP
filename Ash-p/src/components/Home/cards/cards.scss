@@ -32,6 +32,10 @@ $font-xSmall: 12px;
     flex: 1;
     max-width: 320px;
     width: 100%;
+    scroll-snap-align: start;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
     // margin-left: 60px;
     // justify-content: space-around;
     
