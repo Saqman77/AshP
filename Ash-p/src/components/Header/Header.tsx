@@ -39,9 +39,9 @@ const Header: React.FC = () => {
         isScrolled ? 'header-blur' : 'header-transparent'
       }`}
     >
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
+      <NavLink to="/" className="logo">
+        <img src={logo} alt="Logo" className='header-logo'/>
+      </NavLink>
       <nav className="nav">
         <ul>
           <li>

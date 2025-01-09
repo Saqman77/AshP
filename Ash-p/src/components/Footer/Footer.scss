@@ -11,12 +11,22 @@
     overflow: hidden;
 }
 
-.gear-container{
+.gear-container {
     position: absolute;
     width: min-content;
     height: 100%;
     transform: translate(-49px, -10px);
     scale: 1.3;
+    animation: rotateGear 20s linear infinite; /* Add animation */
+}
+
+@keyframes rotateGear {
+    0% {
+        transform: translate(-49px, -10px) rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: translate(-49px, -10px) rotate(360deg); /* Rotate 360 degrees */
+    }
 }
 
 svg, path{
@@ -53,6 +63,8 @@ svg, path{
     align-items: start;
     justify-content: space-between;
     height: 100%;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .footer-social ul{

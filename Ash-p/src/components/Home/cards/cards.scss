@@ -1,3 +1,29 @@
+$font-xSmall: 12px;
+  $font-small: 20px;
+  $font-medium: 24px;
+  $font-large: 60px;
+  $font-xlarge: 80px;
+
+  @media screen and (max-width: 1500px){
+    $font-xSmall: 12px;
+    $font-small: 20px;
+    $font-medium: 24px;
+    $font-large: 48px;
+    $font-xlarge: 52px;
+  }
+
+
+  @media screen and (max-width: 900px){
+    $font-xSmall: 12px;
+    $font-small: 12px;
+    $font-medium: 12px;
+    $font-large: 24px;
+    $font-xlarge: 24px;
+  }
+
+
+
+
 .card-wrapper{
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 16px 17px 0px 0px black;
@@ -119,11 +145,11 @@
 .card-desc{
     margin-top: auto;
     // margin-bottom: auto;
-    font-size: 20px;
+    font-size: $font-small;
 }
 
 .card-heading{
-    font-size: 24px;
+    font-size: $font-medium;
     font-weight: 600;
     margin-bottom: auto;
     text-align: center;
@@ -141,4 +167,9 @@
 
 .cardImg{
     width: 100%;
+}
+
+.flip-button{
+    font-size: $font-xSmall;
+    font-weight: 500;
 }

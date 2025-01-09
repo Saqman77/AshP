@@ -1,3 +1,28 @@
+@import url('../../styles/fonts.scss');
+
+$font-xSmall: 12px;
+  $font-small: 20px;
+  $font-medium: 24px;
+  $font-large: 60px;
+  $font-xlarge: 80px;
+
+  @media screen and (max-width: 1500px){
+    $font-xSmall: 12px;
+    $font-small: 20px;
+    $font-medium: 24px;
+    $font-large: 48px;
+    $font-xlarge: 52px;
+  }
+
+
+  @media screen and (max-width: 900px){
+    $font-xSmall: 12px;
+    $font-small: 12px;
+    $font-medium: 12px;
+    $font-large: 24px;
+    $font-xlarge: 24px;
+  }
+
 .home-wrapper{
     width: 100%;
     height: 100%;
@@ -14,7 +39,7 @@
 }
 
 .heading-text{
-    font-size: 52px;
+    font-size: $font-xlarge;
     font-weight: 500;
     margin-bottom: 24px;
     padding-left: 44px;
@@ -23,6 +48,7 @@
 .left-desc{
     margin-bottom: 24px;
     padding-left: 44px;
+    font-size: $font-small;
 }
 
 .strong{
@@ -75,7 +101,7 @@
 }
 
 .services-heading{
-    font-size: 48px;
+    font-size: $font-large;
     font-weight: 600;
     width:100%;
     display: flex;
@@ -114,6 +140,8 @@
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 4px 4px 0px 0px black;
+    font-weight: 600;
+    -webkit-user-select: none;
 }
 .right-btn{
     width: 50px;
@@ -128,6 +156,16 @@
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 4px 4px 0px 0px black;
+    font-weight: 600;
+}
+
+.left-btn:hover,.right-btn:hover{
+    background-color: #ffffff;
+}
+
+.left-btn:active,.right-btn:active{
+    box-shadow: 1px 1px 0px 1px black;
+    // transform: translate3d(2px, 2px, 0px);
 }
 
 @media screen and (max-width: 900px) {
