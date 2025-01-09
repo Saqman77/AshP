@@ -4,8 +4,39 @@ import reading from '../../assets/home/muslim woman writing something in a noteb
 import Cards from '../../components/Home/cards/Cards'
 import { cardContent } from '../../components/Home/cards/cardContent'
 import ContactUs from '../../components/get-in-touch-button/ContactUs'
+import { useEffect, useRef } from 'react'
 
 const Home = () => {
+
+  const carouselRef = useRef(null);
+
+  const scrollRight = () => {
+    const carousel = carouselRef.current as HTMLElement | null;
+    if (carousel) {
+      const card = carousel.querySelector('.card'); // Assuming the class of each card is `.card`.
+      if (card) {
+        const cardWidth = (card as HTMLElement).offsetWidth;
+        carousel.scrollBy({ left: cardWidth  + 60, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const scrollLeft = () => {
+    const carousel = carouselRef.current as HTMLElement | null;
+    if (carousel) {
+      const card = carousel.querySelector('.card-wrapper'); // Assuming the class of each card is `.card`.
+      if (card) {
+        const cardWidth = (card as HTMLElement).offsetWidth;
+        carousel.scrollBy({ left: -cardWidth  + 60, behavior: 'smooth' });
+      }
+    }
+  };
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    // Additional logic for initialization if required
+  }, []);
+
   return (
     <div className="home-wrapper">
       <div className="home-content-top">
@@ -61,15 +92,19 @@ const Home = () => {
           <p>Our <span className='color-text'>Services</span></p>
         </div>
         <div className="cards-wrapper">
-          <div className="left-btn">L</div>
-          <div className="carousel">
+          <div className="left-btn"
+          onClick={scrollLeft}
+          >L</div>
+          <div className="carousel" ref={carouselRef}>
           
             {cardContent.map((card) => {
               return <Cards key={card.id} head={card.heading} backGround={card.backgroundColor} cardImg={card.imgSrc} desc={card.description} {...card} />
             })}
           
           </div>
-          <div className="right-btn">R</div>
+          <div className="right-btn"
+          onClick={scrollRight}
+          >R</div>
         </div>
       </div>
     </div>
