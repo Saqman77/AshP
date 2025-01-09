@@ -7,6 +7,22 @@
     // left: 0;
     background: #C1BBF5;
     border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+.gear-container{
+    position: absolute;
+    width: min-content;
+    height: 100%;
+    transform: translate(-49px, -10px);
+    scale: 1.3;
+}
+
+svg, path{
+    width: min-content;
+    height: 100%;
+    fill: #7163DE;
 }
 
 .footer-container{
