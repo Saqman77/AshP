@@ -71,7 +71,7 @@ $font-xSmall: 12px;
     width: 100%;
     justify-content: space-evenly;
     margin-left: auto;
-    font-size: $font-small;
+    font-size: var(--font-small);
     font-weight: 500;
 }
 

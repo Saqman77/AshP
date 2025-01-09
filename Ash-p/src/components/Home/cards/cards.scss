@@ -145,11 +145,11 @@ $font-xSmall: 12px;
 .card-desc{
     margin-top: auto;
     // margin-bottom: auto;
-    font-size: $font-small;
+    font-size: var(--font-small);
 }
 
 .card-heading{
-    font-size: $font-medium;
+    font-size: var(--font-medium);
     font-weight: 600;
     margin-bottom: auto;
     text-align: center;
@@ -170,6 +170,6 @@ $font-xSmall: 12px;
 }
 
 .flip-button{
-    font-size: $font-xSmall;
+    font-size: var(--font-xSmall);
     font-weight: 500;
 }

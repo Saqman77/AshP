@@ -40,7 +40,7 @@ $font-xSmall: 12px;
     border: 1px solid #201D06;
     box-shadow: 3px 6px 0px 1px black;
     color: #FFFFFF;
-    font-size: $font-small;
+    font-size: var(--font-small);
     font-weight: 600;
 }
 

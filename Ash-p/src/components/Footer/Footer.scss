@@ -63,7 +63,7 @@ svg, path{
     align-items: start;
     justify-content: space-between;
     height: 100%;
-    font-size: 20px;
+    font-size: var(--font-small);
     font-weight: 500;
 }
 
@@ -89,4 +89,10 @@ svg, path{
 
 .social-img{
     width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .gear-container{
+        height: 80%;
+    }
 }

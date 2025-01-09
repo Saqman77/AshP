@@ -1,4 +1,3 @@
-@import url('../../styles/fonts.scss');
 
 $font-xSmall: 12px;
   $font-small: 20px;
@@ -39,7 +38,7 @@ $font-xSmall: 12px;
 }
 
 .heading-text{
-    font-size: $font-xlarge;
+    font-size: var(--font-xlarge);
     font-weight: 500;
     margin-bottom: 24px;
     padding-left: 44px;
@@ -48,7 +47,7 @@ $font-xSmall: 12px;
 .left-desc{
     margin-bottom: 24px;
     padding-left: 44px;
-    font-size: $font-small;
+    font-size: var(--font-small);
 }
 
 .strong{
@@ -94,6 +93,23 @@ $font-xSmall: 12px;
     width: 100%;
 }
 
+@media  screen and (max-width: 1500px) {
+    .img-container{
+        width:300px;
+    }
+}
+@media  screen and (max-width: 1100px) {
+    .img-container{
+        width:200px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .right-img{
+        display: none;
+    }
+}
+
 .services-section{
     display: flex;
     flex-direction: column;
@@ -101,7 +117,7 @@ $font-xSmall: 12px;
 }
 
 .services-heading{
-    font-size: $font-large;
+    font-size: var(--font-large);
     font-weight: 600;
     width:100%;
     display: flex;
@@ -168,14 +184,54 @@ $font-xSmall: 12px;
     // transform: translate3d(2px, 2px, 0px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1199px) {
+
     .carousel{
         grid-auto-columns: calc((100% / 2) - 9px);
     }
     
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+    .home-wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 200px;
+    }
+
+    .home-content-top{
+        margin-bottom: 60px;
+    }
+
+    .heading-text{
+        padding-left: 10px;
+        font-weight: 600;
+    }
+
+    .left-desc{
+        padding-left: 10px;
+    }
+
+    .arrow{
+        width: 10px;
+    }
+
     .carousel{
         grid-auto-columns: 100%;
+    }
+    .card-wrapper{
+        margin: auto;
+    }
+
+    .left-btn, .right-btn{
+        width: 45px;
+        height: 45px;
+    }
+
+    .left-btn{
+        left: -5px
+    }
+
+    .right-btn{
+        right: -10px;
     }
 }
