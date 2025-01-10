@@ -48,6 +48,7 @@ $font-xSmall: 12px;
     margin-bottom: 24px;
     padding-left: 44px;
     font-size: var(--font-small);
+    font-weight: 500;
 }
 
 .strong{
@@ -68,7 +69,9 @@ $font-xSmall: 12px;
 .button-heading{
     height: min-content;
 }
-
+.button-desc{
+    font-weight: 500;
+}
 .button-container{
     height: min-content;
 }
@@ -163,6 +166,7 @@ $font-xSmall: 12px;
     transform: translateY(-50%);
     box-shadow: 4px 4px 0px 0px black;
     font-weight: 600;
+    user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     z-index: 999;
@@ -181,6 +185,7 @@ $font-xSmall: 12px;
     transform: translateY(-50%);
     box-shadow: 4px 4px 0px 0px black;
     font-weight: 600;
+    user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     z-index: 999;
@@ -220,28 +225,37 @@ $font-xSmall: 12px;
     .home-wrapper{
         width: 100%;
         height: 100%;
-        padding: 10px 10px 200px;
+        padding: 10px 10px 80px;
     }
 
     .home-content-top{
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .heading-text{
         padding-left: 10px;
         font-weight: 600;
+        margin-bottom: 7px;
     }
 
     .left-desc{
         padding-left: 10px;
+        font-weight: 600;
     }
 
     .arrow{
         width: 40px;
     }
 
+    .services-heading{
+        justify-content: left;
+        padding-left: 10px;
+        margin-bottom: 40px;
+    }
+
     .carousel{
         grid-auto-columns: 100%;
+        padding: 0px 30px 30px 30px;
     }
 
     .cards-wrapper{

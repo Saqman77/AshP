@@ -50,7 +50,7 @@ $font-xSmall: 12px;
 @media screen and (max-width: 900px){
     .card-wrapper{
         scroll-snap-align: center;
-        max-width: 250px;
+        max-width: 200px;
     }    
 }
 
@@ -69,6 +69,12 @@ $font-xSmall: 12px;
     width: 100%;
 }
 
+@media screen and (max-width: 900px){
+    .card{
+        height: 300px;
+    }
+}
+
 .front, .back{
     width: 100%;
     height: 100%;
@@ -81,6 +87,25 @@ $font-xSmall: 12px;
     top: 0;
     left: 0;
 
+}
+
+@media screen and (max-width:900px) {
+    .front{
+        width: 100%;
+        height: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 36px;
+    }
+     .back{
+        width: 100%;
+        height: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 36px;
+    }
 }
 
 .front{
@@ -163,6 +188,12 @@ $font-xSmall: 12px;
     margin-top: auto;
     // margin-bottom: auto;
     font-size: var(--font-small);
+    font-weight: 400;
+    text-align: center;
+    @media screen and (max-width: 900px) {
+        font-size: 10px;
+        margin-top: 0;
+    }
 }
 
 .card-heading{
@@ -173,9 +204,12 @@ $font-xSmall: 12px;
 }
 
 .card-heading-back{
-    font-size: 24px;
+    font-size: var(--font-medium);
     font-weight: 600;
     text-align: center;
+    @media screen and (max-width: 900px) {
+        font-size: var(--font-medium);
+    }
 }
 
 .card-img{

@@ -47,7 +47,7 @@ const Home = () => {
               Shaping your stories into <br/> 
               <span className='strong'> great writing,</span>
               &nbsp;one <span className='color-text'> edit</span>
-              &nbsp;at <br/>time..
+              &nbsp;at a<br/>time..
             </p>
           </div>
 
