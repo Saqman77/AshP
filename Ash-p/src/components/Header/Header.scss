@@ -33,7 +33,8 @@ $font-xSmall: 12px;
     align-items: center;
     padding: 23.5px 60px 23.5px 60px;
     transition: transform 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
-     background-color: transparent;
+    background-color: transparent;
+    z-index: 999;
 
 &.header-hidden {
     transform: translateY(-100%);

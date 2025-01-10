@@ -25,10 +25,13 @@ const Footer: React.FC = () => {
         <nav className="footer-nav">
           <ul>
             <li>
-              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/terms-of-service">Terms of Service</Link>
+              <Link to="/freedie">freddy buddy</Link>
+            </li>
+            <li>
+              <Link to="/portfolio">About</Link>
             </li>
             <li>
               <Link to="/contact">Contact Us</Link>
