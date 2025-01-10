@@ -4,7 +4,7 @@ import reading from '../../assets/home/muslim woman writing something in a noteb
 import Cards from '../../components/Home/cards/Cards'
 import { cardContent } from '../../components/Home/cards/cardContent'
 import ContactUs from '../../components/get-in-touch-button/ContactUs'
-import { useEffect, useRef } from 'react'
+import {  useRef } from 'react'
 
 const Home = () => {
 
@@ -32,10 +32,10 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    const carousel = carouselRef.current;
+  // useEffect(() => {
+    // const carousel = carouselRef.current;
     // Additional logic for initialization if required
-  }, []);
+  // }, []);
 
   return (
     <div className="home-wrapper">

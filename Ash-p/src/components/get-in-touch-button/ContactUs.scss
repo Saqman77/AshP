@@ -31,6 +31,7 @@ $font-xSmall: 12px;
     font: inherit; /* Ensures it inherits font styles from parent */
     color: inherit; /* Ensures it inherits color from parent */
     cursor: pointer; /* Ensures it still behaves like a button */
+    margin-left: 5px;
 }
 
 .navigate-button button{
