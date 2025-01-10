@@ -146,7 +146,9 @@ $font-xSmall: 12px;
     scroll-snap-type:x mandatory;
     // justify-content: space-around;
     overflow-y: hidden;
+    // animation: scrollLeft 15s linear infinite;
 }
+
 
 .carousel::-webkit-scrollbar{
     display: none;
@@ -193,11 +195,15 @@ $font-xSmall: 12px;
 
 .left-btn:hover,.right-btn:hover{
     background-color: #ffffff;
+    @media screen and (max-width:1101px) {
+        background-color: #D9D9D9;
+    }
 }
 
 .left-btn:active,.right-btn:active{
     box-shadow: 1px 1px 0px 1px black;
     // transform: translate3d(2px, 2px, 0px);
+    // transform: translate(1px, 1px);
 }
 
 @media screen and (max-width: 1250px) {
@@ -293,4 +299,14 @@ $font-xSmall: 12px;
     }
     
 
+}
+
+@media screen and (max-width: 500px) {
+    .left-btn{
+        left: 40px;
+    }
+
+    .right-btn{
+        right: 40px
+    }
 }
