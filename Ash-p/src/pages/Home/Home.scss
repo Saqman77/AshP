@@ -231,6 +231,10 @@ $font-xSmall: 12px;
     .carousel{
         grid-auto-columns: 100%;
     }
+
+    .cards-wrapper{
+        max-width: 500px;
+    }
     .card-wrapper{
         margin: auto;
     }
@@ -241,10 +245,25 @@ $font-xSmall: 12px;
     }
 
     .left-btn{
-        left: -5px
+        left: 20px
     }
 
     .right-btn{
-        right: -10px;
+        right: 0px;
     }
+}
+
+@media screen and (max-width: 900px) {
+
+    .left-btn, .right-btn{
+        width: 35px;
+        height: 35px;
+        font-size: 12px ;
+        line-height: 37px;
+    }
+
+    .left-btn{
+        left: 10px;
+    }
+
 }
