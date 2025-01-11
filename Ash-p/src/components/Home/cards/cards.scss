@@ -52,7 +52,7 @@ $font-xSmall: 12px;
 
 @media screen and (max-width: 1250px) {
     .card-wrapper{
-        max-width: 300px;
+        // max-width: 300px;
     }
 }
 
@@ -252,7 +252,7 @@ $font-xSmall: 12px;
 .card-img{
     width: 200px;
     margin: 0 auto;
-    @media  screen and (max-width:699px) {
+    @media  screen and (max-width: 900px) {
         width: 150px
     }
 }
