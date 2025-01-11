@@ -35,10 +35,17 @@ $font-xSmall: 12px;
     scroll-snap-align: start;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    // cursor: pointer;
     // margin-left: 60px;
     // justify-content: space-around;
     
+}
+
+.card-wrapper.no-hover{
+
+    @media screen and (min-width:1101px) {
+        pointer-events: none;
+    }
 }
 
 .card-wrapper.restore-shadow{
@@ -252,6 +259,8 @@ $font-xSmall: 12px;
 .card-img{
     width: 200px;
     margin: 0 auto;
+    user-select: none;
+    -webkit-user-select: none;
     @media  screen and (max-width: 900px) {
         width: 150px
     }
@@ -259,6 +268,9 @@ $font-xSmall: 12px;
 
 .cardImg{
     width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
 }
 
 .flip-button{
