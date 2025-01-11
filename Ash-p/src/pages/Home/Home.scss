@@ -288,10 +288,10 @@ $font-xSmall: 12px;
 @media screen and (max-width: 900px) {
 
     .left-btn, .right-btn{
-        width: 35px;
-        height: 35px;
-        font-size: 12px ;
-        line-height: 37px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px ;
+        line-height: 45px;
     }
 
     .left-btn{
@@ -303,10 +303,10 @@ $font-xSmall: 12px;
 
 @media screen and (max-width: 500px) {
     .left-btn{
-        left: 40px;
+        left: 25px;
     }
 
     .right-btn{
-        right: 40px
+        right: 20px
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import logo from '../../assets/header/Frame 9.png';
+import logo from '/src/assets/header/Frame 9.png';
 import ContactUs from '../get-in-touch-button/ContactUs';
 
 const Header: React.FC = () => {
@@ -93,7 +93,9 @@ const Header: React.FC = () => {
           </div>
         </div>
           <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
-          <ul className="mob-list">
+          <ul className="mob-list"
+            onClick={toggleMenu}
+          >
             <li>
               <NavLink
                 to="/"
