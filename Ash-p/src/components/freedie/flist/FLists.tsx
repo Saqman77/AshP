@@ -1,9 +1,9 @@
-
+import { freedie } from '../freedyContent'
 const FLists = () => {
   return (
     <div className="list-wrapper">
       <ul>
-        <li></li>
+        
       </ul>
     </div>
   )

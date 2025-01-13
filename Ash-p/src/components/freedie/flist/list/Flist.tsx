@@ -1,4 +1,3 @@
-import React from 'react'
 
 type Props = {
   name: string,
@@ -11,7 +10,7 @@ const Flist = ({name, profile, role}: Props) => {
     <div className='l-container'>
         <div className="profile">
           <div className="prof-container">
-            <img src={profile} alt="" />
+            <img src={profile} alt="prfoile image" />
           </div>
         </div>
         <div className="l-text">
