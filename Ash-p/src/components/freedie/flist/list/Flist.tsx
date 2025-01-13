@@ -1,4 +1,4 @@
-
+import './flist.scss'
 type Props = {
   name: string,
   profile: string,
@@ -10,7 +10,7 @@ const Flist = ({name, profile, role}: Props) => {
     <div className='l-container'>
         <div className="profile">
           <div className="prof-container">
-            <img src={profile} alt="prfoile image" />
+            <img src={profile} alt="profile image" className='prof-img' />
           </div>
         </div>
         <div className="l-text">

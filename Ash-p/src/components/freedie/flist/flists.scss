@@ -1,0 +1,15 @@
+.lists-wrapper{
+    width:100%;
+    display: flex;
+    // max-height: 500px;
+    // overflow-y: auto;
+}
+
+.f-ul{
+    list-style-type: none;
+    border: 1px solid black;
+}
+
+.f-ul li{
+    width: 100%;
+}

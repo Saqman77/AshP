@@ -1,5 +1,6 @@
 import wheel from '../../assets/freedi/Brutalist 52.png'
 import gear from '../../assets/freedi/Brutalist Shape 181 (1).svg'
+import FLists from '../../components/freedie/flist/FLists'
 import './Freedie.scss'
 
 const Freedie = () => {
@@ -18,7 +19,9 @@ const Freedie = () => {
               </div>
           </div>
         </div>
-        <div className="f-bottom"></div>
+        <div className="f-bottom">
+          <FLists/>
+        </div>
       </div>
       <div className="back-gear">
         <div className="f-gear">
