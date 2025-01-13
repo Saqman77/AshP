@@ -1,5 +1,5 @@
 import wheel from '../../assets/freedi/Brutalist 52.png'
-import gear from '../../assets/freedi/Spark 82.svg'
+import gear from '../../assets/freedi/Brutalist Shape 181 (1).svg'
 import './Freedie.scss'
 
 const Freedie = () => {
