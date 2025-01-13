@@ -7,9 +7,9 @@ const FLists = () => {
       <ul className='f-ul'>
         {freedie.map((list) => {
           return(
-            <li>
+            <li key={list.id}>
               <Flist
-                key={list.id}
+                
                 name={list.name}
                 profile={list.imgSrc}
                 role={list.role}
