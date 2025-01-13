@@ -2,7 +2,13 @@
 
 const Freedie = () => {
   return (
-    <div>Freedie</div>
+    <div className="f-wrapper">
+      <div className="f-top">
+        <div className="f-left"></div>
+        <div className="f-right"></div>
+      </div>
+      <div className="f-bottom"></div>
+    </div>
   )
 }
 
