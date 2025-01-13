@@ -1,4 +1,5 @@
 import wheel from '../../assets/freedi/Brutalist 52.png'
+import gear from '../../assets/freedi/Spark 82.svg'
 import './Freedie.scss'
 
 const Freedie = () => {
@@ -19,7 +20,11 @@ const Freedie = () => {
         </div>
         <div className="f-bottom"></div>
       </div>
-      <div className="back-gear"></div>
+      <div className="back-gear">
+        <div className="f-gear">
+          <img src={gear} alt="gear-image" className='gear-img' />
+        </div>
+      </div>
     </div>
   )
 }

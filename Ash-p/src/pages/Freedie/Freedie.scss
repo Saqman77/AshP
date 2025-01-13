@@ -2,6 +2,9 @@
     width: 100%;
     height: 100%;
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
 }
 
 .f-wrapper{
@@ -12,6 +15,9 @@
     // min-height: 1vh;
     width: 100%;
     height: 100%;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    z-index: 2;
 }
 
 .f-top{
@@ -60,4 +66,24 @@
     100% {
         transform: translate(-49px, -10px) rotate(360deg); /* Rotate 360 degrees */
     }
+}
+
+.back-gear{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/1;
+    grid-row: 1/1;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.f-gear{
+    width: 50%;
+    height: max-content;
+    transform: translateX(-60%);
+}
+
+.gear-img{
+    width: 100%;
 }
