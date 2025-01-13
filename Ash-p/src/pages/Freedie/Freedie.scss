@@ -20,6 +20,31 @@
     z-index: 2;
 }
 
+@keyframes Left {
+    from{
+        transform: translateX(-400px);
+        opacity:0;
+    }
+
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+  @keyframes Right {
+    from{
+        transform: translateX(400px);
+        scale: 0;
+        opacity:0;
+    }
+
+    to{
+        transform: translateX(0px);
+        scale: 1;
+        opacity: 1;
+    }
+}
+
 .f-top{
     display: flex;
     justify-content: space-between;
@@ -28,6 +53,7 @@
 .f-left{
     display: flex;
     align-items: start;
+    animation: Left ease 1s forwards;
 }
 
 .f-heading{
@@ -46,12 +72,13 @@
     display: flex;
     justify-content: right;
     margin-left: 7vw;
+    animation: Right 1s ease forwards ;
 }
 
 .wheel{
     width: 100%;
     padding: 0 2vw 2vw 2vw;
-    transform: translate(-49px, -10px);
+    // transform: translate(-49px, -10px);
     animation: wheelGear 20s linear infinite; /* Add animation */
 }
 
@@ -61,10 +88,10 @@
 
 @keyframes wheelGear {
     0% {
-        transform: translate(-49px, -10px) rotate(0deg); /* Start at 0 degrees */
+        transform: rotate(0deg); /* Start at 0 degrees */
     }
     100% {
-        transform: translate(-49px, -10px) rotate(360deg); /* Rotate 360 degrees */
+        transform: rotate(360deg); /* Rotate 360 degrees */
     }
 }
 @keyframes Gear {
