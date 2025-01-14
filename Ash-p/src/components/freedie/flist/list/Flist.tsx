@@ -1,3 +1,4 @@
+import button from '../../../../assets/freedi/Button.svg'
 import './flist.scss'
 type Props = {
   name: string,
@@ -20,6 +21,9 @@ const Flist = ({name, profile, role}: Props) => {
             <div className="l-role">
               <p className='role'>{role}</p>
             </div>
+        </div>
+        <div className="f-button">
+          <img src={button} alt='button' />
         </div>
     </div>
   )
