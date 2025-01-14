@@ -15,6 +15,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1100px) {
+        width:10%;
+    }
+    @media screen and (max-width: 600px) {
+        width:12%;
+    }
+    @media screen and (max-width: 400px) {
+        width:15%;
+    }
     
 }
 
@@ -83,6 +92,13 @@
     background-clip: text;
     background-size: 100% 100%;
     color: #eee38e00;
+    @media screen and (max-width: 900px) {
+        font-size: var(--font-large);
+    }
+    
+    @media screen and (max-width: 400px) {
+        font-size: var(--font-medium);
+    }
     
     // animation-timeline: view();
     // animation-range: entry 0% cover 100%;
@@ -96,6 +112,12 @@
     background-repeat: no-repeat;
     background-clip: text;
     background-size: 100% 100%;
+    @media screen and (max-width: 900px) {
+        font-size: var(--font-medium);
+    }
+    @media screen and (max-width: 400px) {
+        font-size: var(--font-small);
+    }
     // text-transform: ;
 }
 

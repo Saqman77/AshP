@@ -57,6 +57,7 @@
 .f-top{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 124px;
     @media screen and (max-width: 900px) {
         flex-wrap: wrap;
     }
@@ -65,6 +66,7 @@
 .f-left{
     display: flex;
     align-items: start;
+    flex-direction: column;
     animation: Left ease 1s forwards;
 }
 
@@ -72,6 +74,12 @@
     font-size: var(--font-xlarge);
     font-weight: 500;
     text-wrap: nowrap;
+}
+.fredi-desc{
+    font-size: var(--font-small);
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-top: 24px;
 }
 
 .f-colour{
@@ -92,7 +100,7 @@
     width: 100%;
     padding: 0 2vw 2vw 2vw;
     // transform: translate(-49px, -10px);
-    animation: wheelGear 20s linear infinite; /* Add animation */
+    animation: wheelGear 40s linear infinite; /* Add animation */
     @media screen and (max-width:900px) {
         max-width: 200px;
     }
@@ -132,8 +140,12 @@
     align-items: center;
 }
 
+.f-bottom{
+    margin-bottom: 60px;
+}
+
 .f-gear{
-    width: 50%;
+    width: 80%;
     height: max-content;
     transform: translateX(-60%);
     animation: Gear 55s linear infinite;
@@ -141,4 +153,19 @@
 
 .gear-img{
     width: 100%;
+}
+.f-headingb{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.f-headingb .f-hb{
+    color:#D54974;
+    font-weight: 600;
+    font-size: var(--font-large);
+    background: linear-gradient(to top, #EEE38E 40%, #e74d3c00 40%);
+    width: min-content;
+    text-wrap: nowrap;
+    text-align: center;
 }
