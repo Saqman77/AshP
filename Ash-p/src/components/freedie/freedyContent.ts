@@ -15,7 +15,8 @@ export const freedie = [
         linktree:'https://linktr.ee/alienpandajury',
         youtube:'https://www.youtube.com/playlist?list=PL5Ryp-hMdvtHIGjgXtZCY4cLDkHhdSPNf',
         soundcloud:'https://soundcloud.com/alienpandajury',
-        bandcamp:'https://alienpandajury.bandcamp.com/'
+        bandcamp:'https://alienpandajury.bandcamp.com/',
+        github:''
     },
     {
         id:'Saqlain-Haider',
@@ -33,7 +34,8 @@ export const freedie = [
         linktree:'',
         youtube:'',
         soundcloud:'',
-        bandcamp:''
+        bandcamp:'',
+        github:'https://github.com/Saqman77'
     },
     {
         id:'Daniel-Panjwaneey',
@@ -51,7 +53,8 @@ export const freedie = [
         linktree:'https://linktr.ee/alienpandajury',
         youtube:'https://www.youtube.com/playlist?list=PL5Ryp-hMdvtHIGjgXtZCY4cLDkHhdSPNf',
         soundcloud:'https://soundcloud.com/alienpandajury',
-        bandcamp:'https://alienpandajury.bandcamp.com/'
+        bandcamp:'https://alienpandajury.bandcamp.com/',
+        github:''
     },
     {
         id:'Saqlain-Haider',
@@ -69,7 +72,8 @@ export const freedie = [
         linktree:'',
         youtube:'',
         soundcloud:'',
-        bandcamp:''
+        bandcamp:'',
+        github:'https://github.com/Saqman77'
     },
     {
         id:'Daniel-Panjwaneey',
@@ -87,7 +91,8 @@ export const freedie = [
         linktree:'https://linktr.ee/alienpandajury',
         youtube:'https://www.youtube.com/playlist?list=PL5Ryp-hMdvtHIGjgXtZCY4cLDkHhdSPNf',
         soundcloud:'https://soundcloud.com/alienpandajury',
-        bandcamp:'https://alienpandajury.bandcamp.com/'
+        bandcamp:'https://alienpandajury.bandcamp.com/',
+        github:''
     },
     {
         id:'Saqlain-Haider',
@@ -105,7 +110,8 @@ export const freedie = [
         linktree:'',
         youtube:'',
         soundcloud:'',
-        bandcamp:''
+        bandcamp:'',
+        github:'https://github.com/Saqman77'
     },
     {
         id:'Daniel-Panjwaneey',
@@ -123,7 +129,8 @@ export const freedie = [
         linktree:'https://linktr.ee/alienpandajury',
         youtube:'https://www.youtube.com/playlist?list=PL5Ryp-hMdvtHIGjgXtZCY4cLDkHhdSPNf',
         soundcloud:'https://soundcloud.com/alienpandajury',
-        bandcamp:'https://alienpandajury.bandcamp.com/'
+        bandcamp:'https://alienpandajury.bandcamp.com/',
+        github:''
     },
     {
         id:'Saqlain-Haider',
@@ -141,6 +148,7 @@ export const freedie = [
         linktree:'',
         youtube:'',
         soundcloud:'',
-        bandcamp:''
+        bandcamp:'',
+        github:'https://github.com/Saqman77'
     },
 ]

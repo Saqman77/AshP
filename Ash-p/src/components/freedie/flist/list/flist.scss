@@ -143,7 +143,7 @@
     color:#d5497323;
     background-image: linear-gradient(90deg, #eee38e00, #eee38e00);
     animation: scroll-list 4s forwards;
-    animation-delay: .5s;
+    animation-delay: .1s;
     @media screen and (max-width: 1100px) {
         animation: scroll-list 2s forwards;
         animation-delay: .6s;
@@ -156,7 +156,7 @@
 .l-container:hover .role{
     color: rgba(0, 0, 0, 0.13);
     animation: scroll-role 3s forwards;
-    animation-delay: 1s;
+    animation-delay: .5s;
     @media screen and (max-width: 1100px) {
         animation: scroll-role 1.5s forwards;
         animation-delay: .5s;
