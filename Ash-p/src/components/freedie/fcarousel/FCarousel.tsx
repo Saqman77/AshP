@@ -10,10 +10,21 @@ interface CarouselProps {
 
 const FCarousel: React.FC<CarouselProps> = ({ startIndex, isVisible, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(startIndex);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setCurrentIndex(startIndex);
   }, [startIndex]);
+
+  // useEffect(() => {
+  //   const carouselElement = carouselRef.current;
+
+  //   if (carouselElement) {
+  //     carouselElement.classList.remove("active"); // Remove the class
+  //     void carouselElement.offsetWidth; // Trigger reflow to restart animation
+  //     carouselElement.classList.add("active"); // Reapply the class
+  //   }
+  // }, [currentIndex]);
 
   if (!isVisible) return null;
 
@@ -91,7 +102,7 @@ const FCarousel: React.FC<CarouselProps> = ({ startIndex, isVisible, onClose }) 
     // };
 
   return (
-    <div className="pop-up">
+    <div className={`pop-up`} ref={carouselRef}>
       <div className="pop-wrapper">
         <div className="p-heading">
           <h2 className="pop-name">
@@ -129,7 +140,7 @@ const FCarousel: React.FC<CarouselProps> = ({ startIndex, isVisible, onClose }) 
             </div>
           </div>
           <div className="pagers">
-              <div className="p-left">
+              <div className={`p-left ${currentIndex === 0 ? "disabled" : ""}`}>
                 <div className="left-name"
                   onClick={() =>
                     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : freedie.length - 1))
@@ -144,13 +155,13 @@ const FCarousel: React.FC<CarouselProps> = ({ startIndex, isVisible, onClose }) 
                         : "No name available"}
                   </p>
                   <img src={freedie.length > 0 && currentIndex > 0
-                      ? freedie[currentIndex - 1].name
+                      ? freedie[currentIndex - 1].imgSrc
                       : freedie.length > 0
-                      ? freedie[0].imgSrc
+                      ? freedie[1].imgSrc
                       : "No img available"} alt="prev-prof" />
                 </div>
               </div>
-              <div className="p-right">             
+              <div className={`p-right ${currentIndex === freedie.length - 2 ? "disabled" : ""}`}>             
                 <div className="right-name"
                   onClick={() =>
                     setCurrentIndex((prev) => (prev < freedie.length - 1 ? prev + 1 : 0))

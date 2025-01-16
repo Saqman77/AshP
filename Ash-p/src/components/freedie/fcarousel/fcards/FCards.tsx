@@ -8,6 +8,7 @@ import TREE from '../../../../assets/freedi/linktree-logo-icon.svg'
 import YT from '../../../../assets/freedi/youtube.png'
 import SC from '../../../../assets/freedi/soundcloud.svg'
 import BANDC from '../../../../assets/freedi/bandcamp.png'
+import { useEffect, useRef } from 'react'
 
 interface FCardsProps {
 
@@ -65,8 +66,20 @@ const FCards: React.FC<FCardsProps> = (
     name,
     git
   }) => {
+
+    const carouselRef = useRef<HTMLDivElement | null>(null);
+
+      useEffect(() => {
+        const carouselElement = carouselRef.current;
+    
+        if (carouselElement) {
+          carouselElement.classList.remove("active"); // Remove the class
+          void carouselElement.offsetWidth; // Trigger reflow to restart animation
+          carouselElement.classList.add("active"); // Reapply the class
+        }
+      }, [id]);
   return (
-    <div className='f-card' id={id}>
+    <div className='f-card' id={id} ref={carouselRef}>
        <div className="card-top">
         <div className="left-img"
         style={{ backgroundImage: `url(${img})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
