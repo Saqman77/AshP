@@ -4,11 +4,11 @@
     // min-height: 100vh;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.938), rgb(0, 0, 0));
     z-index: 99999;
-    position: relative;
+    // position: relative;
     display: flex;
     // grid-column: 1/1;
     // grid-row: 1/1;
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     max-height: 100vh;
