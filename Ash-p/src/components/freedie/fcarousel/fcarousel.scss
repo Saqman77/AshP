@@ -115,7 +115,9 @@
     padding: 0px 50px 50px;
     margin-top: auto;
     @media screen and (max-width:1100px) {
-        padding: 0 15px 40px;
+        padding: 20px 15px;
+        border-top: 1px solid white;
+        
     }
 }
 
@@ -141,6 +143,7 @@
     font-weight: 500;
     @media screen and (max-width:900px) {
         font-size: var(--font-large);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.452);
     }
     @media screen and (max-width:400px) {
         font-size: var(--font-medium);
