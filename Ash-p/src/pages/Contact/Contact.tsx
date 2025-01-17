@@ -3,6 +3,7 @@ import FB from '../../assets/freedi/Facebook.png'
 import INSTA from '../../assets/freedi/insta.png'
 import X from '../../assets/freedi/X.png'
 import LINK from '../../assets/freedi/linked.png'
+import Schedule from '../../components/schedule/Schedule'
 
 const Contact = () => {
   return (
@@ -18,6 +19,7 @@ const Contact = () => {
             <p className="c-desc">
               We are always ready to help you and answer your <span className='c-colour'>questions!</span>
             </p>
+            <Schedule/>
           </div>
         </div>
         <div className="top-bg">
