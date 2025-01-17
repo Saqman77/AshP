@@ -50,6 +50,10 @@
 .c-wrapper .schedule-button {
     margin-top: 40px;
     margin-bottom: 40px;
+    @media screen and (max-width:900px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .c-top{
@@ -319,7 +323,7 @@
     @media screen and (max-width:1200px) {
         // width: 50px;
         // height: 50px;
-        // margin-top: 50px;
+        margin-top: 50px;
     }
     @media screen and (max-width:450px) {
         // width: 40px;
