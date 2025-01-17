@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
         <div className="c-right">
           <p className="c-desc">
-            We are always ready to help you and answer your questions!
+            We are always ready to help you and answer your <span className='c-colour'>questions!</span>
           </p>
         </div>
       </div>

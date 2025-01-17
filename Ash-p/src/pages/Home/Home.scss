@@ -107,7 +107,7 @@ $font-xSmall: 12px;
     font-size: var(--font-small);
     font-weight: 500;
     color: rgb(0, 0, 0);
-    background-image: linear-gradient(90deg, #D54974, #D54974);
+    background-image: linear-gradient(90deg, #610F7F, #610F7F);
     // background-size: 0% 100%;
     background-repeat: no-repeat;
     background-clip: text;
@@ -131,9 +131,9 @@ $font-xSmall: 12px;
 }
 
 .color-text{
-    color:#D54974;
+    color:#610F7F;
     font-weight: 600;
-    background: linear-gradient(to top, #EEE38E 40%, #e74d3c00 40%);
+    background: linear-gradient(to top, #B9929F 40%, #e74d3c00 40%);
 }
 .button-wrapper{
     display: flex;
