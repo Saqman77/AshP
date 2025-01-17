@@ -297,7 +297,7 @@ $font-xSmall: 12px;
     @media screen and (max-width: 1100px) {
         justify-content: space-evenly;
         padding: 7px 19px;
-        background-color: #d54973e1;
+        background-color: #7163DE;
         border-radius: 7px;
         box-shadow: 2px 3px 0px 0px black;
     }
@@ -333,7 +333,7 @@ $font-xSmall: 12px;
 }
 
 .flip-back{
-    border: 1px solid rgba(213, 73, 115, 0.8823529412);
+    border: 1px solid #7163DE;
     display: flex;
     align-items: center;
     border-radius: 50%;
@@ -355,5 +355,5 @@ $font-xSmall: 12px;
 .flip-back:active{
     box-shadow: 0px 0px 0px 0px black;
     border: 1px solid bisque;
-    background-color: rgba(213, 73, 115, 0.8823529412);;
+    background-color: #7163DE;
 }
