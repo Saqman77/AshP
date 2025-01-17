@@ -8,7 +8,7 @@
     font: inherit; /* Ensures it inherits font styles from parent */
     color: inherit; /* Ensures it inherits color from parent */
     cursor: pointer; /* Ensures it still behaves like a button */
-    margin-left: 5px;
+    margin-left: 0px;
     position: relative;
     z-index: 2;
 }
@@ -26,6 +26,13 @@
       padding: 8px;
       font-size: 10px;
       box-shadow: 2.5px 2px 0px 1px black;
+    }
+    @media screen and (max-width: 600px) {
+        padding: 6px;
+        font-size: 9px;
+        box-shadow: 2.5px 2px 0px 1px black;
+        width: 108px;
+    
     }
 }
 

@@ -19,7 +19,7 @@ const Contact = () => {
             <p className="c-desc">
               We are always ready to help you and answer your <span className='c-colour'>questions!</span>
             </p>
-            <Schedule/>
+            
           </div>
         </div>
         <div className="top-bg">
@@ -40,6 +40,7 @@ const Contact = () => {
               </div>
         </div>
       </div>
+      <Schedule/>
       <div className="c-bottom">
         <p className='contact '>
           Contact:
