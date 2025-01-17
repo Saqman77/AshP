@@ -1,6 +1,6 @@
 import './Home.scss'
 import arrow from '/src/assets/home/Frame 42.svg'
-import reading from '/src/assets/home/muslim woman writing something in a notebook.png'
+import reading from '/src/assets/home/muslim woman writing something in a notebook 1.png'
 import Cards from '../../components/Home/cards/Cards'
 import { cardContent } from '../../components/Home/cards/cardContent'
 import ContactUs from '../../components/get-in-touch-button/ContactUs'
@@ -12,7 +12,7 @@ const Home = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollStart, setScrollStart] = useState(0);
-  const { closeMenu } = useThemeContext();
+  // const { toggleMenu } = useThemeContext();
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
 
@@ -113,7 +113,7 @@ const Home = () => {
               </div>
 
               <div className="button-container">
-                <ContactUs closeMenu={() => { closeMenu}} />
+                <ContactUs />
               </div>
             </div>
           </div>
