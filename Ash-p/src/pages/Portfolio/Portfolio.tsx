@@ -1,8 +1,9 @@
 import Horizontal from "../../components/Portfolio/Horizontal"
+import './Portfolio.scss'
 
 const Portfolio = () => {
   return (
-    <div><Horizontal/></div>
+    <div className="a-container"><Horizontal/></div>
   )
 }
 

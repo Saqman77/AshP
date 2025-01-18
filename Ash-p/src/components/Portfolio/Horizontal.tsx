@@ -15,39 +15,61 @@ const Horizontal: React.FC = () => {
         {id: "#h-card4", endTranslateX: -1500, rotate: -30}
     ]
 
-    useEffect(()=> {
-        if (wrapper.current) {ScrollTrigger.create({
-            trigger:wrapper.current,
-            start:'top top',
-            end:'+=900vh',
-            scrub: 1,
-            pin: true,
-            onUpdate: (self) =>{
-                gsap.to(wrapper.current,{
-                    x: `${-350 *self.progress}vw`,
-                    duration: 0.5,
-                    ease: 'power3.out'
-                })
-            }
-        })}
-
-        cards.forEach((card) => {
+    useEffect(() => {
+        const initializeScrollTrigger = () => {
+          if (wrapper.current) {
             ScrollTrigger.create({
-                trigger:'card.id',
-                start: 'top top',
-                end: '+=400vh',
-                scrub: 1,
-                onUpdate: (self) => {
-                    gsap.to(card.id,{
-                        x: `${card.endTranslateX * self.progress}px`,
-                        rotate:`${card.rotate * self.progress * 2}`,
-                        duration: 0.5,
-                        ease: 'power3.out'
-                    })
-                }
-            })
-        })
-    },[boxRef.current])
+              trigger: wrapper.current,
+              start: 'top top',
+              end: '+=900vh',
+              scrub: 1,
+              pin: true,
+              onUpdate: (self) => {
+                gsap.to(wrapper.current, {
+                  x: `${-350 * self.progress}vw`,
+                  duration: 0.5,
+                  ease: 'power3.out'
+                });
+              }
+            });
+          }
+    
+          cards.forEach((card) => {
+            ScrollTrigger.create({
+              trigger: card.id,
+              start: 'top top',
+              end: '+=400vh',
+              scrub: 1,
+              onUpdate: (self) => {
+                gsap.to(card.id, {
+                  x: `${card.endTranslateX * self.progress}px`,
+                  rotate: `${card.rotate * self.progress * 2}`,
+                  duration: 0.5,
+                  ease: 'power3.out'
+                });
+              }
+            });
+          });
+        };
+    
+        const handleDOMContentLoaded = () => {
+          initializeScrollTrigger();
+          ScrollTrigger.refresh(); // Refresh positions after initialization
+        };
+    
+        if (document.readyState === 'loading') {
+          // DOM is still loading, wait for it to finish
+          document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+        } else {
+          // DOM is already loaded
+          handleDOMContentLoaded();
+        }
+    
+        return () => {
+          document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+        };
+      }, []);
 
   return (
     <div className="h-container"
