@@ -2,7 +2,22 @@ import './horizontal.scss'
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-const Horizontal = () => {
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Horizontal: React.FC = () => {
+
+    const cards = [
+        {id: "h-card1", endTranslateX: -2000, rotate: 45},
+        {id: "h-card2", endTranslateX: -1000, rotate: -30},
+        {id: "h-card3", endTranslateX: -2000, rotate: 45},
+        {id: "h-card4", endTranslateX: -1500, rotate: -30}
+    ]
+
+    useEffect(()=> {
+
+    },[])
+
   return (
     <div className="h-container">
         <section className='h-wrapper'>
