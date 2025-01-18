@@ -1,7 +1,8 @@
+import Horizontal from "../../components/Portfolio/Horizontal"
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <div><Horizontal/></div>
   )
 }
 

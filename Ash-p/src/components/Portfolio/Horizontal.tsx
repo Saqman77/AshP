@@ -6,7 +6,7 @@ const Horizontal = () => {
   return (
     <div className="h-container">
         <section className='h-wrapper'>
-            <h1>Who we are?</h1>
+            <h1 className='h-heading'>Who we are?</h1>
 
             <div className="h-card" id='h-card1'>
                 <img src="../Frame 21.svg" alt="" />
@@ -21,7 +21,11 @@ const Horizontal = () => {
                 <img src="../Frame 21.svg" alt="" />
             </div>
         </section>
-        <section className='outro'></section>
+        <section className='outro'>
+            <h3>
+            Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. From data-driven social campaigns to cutting-edge AI products, we’re redefining what's possible in the digital space. 
+            </h3>
+        </section>
     </div>
   )
 }
