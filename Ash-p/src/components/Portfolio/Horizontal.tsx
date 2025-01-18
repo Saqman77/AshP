@@ -6,21 +6,56 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Horizontal: React.FC = () => {
-
+    const boxRef = useRef<HTMLDivElement | null>(null);
+    const wrapper = useRef<HTMLDivElement | null>(null);
     const cards = [
-        {id: "h-card1", endTranslateX: -2000, rotate: 45},
-        {id: "h-card2", endTranslateX: -1000, rotate: -30},
-        {id: "h-card3", endTranslateX: -2000, rotate: 45},
-        {id: "h-card4", endTranslateX: -1500, rotate: -30}
+        {id: "#h-card1", endTranslateX: -2000, rotate: 45},
+        {id: "#h-card2", endTranslateX: -1000, rotate: -30},
+        {id: "#h-card3", endTranslateX: -2000, rotate: 45},
+        {id: "#h-card4", endTranslateX: -1500, rotate: -30}
     ]
 
     useEffect(()=> {
+        if (wrapper.current) {ScrollTrigger.create({
+            trigger:wrapper.current,
+            start:'top top',
+            end:'+=900vh',
+            scrub: 1,
+            pin: true,
+            onUpdate: (self) =>{
+                gsap.to(wrapper.current,{
+                    x: `${-350 *self.progress}vw`,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                })
+            }
+        })}
 
-    },[])
+        cards.forEach((card) => {
+            ScrollTrigger.create({
+                trigger:'card.id',
+                start: 'top top',
+                end: '+=400vh',
+                scrub: 1,
+                onUpdate: (self) => {
+                    gsap.to(card.id,{
+                        x: `${card.endTranslateX * self.progress}px`,
+                        rotate:`${card.rotate * self.progress * 2}`,
+                        duration: 0.5,
+                        ease: 'power3.out'
+                    })
+                }
+            })
+        })
+    },[boxRef.current])
 
   return (
-    <div className="h-container">
-        <section className='h-wrapper'>
+    <div className="h-container"
+    ref={boxRef}
+    >
+        <section className='h-wrapper'
+            ref={wrapper}
+        >
             <h1 className='h-heading'>Who we are?</h1>
 
             <div className="h-card" id='h-card1'>
