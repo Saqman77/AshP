@@ -9,7 +9,7 @@ const Horizontal: React.FC = () => {
     const boxRef = useRef<HTMLDivElement | null>(null);
     const wrapper = useRef<HTMLDivElement | null>(null);
     const cards = [
-        {id: "#h-card1", endTranslateX: -2000, rotate: 45},
+        {id: "#h-card1", endTranslateX: -2000, rotate: 25},
         {id: "#h-card2", endTranslateX: -1000, rotate: -30},
         {id: "#h-card3", endTranslateX: -2000, rotate: 45},
         {id: "#h-card4", endTranslateX: -1500, rotate: -30}
@@ -21,7 +21,7 @@ const Horizontal: React.FC = () => {
             ScrollTrigger.create({
               trigger: wrapper.current,
               start: 'top top',
-              end: '+=900vh',
+              end: '+=400vh',
               scrub: 1,
               pin: true,
               onUpdate: (self) => {
@@ -36,7 +36,7 @@ const Horizontal: React.FC = () => {
     
           cards.forEach((card) => {
             ScrollTrigger.create({
-              trigger: card.id,
+              trigger: 'card.id',
               start: 'top top',
               end: '+=400vh',
               scrub: 1,
