@@ -1,5 +1,5 @@
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
-import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
+// import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
 import img4 from '../../assets/about/AshPReads-Editng Services-Line or Content Editing.png'
 import img5 from '../../assets/about/Hira.jpg'
