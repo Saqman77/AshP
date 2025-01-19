@@ -5,7 +5,7 @@ import './Portfolio.scss'
 const Portfolio = () => {
   return (
     <div className="a-container">
-      {/* <Horizontal/> */}
+      <Horizontal/>
       <Scroll/>
     </div>
   )

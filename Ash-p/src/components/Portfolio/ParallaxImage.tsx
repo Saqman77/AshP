@@ -1,4 +1,4 @@
-import { useLenis } from "@studio-freight/react-lenis/types"
+import { useLenis } from '@studio-freight/react-lenis';
 import { useRef, useEffect } from "react"
 
 interface LerpFunction {
@@ -19,7 +19,7 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({ src, alt, className }) =>
     const bounds = useRef<{ top: number; bottom: number } | null>(null)
     const currentTranslateY = useRef(0);
     const targetTranslateY = useRef(0);
-    const rafId = useRef(null);
+    const rafId = useRef<number | null>(null);
 
     useEffect(()=>{
         const updateBounds = () => {
@@ -42,10 +42,31 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({ src, alt, className }) =>
                     targetTranslateY.current,
                     0.1
                 )
-                if(Math.abs(currentTranslateY.current - targetTranslateY.current > 0.01))
+                if(Math.abs(currentTranslateY.current - targetTranslateY.current) > 0.01){
+                    imageRef.current.style.transform = `translateY(${currentTranslateY.current}px) scale(1.25)`;
+                }
             }
+
+            rafId.current = requestAnimationFrame(animate);
+
         }
+
+
+    animate();
+
+    return() =>{
+        window.removeEventListener("resize", updateBounds)
+        if(rafId.current){
+            cancelAnimationFrame(rafId.current)
+        }
+    }
     },[])
+
+    useLenis(({scroll}) => {
+        if(!bounds.current) return;
+        const relativeScroll = scroll - bounds.current.top;
+        targetTranslateY.current = relativeScroll * 0.2
+    })
 
   return (
     <img
@@ -55,7 +76,11 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({ src, alt, className }) =>
         className={className}
         style={{
             willChange:'transform',
-            transform: 'translateY(0) scale(1.25)'
+            transform: 'translateY(0) scale(1.25)',
+            backgroundImage:`url(${src})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100%',
+            backgroundPosition: '100% 100%'
         }}
     />
   )

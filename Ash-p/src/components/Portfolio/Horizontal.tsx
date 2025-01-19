@@ -21,7 +21,7 @@ const Horizontal: React.FC = () => {
             ScrollTrigger.create({
               trigger: wrapper.current,
               start: 'top top',
-              end: '+=400vh',
+              end: '+=200vh',
               scrub: 1,
               pin: true,
               onUpdate: (self) => {

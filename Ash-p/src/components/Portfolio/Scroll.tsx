@@ -1,8 +1,9 @@
-import img1 from '../../../public/Aisha Panjwaneey.jpeg'
-import img2 from '../../../public/AshPReads-EditingServices-Logo.png'
-import img3 from '../../../public/AshPReads-EditingServices-Paid BR.png'
-import img4 from '../../../public/AshPReads-Editng Services-Line or Content Editing.png'
-import img5 from '../../../public/Hira.jpg'
+import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
+import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
+import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
+import img4 from '../../assets/about/AshPReads-Editng Services-Line or Content Editing.png'
+import img5 from '../../assets/about/Hira.jpg'
+import ParallaxImage from './ParallaxImage'
 import './scroll.scss'
 const Scroll = () => {
   return (
@@ -10,8 +11,10 @@ const Scroll = () => {
 
         <section className='ash'>
 
-            <div className='ash-img'>
-                <img src={img1} alt="" className='s-imgs' />
+            <div className='ash-img'
+            // style={{ backgroundImage: `url(${img1})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
+            >
+                <ParallaxImage src={img1} alt="" className='s-imgs' />
             </div>
 
         </section>
@@ -21,7 +24,7 @@ const Scroll = () => {
 
                 <div className='ash-img'>
 
-                    <img src={img3} alt="" className='s-imgs' />
+                    <ParallaxImage src={img3} alt="" className='s-imgs' />
 
                 </div>
 
@@ -40,7 +43,7 @@ const Scroll = () => {
 
                 <div className="ash-img">
 
-                    <img src={img4} alt="" className='s-imgs' />
+                    <ParallaxImage src={img4} alt="" className='s-imgs' />
 
                 </div>
 
@@ -103,7 +106,7 @@ const Scroll = () => {
 
                 <div className="portrait-container">
                     <div className="ash-img">
-                        <img src={img2} alt="" className='s-imgs' />
+                        <ParallaxImage src={img2} alt="" className='s-imgs' />
                     </div>
                 </div>
 
@@ -114,7 +117,7 @@ const Scroll = () => {
         <section className='banner'>
 
             <div className="ash-img">
-                <img src={img5} alt="" className='s-imgs' />
+                <ParallaxImage src={img5} alt="" className='s-imgs' />
             </div>
 
 
