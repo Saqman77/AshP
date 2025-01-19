@@ -1,9 +1,13 @@
 import Horizontal from "../../components/Portfolio/Horizontal"
+import Scroll from "../../components/Portfolio/scroll"
 import './Portfolio.scss'
 
 const Portfolio = () => {
   return (
-    <div className="a-container"><Horizontal/></div>
+    <div className="a-container">
+      {/* <Horizontal/> */}
+      <Scroll/>
+    </div>
   )
 }
 
