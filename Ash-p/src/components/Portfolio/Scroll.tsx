@@ -29,7 +29,7 @@ const Scroll = () => {
                 </div>
 
 
-            <div className="projects-brief">
+            {/* <div className="projects-brief">
 
                 <p className='s-text'>
                     Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. 
@@ -37,9 +37,9 @@ const Scroll = () => {
                     we’re redefining what's possible in the digital space. 
                 </p>
 
-            </div>
+            </div> */}
 
-            <div className="col projects-cover">
+            {/* <div className="col projects-cover">
 
                 <div className="ash-img">
 
@@ -47,7 +47,85 @@ const Scroll = () => {
 
                 </div>
 
+            </div> */}
+
+
+            <div className="col projects-list">
+
+                <div className="project">
+
+                    <h3 className='s-heading'>sunrise</h3>
+                    
+                    <p className='s-text'>apple music / spotify / youtube</p>
+
+                </div>
+
+                <div className="project">
+
+                    <h3 className='s-heading'>sunrise</h3>
+
+                    <p className='s-text'>apple music / spotify / youtube</p>
+
+                </div>
+
+                <div className="project">
+
+                    <h3 className='s-heading'>sunrise</h3>
+
+                    <p className='s-text'>apple music / spotify / youtube</p>
+
+                </div>
+                
+                <div className="project">
+
+                    <h3 className='s-heading'>sunrise</h3>
+
+                    <p className='s-text'>apple music / spotify / youtube</p>
+
+                </div>
+
             </div>
+
+        </section>
+        <section className='panel ash'>
+
+            <div className='ash-img'
+            // style={{ backgroundImage: `url(${img1})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
+            >
+                <ParallaxImage src={img5} alt="" className='s-imgs' />
+            </div>
+
+        </section>
+
+
+        <section className='panel projects'>
+
+                <div className='ash-img'>
+
+                    <ParallaxImage src={img4} alt="" className='s-imgs' />
+
+                </div>
+
+
+            {/* <div className="projects-brief">
+
+                <p className='s-text'>
+                    Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. 
+                    From data-driven social campaigns to cutting-edge AI products, 
+                    we’re redefining what's possible in the digital space. 
+                </p>
+
+            </div> */}
+
+            {/* <div className="col projects-cover">
+
+                <div className="ash-img">
+
+                    <ParallaxImage src={img4} alt="" className='s-imgs' />
+
+                </div>
+
+            </div> */}
 
 
             <div className="col projects-list">
@@ -88,7 +166,7 @@ const Scroll = () => {
 
         </section>
 
-        <section className='panel s-about'>
+        {/* <section className='panel s-about'>
 
             <div className="col intro">
 
@@ -132,7 +210,7 @@ const Scroll = () => {
                     this is an example text.
                 </p>
             </div>
-        </section>
+        </section> */}
 
     </div>
   )
