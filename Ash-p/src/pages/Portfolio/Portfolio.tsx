@@ -5,7 +5,7 @@ import './Portfolio.scss'
 const Portfolio = () => {
   return (
     <div className="a-container">
-      {/* <h1
+      <h1
         style={{
           position:'fixed',
           color: 'red',
@@ -20,7 +20,7 @@ const Portfolio = () => {
 
       >
         Under construction
-      </h1> */}
+      </h1>
       <Horizontal/>
       <Scroll/>
     </div>
