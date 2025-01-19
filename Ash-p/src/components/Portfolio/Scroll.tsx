@@ -9,7 +9,7 @@ const Scroll = () => {
   return (
     <div className='s-container'>
 
-        <section className='ash'>
+        <section className='panel ash'>
 
             <div className='ash-img'
             // style={{ backgroundImage: `url(${img1})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
@@ -20,7 +20,7 @@ const Scroll = () => {
         </section>
 
 
-        <section className='projects'>
+        <section className='panel projects'>
 
                 <div className='ash-img'>
 
@@ -88,7 +88,7 @@ const Scroll = () => {
 
         </section>
 
-        <section className='s-about'>
+        <section className='panel s-about'>
 
             <div className="col intro">
 
@@ -114,7 +114,7 @@ const Scroll = () => {
 
         </section>
 
-        <section className='banner'>
+        <section className='panel banner'>
 
             <div className="ash-img">
                 <ParallaxImage src={img5} alt="" className='s-imgs' />

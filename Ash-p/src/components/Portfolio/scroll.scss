@@ -29,14 +29,14 @@ p.s-text{
     line-height: 1;
 }
 
-section{
+.panel{
     width: 100vw;
     height: 100vh;
     position: relative;
     // overflow: hidden;
 }
 
-section.projects{
+.panel.projects{
     width: 100vw;
     height: 125vh;
     display: flex;
