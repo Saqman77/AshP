@@ -11,9 +11,35 @@ const Scroll = () => {
 
         <section className='panel ash'>
 
-            <div className='ash-img'
-            // style={{ backgroundImage: `url(${img1})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
-            >
+            <div className="panel-front">
+
+
+                <div className="panel-top">
+
+                </div>
+
+                <div className="panel-center">
+
+                    <div className="panel-left">
+
+                    </div>
+
+                    <div className="panel-center">
+
+                    </div>
+                    <div className="panel-right">
+
+                    </div>
+                    
+                </div>
+                <div className="panel-bottom">
+
+                </div>
+
+
+            </div>
+
+            <div className='ash-img'>
                 <ParallaxImage src={img1} alt="" className='s-imgs' />
             </div>
 
@@ -22,6 +48,34 @@ const Scroll = () => {
 
         <section className='panel projects'>
 
+            <div className="panel-front">
+
+
+                <div className="panel-top">
+
+                </div>
+
+                <div className="panel-center">
+
+                    <div className="panel-left">
+
+                    </div>
+
+                    <div className="panel-center">
+
+                    </div>
+                    <div className="panel-right">
+
+                    </div>
+                    
+                </div>
+                <div className="panel-bottom">
+
+                </div>
+
+
+            </div>
+
                 <div className='ash-img'>
 
                     <ParallaxImage src={img3} alt="" className='s-imgs' />
@@ -29,69 +83,36 @@ const Scroll = () => {
                 </div>
 
 
-            {/* <div className="projects-brief">
 
-                <p className='s-text'>
-                    Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. 
-                    From data-driven social campaigns to cutting-edge AI products, 
-                    we’re redefining what's possible in the digital space. 
-                </p>
-
-            </div> */}
-
-            {/* <div className="col projects-cover">
-
-                <div className="ash-img">
-
-                    <ParallaxImage src={img4} alt="" className='s-imgs' />
-
-                </div>
-
-            </div> */}
-
-
-            <div className="col projects-list">
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-                    
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-                
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-            </div>
 
         </section>
         <section className='panel ash'>
 
-            <div className='ash-img'
-            // style={{ backgroundImage: `url(${img1})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize:'100% 100%'}}
-            >
+                        <div className="panel-front">
+
+
+                            <div className="panel-top">
+
+                            </div>
+
+                            <div className="panel-center">
+
+                                <div className="panel-left">
+
+                                </div>
+
+                                <div className="panel-center">
+
+                                </div>
+                                <div className="panel-right">
+
+                                </div>
+                            </div>
+                            
+                            <div className="panel-bottom"></div>
+                        </div>
+
+            <div className='ash-img'>
                 <ParallaxImage src={img5} alt="" className='s-imgs' />
             </div>
 
@@ -100,117 +121,38 @@ const Scroll = () => {
 
         <section className='panel projects'>
 
+                        <div className="panel-front">
+
+
+                            <div className="panel-top">
+
+                            </div>
+
+                            <div className="panel-center">
+
+                                <div className="panel-left">
+
+                                </div>
+
+                                <div className="panel-center"></div>
+                                <div className="panel-right"></div>
+                            </div>
+                            
+                            <div className="panel-bottom"></div>
+                        </div>
+
                 <div className='ash-img'>
 
+ 
                     <ParallaxImage src={img4} alt="" className='s-imgs' />
 
                 </div>
 
 
-            {/* <div className="projects-brief">
-
-                <p className='s-text'>
-                    Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. 
-                    From data-driven social campaigns to cutting-edge AI products, 
-                    we’re redefining what's possible in the digital space. 
-                </p>
-
-            </div> */}
-
-            {/* <div className="col projects-cover">
-
-                <div className="ash-img">
-
-                    <ParallaxImage src={img4} alt="" className='s-imgs' />
-
-                </div>
-
-            </div> */}
-
-
-            <div className="col projects-list">
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-                    
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-                
-                <div className="project">
-
-                    <h3 className='s-heading'>sunrise</h3>
-
-                    <p className='s-text'>apple music / spotify / youtube</p>
-
-                </div>
-
-            </div>
 
         </section>
 
-        {/* <section className='panel s-about'>
-
-            <div className="col intro">
-
-                <p className='s-text'>Introduction</p>
-
-                <p className='s-text'>
-                    Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. 
-                    From data-driven social campaigns to cutting-edge AI products, 
-                    we’re redefining what's possible in the digital space.
-                </p>
-
-            </div>
-
-            <div className="col portrait">
-
-                <div className="portrait-container">
-                    <div className="ash-img">
-                        <ParallaxImage src={img2} alt="" className='s-imgs' />
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section className='panel banner'>
-
-            <div className="ash-img">
-                <ParallaxImage src={img5} alt="" className='s-imgs' />
-            </div>
-
-
-            <div className="banner-copy">
-
-                <p className='s-text'> heading </p>
-
-                <h3 className='s-heading'> be the first to know </h3>
-
-                <p className='s-text'>
-                    be the first to know about my latest music,
-                    this is an example text.
-                </p>
-            </div>
-        </section> */}
+        
 
     </div>
   )
