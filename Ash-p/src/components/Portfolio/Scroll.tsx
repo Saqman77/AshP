@@ -159,30 +159,104 @@ const Scroll = () => {
         </section>
         <section className='panel ash'>
 
-                        <div className="panel-front">
+        <div className="panel-front">
 
 
-                            <div className="panel-top">
+<div className="panel-top">
+   <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
+   <ul className='services-list'>
+    <li><p className='s-text'>Developmental</p></li>
+    <li><p className='s-text'>Line</p></li>
+    <li><p className='s-text'>Copy Editor</p></li>
+    <li><p className='s-text'>Proofreader</p></li>
+    <li><p className='s-text'>Translator</p></li>
+    <li><p className='s-text'>Beta Reader</p></li>
+    <li><p className='s-text'>Sensitivity Reader</p></li>
+   </ul>
+</div>
 
-                            </div>
+<div className="panel-center">
 
-                            <div className="panel-center">
+    <div className="panel-left">
 
-                                <div className="panel-left">
+        <div className='ash2-img'>
 
-                                </div>
+            <ParallaxImage src={img5} alt="" className='s-imgs' />
 
-                                <div className="panel-center">
+        </div>
 
-                                </div>
-                                <div className="panel-right">
+    </div>
 
-                                </div>
-                            </div>
-                            
-                            <div className="panel-bottom"></div>
-                        </div>
+    <div className="sub-panel-center">
 
+        <div className="center-content">
+
+            <div className="center-heading">
+
+                <h2 className='center-header'>
+
+                    QUALIFICATIONS
+
+                </h2>
+
+            </div>
+
+            <div className="center-desc">
+
+                <p className='center-p'>
+
+                    Bachelor of Arts in Mass Communication, English Literature, and Education.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div className="panel-right">
+
+        <div className="cert-heading">
+
+            <h2 className='cert-header'>
+
+                CERTIFICATIONS AND COURSES
+
+            </h2>
+
+        </div>
+
+        <ul className='cert-list'>
+            <li><p className='cert-text'>Developmental</p></li>
+            <li><p className='cert-text'>Line</p></li>
+            <li><p className='cert-text'>Copy Editor</p></li>
+            <li><p className='cert-text'>Proofreader</p></li>
+            <li><p className='cert-text'>Translator</p></li>
+            <li><p className='cert-text'>Beta Reader</p></li>
+            <li><p className='cert-text'>Sensitivity Reader</p></li>
+    </ul>
+
+    </div>
+    
+</div>
+<div className="panel-bottom">
+
+    <p className='bottom-p'>
+        #RevPit 2025 Editor, Occasional co-host
+        of the Northwest Editors Guild, monthly
+        Editing with Disability/Chronic
+        Illness/Neurodivergence 
+        Virtual Chat, 
+        Mentor for aspiring editors, beta readers, 
+        and freelancers, Coach and Consultant for new authors.
+
+    </p>
+
+</div>
+
+
+</div>
             <div className='ash-img'>
                 <ParallaxImage src={img5} alt="" className='s-imgs' />
             </div>
