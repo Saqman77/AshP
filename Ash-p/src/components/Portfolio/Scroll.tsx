@@ -42,7 +42,7 @@ const Scroll = () => {
                 start: '-30% top',
                 end: '+=400px',
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 onLeave:()=>{
                     gsap.to('.s-text ,.s-heading',{
                         x: '-100%',
@@ -54,7 +54,8 @@ const Scroll = () => {
                             trigger: panel,
                             start: 'center center',
                             end: 'bottom',
-                            scrub:true
+                            scrub:true,
+                            markers:true
                         }
                     })
                 }
