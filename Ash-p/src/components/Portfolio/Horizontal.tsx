@@ -1,88 +1,74 @@
 import './horizontal.scss'
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Horizontal: React.FC = () => {
-    const boxRef = useRef<HTMLDivElement | null>(null);
-    const wrapper = useRef<HTMLDivElement | null>(null);
-    const cards = [
-        {id: "#h-card1", endTranslateX: -2000, rotate: 25},
-        {id: "#h-card2", endTranslateX: -1000, rotate: -30},
-        {id: "#h-card3", endTranslateX: -2000, rotate: 45},
-        {id: "#h-card4", endTranslateX: -1500, rotate: -30}
-    ]
+  const boxRef = useRef<HTMLDivElement | null>(null);
+  const wrapper = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
-        const initializeScrollTrigger = () => {
-          if (wrapper.current) {
-            ScrollTrigger.create({
-              trigger: wrapper.current,
-              start: 'top top',
-              end: '+=400vh',
-              scrub: 1,
-              pin: true,
-              onUpdate: (self) => {
-                gsap.to(wrapper.current, {
-                  x: `${-350 * self.progress}vw`,
-                  duration: 0.5,
-                  ease: 'power3.out',
-                  
-                });
-              }
-            });
-          }
-    
-          cards.forEach((card) => {
-            ScrollTrigger.create({
-              trigger: 'card.id',
-              start: 'top top',
-              end: '+=400vh',
-              scrub: 1,
-              onUpdate: (self) => {
-                gsap.to(card.id, {
-                  x: `${card.endTranslateX * self.progress}px`,
-                  rotate: `${card.rotate * self.progress * 2}`,
-                  duration: 0.5,
-                  ease: 'power3.out'
-                });
-              }
-            });
-          });
+  const cards = [
+    { id: '#h-card1', endTranslateX: -2000, rotate: 25 },
+    { id: '#h-card2', endTranslateX: -1000, rotate: -30 },
+    { id: '#h-card3', endTranslateX: -2000, rotate: 45 },
+    { id: '#h-card4', endTranslateX: -1500, rotate: -30 },
+  ];
 
-          gsap.to('body, html, .h-heading',{
-            backgroundColor:'#7163DE',
-            color: '#FFF9E3',
-            scrollTrigger:{
-              trigger: '.h-heading',
-              start: '10% top',
-              end: '+=20vh',
-              scrub: 1,
-              // markers: true
-            }
-          })
-        };
-    
-        const handleDOMContentLoaded = () => {
-          initializeScrollTrigger();
-          ScrollTrigger.refresh(); // Refresh positions after initialization
-        };
-    
-        if (document.readyState === 'loading') {
-          // DOM is still loading, wait for it to finish
-          document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
-        } else {
-          // DOM is already loaded
-          handleDOMContentLoaded();
-        }
-    
-        return () => {
-          document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
-          // ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
-        };
-      }, []);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      if (wrapper.current) {
+        ScrollTrigger.create({
+          trigger: wrapper.current,
+          start: 'top top',
+          end: '+=400vh',
+          scrub: 1,
+          pin: true,
+          onUpdate: (self) => {
+            gsap.to(wrapper.current, {
+              x: `${-350 * self.progress}vw`,
+              duration: 0.5,
+              ease: 'power3.out',
+            });
+          },
+        });
+      }
+
+      cards.forEach((card) => {
+        ScrollTrigger.create({
+          trigger: card.id,
+          start: 'top top',
+          end: '+=400vh',
+          scrub: 1,
+          onUpdate: (self) => {
+            gsap.to(card.id, {
+              x: `${card.endTranslateX * self.progress}px`,
+              rotate: `${card.rotate * self.progress * 2}`,
+              duration: 0.5,
+              ease: 'power3.out',
+            });
+          },
+        });
+      });
+
+    }, boxRef);
+
+    gsap.to('body, html, .h-heading', {
+      backgroundColor: '#7163DE',
+      color: '#FFF9E3',
+      scrollTrigger: {
+        trigger: '.h-heading',
+        start: '10% top',
+        end: '+=20vh',
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    return () => ctx.revert(); // Cleanup animations and ScrollTriggers
+  }, []);
+
 
   return (
     <div className="h-container"

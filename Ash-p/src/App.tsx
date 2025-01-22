@@ -8,7 +8,11 @@ import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
 import { HashRouter, Routes, Route } from "react-router-dom";
 // import {ReactLenis} from '@studio-freight/react-lenis';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   return (

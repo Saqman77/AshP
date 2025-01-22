@@ -44,12 +44,12 @@ h3.s-heading{
     // letter-spacing: -1px;
     font-weight: 600;
 }
-p.s-text{
-    color: #ffffff;
-    font-weight: 500;
-    font-size: var(--font-small);
-    line-height: 1;
-}
+// p.s-text{
+//     color: #ffffff;
+//     font-weight: 500;
+//     font-size: var(--font-small);
+//     line-height: 1;
+// }
 
 .services-list{
     list-style-type: none;
@@ -64,8 +64,9 @@ p.s-text{
 .services-list li p{
     font-size: var(--font-large);
     font-weight: 600;
-    color: #7163DE;
+    color: #FFF9E3;
     text-decoration: underline;
+    // transform: translateX(-100%);
     // line-height: .75;
     // margin: auto;
     // width: max-content;
@@ -80,6 +81,7 @@ p.s-text{
     // backdrop-filter: blur(20px);
     text-wrap: nowrap;
     // max-width: max-content;
+    will-change: transform;
 }
 
 .panel{
@@ -109,7 +111,7 @@ p.s-text{
     -webkit-backdrop-filter: blur(7px) brightness(0.8);
     display: grid;
     grid-template-areas: "top" "center" "bottom";
-    background-color: #F0195B33;
+    background-color: #7163de7c;
     // grid-auto-rows: calc(100%/3);
     // padding: 5em;
 }
@@ -140,6 +142,7 @@ p.s-text{
 
 .sub-panel-center{
     // padding: 1em 0;
+    padding: 5em;
 }
 
 .center-content{
@@ -187,9 +190,9 @@ p.s-text{
 }
 
 .cert-list{
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     font-weight: 600;
-    color: #7163DE;
+    color: #ff9899;
     padding-left: 1em;
     list-style-type: none;
 }

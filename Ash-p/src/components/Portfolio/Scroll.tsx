@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
 import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
@@ -14,118 +14,131 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 const Scroll = () => {
-    // useEffect(() => {
-    //     ScrollTrigger.create({
-    //         markers:true,
-    //       trigger: '.panel', // Applies to the entire document
-    //       start: "top top", 
-    //       end: "bottom bottom",
-    //       onUpdate: (self) => handleScroll(self.direction), // Detect scroll direction
-    //     });
-    
-    //     let isScrolling = false;
-    
-    //     const handleScroll = (direction: number) => {
-    //       if (isScrolling) return; // Prevent multiple triggers during a single scroll
-    //       isScrolling = true;
-    
-    //       const scrollY = window.scrollY;
-    //       const targetY = direction === 1 ? scrollY + window.innerHeight : scrollY - window.innerHeight;
-    
-    //       gsap.to(window, {
-    //         scrollTo: { y: targetY, autoKill: false },
-    //         duration: 1,
-    //         ease: "power2.out",
-    //         onComplete: () => { isScrolling = false; }, // Allow new scroll triggers after animation
-    //       });
-    //     };
-    //   }, []);
-    const panels = gsap.utils.toArray<HTMLElement>(".panel");
-    const lists = gsap.utils.toArray<HTMLElement>('.s-text')
-    const tl = gsap.timeline()
-    const tl2 = gsap.timeline()
-    useEffect(()=>{
-        const initializeScrollTrigger = () => {
-            panels.forEach((panel, index)=>{
-                tl.fromTo('.s-text ,.s-heading',{
-                    x:"-100%",
-                    stagger: 0.1,
-                    scale: 0,
-                    opacity: 0,
-                    ease: 'Power2.easeIn'
-                    },
-                    {
-                        x:"0",
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+      const ctx = gsap.context(() => {
+        const panels = gsap.utils.toArray<HTMLElement>('.panel.ash');
+        const tl = gsap.timeline();
+        const tl2 = gsap.timeline();
+  
+        panels.forEach((panel) => {
+          tl.fromTo(
+            '.s-text ,.s-heading',
+            {
+              x: '-100%',
+              stagger: 0.1,
+              scale: 0,
+              opacity: 0,
+              ease: 'Power2.easeIn',
+            },
+            {
+              x: '0',
+              stagger: 0.1,
+              scale: 1,
+              opacity: 1,
+              scrollTrigger: {
+                trigger: panel,
+                start: '-30% top',
+                end: '+=400px',
+                scrub: 1,
+                markers: true,
+                onLeave:()=>{
+                    gsap.to('.s-text ,.s-heading',{
+                        x: '-100%',
                         stagger: 0.1,
-                        scale: 1,
-                        opacity: 1,
-                        scrollTrigger:{
+                        scale: 0,
+                        opacity: 0,
+                        ease: 'Power2.easeIn',
+                        scrollTrigger: {
                             trigger: panel,
-                            start:'-20% top',
-                            end:'+=400px',
-                            scrub:true,
-                            markers:true,
+                            start: 'center center',
+                            end: 'bottom',
+                            scrub:true
                         }
-                    }
-                );
-
-                tl.fromTo('.cert-text',{
-                    x:'100%',
-                    scale:0
-                },
-                {
-                    x:'0%',
-                    scale:1,
-                    stagger:0.1,
-                    scrollTrigger:{
-                        trigger:panel,
-                        start:'-20% top',
-                        end:'+=200px',
-                        scrub:true
-                    }
-                })
-                tl2.fromTo('.panel-front ',{
-                    // x:'-100%'
-                    // opacity: 0
-                    // backgroundColor: 'black',
-                    backdropFilter: 'blur(50px) brightness(0.7)',
-                    webkitBackdropFilter:' blur(50px) brightness(0.7)',
-                },{
-                    // opacity: 1,
-                    // backgroundColor:'#F0195B33',
-                    backdropFilter: 'blur(7px) brightness(0.8)',
-                    webkitBackdropFilter:' blur(7px) brightness(0.8)',
-                    scrollTrigger:{
-                        trigger:panel,
-                        start:'-20% top',
-                        end:'+=100px',
-                        scrub:true
-                    }
-                })
-        })
-        }
-
-                const handleDOMContentLoaded = () => {
-                  initializeScrollTrigger();
-                  ScrollTrigger.refresh(); // Refresh positions after initialization
-                };
-            
-                if (document.readyState === 'loading') {
-                  // DOM is still loading, wait for it to finish
-                  document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
-                } else {
-                  // DOM is already loaded
-                  handleDOMContentLoaded();
+                    })
                 }
-            
-                return () => {
-                  document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
-                //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
-                };
-    },[])
-   
+              },
+            }
+          );
+  
+          tl.fromTo(
+            '.cert-text',
+            { x: '100%', scale: 0 },
+            {
+              x: '0%',
+              scale: 1,
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: panel,
+                start: '-20% top',
+                end: '+=200px',
+                scrub: true,
+                onLeave:()=>{
+                    gsap.to('.cert-text',{
+                        x: '100%',
+                        stagger: 0.1,
+                        scale: 0,
+                        opacity: 0,
+                        ease: 'Power2.easeIn',
+                        scrollTrigger: {
+                            trigger: panel,
+                            start: 'center center',
+                            end: 'bottom',
+                            scrub:true
+                        }
+                    })
+
+                }
+              },
+            }
+          );
+  
+
+        });
+        tl2.fromTo(
+            '.panel.ash .panel-front',
+            {
+            //   backdropFilter: 'blur(50px) brightness(0.7)',
+            //   webkitBackdropFilter: 'blur(50px) brightness(0.7)',
+                backgroundColor:'#7163DE'
+            },
+            {
+            //   backdropFilter: 'blur(7px) brightness(0.8)',
+            //   webkitBackdropFilter: 'blur(7px) brightness(0.8)',
+            backgroundColor:'#7163de7c',
+              scrollTrigger: {
+                trigger: '.panel',
+                start: '-20% top',
+                end: '+=100px',
+                scrub: true,
+              },
+            }
+          );
+        // tl2.fromTo('.ash2-img',{
+        //     // height:'0%',
+        //     // transform:'translateY(100%)'
+        //     scale:0.5
+        // },
+        // {
+        //     // transform:'translateY(0%)',
+        //     // height:'100%',
+        //     scale:1,
+        //     ease:'power2.inOut',
+        //     duration:2,
+        //     scrollTrigger: {
+        //         trigger: '.panel',
+        //         start: '-20% top',
+        //         end: '+=100px',
+        //         scrub: true,
+        //       },
+        // })
+      }, scrollRef);
+  
+      return () => ctx.revert(); // Clean up the ScrollTrigger and animations on unmount
+    }, []);
   return (
-    <div className='s-container'>
+    <div className='s-container' ref={scrollRef}>
 
         <section className='panel ash'>
 
