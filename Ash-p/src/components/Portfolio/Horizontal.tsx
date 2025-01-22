@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Horizontal: React.FC = () => {
   const boxRef = useRef<HTMLDivElement | null>(null);
   const wrapper = useRef<HTMLDivElement | null>(null);
+  const spans = document.querySelectorAll('.outro-span')
 
   const cards = [
     { id: '#h-card1', endTranslateX: -2000, rotate: 25 },
@@ -52,6 +53,21 @@ const Horizontal: React.FC = () => {
         });
       });
 
+      spans.forEach((span)=>{
+        gsap.to(span,{
+          backgroundSize: '100% 100%',
+          stagger:0.1,
+          ease:'power1.inOut',
+          scrollTrigger:{
+            trigger: '.outro',
+            start: 'top center',
+            end: 'center',
+            scrub: true,
+            markers: true
+          }
+        })
+      })
+
     }, boxRef);
 
     gsap.to('body, html, .h-heading', {
@@ -59,7 +75,7 @@ const Horizontal: React.FC = () => {
       color: '#FFF9E3',
       scrollTrigger: {
         trigger: '.h-heading',
-        start: '10% top',
+        start: window.innerWidth < 1250 ? 'center 30%':'10% top',
         end: '+=20vh',
         scrub: 1,
         // markers: true,
@@ -94,7 +110,20 @@ const Horizontal: React.FC = () => {
         </section>
         <section className='outro'>
             <h3>
-              We are a sibling duo with more than two decades of freelance editing experience between us. Our flexible rates and payment plans accommodate various budgets, and we offer a complimentary 30-minute video consultation call, a manuscript assessment, and an short editing sample of your chosen text. 
+              {/* <span className='outro-span'>We are a sibling</span>
+              <span className='outro-span'> duo with more than two</span>
+              <span className='outro-span'> decades of freelance editing experience</span>
+              <span className='outro-span'> between us. Our flexible rates and payment plans accommodate various</span>
+              <span className='outro-span'> budgets, and we offer a complimentary 30-minute video consultation call,</span>
+              <span className='outro-span'>a manuscript assessment, and an short editing sample of your chosen text.</span>  */}
+              <span className='outro-span'>
+                We are a sibling
+                duo with more than two
+                decades of freelance editing experience
+                between us. Our flexible rates and payment plans accommodate various
+                budgets, and we offer a complimentary 30-minute video consultation call,
+                a manuscript assessment, and an short editing sample of your chosen text.
+              </span> 
             </h3>
         </section>
     </div>

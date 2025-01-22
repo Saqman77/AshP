@@ -55,7 +55,7 @@ const Scroll = () => {
                             start: 'center 45%',
                             end: 'bottom',
                             scrub:true,
-                            markers:true
+                            // markers:true
                         }
                     })
                 }
