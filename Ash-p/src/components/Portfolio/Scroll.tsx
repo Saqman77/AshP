@@ -52,7 +52,7 @@ const Scroll = () => {
                         ease: 'Power2.easeIn',
                         scrollTrigger: {
                             trigger: panel,
-                            start: 'center center',
+                            start: 'center 45%',
                             end: 'bottom',
                             scrub:true,
                             markers:true

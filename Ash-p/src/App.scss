@@ -2,7 +2,7 @@
 
 
 :root {
-  --font-xSmall: 12px;
+  --font-xsmall: 12px;
   --font-small: 20px;
   --font-medium: clamp(20px, 1.6vw, 30px);
   --font-large: clamp(30px, 3vw, 60px);
@@ -12,17 +12,18 @@
 
 @media screen and (max-width: 1250px) {
   :root {
-    --font-xSmall: 12px;
+    --font-xsmall: 12px;
     --font-small: 20px;
     --font-medium: 24px;
     --font-large: 48px;
     --font-xlarge: 52px;
+    --font-xxlarge: clamp(30px, 7.1vw, 80px);
   }
 }
 
 @media screen and (max-width: 1199px) {
   :root {
-    --font-xSmall: 12px;
+    --font-xsmall: 12px;
     --font-small: 16px;
     --font-medium: 20px;
     --font-large: 35px;
@@ -32,7 +33,7 @@
 
 @media screen and (max-width: 900px) {
   :root {
-    --font-xSmall: 10px;
+    --font-xsmall: 10px;
     --font-small: 12px;
     --font-medium: 16px;
     --font-large: clamp(18px, 3vw, 24px);

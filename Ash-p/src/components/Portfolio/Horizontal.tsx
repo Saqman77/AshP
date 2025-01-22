@@ -37,7 +37,7 @@ const Horizontal: React.FC = () => {
 
       cards.forEach((card) => {
         ScrollTrigger.create({
-          trigger: card.id,
+          trigger: 'card.id',
           start: 'top top',
           end: '+=400vh',
           scrub: 1,

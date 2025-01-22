@@ -85,7 +85,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     // width: max-content;
-    font-size: 40px;
+    font-size: var(--font-large);
     font-weight: 600;
     text-align: center;
 }
