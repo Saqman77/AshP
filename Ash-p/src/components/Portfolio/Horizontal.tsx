@@ -95,7 +95,7 @@ const Horizontal: React.FC = () => {
         </section>
         <section className='outro'>
             <h3>
-            Our suite of digital solutions pushes the boundaries of innovation to deliver end-to-end experiences that drive results. From data-driven social campaigns to cutting-edge AI products, we’re redefining what's possible in the digital space. 
+              We are a sibling duo with more than two decades of freelance editing experience between us. Our flexible rates and payment plans accommodate various budgets, and we offer a complimentary 30-minute video consultation call, a manuscript assessment, and an short editing sample of your chosen text. 
             </h3>
         </section>
     </div>

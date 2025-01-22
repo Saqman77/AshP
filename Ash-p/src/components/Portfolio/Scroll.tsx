@@ -1,5 +1,5 @@
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
-// import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
+import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
 import img4 from '../../assets/about/AshPReads-Editng Services-Line or Content Editing.png'
 import img5 from '../../assets/about/Hira.jpg'
@@ -15,8 +15,8 @@ const Scroll = () => {
 
 
                 <div className="panel-top">
-                   <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
-                   <ul className='services-list'>
+                   <h3 className='s-heading'><span className='s-heading'>Meet: </span>Aisha Panjwaneey - Ash P</h3>
+                   {/* <ul className='services-list'>
                     <li><p className='s-text'>Developmental</p></li>
                     <li><p className='s-text'>Line</p></li>
                     <li><p className='s-text'>Copy Editor</p></li>
@@ -24,12 +24,27 @@ const Scroll = () => {
                     <li><p className='s-text'>Translator</p></li>
                     <li><p className='s-text'>Beta Reader</p></li>
                     <li><p className='s-text'>Sensitivity Reader</p></li>
-                   </ul>
+                   </ul> */}
                 </div>
 
                 <div className="panel-center">
 
                     <div className="panel-left">
+                        <ul className='services-list'>
+                            <li><p className='s-text'>Developmental</p></li>
+                            <li><p className='s-text'>Line</p></li>
+                            <li><p className='s-text'>Copy Editor</p></li>
+                            <li><p className='s-text'>Proofreader</p></li>
+                            <li><p className='s-text'>Translator</p></li>
+                            <li><p className='s-text'>Beta Reader</p></li>
+                            <li><p className='s-text'>Sensitivity Reader</p></li>
+                        </ul>
+
+
+                    </div>
+
+                    <div className="sub-panel-center">
+
 
                         <div className='ash2-img'>
 
@@ -37,13 +52,9 @@ const Scroll = () => {
 
                         </div>
 
-                    </div>
+                        {/* <div className="center-content"> */}
 
-                    <div className="sub-panel-center">
-
-                        <div className="center-content">
-
-                            <div className="center-heading">
+                            {/* <div className="center-heading">
 
                                 <h2 className='center-header'>
 
@@ -61,15 +72,15 @@ const Scroll = () => {
 
                                 </p>
 
-                            </div>
+                            </div> */}
 
-                        </div>
+                        {/* </div> */}
 
                     </div>
 
                     <div className="panel-right">
 
-                        <div className="cert-heading">
+                        {/* <div className="cert-heading">
 
                             <h2 className='cert-header'>
 
@@ -87,7 +98,7 @@ const Scroll = () => {
                             <li><p className='cert-text'>Translator</p></li>
                             <li><p className='cert-text'>Beta Reader</p></li>
                             <li><p className='cert-text'>Sensitivity Reader</p></li>
-                    </ul>
+                        </ul> */}
 
                     </div>
                     
@@ -111,7 +122,7 @@ const Scroll = () => {
             </div>
 
             <div className='ash-img'>
-                <ParallaxImage src={img1} alt="" className='s-imgs' />
+                <ParallaxImage src={img2} alt="" className='s-imgs' />
             </div>
 
         </section>
