@@ -28,7 +28,8 @@ const Horizontal: React.FC = () => {
                 gsap.to(wrapper.current, {
                   x: `${-350 * self.progress}vw`,
                   duration: 0.5,
-                  ease: 'power3.out'
+                  ease: 'power3.out',
+                  
                 });
               }
             });
@@ -50,6 +51,18 @@ const Horizontal: React.FC = () => {
               }
             });
           });
+
+          gsap.to('body, html, .h-heading',{
+            backgroundColor:'#7163DE',
+            color: '#FFF9E3',
+            scrollTrigger:{
+              trigger: '.h-heading',
+              start: '10% top',
+              end: '+=20vh',
+              scrub: 1,
+              // markers: true
+            }
+          })
         };
     
         const handleDOMContentLoaded = () => {
@@ -67,7 +80,7 @@ const Horizontal: React.FC = () => {
     
         return () => {
           document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+          // ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
         };
       }, []);
 

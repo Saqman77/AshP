@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
 import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
@@ -5,7 +6,124 @@ import img4 from '../../assets/about/AshPReads-Editng Services-Line or Content E
 import img5 from '../../assets/about/Hira.jpg'
 import ParallaxImage from './ParallaxImage'
 import './scroll.scss'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
 const Scroll = () => {
+    // useEffect(() => {
+    //     ScrollTrigger.create({
+    //         markers:true,
+    //       trigger: '.panel', // Applies to the entire document
+    //       start: "top top", 
+    //       end: "bottom bottom",
+    //       onUpdate: (self) => handleScroll(self.direction), // Detect scroll direction
+    //     });
+    
+    //     let isScrolling = false;
+    
+    //     const handleScroll = (direction: number) => {
+    //       if (isScrolling) return; // Prevent multiple triggers during a single scroll
+    //       isScrolling = true;
+    
+    //       const scrollY = window.scrollY;
+    //       const targetY = direction === 1 ? scrollY + window.innerHeight : scrollY - window.innerHeight;
+    
+    //       gsap.to(window, {
+    //         scrollTo: { y: targetY, autoKill: false },
+    //         duration: 1,
+    //         ease: "power2.out",
+    //         onComplete: () => { isScrolling = false; }, // Allow new scroll triggers after animation
+    //       });
+    //     };
+    //   }, []);
+    const panels = gsap.utils.toArray<HTMLElement>(".panel");
+    const lists = gsap.utils.toArray<HTMLElement>('.s-text')
+    const tl = gsap.timeline()
+    const tl2 = gsap.timeline()
+    useEffect(()=>{
+        const initializeScrollTrigger = () => {
+            panels.forEach((panel, index)=>{
+                tl.fromTo('.s-text ,.s-heading',{
+                    x:"-100%",
+                    stagger: 0.1,
+                    scale: 0,
+                    opacity: 0,
+                    ease: 'Power2.easeIn'
+                    },
+                    {
+                        x:"0",
+                        stagger: 0.1,
+                        scale: 1,
+                        opacity: 1,
+                        scrollTrigger:{
+                            trigger: panel,
+                            start:'-20% top',
+                            end:'+=400px',
+                            scrub:true,
+                            markers:true,
+                        }
+                    }
+                );
+
+                tl.fromTo('.cert-text',{
+                    x:'100%',
+                    scale:0
+                },
+                {
+                    x:'0%',
+                    scale:1,
+                    stagger:0.1,
+                    scrollTrigger:{
+                        trigger:panel,
+                        start:'-20% top',
+                        end:'+=200px',
+                        scrub:true
+                    }
+                })
+                tl2.fromTo('.panel-front ',{
+                    // x:'-100%'
+                    // opacity: 0
+                    // backgroundColor: 'black',
+                    backdropFilter: 'blur(50px) brightness(0.7)',
+                    webkitBackdropFilter:' blur(50px) brightness(0.7)',
+                },{
+                    // opacity: 1,
+                    // backgroundColor:'#F0195B33',
+                    backdropFilter: 'blur(7px) brightness(0.8)',
+                    webkitBackdropFilter:' blur(7px) brightness(0.8)',
+                    scrollTrigger:{
+                        trigger:panel,
+                        start:'-20% top',
+                        end:'+=100px',
+                        scrub:true
+                    }
+                })
+        })
+        }
+
+                const handleDOMContentLoaded = () => {
+                  initializeScrollTrigger();
+                  ScrollTrigger.refresh(); // Refresh positions after initialization
+                };
+            
+                if (document.readyState === 'loading') {
+                  // DOM is still loading, wait for it to finish
+                  document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+                } else {
+                  // DOM is already loaded
+                  handleDOMContentLoaded();
+                }
+            
+                return () => {
+                  document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
+                //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+                };
+    },[])
+   
   return (
     <div className='s-container'>
 
@@ -15,7 +133,7 @@ const Scroll = () => {
 
 
                 <div className="panel-top">
-                   <h3 className='s-heading'><span className='s-heading'>Meet: </span>Aisha Panjwaneey - Ash P</h3>
+                   <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
                    {/* <ul className='services-list'>
                     <li><p className='s-text'>Developmental</p></li>
                     <li><p className='s-text'>Line</p></li>
@@ -31,13 +149,13 @@ const Scroll = () => {
 
                     <div className="panel-left">
                         <ul className='services-list'>
-                            <li><p className='s-text'>Developmental</p></li>
-                            <li><p className='s-text'>Line</p></li>
-                            <li><p className='s-text'>Copy Editor</p></li>
-                            <li><p className='s-text'>Proofreader</p></li>
-                            <li><p className='s-text'>Translator</p></li>
-                            <li><p className='s-text'>Beta Reader</p></li>
-                            <li><p className='s-text'>Sensitivity Reader</p></li>
+                            <li id='list1'><p className='s-text'>Developmental</p></li>
+                            <li id='list2'><p className='s-text'>Line</p></li>
+                            <li id='list3'><p className='s-text'>Copy Editor</p></li>
+                            <li id='list4'><p className='s-text'>Proofreader</p></li>
+                            <li id='list5'><p className='s-text'>Translator</p></li>
+                            <li id='list6'><p className='s-text'>Beta Reader</p></li>
+                            <li id='list7'><p className='s-text'>Sensitivity Reader</p></li>
                         </ul>
 
 
@@ -76,6 +194,8 @@ const Scroll = () => {
 
                         {/* </div> */}
 
+                        
+
                     </div>
 
                     <div className="panel-right">
@@ -99,6 +219,20 @@ const Scroll = () => {
                             <li><p className='cert-text'>Beta Reader</p></li>
                             <li><p className='cert-text'>Sensitivity Reader</p></li>
                         </ul> */}
+
+                        <ul className='cert-list'>
+                            <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
+                            <li id='list2'><p className='cert-text'>Freelancing</p></li>
+                            <li id='list3'><p className='cert-text'>Video Editing</p></li>
+                            <li id='list4'><p className='cert-text'>Graphic Design</p></li>
+                            <li id='list5'><p className='cert-text'>Communication & Soft Skills</p></li>
+                            <li id='list6'><p className='cert-text'>Creative Writing</p></li>
+                            <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
+                            <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
+                            <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
+                            <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
+                            <li id='list7'><p className='cert-text'>AI for Editors</p></li>
+                        </ul>
 
                     </div>
                     
