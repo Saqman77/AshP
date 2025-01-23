@@ -6,15 +6,19 @@ import Contact from './pages/Contact/Contact';
 import Freedie from './pages/Freedie/Freedie';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, } from "react-router-dom";
 // import {ReactLenis} from '@studio-freight/react-lenis';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from 'react';
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+
+
+
   return (
     <HashRouter>
       {/* <ReactLenis root> */}

@@ -1,8 +1,27 @@
+import { useEffect } from "react";
 import Horizontal from "../../components/Portfolio/Horizontal"
 import Scroll from "../../components/Portfolio/Scroll"
 import './Portfolio.scss'
+import { useLocation } from "react-router-dom";
 
 const Portfolio = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/portfolio') {
+      document.documentElement.classList.add('active')
+      document.body.classList.add('active')
+    }
+    else{
+      document.documentElement.classList.remove('active')
+      document.body.classList.remove('active')
+    }
+  }, [location.pathname]);
+
+
+
+
   return (
     <div className="a-container">
       {/* <h1

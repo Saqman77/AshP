@@ -70,14 +70,24 @@ const Horizontal: React.FC = () => {
 
     }, boxRef);
 
-    gsap.to('body.active, html.active, .h-heading', {
+    gsap.to('body.active, html.active', {
       backgroundColor: '#7163DE',
-      color: '#FFF9E3',
+
       scrollTrigger: {
         trigger: '.h-heading',
         start: window.innerWidth < 1250 ? 'center 30%':'10% top',
         end: '+=20vh',
         scrub: 1,
+        onEnter:()=>{
+          gsap.to('.h-heading',{
+            color: '#FFF9E3',
+          })
+        },
+        onEnterBack:()=>{
+          gsap.to('.h-heading',{
+            color: '#7163DE',
+          })
+        }
         // markers: true,
       },
     });
