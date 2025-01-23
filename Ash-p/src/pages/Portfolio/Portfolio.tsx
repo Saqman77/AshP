@@ -1,23 +1,28 @@
+
 import { useEffect } from "react";
 import Horizontal from "../../components/Portfolio/Horizontal"
 import Scroll from "../../components/Portfolio/Scroll"
 import './Portfolio.scss'
-import { useLocation } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 
 const Portfolio = () => {
 
-  const location = useLocation();
-
   useEffect(() => {
-    if (location.pathname === '/portfolio') {
-      document.documentElement.classList.add('active')
-      document.body.classList.add('active')
-    }
-    else{
-      document.documentElement.classList.remove('active')
-      document.body.classList.remove('active')
-    }
-  }, [location.pathname]);
+    // Add the classes to <body> and <html>
+    document.body.classList.add("active");
+    document.documentElement.classList.add("active");
+
+    // Cleanup function to remove the classes when the component is unmounted
+    return () => {
+      document.body.classList.remove("active");
+      document.documentElement.classList.remove("active");
+    };
+  }, []); // Empty dependency array ensures this runs only on mount and unmount
 
 
 

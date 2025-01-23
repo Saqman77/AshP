@@ -10,22 +10,36 @@ import { HashRouter, Routes, Route, } from "react-router-dom";
 // import {ReactLenis} from '@studio-freight/react-lenis';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from 'react';
+// // import { useThemeContext } from './utils/ThemeContextProvider';
+// import { useEffect} from 'react';
+// import { useEffect, useRef } from 'react';
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger);
 
+ 
+
 const App = () => {
+  // const {isActive, removeClass} = useThemeContext();
+  
+
+  // useEffect(()=>{
+  //   removeClass()
+  //   if(isActive){
+  //     document.documentElement.classList.remove('active')
+  //     document.body.classList.remove('active')
+  //   }
+  // },[])
 
 
 
   return (
     <HashRouter>
       {/* <ReactLenis root> */}
-        <div className="main">
+        <div className="main" >
         
           <Header />
-          <Routes>
+          <Routes >
             <Route path="/" element={<Home />} />
             <Route path="/freedie" element={<Freedie />} />
             <Route path="/portfolio" element={<Portfolio />} />

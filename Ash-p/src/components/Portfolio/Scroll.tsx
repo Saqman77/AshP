@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
 import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
@@ -42,7 +42,7 @@ const Scroll = () => {
                 start: '-30% top',
                 end: '+=400px',
                 scrub: 1,
-                // markers: true,
+                markers: true,
                 onLeave:()=>{
                     gsap.to('.s-text ,.s-heading',{
                         x: '-100%',
@@ -63,7 +63,7 @@ const Scroll = () => {
             }
           );
   
-          tl.fromTo(
+          tl2.fromTo(
             '.cert-text',
             { x: '100%', scale: 0 },
             {
@@ -184,55 +184,12 @@ const Scroll = () => {
 
                         </div>
 
-                        {/* <div className="center-content"> */}
-
-                            {/* <div className="center-heading">
-
-                                <h2 className='center-header'>
-
-                                    QUALIFICATIONS
-
-                                </h2>
-
-                            </div>
-
-                            <div className="center-desc">
-
-                                <p className='center-p'>
-
-                                    Bachelor of Arts in Mass Communication, English Literature, and Education.
-
-                                </p>
-
-                            </div> */}
-
-                        {/* </div> */}
-
                         
 
                     </div>
 
                     <div className="panel-right">
 
-                        {/* <div className="cert-heading">
-
-                            <h2 className='cert-header'>
-
-                                CERTIFICATIONS AND COURSES
-
-                            </h2>
-
-                        </div>
-
-                        <ul className='cert-list'>
-                            <li><p className='cert-text'>Developmental</p></li>
-                            <li><p className='cert-text'>Line</p></li>
-                            <li><p className='cert-text'>Copy Editor</p></li>
-                            <li><p className='cert-text'>Proofreader</p></li>
-                            <li><p className='cert-text'>Translator</p></li>
-                            <li><p className='cert-text'>Beta Reader</p></li>
-                            <li><p className='cert-text'>Sensitivity Reader</p></li>
-                        </ul> */}
 
                         <ul className='cert-list'>
                             <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
@@ -318,104 +275,79 @@ const Scroll = () => {
         </section>
         <section className='panel ash'>
 
-        <div className="panel-front">
+            <div className="panel-front">
 
 
-<div className="panel-top">
-   <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
-   <ul className='services-list'>
-    <li><p className='s-text'>Developmental</p></li>
-    <li><p className='s-text'>Line</p></li>
-    <li><p className='s-text'>Copy Editor</p></li>
-    <li><p className='s-text'>Proofreader</p></li>
-    <li><p className='s-text'>Translator</p></li>
-    <li><p className='s-text'>Beta Reader</p></li>
-    <li><p className='s-text'>Sensitivity Reader</p></li>
-   </ul>
-</div>
+                <div className="panel-top">
+                    <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
+                </div>
 
-<div className="panel-center">
+                <div className="panel-center">
 
-    <div className="panel-left">
+                    <div className="panel-left">
+                        <ul className='services-list'>
+                            <li id='list1'><p className='s-text'>Developmental</p></li>
+                            <li id='list2'><p className='s-text'>Line</p></li>
+                            <li id='list3'><p className='s-text'>Copy Editor</p></li>
+                            <li id='list4'><p className='s-text'>Proofreader</p></li>
+                            <li id='list5'><p className='s-text'>Translator</p></li>
+                            <li id='list6'><p className='s-text'>Beta Reader</p></li>
+                            <li id='list7'><p className='s-text'>Sensitivity Reader</p></li>
+                        </ul>
 
-        <div className='ash2-img'>
 
-            <ParallaxImage src={img5} alt="" className='s-imgs' />
+                    </div>
 
-        </div>
+                    <div className="sub-panel-center">
 
-    </div>
 
-    <div className="sub-panel-center">
+                        <div className='ash2-img'>
 
-        <div className="center-content">
+                            <ParallaxImage src={img5} alt="" className='s-imgs' />
 
-            <div className="center-heading">
+                        </div>
 
-                <h2 className='center-header'>
+                        
 
-                    QUALIFICATIONS
+                    </div>
 
-                </h2>
+                    <div className="panel-right">
+
+
+                        <ul className='cert-list'>
+                            <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
+                            <li id='list2'><p className='cert-text'>Freelancing</p></li>
+                            <li id='list3'><p className='cert-text'>Video Editing</p></li>
+                            <li id='list4'><p className='cert-text'>Graphic Design</p></li>
+                            <li id='list5'><p className='cert-text'>Communication & Soft Skills</p></li>
+                            <li id='list6'><p className='cert-text'>Creative Writing</p></li>
+                            <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
+                            <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
+                            <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
+                            <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
+                            <li id='list7'><p className='cert-text'>AI for Editors</p></li>
+                        </ul>
+
+                    </div>
+                    
+                </div>
+                <div className="panel-bottom">
+
+                    <p className='bottom-p'>
+                        #RevPit 2025 Editor, Occasional co-host
+                        of the Northwest Editors Guild, monthly
+                        Editing with Disability/Chronic
+                        Illness/Neurodivergence 
+                        Virtual Chat, 
+                        Mentor for aspiring editors, beta readers, 
+                        and freelancers, Coach and Consultant for new authors.
+
+                    </p>
+
+                </div>
+
 
             </div>
-
-            <div className="center-desc">
-
-                <p className='center-p'>
-
-                    Bachelor of Arts in Mass Communication, English Literature, and Education.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div className="panel-right">
-
-        <div className="cert-heading">
-
-            <h2 className='cert-header'>
-
-                CERTIFICATIONS AND COURSES
-
-            </h2>
-
-        </div>
-
-        <ul className='cert-list'>
-            <li><p className='cert-text'>Developmental</p></li>
-            <li><p className='cert-text'>Line</p></li>
-            <li><p className='cert-text'>Copy Editor</p></li>
-            <li><p className='cert-text'>Proofreader</p></li>
-            <li><p className='cert-text'>Translator</p></li>
-            <li><p className='cert-text'>Beta Reader</p></li>
-            <li><p className='cert-text'>Sensitivity Reader</p></li>
-    </ul>
-
-    </div>
-    
-</div>
-<div className="panel-bottom">
-
-    <p className='bottom-p'>
-        #RevPit 2025 Editor, Occasional co-host
-        of the Northwest Editors Guild, monthly
-        Editing with Disability/Chronic
-        Illness/Neurodivergence 
-        Virtual Chat, 
-        Mentor for aspiring editors, beta readers, 
-        and freelancers, Coach and Consultant for new authors.
-
-    </p>
-
-</div>
-
-
-</div>
             <div className='ash-img'>
                 <ParallaxImage src={img5} alt="" className='s-imgs' />
             </div>

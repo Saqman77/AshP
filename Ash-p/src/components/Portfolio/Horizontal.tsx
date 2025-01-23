@@ -1,5 +1,5 @@
 import './horizontal.scss'
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Horizontal: React.FC = () => {
   const boxRef = useRef<HTMLDivElement | null>(null);
   const wrapper = useRef<HTMLDivElement | null>(null);
-  const spans = document.querySelectorAll('.outro-span')
+  
 
   const cards = [
     { id: '#h-card1', endTranslateX: -2000, rotate: 25 },
@@ -19,6 +19,7 @@ const Horizontal: React.FC = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      const spans = document.querySelectorAll('.outro-span')
       if (wrapper.current) {
         ScrollTrigger.create({
           trigger: wrapper.current,
@@ -68,11 +69,12 @@ const Horizontal: React.FC = () => {
         })
       })
 
+
     }, boxRef);
-
-    gsap.to('body.active, html.active', {
+ 
+    gsap.to('body.active', {
       backgroundColor: '#7163DE',
-
+  
       scrollTrigger: {
         trigger: '.h-heading',
         start: window.innerWidth < 1250 ? 'center 30%':'10% top',

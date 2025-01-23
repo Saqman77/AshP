@@ -1,12 +1,14 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode,} from 'react';
 
 // Define the shape of the context value
 interface ThemeContextType {
   isMenuOpen: boolean;
   isActive: boolean;
   toggleMenu: () => void;
+  // classToggle: () => void;
   closeMenu: () => void;
   active: () => void;
+  removeClass: ()=> void;
 }
 
 // Create the context with a default value
@@ -26,11 +28,17 @@ export const ThemeContextProvider: React.FC<{ children: ReactNode }> = ({ childr
   };
 
   const active = () => {
-    setActive((prev) => (!prev))
+    setActive(true)
   }
 
+  const removeClass =() => {
+    setActive(false)
+  }
+
+
+
   return (
-    <ThemeContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu, isActive, active }}>
+    <ThemeContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu, isActive, active,removeClass}}>
       {children}
     </ThemeContext.Provider>
   );
