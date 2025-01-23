@@ -70,7 +70,7 @@ const Horizontal: React.FC = () => {
 
     }, boxRef);
 
-    gsap.to('body, html, .h-heading', {
+    gsap.to('body.active, html.active, .h-heading', {
       backgroundColor: '#7163DE',
       color: '#FFF9E3',
       scrollTrigger: {

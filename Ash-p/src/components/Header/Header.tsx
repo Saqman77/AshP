@@ -10,10 +10,13 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { isMenuOpen, toggleMenu, closeMenu } = useThemeContext();
+  const [className, setClassName] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      document.documentElement.classList.add(className);
+      document.body.classList.add(className);
 
       // Check if the user is scrolling up or down
       if (currentScrollY > lastScrollY) {
@@ -36,6 +39,18 @@ const Header: React.FC = () => {
     };
   }, [lastScrollY, closeMenu]);
 
+  const toggleClass = () => {
+    if(className == 'active'){
+      document.documentElement.classList.remove(className);
+      document.body.classList.remove(className);
+    }
+    else if ((className !== 'active')){
+      setClassName('active')
+
+    }
+
+  }
+
   // const toggleMenu = () => {
   //   setIsMenuOpen((prev) => !prev); // Toggle menu open state
   // };
@@ -43,6 +58,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header
+        onClick={toggleClass}
         className={`header ${isHidden ? 'header-hidden' : ''} ${
           isScrolled ? 'header-blur' : 'header-transparent'
         }`}
@@ -66,6 +82,7 @@ const Header: React.FC = () => {
                 <NavLink
                   to="/portfolio"
                   className={({ isActive }) => (isActive ? 'header-active' : '')}
+                  onClick={toggleClass}
                 >
                   About
                 </NavLink>
@@ -109,6 +126,7 @@ const Header: React.FC = () => {
             <li>
               <NavLink
                 to="/portfolio"
+                onClick={toggleClass}
                 className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
               >
                 About

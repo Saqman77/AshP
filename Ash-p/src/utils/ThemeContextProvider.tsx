@@ -3,8 +3,10 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 // Define the shape of the context value
 interface ThemeContextType {
   isMenuOpen: boolean;
+  isActive: boolean;
   toggleMenu: () => void;
   closeMenu: () => void;
+  active: () => void;
 }
 
 // Create the context with a default value
@@ -13,6 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 // Context provider component
 export const ThemeContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isActive, setActive] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -22,8 +25,12 @@ export const ThemeContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     setIsMenuOpen(false);
   };
 
+  const active = () => {
+    setActive((prev) => (!prev))
+  }
+
   return (
-    <ThemeContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu }}>
+    <ThemeContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu, isActive, active }}>
       {children}
     </ThemeContext.Provider>
   );
