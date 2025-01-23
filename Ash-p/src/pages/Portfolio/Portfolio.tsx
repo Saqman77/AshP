@@ -12,17 +12,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Portfolio = () => {
 
-  useEffect(() => {
-    // Add the classes to <body> and <html>
-    document.body.classList.add("active");
-    document.documentElement.classList.add("active");
-
-    // Cleanup function to remove the classes when the component is unmounted
-    return () => {
-      document.body.classList.remove("active");
-      document.documentElement.classList.remove("active");
-    };
-  }, []); // Empty dependency array ensures this runs only on mount and unmount
+ // Empty dependency array ensures this runs only on mount and unmount
 
 
 

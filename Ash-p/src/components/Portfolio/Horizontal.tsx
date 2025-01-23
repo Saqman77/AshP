@@ -2,8 +2,9 @@ import './horizontal.scss'
 import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Horizontal: React.FC = () => {
   const boxRef = useRef<HTMLDivElement | null>(null);
@@ -16,6 +17,30 @@ const Horizontal: React.FC = () => {
     { id: '#h-card3', endTranslateX: -2000, rotate: 45 },
     { id: '#h-card4', endTranslateX: -1500, rotate: -30 },
   ];
+
+  useGSAP(()=>{
+    gsap.to('.main', {
+      backgroundColor: '#7163DE',
+  
+      scrollTrigger: {
+        trigger: '.h-heading',
+        start: window.innerWidth < 1250 ? 'center 30%':'10% top',
+        end: '+=20vh',
+        scrub: 1,
+        onEnter:()=>{
+          gsap.to('.h-heading',{
+            color: '#FFF9E3',
+          })
+        },
+        onEnterBack:()=>{
+          gsap.to('.h-heading',{
+            color: '#7163DE',
+          })
+        }
+        // markers: true,
+      },
+    });
+  })
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -64,7 +89,7 @@ const Horizontal: React.FC = () => {
             start: 'top center',
             end: 'center',
             scrub: true,
-            markers: true
+            // markers: true
           }
         })
       })
@@ -72,27 +97,7 @@ const Horizontal: React.FC = () => {
 
     }, boxRef);
  
-    gsap.to('body.active', {
-      backgroundColor: '#7163DE',
-  
-      scrollTrigger: {
-        trigger: '.h-heading',
-        start: window.innerWidth < 1250 ? 'center 30%':'10% top',
-        end: '+=20vh',
-        scrub: 1,
-        onEnter:()=>{
-          gsap.to('.h-heading',{
-            color: '#FFF9E3',
-          })
-        },
-        onEnterBack:()=>{
-          gsap.to('.h-heading',{
-            color: '#7163DE',
-          })
-        }
-        // markers: true,
-      },
-    });
+
 
     return () => ctx.revert(); // Cleanup animations and ScrollTriggers
   }, []);

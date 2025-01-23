@@ -47,6 +47,9 @@ h3.s-heading{
     line-height: 1;
     // letter-spacing: -1px;
     font-weight: 600;
+    @media screen and (max-width:400px) {
+        font-size: var(--font-xlarge);
+    }
 }
 // p.s-text{
 //     color: #ffffff;
@@ -212,8 +215,22 @@ h3.s-heading{
     padding-left: 1em;
     list-style-type: none;
     @media screen and (max-width:1250px) {
-        padding: 1em 0 0;
+        padding: 1em ;
+        font-size: var(--font-medium);
     }
+    @media screen and (max-width:600px) {
+        padding: 1em 0 0;
+        font-size: var(--font-medium);
+    }
+    @media screen and (max-width:400px) {
+        padding: 1em 0 0;
+        font-size: var(--font-small);
+    }
+}
+
+.cert-text{
+    // scale: 0;
+    // transform: translateX(-100%);
 }
 .panel-left{
     padding-right: 4em;
