@@ -369,22 +369,55 @@ const Scroll = () => {
 
                 <div className="panel-top">
 
+                    <div className="projects-heading">
+
+                        <h3>
+
+                        </h3>
+
+                    </div>
+
+                    <div className="projects-description">
+
+                        <p>
+
+                        </p>
+
+                    </div>
+
+
+                    <div className="project-lists">
+                        <ul>
+                            <li>
+
+                            </li>
+
+                            <li>
+
+                            </li>
+
+                            <li>
+
+                            </li>
+
+                            <li>
+
+                            </li>
+                            
+                            <li>
+
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
 
                 <div className="panel-center">
 
-                    <div className="panel-left">
 
-                    </div>
-
-                    <div className="panel-center">
-
-                    </div>
-                    <div className="panel-right">
-
-                    </div>
                     
                 </div>
+
                 <div className="panel-bottom">
 
                 </div>
