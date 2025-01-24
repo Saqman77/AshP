@@ -1,5 +1,5 @@
 import './horizontal.scss'
-import ace from '../../assets/freedi/Spark 82.svg'
+// import ace from '../../assets/freedi/Spark 82.svg'
 import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -73,13 +73,13 @@ const Horizontal: React.FC = () => {
           trigger: wrapper.current,
           start: 'top top',
           end: '+=500vh',
-          scrub: 1,
+          scrub: true,
           pin: true,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
               x: `${-350 * self.progress}vw`,
               duration: 1,
-              ease: 'power1.inOut',
+              ease: 'power1.out',
             });
           },
         });
@@ -132,7 +132,9 @@ const Horizontal: React.FC = () => {
     >
       <div className="h-grid">
         <div className='ace'>
-          <img src={ace} alt="" />
+            <svg width="370" height="370" viewBox="0 0 370 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M184.5 28.0008L221.2 0.300781L244.5 39.9008L289.1 28.4008L295.4 73.9008L341 80.3008L329.4 124.801L369.1 148.101L341.3 184.801L369.1 221.501L329.4 244.801L341 289.301L295.4 295.701L289.1 341.201L244.5 329.701L221.2 369.301L184.5 341.601L147.8 369.301L124.5 329.701L80 341.201L73.6 295.701L28.1 289.301L39.7 244.801L0 221.501L27.7 184.801L0 148.101L39.7 124.801L28.1 80.3008L73.6 73.9008L80 28.4008L124.5 39.9008L147.8 0.300781L184.5 28.0008Z" fill="#C1BBF5"/>
+            </svg>
         </div>
       </div>
         <section className='h-wrapper'
