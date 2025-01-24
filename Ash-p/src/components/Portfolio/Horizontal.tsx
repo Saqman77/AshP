@@ -28,6 +28,7 @@ const Horizontal: React.FC = () => {
         start: window.innerWidth < 1250 ? 'center 30%':'10% top',
         end: '+=20vh',
         scrub: 1,
+        // duration: 2,
         onEnter:()=>{
           gsap.to('.h-heading',{
             color: '#FFF9E3',
@@ -71,14 +72,14 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: '+=400vh',
+          end: '+=500vh',
           scrub: 1,
           pin: true,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
               x: `${-350 * self.progress}vw`,
-              duration: 0.5,
-              ease: 'power3.out',
+              duration: 1,
+              ease: 'power1.inOut',
             });
           },
         });
