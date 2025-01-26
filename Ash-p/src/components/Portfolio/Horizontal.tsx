@@ -72,13 +72,13 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: '+=500vh',
-          scrub: true,
+          end: '+=400vh',
+          scrub: 1,
           pin: true,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
               x: `${-350 * self.progress}vw`,
-              duration: 1,
+              duration: 0.5,
               ease: 'power1.out',
             });
           },
@@ -157,14 +157,16 @@ const Horizontal: React.FC = () => {
         </section>
         <section className='outro'>
             <h3>
-              {/* <span className='outro-span'>We are a sibling</span>
-              <span className='outro-span'> duo with more than two</span>
-              <span className='outro-span'> decades of freelance editing experience</span>
-              <span className='outro-span'> between us. Our flexible rates and payment plans accommodate various</span>
-              <span className='outro-span'> budgets, and we offer a complimentary 30-minute video consultation call,</span>
-              <span className='outro-span'>a manuscript assessment, and an short editing sample of your chosen text.</span>  */}
-              <span className='outro-span'>
-                <span className='space' ></span>
+            <span className='outro-span'>
+                We are a sibling
+                duo with more than two
+                decades of freelance editing experience
+                between us. Our flexible rates and payment plans accommodate various
+                budgets, and we offer a complimentary 30-minute video consultation call,
+                a manuscript assessment, and an short editing sample of your chosen text.
+              </span> 
+              {/* <span className='outro-span'> */}
+                {/* <span className='space' ></span>
                   Ash P brings over two decades of experience in literary editing across diverse genres and online content. Known among peers as "the book surgeon," she specializes in safe-for-work nonfiction and fiction. She is actively expanding her expertise into new adult (NA), young adult (YA), and children's fiction, as well as graphic novels, memoirs, and comics, particularly those aimed at younger readers.
                 
                 <span className='space' ></span>
@@ -183,7 +185,7 @@ const Horizontal: React.FC = () => {
                 Whether working with seasoned authors, ESL, or first-time writers, Ash focuses on polishing manuscripts while retaining each writer's voice, and ensuring their message resonates clearly with their intended audience.
                 A self-proclaimed logophile and librocubicularist, she is often found studying a new skill or reading a book on something she loves, in her free time.
                 
-              </span>
+              </span> */}
             </h3>
         </section>
     </div>

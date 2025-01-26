@@ -337,7 +337,7 @@ const Scroll = () => {
                     </div>
                     
                 </div>
-                <div className="panel-bottom">
+                {/* <div className="panel-bottom">
 
                     <p className='bottom-p'>
                         #RevPit 2025 Editor, Occasional co-host
@@ -350,7 +350,7 @@ const Scroll = () => {
 
                     </p>
 
-                </div>
+                </div> */}
 
 
             </div>
@@ -493,7 +493,7 @@ const Scroll = () => {
                     </div>
                     
                 </div>
-                <div className="panel-bottom">
+                {/* <div className="panel-bottom">
 
                     <p className='bottom-p'>
                         #RevPit 2025 Editor, Occasional co-host
@@ -506,7 +506,7 @@ const Scroll = () => {
 
                     </p>
 
-                </div>
+                </div> */}
 
 
             </div>
