@@ -25,8 +25,8 @@ const ParallaxImage: React.FC<ParallaxImageProps> = ({ src, alt, className }) =>
       if (imageRef.current) {
         const rect = imageRef.current.getBoundingClientRect();
         bounds.current = {
-          top: rect.top + window.scrollY,
-          bottom: rect.bottom + window.scrollY,
+          top: rect.top + window.scrollY ,
+          bottom: rect.bottom + window.scrollY ,
         };
       }
     };
