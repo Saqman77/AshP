@@ -267,14 +267,25 @@ const Scroll = () => {
         gsap.fromTo('.projects .panel-front',{
             opacity:'0'
         },{
-            backdropFilter:'blur(5px) brightness(0.5)',
+            backdropFilter:'blur(10px) brightness(0.5)',
             opacity:'1',
+            backgroundColor: '#f0195918',
             scrollTrigger:{
                 trigger:'.projects .panel-front',
                 start:'-10% top',
                 end:'top',
-                scrub: true
-            }
+                scrub: true,
+                // onLeave:  ()=>{
+                //     gsap.to('.projects .panel-front',{
+                //         opacity:'0'
+                //     })
+                // },
+                // onEnterBack:  ()=>{
+                //     gsap.to('.projects .panel-front',{
+                //         opacity:'1'
+                //     })
+                // },
+            },
         })
       
   
@@ -384,7 +395,7 @@ const Scroll = () => {
 
                     <div className="projects-heading">
 
-                        <h3 className='s-heading'>
+                        <h3 className='q-heading'>
                             Qualifications
                         </h3>
 
