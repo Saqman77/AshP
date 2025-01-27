@@ -267,13 +267,13 @@ const Scroll = () => {
         gsap.fromTo('.projects .panel-front',{
             opacity:'0'
         },{
-            backdropFilter:'blur(10px) brightness(0.5)',
+            backdropFilter:'blur(10px) brightness(0.6)',
             opacity:'1',
-            backgroundColor: '#f0195918',
+            // backgroundColor: 'rgb(255 152 154 / 82%)',
             scrollTrigger:{
                 trigger:'.projects .panel-front',
                 start:'-10% top',
-                end:'top',
+                end:'-2%',
                 scrub: true,
                 // onLeave:  ()=>{
                 //     gsap.to('.projects .panel-front',{
@@ -405,7 +405,7 @@ const Scroll = () => {
 
                 <div className="panel-certification"
                     style={{
-                        gridRow:'2'
+                        gridRow:'4'
                     }}
                 >
 

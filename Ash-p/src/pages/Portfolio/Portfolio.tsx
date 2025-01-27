@@ -6,6 +6,7 @@ import './Portfolio.scss'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -13,6 +14,26 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const Portfolio = () => {
 
  // Empty dependency array ensures this runs only on mount and unmount
+
+ useEffect(()=>{
+    const headerP = document.querySelector('.header-blur') as HTMLElement
+    const nav = document.querySelector('.nav ul') as HTMLElement
+    const btns = document.querySelectorAll('.menu-btn span') as NodeListOf<HTMLElement>;
+    if (headerP) {
+      headerP.style.background = 'transparent';
+      btns.forEach(btn => btn.style.backgroundColor = '#ffffff');
+      nav.style.color = '#ffffff';
+    }
+
+    return () => {
+      if (headerP) {
+        headerP.style.background = ''; // Reset to its original value
+        nav.style.color = '';
+        btns.forEach(btn => btn.style.backgroundColor = '');
+      }
+    };
+
+ },[])
 
 
 
