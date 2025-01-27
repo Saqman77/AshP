@@ -11,8 +11,12 @@ import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
-const Portfolio = () => {
+interface PortfolioProps {
+  key: string;
+}
 
+const Portfolio = ({ key }: PortfolioProps) => {
+  
  // Empty dependency array ensures this runs only on mount and unmount
 
  useEffect(()=>{
@@ -39,7 +43,7 @@ const Portfolio = () => {
 
 
   return (
-    <div className="a-container">
+    <div className="a-container" key={key}>
       {/* <h1
         style={{
           position:'fixed',

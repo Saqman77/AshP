@@ -269,9 +269,34 @@ const Scroll = () => {
         },{
             backdropFilter:'blur(10px) brightness(0.6)',
             opacity:'1',
+            ease:'power1.inOut',
             // backgroundColor: 'rgb(255 152 154 / 82%)',
             scrollTrigger:{
                 trigger:'.projects .panel-front',
+                start:'-10% top',
+                end:'-2%',
+                scrub: true,
+                // onLeave:  ()=>{
+                //     gsap.to('.projects .panel-front',{
+                //         opacity:'0'
+                //     })
+                // },
+                // onEnterBack:  ()=>{
+                //     gsap.to('.projects .panel-front',{
+                //         opacity:'1'
+                //     })
+                // },
+            },
+        })
+        gsap.fromTo('.projects-hira .panel-front',{
+            opacity:'0'
+        },{
+            backdropFilter:'blur(10px) brightness(0.6)',
+            opacity:'1',
+            ease:'power1.inOut',
+            // backgroundColor: 'rgb(255 152 154 / 82%)',
+            scrollTrigger:{
+                trigger:'.projects-hira .panel-front',
                 start:'-10% top',
                 end:'-2%',
                 scrub: true,
@@ -558,27 +583,84 @@ const Scroll = () => {
         </section>
 
 
-        <section className='panel projects'>
+        <section className='panel projects-hira'>
 
-                        <div className="panel-front">
+        <div className="panel-front">
 
 
-                            <div className="panel-top">
+<div className="panel-top">
 
-                            </div>
+    <div className="projects-heading">
 
-                            <div className="panel-center">
+        <h3 className='q-heading'>
+            Qualifications
+        </h3>
 
-                                <div className="panel-left">
+    </div>
 
-                                </div>
+</div>
 
-                                <div className="panel-center"></div>
-                                <div className="panel-right"></div>
-                            </div>
-                            
-                            <div className="panel-bottom"></div>
-                        </div>
+<div className="panel-certification"
+    style={{
+        gridRow:'4'
+    }}
+>
+
+    <p className='certification'>
+        B.A. in Mass Communication, English Literature, and Education.
+    </p>
+
+    
+</div>
+
+<div className="panel-bio" >
+    <p className='bio'>
+
+        <span>
+
+            <span>
+
+                Hira P brings 30 years of experience as an educationist and four years as an editorial professional
+                , specializing in proofreading and beta reading, including a year of copyediting. 
+
+            </span> 
+
+            <span className='line'
+                style={{
+                    width:'100%',
+                    height:'20px',
+                    display:'inline-block'
+                }}
+            > </span>
+
+            <span>
+
+                Her professional journey includes extensive experience in curriculum design
+                , and teacher training, which has honed her ability to communicate effectively and adapt to the diverse needs of her students. 
+
+            </span>
+
+            <span className='line'
+                style={{
+                    width:'100%',
+                    height:'20px',
+                    display:'inline-block'
+                }}
+            > </span>
+
+            <span>
+            This has led Hira to have a passion for language and a keen eye for detail
+            . She is committed to delivering excellence and helping clients achieve their vision through well-crafted written materials
+            . Hira P is a verified reader on IAX.
+            </span>
+
+        </span>
+
+    </p>
+</div>
+
+
+</div>
 
                 <div className='ash-img'>
 
