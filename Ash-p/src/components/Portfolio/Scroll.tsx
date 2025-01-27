@@ -263,6 +263,19 @@ const Scroll = () => {
         //         scrub: true,
         //       },
         // })
+
+        gsap.fromTo('.projects .panel-front',{
+            opacity:'0'
+        },{
+            backdropFilter:'blur(5px) brightness(0.5)',
+            opacity:'1',
+            scrollTrigger:{
+                trigger:'.projects .panel-front',
+                start:'-10% top',
+                end:'top',
+                scrub: true
+            }
+        })
       
   
     //   return () => ctx.revert(); // Clean up the ScrollTrigger and animations on unmount
@@ -371,55 +384,72 @@ const Scroll = () => {
 
                     <div className="projects-heading">
 
-                        <h3>
-
+                        <h3 className='s-heading'>
+                            Qualifications
                         </h3>
 
                     </div>
 
-                    <div className="projects-description">
-
-                        <p>
-
-                        </p>
-
-                    </div>
-
-
-                    <div className="project-lists">
-                        <ul>
-                            <li>
-
-                            </li>
-
-                            <li>
-
-                            </li>
-
-                            <li>
-
-                            </li>
-
-                            <li>
-
-                            </li>
-                            
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
 
-                <div className="panel-center">
+                <div className="panel-certification"
+                    style={{
+                        gridRow:'2'
+                    }}
+                >
 
+                    <p className='certification'>
+                        B.A. in Mass Communication, English Literature, and Education.
+                    </p>
 
                     
                 </div>
 
-                <div className="panel-bottom">
+                <div className="panel-bio" >
+                    <p className='bio'>
 
+                        <span>
+
+                            <span>
+
+                                Ash P brings over two decades of experience in literary editing across diverse genres and online content.
+                                Known among peers as "the book surgeon", she specializes in safe-for-work nonfiction and fiction for all ages.
+
+                            </span> 
+
+                            <span className='line'
+                                style={{
+                                    width:'100%',
+                                    height:'20px',
+                                    display:'inline-block'
+                                }}
+                            > </span>
+
+                            <span>
+
+                                Ash is a volunteer editor for #RevPit, a verified editor on IAX, and as a member of the Comic Book Editors Alliance, she is being mentored in comic book editing.
+                                She is an active participant in several supportive social spaces and networks for editors like the Neurodivergent Publishing Lounge and the Editors' Lair on Discord,
+                                and the Editors Tea Club and EFA BIPOC Chapter on Slack.
+
+
+                            </span>
+
+                            <span className='line'
+                                style={{
+                                    width:'100%',
+                                    height:'20px',
+                                    display:'inline-block'
+                                }}
+                            > </span>
+
+                            <span>
+                                A self-proclaimed logophile, lexophile, and librocubicularist, Ash is often reading, networking,
+                                or learning a new skill in her free time.
+                            </span>
+
+                        </span>
+
+                    </p>
                 </div>
 
 

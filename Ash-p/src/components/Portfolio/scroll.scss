@@ -331,11 +331,44 @@ h3.s-heading{
         display: grid;
         // grid-template-areas: "top" "center" "bottom";
         grid-template-columns: 1fr;
-        grid-auto-rows: calc(100%/3);
+        grid-template-rows: repeat(4, max-content);
         background-color: #f0195900;
         // grid-auto-rows: calc(100%/3);
         // padding: 5em;
     
+}
+
+.panel-certification{
+    width: 100%;
+    display: flex;
+    margin:60px 0;
+    padding: 1em;
+    
+    // justify-content: center;
+}
+
+.certification{
+    font-size: 3vw;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.panel-bio{
+    padding: 1em;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.bio{
+    font-size: var(--font-medium);
+    color: #ffffff;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .panel.projects .panel-bottom{
