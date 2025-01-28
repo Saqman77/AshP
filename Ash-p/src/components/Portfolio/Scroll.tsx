@@ -321,6 +321,96 @@ const Scroll = () => {
 
         <section className='panel ash'>
 
+        <div className='past-wrapper'>
+            <div className="past-heading">
+                <h3 className="s-heading">
+                    service
+                </h3>
+            </div>
+            <div className='past-work'>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white'
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white',
+                    }}
+                >
+                </div>
+                <div className="past-card"
+                    style={{
+                        width:'100%',
+                        height:'100%',
+                        background:'white'
+                    }}
+                >
+                </div>
+            </div>
+        </div>
+
             <div className="panel-front">
 
 
@@ -341,13 +431,16 @@ const Scroll = () => {
 
                     <div className="panel-left">
                         <ul className='services-list'>
-                            <li id='list1'><p className='s-text'>Developmental</p></li>
-                            <li id='list2'><p className='s-text'>Line</p></li>
-                            <li id='list3'><p className='s-text'>Copy Editor</p></li>
-                            <li id='list4'><p className='s-text'>Proofreader</p></li>
-                            <li id='list5'><p className='s-text'>Translator</p></li>
-                            <li id='list6'><p className='s-text'>Beta Reader</p></li>
-                            <li id='list7'><p className='s-text'>Sensitivity Reader</p></li>
+                            <li id='list1'>
+                                <p className='s-text'>Developmental<span className='services-indicator'></span></p> 
+                            </li>
+
+                            <li id='list2'><p className='s-text'>Line</p><span className='services-indicator'></span></li>
+                            <li id='list3'><p className='s-text'>Copy Editor</p><span className='services-indicator'></span></li>
+                            <li id='list4'><p className='s-text'>Proofreader</p><span className='services-indicator'></span></li>
+                            <li id='list5'><p className='s-text'>Translator</p><span className='services-indicator'></span></li>
+                            <li id='list6'><p className='s-text'>Beta Reader</p><span className='services-indicator'></span></li>
+                            <li id='list7'><p className='s-text'>Sensitivity Reader</p><span className='services-indicator'></span></li>
                         </ul>
 
 

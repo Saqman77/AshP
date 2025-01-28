@@ -92,12 +92,28 @@ h3.q-heading{
     flex-direction: column;
     // margin-top: 1em;
     width: 100%;
+    transition: opacity 0.4s ease-in-out ;
+    opacity: 1;
 }
 
-.services-list li p{
+.services-list *{
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.services-list:hover *, .services-list:active *{
+    transition: opacity 0.2s ease-in-out ;
+    opacity: 0.1;
+}
+
+.services-list li .s-text{
     font-size: var(--font-large);
     font-weight: 600;
     color: #F4F9E9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     // text-decoration: underline;
     // transform: translateX(-100%);
     // line-height: .75;
@@ -114,11 +130,50 @@ h3.q-heading{
     // backdrop-filter: blur(20px);
     text-wrap: nowrap;
     // max-width: max-content;
+    // transition: opacity 0.3s ease-in-out  ;
     will-change: transform;
+    opacity: 1;
     @media screen and (max-width:1250px) {
         font-size: var(--font-large);
     }
 }
+
+.services-list *:hover, .services-list *:active{
+    transition: opacity 0.2s ease-in-out ;
+    opacity: 1 ;
+}
+
+.services-list li{
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+}
+
+.services-list li .services-indicator {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgb(255, 255, 255); /* Change color here */
+    margin-left: .2em;
+    margin-right: auto;
+    opacity: 0;
+    // transform: rotate(360deg);
+    transition: transform 0.1s ease-in-out, opacity 0.2s ease-in;
+  }
+
+  .services-list li:hover .services-indicator{
+    opacity: 1;
+  }
+
+  .services-list li:active .services-indicator{
+    transform: rotate(-180deg);
+    
+  }
+
+  .client-text{
+    font-size: 16px;
+  }
 
 .panel{
     width: 100vw;
@@ -136,6 +191,34 @@ h3.q-heading{
     grid-template-rows: 1fr;
     overflow: hidden;
 }
+.past-wrapper{
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 0;
+    background-color: rgb(113, 99, 222);
+    display: flex;
+    flex-direction: column;
+}
+.past-work{
+    width: 100%;
+    height: 100%;
+    // grid-column: 1;
+    // grid-row: 1;
+    // position: relative;
+    // z-index: 0;
+    
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    // grid-template-rows: min-content;
+    padding: 4em;
+    gap: 15px;
+}
+
+
 
 .panel-front{
     width: 100%;
