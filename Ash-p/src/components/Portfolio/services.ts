@@ -361,43 +361,99 @@ export const services = [
         ]
     },
     {
-        service:'Full Editing Services',
-        id:'Full Editing Services',
+        service:'Other Services',
+        id:'Other Services',
         clients:[
             {           
-                name:'TC Publishing',
+                name:'Publications, Website, and SMP content for a Nonprofit Organization',
                 types:[
                     {
                     type:'Nonfiction',
                     projects:[
                         {
-                            project:'Overcoming Hardship – Senada Dervisevic',
-                            link:'https://a.co/d/0Aq7xUn',
-                        },
-                        {
-                            project:'Miracles and Magic: A story of faith, resilience and overcoming adversity – Noreen Clarke',
-                            link:'https://a.co/d/7WBdTTt',
-                        },
-                        {
-                            project:'Tha Game Changa: Fuel your body, empower your mind- through food, fitness, and motivation. – Horace Jones',
-                            link:'https://amzn.eu/d/18qHbq3',
-                        },
-                        {
-                            project:'Seasons of Change – Trish Nelson',
+                            project:'',
                             link:'',
                         },
-                        {
-                            project:'THE REAPing WOMAN: A Step-by-Step Guide to a Purposeful Life – Dr. Catherine Muyeba ',
-                            link:'',
-                        },
+                        
                     ]
                     },
                     {
                         type:'Fiction',
-                        projects:[{}]
+                        projects:[{
+                            project:'Transcribing, Translation, Subtitling, Content Development, Copyediting, Proofreading',
+                            link:'',
+                        }]
                     },
                 ]
-            }
+            },
+            {           
+                name:'Application Packets',
+                types:[
+                    {
+                    type:'Nonfiction',
+                    projects:[
+                        {
+                            project:'',
+                            link:'',
+                        },
+                        
+                    ]
+                    },
+                    {
+                        type:'Fiction',
+                        projects:[
+                            {
+                            project:'Compilation of CVs and resumes, cover letters and documents of job application packets for various clients ',
+                            link:'',
+                        },
+                    ]
+                    },
+                ]
+            },
+            {           
+                name:'Educational Resources',
+                types:[
+                    {
+                    type:'Nonfiction',
+                    projects:[
+                        {
+                            project:'',
+                            link:'',
+                        },
+                        
+                    ]
+                    },
+                    {
+                        type:'Fiction',
+                        projects:[{
+                            project:'Consultation and creation of curriculum designs, Individual Educational Plans (IEPs) for private educational institutes and special ed. tutors. ',
+                            link:'',
+                        }]
+                    },
+                ]
+            },
+            {           
+                name:'Documentation Services',
+                types:[
+                    {
+                    type:'Nonfiction',
+                    projects:[
+                        {
+                            project:'',
+                            link:'',
+                        },
+                        
+                    ]
+                    },
+                    {
+                        type:'Fiction',
+                        projects:[{
+                            project:'Style guides, Standard Operating Procedures (SOPs), Training Manuals for private educational institutes and publishing houses',
+                            link:'',
+                        }]
+                    },
+                ]
+            },
         ]
     },
     
