@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { services } from './services'
 import img1 from '../../assets/about/Aisha Panjwaneey.jpeg'
 import img2 from '../../assets/about/AshPReads-EditingServices-Logo.png'
 import img3 from '../../assets/about/AshPReads-EditingServices-Paid BR.png'
@@ -10,12 +11,22 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from '@gsap/react'
+import ServiceGrid from './ServiceGrid'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
-const Scroll = () => {
+interface ScrollProps {
+    startIndex: number;
+    isVisible: boolean;
+    onClose: () => void;
+    onItemClick: (index: number) => void;
+}
+
+const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) => {
     const scrollRef = useRef<HTMLDivElement>(null);
+
+    const [currentIndex, setCurrentIndex] = useState(startIndex);
 
     useGSAP(() => {
     //   const ctx = gsap.context(() => {
@@ -316,6 +327,11 @@ const Scroll = () => {
   
     //   return () => ctx.revert(); // Clean up the ScrollTrigger and animations on unmount
     },{scope:scrollRef});
+
+    useEffect(() => {
+        setCurrentIndex(startIndex);
+      }, [startIndex]);
+    
   return (
     <div className='s-container' ref={scrollRef}>
 
@@ -324,91 +340,10 @@ const Scroll = () => {
         <div className='past-wrapper'>
             <div className="past-heading">
                 <h3 className="s-heading">
-                    service
+                    {services[currentIndex].service}
                 </h3>
             </div>
-            <div className='past-work'>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white'
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white',
-                    }}
-                >
-                </div>
-                <div className="past-card"
-                    style={{
-                        width:'100%',
-                        height:'100%',
-                        background:'white'
-                    }}
-                >
-                </div>
-            </div>
+            <ServiceGrid/>
         </div>
 
             <div className="panel-front">
@@ -431,7 +366,12 @@ const Scroll = () => {
 
                     <div className="panel-left">
                         <ul className='services-list'>
-                            <li id='list1'>
+                            {services.map((list: { id: string; service: string }, index: number) => {
+                        return(
+                                <li key={list.id} onClick={() => onItemClick(index)}><p className='s-text'>{list.service}<span className='services-indicator'></span></p> </li>
+                            )}
+                            )}
+                            {/* <li id='list1'>
                                 <p className='s-text'>Developmental<span className='services-indicator'></span></p> 
                             </li>
 
@@ -440,7 +380,7 @@ const Scroll = () => {
                             <li id='list4'><p className='s-text'>Proofreader</p><span className='services-indicator'></span></li>
                             <li id='list5'><p className='s-text'>Translator</p><span className='services-indicator'></span></li>
                             <li id='list6'><p className='s-text'>Beta Reader</p><span className='services-indicator'></span></li>
-                            <li id='list7'><p className='s-text'>Sensitivity Reader</p><span className='services-indicator'></span></li>
+                            <li id='list7'><p className='s-text'>Sensitivity Reader</p><span className='services-indicator'></span></li> */}
                         </ul>
 
 

@@ -6,7 +6,7 @@ import './Portfolio.scss'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -16,6 +16,9 @@ interface PortfolioProps {
 }
 
 const Portfolio = ({ key }: PortfolioProps) => {
+
+   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isServVisible, setServVisible] = useState(false);
   
  // Empty dependency array ensures this runs only on mount and unmount
 
@@ -38,7 +41,14 @@ const Portfolio = ({ key }: PortfolioProps) => {
     };
 
  },[])
+ const handleItemClick = (index: number) => {
+  setSelectedIndex(index);
+  setServVisible(true);
+};
 
+const handleCloseServ = () => {
+  setServVisible(false);
+};
 
 
 
@@ -61,7 +71,12 @@ const Portfolio = ({ key }: PortfolioProps) => {
         Under construction
       </h1> */}
       <Horizontal/>
-      <Scroll/>
+      <Scroll
+            startIndex={selectedIndex}
+            isVisible={isServVisible}
+            onClose={handleCloseServ}
+            onItemClick={handleItemClick}
+      />
     </div>
   )
 }
