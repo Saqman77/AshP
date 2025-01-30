@@ -337,14 +337,13 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
         <section className='panel ash'>
 
-        <div className='past-wrapper'>
-            <div className="past-heading">
-                <h3 className="s-heading">
-                    {services[currentIndex].service}
-                </h3>
-            </div>
-            <ServiceGrid/>
-        </div>
+
+            <ServiceGrid
+                close={onClose}
+                isVisible={isVisible}
+                service={services[currentIndex]}
+            />
+        
 
             <div className="panel-front">
 
