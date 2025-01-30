@@ -1,13 +1,13 @@
 export const services = [
     {
         service:'Full Editing Services',
-        id:'Full Editing Services',
+        id:'full-editing-services',
         clients:[
             {           
                 name:'TC Publishing',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
                             project:'Overcoming Hardship – Senada Dervisevic',
@@ -23,17 +23,20 @@ export const services = [
                         },
                         {
                             project:'Seasons of Change – Trish Nelson',
-                            link:'',
+                            link: null,
                         },
                         {
                             project:'THE REAPing WOMAN: A Step-by-Step Guide to a Purposeful Life – Dr. Catherine Muyeba ',
-                            link:'',
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
-                        projects:[{}]
+                        genre:'Fiction',
+                        projects:[{
+                            project:null,
+                            link: null,
+                        }]
                     },
                 ]
             }
@@ -41,13 +44,13 @@ export const services = [
     },
     {
         service:'Developmental Editing',
-        id:'Developmental Editing',
+        id:'developmental-editing',
         clients:[
             {           
                 name:'Shena Lashey',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
                             project:'How to Pick Partners for Love Addicts: A Comprehensive Relationship Guide to Breaking Free from Toxic Patterns and Choosing Those Who Are Ready for Love',
@@ -55,14 +58,17 @@ export const services = [
                         },
                         {
                             project:'No Contact & Detox Support book',
-                            link:'',
+                            link: null,
                         },
                         
                     ]
                     },
                     {
-                        type:'Fiction',
-                        projects:[{}]
+                        genre:'Fiction',
+                        projects:[{
+                            project:null,
+                            link: null,
+                        }]
                     },
                 ]
             }
@@ -74,9 +80,9 @@ export const services = [
         clients:[
             {           
                 name:'TC Publishing',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
                             project:'The simple way to get motivated –Tarnya Coley',
@@ -96,21 +102,24 @@ export const services = [
                         },
                         {
                             project:'Ignite Your Author – Tarnya Coley',
-                            link:'',
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
-                        projects:[{}]
+                        genre:'Fiction',
+                        projects:[{
+                            project:null,
+                            link: null,
+                        }]
                     },
                 ]
             },
             {           
                 name:'Shena Lashey',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
                             project:'How to Pick Partners for Love Addicts: A Comprehensive Relationship Guide to Breaking Free from Toxic Patterns and Choosing Those Who Are Ready for Love',
@@ -119,25 +128,28 @@ export const services = [
                     ]
                     },
                     {
-                        type:'Fiction',
-                        projects:[{}]
+                        genre:'Fiction',
+                        projects:[{
+                            project:null,
+                            link: null,
+                        }]
                     },
                 ]
             },
             {           
                 name:'Grea Alexander',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         }                       
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'All series by author',
@@ -150,18 +162,18 @@ export const services = [
             },
             {           
                 name:'Charlene Hartnady',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         }                       
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'All series by author',
@@ -173,18 +185,18 @@ export const services = [
             },
             {           
                 name:'B.E. Brouillard',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         }                       
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'Exiled by the Pack (with Charlene Hartnady) 4 Books',
@@ -214,13 +226,13 @@ export const services = [
     },
     {
         service:'Beta Reading',
-        id:'Beta Reading',
+        id:'beta-reading',
         clients:[
             {           
                 name:'Ellis Prybylsk',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
                             project:'How To Publish The Damn Book',
@@ -229,22 +241,28 @@ export const services = [
                     ]
                     },
                     {
-                        type:'Fiction',
-                        projects:[{}]
+                        genre:'Fiction',
+                        projects:[{
+                            project:null,
+                            link: null,
+                        }]
                     },
                 ]
             },
             {           
                 name:'Gillian Grant',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
-                        {},
+                        {
+                            project:null,
+                            link: null,
+                        },
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'Where the Heart Festers – Book 3 in the Blood of Eith series',
@@ -256,17 +274,18 @@ export const services = [
             },
             {           
                 name:'Elisabeth Naughton',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            
+                            project:null,
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'Books 1-3 of the House of Sin series',
@@ -277,18 +296,18 @@ export const services = [
             },
             {           
                 name:'Charlene Hartnady',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'How To Publish The Damn Book',
-                            link:'https://a.co/d/jdObCai',
+                            project:null,
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                                 project:'All series by the author',
@@ -299,17 +318,18 @@ export const services = [
             },
             {           
                 name:'Grea Alexander',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-
+                            project:null,
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                                 project:'All series by author',
@@ -322,17 +342,18 @@ export const services = [
             },
             {           
                 name:'B.E. Brouillard',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-
+                            project:null,
+                            link: null,
                         },
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                                 project:'Exiled by the Pack (with Charlene Hartnady) 4 Books',
@@ -362,49 +383,49 @@ export const services = [
     },
     {
         service:'Other Services',
-        id:'Other Services',
+        id:'other-services',
         clients:[
             {           
                 name:'Publications, Website, and SMP content for a Nonprofit Organization',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         },
                         
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[{
                             project:'Transcribing, Translation, Subtitling, Content Development, Copyediting, Proofreading',
-                            link:'',
+                            link: null,
                         }]
                     },
                 ]
             },
             {           
                 name:'Application Packets',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         },
                         
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[
                             {
                             project:'Compilation of CVs and resumes, cover letters and documents of job application packets for various clients ',
-                            link:'',
+                            link: null,
                         },
                     ]
                     },
@@ -412,44 +433,44 @@ export const services = [
             },
             {           
                 name:'Educational Resources',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         },
                         
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[{
                             project:'Consultation and creation of curriculum designs, Individual Educational Plans (IEPs) for private educational institutes and special ed. tutors. ',
-                            link:'',
+                            link: null,
                         }]
                     },
                 ]
             },
             {           
                 name:'Documentation Services',
-                types:[
+                genres:[
                     {
-                    type:'Nonfiction',
+                    genre:'Nonfiction',
                     projects:[
                         {
-                            project:'',
-                            link:'',
+                            project:null,
+                            link: null,
                         },
                         
                     ]
                     },
                     {
-                        type:'Fiction',
+                        genre:'Fiction',
                         projects:[{
                             project:'Style guides, Standard Operating Procedures (SOPs), Training Manuals for private educational institutes and publishing houses',
-                            link:'',
+                            link: null,
                         }]
                     },
                 ]
