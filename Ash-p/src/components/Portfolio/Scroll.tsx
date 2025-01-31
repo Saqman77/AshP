@@ -34,84 +34,84 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         
         const tl2 = gsap.timeline();
         const tl = gsap.timeline();
-          tl.fromTo(
-            '.ash .s-text ,.ash .s-heading',
-            {
-              x: '-100%',
-              stagger: 0.1,
-              scale: 0,
-              opacity: 0,
-              ease: 'Power2.easeIn',
-            },
-            {
-              x: '0',
-              stagger: 0.1,
-              scale: 1,
-              opacity: 1,
-              scrollTrigger: {
-                trigger: '.ash',
-                start: 'clamp(-50% top)',
-                end: 'clamp(center center)',
-                scrub: 1,
-                refreshPriority: 1,
-                preventOverlaps:true,
-                // onEnter: tl.revert ,
-                // once:true,
-                // markers: true,
-                // toggleActions: 'restart none restart none',
-                onLeave:()=>{
-                    tl.to('.ash .s-text ,.ash .s-heading',{
-                        x: '-100%',
-                        stagger: 0.1,
-                        scale: 0,
-                        opacity: 0,
-                        ease: 'Power2.easeIn',
-                        scrollTrigger: {
-                            trigger: '.ash',
-                            start: 'clamp(top 10%)',
-                            end: 'clamp(+=400px)',
-                            scrub:true,
-                            preventOverlaps:true,
-                            // onScrubComplete:tl.revert,
-                            // once:true,
-                            // toggleActions: 'restart none restart none',
-                            // markers:true
-                        }
-                    })
-                }
-              },
-            }
-          );
-            tl.fromTo('.ash .cert-text',{ x:'100%', scale: 0, opacity:0},
-            {
-              x: '0%',
-              scale: 1,
-              opacity:1,
-              stagger: 0.1,
-            //   yoyo: true,
-            //   repeat:2,
-              scrollTrigger: {
-                trigger: ".ash",
-                start: 'clamp(-30% top)',
-                end: 'clamp(+=200px )',
-                // markers: true,
-                scrub: true,
-                onLeave:()=>{
-                    tl.to(".ash .cert-text",{
-                         x:'100%',
-                         scale: 0,
-                         opacity:0,
-                        stagger:0.1,
-                        scrollTrigger:{
-                            trigger:'.ash .cert-list',
-                            start:'-40% top',
-                            end:'+=600px',
-                            scrub: true
-                        }
-                        })
-                }
+        //   tl.fromTo(
+        //     '.ash .s-text ,.ash .s-heading',
+        //     {
+        //       x: '-100%',
+        //       stagger: 0.1,
+        //       scale: 0,
+        //       opacity: 0,
+        //       ease: 'Power2.easeIn',
+        //     },
+        //     {
+        //       x: '0',
+        //       stagger: 0.1,
+        //       scale: 1,
+        //       opacity: 1,
+        //       scrollTrigger: {
+        //         trigger: '.ash',
+        //         start: 'clamp(-50% top)',
+        //         end: 'clamp(center center)',
+        //         scrub: 1,
+        //         refreshPriority: 1,
+        //         preventOverlaps:true,
+        //         // onEnter: tl.revert ,
+        //         // once:true,
+        //         // markers: true,
+        //         // toggleActions: 'restart none restart none',
+        //         onLeave:()=>{
+        //             tl.to('.ash .s-text ,.ash .s-heading',{
+        //                 x: '-100%',
+        //                 stagger: 0.1,
+        //                 scale: 0,
+        //                 opacity: 0,
+        //                 ease: 'Power2.easeIn',
+        //                 scrollTrigger: {
+        //                     trigger: '.ash',
+        //                     start: 'clamp(top 10%)',
+        //                     end: 'clamp(+=400px)',
+        //                     scrub:true,
+        //                     preventOverlaps:true,
+        //                     // onScrubComplete:tl.revert,
+        //                     // once:true,
+        //                     // toggleActions: 'restart none restart none',
+        //                     // markers:true
+        //                 }
+        //             })
+        //         }
+        //       },
+        //     }
+        //   );
+    //         tl.fromTo('.ash .cert-text',{ x:'100%', scale: 0, opacity:0},
+    //         {
+    //           x: '0%',
+    //           scale: 1,
+    //           opacity:1,
+    //           stagger: 0.1,
+    //         //   yoyo: true,
+    //         //   repeat:2,
+    //           scrollTrigger: {
+    //             trigger: ".ash",
+    //             start: 'clamp(-30% top)',
+    //             end: 'clamp(+=200px )',
+    //             // markers: true,
+    //             scrub: true,
+    //             onLeave:()=>{
+    //                 tl.to(".ash .cert-text",{
+    //                      x:'100%',
+    //                      scale: 0,
+    //                      opacity:0,
+    //                     stagger:0.1,
+    //                     scrollTrigger:{
+    //                         trigger:'.ash .cert-list',
+    //                         start:'-40% top',
+    //                         end:'+=600px',
+    //                         scrub: true
+    //                     }
+    //                     })
+    //             }
 
-    }})
+    // }})
           tl2.fromTo(
             '.hira .s-text ,.hira .s-heading',
             {
@@ -343,45 +343,11 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             <div className="panel-front">
 
 
-                <div className="panel-top">
-                   <h3 className='s-heading'>Ash P</h3>
-                   {/* <ul className='services-list'>
-                    <li><p className='s-text'>Developmental</p></li>
-                    <li><p className='s-text'>Line</p></li>
-                    <li><p className='s-text'>Copy Editor</p></li>
-                    <li><p className='s-text'>Proofreader</p></li>
-                    <li><p className='s-text'>Translator</p></li>
-                    <li><p className='s-text'>Beta Reader</p></li>
-                    <li><p className='s-text'>Sensitivity Reader</p></li>
-                   </ul> */}
-                </div>
+
 
                 <div className="panel-center">
 
                     <div className="panel-left">
-                        {/* <ul className='services-list'>
-                            {services.map((list: { id: string; service: string }, index: number) => {
-                        return(
-                                <li key={list.id} onClick={() => onItemClick(index)}><p className='s-text'>{list.service}<span className='services-indicator'></span></p> </li>
-                            )}
-                            )} */}
-                            {/* <li id='list1'>
-                                <p className='s-text'>Developmental<span className='services-indicator'></span></p> 
-                            </li>
-
-                            <li id='list2'><p className='s-text'>Line</p><span className='services-indicator'></span></li>
-                            <li id='list3'><p className='s-text'>Copy Editor</p><span className='services-indicator'></span></li>
-                            <li id='list4'><p className='s-text'>Proofreader</p><span className='services-indicator'></span></li>
-                            <li id='list5'><p className='s-text'>Translator</p><span className='services-indicator'></span></li>
-                            <li id='list6'><p className='s-text'>Beta Reader</p><span className='services-indicator'></span></li>
-                            <li id='list7'><p className='s-text'>Sensitivity Reader</p><span className='services-indicator'></span></li> */}
-                        {/* </ul> */}
-
-
-                    </div>
-
-                    <div className="sub-panel-center">
-
 
                         <div className='ash2-img'>
 
@@ -389,11 +355,13 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
                         </div>
 
-                        
-
                     </div>
 
+
                     <div className="panel-right">
+                        <div className="panel-top">
+                            <h3 className='s-heading'>Ash P</h3>
+                        </div>
 
 
                         <ul className='cert-list'>
@@ -413,20 +381,6 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                     </div>
                     
                 </div>
-                {/* <div className="panel-bottom">
-
-                    <p className='bottom-p'>
-                        #RevPit 2025 Editor, Occasional co-host
-                        of the Northwest Editors Guild, monthly
-                        Editing with Disability/Chronic
-                        Illness/Neurodivergence 
-                        Virtual Chat, 
-                        Mentor for aspiring editors, beta readers, 
-                        and freelancers, Coach and Consultant for new authors.
-
-                    </p>
-
-                </div> */}
 
 
             </div>

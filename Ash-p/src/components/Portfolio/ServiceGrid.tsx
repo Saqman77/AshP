@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ServProject from "./ServProject";
 
 interface Project {
   name: string;
@@ -29,7 +28,7 @@ interface ServiceGridProps {
 const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) => {
   const [activeFilter, setActiveFilter] = useState<'All' | 'Fiction' | 'Nonfiction'>('All');
   const [activeScreen, setActiveScreen] = useState<'service' | 'client'>('service');
-  const [selectedClient, setSelectedClient] = useState(null);
+  const [selectedClient, setSelectedClient] = useState<Client | null>(null);
 
   const handleFilterClick = (filter: 'All' | 'Fiction' | 'Nonfiction') => {
     setActiveFilter(filter);
@@ -69,6 +68,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
               background: "transparent",
               border: "none",
               cursor: "pointer",
+              padding:"1.5rem"
             }}
           >
             <span
@@ -98,26 +98,29 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
       </div>
 
       {/* Filter Buttons */}
-      <div className="filter-buttons">
-        <button
-          className={activeFilter === 'All' ? 'active' : ''}
-          onClick={() => handleFilterClick('All')}
-        >
-          All
-        </button>
-        <button
-          className={activeFilter === 'Fiction' ? 'active' : ''}
-          onClick={() => handleFilterClick('Fiction')}
-        >
-          Fiction
-        </button>
-        <button
-          className={activeFilter === 'Nonfiction' ? 'active' : ''}
-          onClick={() => handleFilterClick('Nonfiction')}
-        >
-          Nonfiction
-        </button>
-      </div>
+      {activeScreen == 'service' && (
+        <div className="filter-buttons">
+          <button
+            className={activeFilter === 'All' ? 'filter-button active' : 'filter-button'}
+            onClick={() => handleFilterClick('All')}
+          >
+            All
+          </button>
+          <button
+            className={activeFilter === 'Fiction' ? 'filter-button active' : 'filter-button'}
+            onClick={() => handleFilterClick('Fiction')}
+          >
+            Fiction
+          </button>
+          <button
+            className={activeFilter === 'Nonfiction' ? 'filter-button active' : 'filter-button'}
+            onClick={() => handleFilterClick('Nonfiction')}
+          >
+            Non-fiction
+          </button>
+        </div>
+      )}
+      
 
       {/* Display filtered genres and projects */}
       {activeScreen == 'service' && (
@@ -129,7 +132,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
               onClick={() => {handleClientClick(client)}}
             >
               <h4>{client.name}</h4>
-              <div>Projects:{client.projects.length}</div>
+              <div>Projects: {client.projects.length}</div>
               {/* <ServProject genre={client} /> */}
             </button>
           ))}
