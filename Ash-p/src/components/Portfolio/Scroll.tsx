@@ -338,18 +338,13 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         <section className='panel ash'>
 
 
-            <ServiceGrid
-                close={onClose}
-                isVisible={isVisible}
-                service={services[currentIndex]}
-            />
         
 
             <div className="panel-front">
 
 
                 <div className="panel-top">
-                   <h3 className='s-heading'>Aisha Panjwaneey - Ash P</h3>
+                   <h3 className='s-heading'>Ash P</h3>
                    {/* <ul className='services-list'>
                     <li><p className='s-text'>Developmental</p></li>
                     <li><p className='s-text'>Line</p></li>
@@ -364,12 +359,12 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 <div className="panel-center">
 
                     <div className="panel-left">
-                        <ul className='services-list'>
+                        {/* <ul className='services-list'>
                             {services.map((list: { id: string; service: string }, index: number) => {
                         return(
                                 <li key={list.id} onClick={() => onItemClick(index)}><p className='s-text'>{list.service}<span className='services-indicator'></span></p> </li>
                             )}
-                            )}
+                            )} */}
                             {/* <li id='list1'>
                                 <p className='s-text'>Developmental<span className='services-indicator'></span></p> 
                             </li>
@@ -380,7 +375,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                             <li id='list5'><p className='s-text'>Translator</p><span className='services-indicator'></span></li>
                             <li id='list6'><p className='s-text'>Beta Reader</p><span className='services-indicator'></span></li>
                             <li id='list7'><p className='s-text'>Sensitivity Reader</p><span className='services-indicator'></span></li> */}
-                        </ul>
+                        {/* </ul> */}
 
 
                     </div>
@@ -539,20 +534,20 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
 
                 <div className="panel-top">
-                    <h3 className='s-heading'>Hira Panjwaneey</h3>
+                    <h3 className='s-heading'>Hira P</h3>
                 </div>
 
                 <div className="panel-center">
 
                     <div className="panel-left">
                         <ul className='services-list'>
-                            <li id='list1'><p className='s-text'>Proofreading</p></li>
+                            {/* <li id='list1'><p className='s-text'>Proofreading</p></li>
                             <li id='list2'><p className='s-text'>Beta Reading</p></li>
                             <li id='list3'><p className='s-text'>Copy Editing</p></li>
                             <li id='list4'><p className='s-text'>Line Editing</p></li>
                             <li id='list5'><p className='s-text'>Manuscript Assessment</p></li>
                             <li id='list6'><p className='s-text'>Critique Reports</p></li>
-                            <li id='list7'><p className='s-text'>Revisions</p></li>
+                            <li id='list7'><p className='s-text'>Revisions</p></li> */}
                         </ul>
 
 
@@ -705,6 +700,26 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
         </section>
 
+        <section className='our-work'>
+            <div className='work-wrapper'>
+                <div className="work-heading">
+                    <h3 className="s-heading">Our Work</h3>
+                </div>
+                
+                        <ul className='services-list'>
+                    {services.map((list: { id: string; service: string }, index: number) => {
+                return(
+                        <li key={list.id} onClick={() => onItemClick(index)}><p className='s-text'>{list.service}<span className='services-indicator'></span></p> </li>
+                    )}
+                    )}
+                        </ul>
+            </div>
+        <ServiceGrid
+                close={onClose}
+                isVisible={isVisible}
+                service={services[currentIndex]}
+            />
+        </section>
         
 
     </div>

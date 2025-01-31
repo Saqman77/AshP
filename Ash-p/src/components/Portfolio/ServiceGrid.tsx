@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import ServProject from "./ServProject";
 
 interface Project {
-  project: string | null;
+  name: string;
   link: string | null;
 }
 
-interface Genre {
-  genre: string;
-  projects: Project[];
-}
 
 interface Client {
   name: string;
-  genres: Genre[];
+  projects: Project[];
 }
 
 interface Service {
   service: string;
-  clients: Client[];
+  genres: {
+    Fiction: Client[];
+    Nonfiction: Client[];
+  };
 }
 
 interface ServiceGridProps {
@@ -27,28 +27,41 @@ interface ServiceGridProps {
 }
 
 const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) => {
-//   useEffect(() => {
-//     if (!isVisible) return;
+  const [activeFilter, setActiveFilter] = useState<'All' | 'Fiction' | 'Nonfiction'>('All');
+  const [activeScreen, setActiveScreen] = useState<'service' | 'client'>('service');
+  const [selectedClient, setSelectedClient] = useState(null);
 
-//     const handleScroll = () => {
-//       close();
-//     };
+  const handleFilterClick = (filter: 'All' | 'Fiction' | 'Nonfiction') => {
+    setActiveFilter(filter);
+  };
 
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, [isVisible, close]);
+  const handleClientClick = (client: Client) => {
+    setSelectedClient(client);
+    setActiveScreen('client');
+  }
+
+  const closeService = () => {
+    setActiveScreen('service');
+    setSelectedClient(null);
+    close();
+  }
 
   if (!isVisible) return null;
+
+  const filteredGenres =
+    activeFilter === 'All'
+      ? [...service.genres.Fiction, ...service.genres.Nonfiction]
+      : activeFilter === 'Fiction'
+      ? service.genres.Fiction
+      : service.genres.Nonfiction;
 
   return (
     <div className="past-wrapper">
       <div className="past-heading">
-        <h3 className="s-heading">{service.service}</h3>
+        <h3 className="s-heading">{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
         <div className="past-close">
           <button
-            onClick={close}
+            onClick={() => {closeService()}}
             style={{
               position: "relative",
               width: "40px",
@@ -84,32 +97,60 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
         </div>
       </div>
 
-      <div className="past-work">
-        {service.clients.flatMap((client) =>
-          client.genres.flatMap((genre) =>
-            genre.projects
-              .filter((project) => project.project !== null) // Remove empty projects
-              .map((project, index) => (
-                <div key={index} className="past-card">
-                  <h4 className="past-cardheading" >{client.name}</h4>
-                  <p className="project-title">
-                    {project.project}
-                  </p>
-                  <p className="genre">
-                   {genre.genre}
-                  </p>
-                  {project.link && (
-                    <p>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        View Project
-                      </a>
-                    </p>
-                  )}
-                </div>
-              ))
-          )
-        )} 
+      {/* Filter Buttons */}
+      <div className="filter-buttons">
+        <button
+          className={activeFilter === 'All' ? 'active' : ''}
+          onClick={() => handleFilterClick('All')}
+        >
+          All
+        </button>
+        <button
+          className={activeFilter === 'Fiction' ? 'active' : ''}
+          onClick={() => handleFilterClick('Fiction')}
+        >
+          Fiction
+        </button>
+        <button
+          className={activeFilter === 'Nonfiction' ? 'active' : ''}
+          onClick={() => handleFilterClick('Nonfiction')}
+        >
+          Nonfiction
+        </button>
       </div>
+
+      {/* Display filtered genres and projects */}
+      {activeScreen == 'service' && (
+        <div className="past-work">
+          {filteredGenres.map((client) => (
+            <button 
+              key={client.name} 
+              className="past-card"
+              onClick={() => {handleClientClick(client)}}
+            >
+              <h4>{client.name}</h4>
+              <div>Projects:{client.projects.length}</div>
+              {/* <ServProject genre={client} /> */}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {activeScreen == 'client' && selectedClient && (
+        <div className="past-work">
+          {selectedClient.projects.map((project) => (
+            <div className="past-card">
+              <div>{project.name}</div>
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  go to link
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
     </div>
   );
 };
