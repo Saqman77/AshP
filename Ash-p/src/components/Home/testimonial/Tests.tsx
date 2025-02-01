@@ -1,6 +1,6 @@
 import './tests.scss';
-import flip from '/src/assets/home/uis_flip-v.png';
-import { useState } from 'react';
+// import flip from '/src/assets/home/uis_flip-v.png';
+// import { useState } from 'react';
 
 type Props = {
   id: string;
@@ -9,22 +9,22 @@ type Props = {
   isDragging: boolean;
 };
 
-const Tests = ({ id, head,desc, isDragging }: Props) => {
-  const [rotate, setRotate] = useState(false);
-  const [animationClass, setAnimationClass] = useState('');
+const Tests = ({ id, head,desc }: Props) => {
+  // const [rotate, setRotate] = useState(false);
+  // const [animationClass, setAnimationClass] = useState('');
 
-  const handleFlip = () => {
-    if (!rotate) {
-      setAnimationClass('restore-shadow');
-      setRotate(true);
-    } else {
-      setAnimationClass('unhover-shadow');
-      setRotate(false);
-    }
+  // const handleFlip = () => {
+  //   if (!rotate) {
+  //     setAnimationClass('restore-shadow');
+  //     setRotate(true);
+  //   } else {
+  //     setAnimationClass('unhover-shadow');
+  //     setRotate(false);
+  //   }
 
-    // Clear the animation class after the animation completes
-    setTimeout(() => setAnimationClass(''), 600);
-  };
+  //   // Clear the animation class after the animation completes
+  //   setTimeout(() => setAnimationClass(''), 600);
+  // };
 
   return (
     <div className={`test-wrapper`} id={id}>
