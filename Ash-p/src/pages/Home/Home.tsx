@@ -6,6 +6,8 @@ import { cardContent } from '../../components/Home/cards/cardContent'
 import ContactUs from '../../components/get-in-touch-button/ContactUs'
 import { useEffect, useRef, useState } from 'react'
 import Schedule from '../../components/schedule/Schedule'
+import CardsContainer from '../../components/Home/wish/Wishs'
+import Wishs from '../../components/Home/wish/Wishs'
 // import { useThemeContext } from '../../utils/ThemeContextProvider'
 // import { useThemeContext } from '../../utils/ThemeContextProvider'
 
@@ -192,6 +194,17 @@ const Home = () => {
           <div className="right-btn" onClick={moveRight}>
             R
           </div>
+        </div>
+      </div>
+
+      <div className="wish-section">
+        <div className="wish-heading">
+          <p>
+            Ash P Reads Manuscript <span className="color-text">Wish List</span>
+          </p>
+        </div>
+        <div className="wish-container ">
+            <Wishs/>
         </div>
       </div>
     </div>
