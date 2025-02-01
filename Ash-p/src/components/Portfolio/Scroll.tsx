@@ -341,7 +341,9 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         
 
             <div className="panel-front">
-
+            <div className="panel-top">
+                            <h3 className='s-heading'>Ash P</h3>
+                        </div>
 
 
 
@@ -359,25 +361,39 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
 
                     <div className="panel-right">
-                        <div className="panel-top">
-                            <h3 className='s-heading'>Ash P</h3>
-                        </div>
 
 
-                        <ul className='cert-list'>
-                            <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
-                            <li id='list2'><p className='cert-text'>Freelancing</p></li>
-                            <li id='list3'><p className='cert-text'>Video Editing</p></li>
-                            <li id='list4'><p className='cert-text'>Graphic Design</p></li>
-                            <li id='list5'><p className='cert-text'>Communication & Soft Skills</p></li>
-                            <li id='list6'><p className='cert-text'>Creative Writing</p></li>
-                            <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
-                            <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
-                            <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
-                            <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
-                            <li id='list7'><p className='cert-text'>AI for Editors</p></li>
-                        </ul>
+                            <div className='qualification-wrapper'>
+                                <div className='qual-section'>
+                                    <h3 className='cert-heading'>
+                                        Certifications & Courses
+                                    </h3>
+                                    <ul className='cert-list'>
+                                        <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
+                                        <li id='list2'><p className='cert-text'>Freelancing</p></li>
+                                        <li id='list3'><p className='cert-text'>Video Editing</p></li>
+                                        <li id='list4'><p className='cert-text'>Graphic Design</p></li>
+                                        <li id='list5'><p className='cert-text'>Communication & Soft Skills</p></li>
+                                        <li id='list6'><p className='cert-text'>Creative Writing</p></li>
+                                        <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
+                                        <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
+                                        <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
+                                        <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
+                                        <li id='list7'><p className='cert-text'>AI for Editors</p></li>
+                                    </ul>
+                                </div>
+                                <div className='qual-section2'>
+                                <h3 className='q-heading'>
+                                         Qualifications
+                                    </h3>
+                                    <ul className='cert-list2'>
+                                        <li id='list1'><p className='cert-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
+                                        
+                                    </ul>
+                            </div>
 
+                            </div>
+                           
                     </div>
                     
                 </div>
@@ -484,82 +500,73 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         </section>
         <section className='panel hira'>
 
-            <div className="panel-front">
+
+        
+
+        <div className="panel-front">
+        <div className="panel-top">
+                        <h3 className='s-heading'>Hira P</h3>
+                    </div>
 
 
-                <div className="panel-top">
-                    <h3 className='s-heading'>Hira P</h3>
-                </div>
 
-                <div className="panel-center">
+            <div className="panel-center">
 
-                    <div className="panel-left">
-                        <ul className='services-list'>
-                            {/* <li id='list1'><p className='s-text'>Proofreading</p></li>
-                            <li id='list2'><p className='s-text'>Beta Reading</p></li>
-                            <li id='list3'><p className='s-text'>Copy Editing</p></li>
-                            <li id='list4'><p className='s-text'>Line Editing</p></li>
-                            <li id='list5'><p className='s-text'>Manuscript Assessment</p></li>
-                            <li id='list6'><p className='s-text'>Critique Reports</p></li>
-                            <li id='list7'><p className='s-text'>Revisions</p></li> */}
-                        </ul>
+                <div className="panel-left">
 
+                    <div className='ash2-img'>
+
+                        <ParallaxImage src={img5} alt="" className='s-imgs' />
 
                     </div>
 
-                    <div className="sub-panel-center">
+                </div>
 
 
-                        <div className='ash2-img'>
+                <div className="panel-right">
 
-                            <ParallaxImage src={img5} alt="" className='s-imgs' />
 
+                        <div className='qualification-wrapper'>
+                            <div className='qual-section'>
+                                <h3 className='cert-heading'>
+                                    Certifications & Courses
+                                </h3>
+                                <ul className='cert-list'>
+                                    <li id='list1'><p className='cert-text'>Digital Marketing</p></li>
+                                    <li id='list2'><p className='cert-text'>Freelancing</p></li>
+                                    <li id='list3'><p className='cert-text'>Video Editing</p></li>
+                                    <li id='list4'><p className='cert-text'>Graphic Design</p></li>
+                                    <li id='list5'><p className='cert-text'>Communication & Soft Skills</p></li>
+                                    <li id='list6'><p className='cert-text'>Creative Writing</p></li>
+                                    <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
+                                    <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
+                                    <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
+                                    <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
+                                    <li id='list7'><p className='cert-text'>AI for Editors</p></li>
+                                </ul>
+                            </div>
+                            <div className='qual-section2'>
+                            <h3 className='q-heading'>
+                                    Qualifications
+                                </h3>
+                                <ul className='cert-list2'>
+                                    <li id='list1'><p className='cert-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
+                                    
+                                </ul>
                         </div>
 
-                        
-
-                    </div>
-
-                    <div className="panel-right">
-
-
-                        <ul className='cert-list'>
-                            <li id='list1'><p className='cert-text'>Curriculum Desig</p></li>
-                            <li id='list2'><p className='cert-text'>Teacher Training</p></li>
-                            <li id='list3'><p className='cert-text'>Educational Leadership</p></li>
-                            <li id='list4'><p className='cert-text'>Content Development</p></li>
-                            <li id='list5'><p className='cert-text'>CV Writing</p></li>
-                            <li id='list6'><p className='cert-text'>Special Education Support</p></li>
-                            {/* <li id='list7'><p className='cert-text'>Digital Literacy</p></li>
-                            <li id='list7'><p className='cert-text'>AI in Teaching</p></li>
-                            <li id='list7'><p className='cert-text'>Google Soft Skills Certification</p></li>
-                            <li id='list7'><p className='cert-text'>Pathways to Publishing</p></li>
-                            <li id='list7'><p className='cert-text'>AI for Editors</p></li> */}
-                        </ul>
-
-                    </div>
+                        </div>
                     
                 </div>
-                {/* <div className="panel-bottom">
-
-                    <p className='bottom-p'>
-                        #RevPit 2025 Editor, Occasional co-host
-                        of the Northwest Editors Guild, monthly
-                        Editing with Disability/Chronic
-                        Illness/Neurodivergence 
-                        Virtual Chat, 
-                        Mentor for aspiring editors, beta readers, 
-                        and freelancers, Coach and Consultant for new authors.
-
-                    </p>
-
-                </div> */}
-
-
+                
             </div>
-            <div className='ash-img'>
-                <ParallaxImage src={img5} alt="" className='s-imgs' />
-            </div>
+
+
+        </div>
+
+        <div className='ash-img'>
+            <ParallaxImage src={img5} alt="" className='s-imgs' />
+        </div>
 
         </section>
 

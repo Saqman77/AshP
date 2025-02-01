@@ -116,7 +116,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
             className={activeFilter === 'Nonfiction' ? 'filter-button active' : 'filter-button'}
             onClick={() => handleFilterClick('Nonfiction')}
           >
-            Non-fiction
+            Nonfiction
           </button>
         </div>
       )}
