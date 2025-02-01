@@ -34,84 +34,84 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         
         const tl2 = gsap.timeline();
         const tl = gsap.timeline();
-        //   tl.fromTo(
-        //     '.ash .s-text ,.ash .s-heading',
-        //     {
-        //       x: '-100%',
-        //       stagger: 0.1,
-        //       scale: 0,
-        //       opacity: 0,
-        //       ease: 'Power2.easeIn',
-        //     },
-        //     {
-        //       x: '0',
-        //       stagger: 0.1,
-        //       scale: 1,
-        //       opacity: 1,
-        //       scrollTrigger: {
-        //         trigger: '.ash',
-        //         start: 'clamp(-50% top)',
-        //         end: 'clamp(center center)',
-        //         scrub: 1,
-        //         refreshPriority: 1,
-        //         preventOverlaps:true,
-        //         // onEnter: tl.revert ,
-        //         // once:true,
-        //         // markers: true,
-        //         // toggleActions: 'restart none restart none',
-        //         onLeave:()=>{
-        //             tl.to('.ash .s-text ,.ash .s-heading',{
-        //                 x: '-100%',
-        //                 stagger: 0.1,
-        //                 scale: 0,
-        //                 opacity: 0,
-        //                 ease: 'Power2.easeIn',
-        //                 scrollTrigger: {
-        //                     trigger: '.ash',
-        //                     start: 'clamp(top 10%)',
-        //                     end: 'clamp(+=400px)',
-        //                     scrub:true,
-        //                     preventOverlaps:true,
-        //                     // onScrubComplete:tl.revert,
-        //                     // once:true,
-        //                     // toggleActions: 'restart none restart none',
-        //                     // markers:true
-        //                 }
-        //             })
-        //         }
-        //       },
-        //     }
-        //   );
-    //         tl.fromTo('.ash .cert-text',{ x:'100%', scale: 0, opacity:0},
-    //         {
-    //           x: '0%',
-    //           scale: 1,
-    //           opacity:1,
-    //           stagger: 0.1,
-    //         //   yoyo: true,
-    //         //   repeat:2,
-    //           scrollTrigger: {
-    //             trigger: ".ash",
-    //             start: 'clamp(-30% top)',
-    //             end: 'clamp(+=200px )',
-    //             // markers: true,
-    //             scrub: true,
-    //             onLeave:()=>{
-    //                 tl.to(".ash .cert-text",{
-    //                      x:'100%',
-    //                      scale: 0,
-    //                      opacity:0,
-    //                     stagger:0.1,
-    //                     scrollTrigger:{
-    //                         trigger:'.ash .cert-list',
-    //                         start:'-40% top',
-    //                         end:'+=600px',
-    //                         scrub: true
-    //                     }
-    //                     })
-    //             }
+          tl.fromTo(
+            '.ash .s-text ,.ash .s-heading',
+            {
+              x: '-100%',
+              stagger: 0.1,
+              scale: 0,
+              opacity: 0,
+              ease: 'Power2.easeIn',
+            },
+            {
+              x: '0',
+              stagger: 0.1,
+              scale: 1,
+              opacity: 1,
+              scrollTrigger: {
+                trigger: '.ash',
+                start: 'clamp(-50% top)',
+                end: 'clamp(center center)',
+                scrub: 1,
+                refreshPriority: 1,
+                preventOverlaps:true,
+                // onEnter: tl.revert ,
+                // once:true,
+                // markers: true,
+                // toggleActions: 'restart none restart none',
+                onLeave:()=>{
+                    tl.to('.ash .s-text ,.ash .s-heading',{
+                        x: '-100%',
+                        stagger: 0.1,
+                        scale: 0,
+                        opacity: 0,
+                        ease: 'Power2.easeIn',
+                        scrollTrigger: {
+                            trigger: '.ash',
+                            start: 'clamp(top 10%)',
+                            end: 'clamp(+=400px)',
+                            scrub:true,
+                            preventOverlaps:true,
+                            // onScrubComplete:tl.revert,
+                            // once:true,
+                            // toggleActions: 'restart none restart none',
+                            // markers:true
+                        }
+                    })
+                }
+              },
+            }
+          );
+            tl.fromTo('.ash .cert-text',{ x:'100%', scale: 0, opacity:0},
+            {
+              x: '0%',
+              scale: 1,
+              opacity:1,
+              stagger: 0.1,
+            //   yoyo: true,
+            //   repeat:2,
+              scrollTrigger: {
+                trigger: ".ash",
+                start: 'clamp(-30% top)',
+                end: 'clamp(+=200px )',
+                // markers: true,
+                scrub: true,
+                onLeave:()=>{
+                    tl.to(".ash .cert-text",{
+                         x:'100%',
+                         scale: 0,
+                         opacity:0,
+                        stagger:0.1,
+                        scrollTrigger:{
+                            trigger:'.ash .cert-list',
+                            start:'-40% top',
+                            end:'+=600px',
+                            scrub: true
+                        }
+                        })
+                }
 
-    // }})
+    }})
           tl2.fromTo(
             '.hira .s-text ,.hira .s-heading',
             {
@@ -413,7 +413,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             <div className="panel-front">
 
 
-                <div className="panel-top">
+                {/* <div className="panel-top">
 
                     <div className="projects-heading">
 
@@ -423,9 +423,9 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
                     </div>
 
-                </div>
+                </div> */}
 
-                <div className="panel-certification"
+                {/* <div className="panel-certification"
                     style={{
                         gridRow:'4'
                     }}
@@ -436,7 +436,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                     </p>
 
                     
-                </div>
+                </div> */}
 
                 <div className="panel-bio" >
                     <p className='bio'>
@@ -576,7 +576,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         <div className="panel-front">
 
 
-<div className="panel-top">
+{/* <div className="panel-top">
 
     <div className="projects-heading">
 
@@ -586,9 +586,9 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
     </div>
 
-</div>
+</div> */}
 
-<div className="panel-certification"
+{/* <div className="panel-certification"
     style={{
         gridRow:'4'
     }}
@@ -599,7 +599,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
     </p>
 
     
-</div>
+</div> */}
 
 <div className="panel-bio" >
     <p className='bio'>
