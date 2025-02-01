@@ -6,7 +6,7 @@ type Props = {
   id: string;
   head: string;
   desc: string;
-  isDragging: boolean;
+  // isDragging: boolean;
 };
 
 const Tests = ({ id, head,desc }: Props) => {
