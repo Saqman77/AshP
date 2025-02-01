@@ -198,7 +198,7 @@ const Home = () => {
       </div>
 
       <div className="wish-section">
-        <div className="wish-heading">
+        <div className="wish-header">
           <p>
             Ash P Reads Manuscript <span className="color-text">Wish List</span>
           </p>
