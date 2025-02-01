@@ -104,7 +104,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                         stagger:0.1,
                         scrollTrigger:{
                             trigger:'.ash .cert-list',
-                            start:'-40% top',
+                            start:'-20% top',
                             end:'+=600px',
                             scrub: true
                         }
