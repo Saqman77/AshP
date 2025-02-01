@@ -67,7 +67,19 @@
     grid-row: 1;
     position: relative;
     z-index: 1;
+    // height: 100%;
     max-height: 100vh;
+}
+.panel.projects-hira .ash-img,.panel.hira .ash-img{
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    // max-height: 100vh;
 }
 
 .ash2-img{
@@ -847,8 +859,11 @@ section.our-work .work-wrapper{
     padding: 1em;
     justify-content: center;
     text-align: center;
-    line-height: 1.5em;
+    line-height: 1em;
     letter-spacing: 2px;
+    @media screen and (max-width:1250px) {
+        font-size: var(--font-medium);
+    }
 }
 
 .panel.projects .panel-bottom{
