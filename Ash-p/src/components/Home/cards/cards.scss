@@ -274,13 +274,17 @@ $font-xSmall: 12px;
     margin-right: auto;
 }
 
-.card-img{
+.card .card-img{
     width: 200px;
-    margin: 0 auto;
+    height: 150px;
+    // margin: 0 auto;
+    align-self: center;
     user-select: none;
+    display: flex;
     -webkit-user-select: none;
     @media  screen and (max-width: 900px) {
-        width: 150px
+        width: 150px;
+        height: 100px;
     }
 }
 
@@ -289,6 +293,7 @@ $font-xSmall: 12px;
     user-select: none;
     -webkit-user-select: none;
     pointer-events: none;
+    object-fit: cover;
 }
 
 .flip-button{
