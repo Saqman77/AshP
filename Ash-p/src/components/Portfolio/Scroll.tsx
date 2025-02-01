@@ -402,7 +402,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             </div>
 
             <div className='ash-img'>
-                <ParallaxImage src={img2} alt="" className='s-imgs' />
+                <ParallaxImage src={img2} alt="" className='s-imgs bg' />
             </div>
 
         </section>
@@ -490,7 +490,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
                 <div className='ash-img'>
 
-                    <ParallaxImage src={img3} alt="" className='s-imgs' />
+                    <ParallaxImage src={img3} alt="" className='s-imgs  bg' />
 
                 </div>
 
@@ -565,7 +565,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         </div>
 
         <div className='ash-img'>
-            <ParallaxImage src={img5} alt="" className='s-imgs' />
+            <ParallaxImage src={img5} alt="" className='s-imgs bg' />
         </div>
 
         </section>
@@ -653,7 +653,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 <div className='ash-img'>
 
  
-                    <ParallaxImage src={img4} alt="" className='s-imgs' />
+                    <ParallaxImage src={img4} alt="" className='s-imgs bg' />
 
                 </div>
 
