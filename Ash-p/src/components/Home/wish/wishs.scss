@@ -162,7 +162,7 @@
 }
 
 .wish-head{
-    font-size: var(--font-xlarge);
+    font-size: var(--font-large);
     // text-decoration: underline;
     letter-spacing: 2px;
     font-family: "Euphorigenic";
@@ -190,8 +190,16 @@
 
 .wish-front.not .wish-desc{
     // letter-spacing: 2px;
-    margin: 0em 0 1.5em;
+    margin: auto 0 1.5em;
+    
     // line-height: 1.5em;
+}
+
+.wish-front.not .wish-description{
+    flex: 2;
+    display: flex;
+    // flex-direction: column;
+    justify-content: end;
 }
 
 .wish-back{
