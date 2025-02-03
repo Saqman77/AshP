@@ -2,6 +2,8 @@ import { useState } from 'react';
 import flip from '/src/assets/home/uis_flip-v.png';
 import './wishs.scss'
 
+
+
 const Wishs = () => {
 
 
@@ -18,14 +20,14 @@ const Wishs = () => {
         }
     
         // Clear the animation class after the animation completes
-        setTimeout(() => setAnimationClass(''), 600);
+        // setTimeout(() => setAnimationClass(''), 600);
       };
 
   return (
     <div className='wish-main'>
         <div className={`wish-box ${animationClass}`}>
             <div className={`wish-wrapper`}
-                         style={ window.innerWidth < 1100 
+                         style={ window.innerWidth < 1250 
                             ? rotate 
                             ? { transform: 'rotateY(-180deg)' } : { transform: 'rotateY(0deg)' }
                            : {}}
@@ -91,7 +93,7 @@ const Wishs = () => {
         </div>
         <div className={`wish-box ${animationClass}`}>
             <div className={`wish-wrapper`}
-                         style={ window.innerWidth < 1100 
+                         style={ window.innerWidth < 1250 
                             ? rotate 
                             ? { transform: 'rotateY(-180deg)' } : { transform: 'rotateY(0deg)' }
                            : {}}

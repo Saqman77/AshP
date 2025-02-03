@@ -11,7 +11,7 @@ import instagram from '/src/assets/footer/instagram.png'
 // import twitter from '/src/assets/footer/twitter.png'
 import FB from '/src/assets/footer/icons8-facebook-48.png'
 import Blue from '/src/assets/footer/Bluesky_Logo.svg.png'
-import favR from '/src/assets/footer/favorited_reviews.png'
+// import favR from '/src/assets/footer/favorited_reviews.png'
 import threads from '/src/assets/footer/threads-app-icon.png'
 const Footer: React.FC = () => {
   return (

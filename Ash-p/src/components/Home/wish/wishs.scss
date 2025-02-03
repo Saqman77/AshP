@@ -61,7 +61,7 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
-    // transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
     // width: 100%;
     transform: rotateY(0deg);
 }
@@ -119,9 +119,9 @@
     }
 }
 
-.wish-main .wish-wrapper .flip-button, .wish-main .wish-wrapper .flip-button:active {
-    // margin-top: auto;
-}
+// .wish-main .wish-wrapper .flip-button, .wish-main .wish-wrapper .flip-button:active {
+//     // margin-top: auto;
+// }
 
 
 .wish-front{
@@ -387,12 +387,12 @@
     width: 100%;
 }
 
-@media screen and (max-width: 1100px) {
-    .wish-main .wish-wrapper .flip-button:active{
-        transform: translate(2px, 3px);
-        box-shadow: 1px 1px 0px 0px black;
-    }
-}
+// @media screen and (max-width: 1100px) {
+//     .wish-main .wish-wrapper .flip-button:active{
+//         transform: translate(2px, 3px);
+//         box-shadow: 1px 1px 0px 0px black;
+//     }
+// }
 
 .wish-main .wish-wrapper .flip-back{
     border: 1px solid rgba(213, 73, 115, 0.8823529412);
