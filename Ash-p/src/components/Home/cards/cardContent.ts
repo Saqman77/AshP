@@ -14,19 +14,20 @@ export const cardContent = [
       description: "Is your manuscript feeling incomplete? Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful."
     },
     {
-      id: "Developmental Edit",
-      imgSrc: "../Developmental Editing.webp",
-      heading: "Developmental Edit",
-      backgroundColor: "#F0195B33",
-      description: "Our developmental editing will dig deep, offering targeted feedback and strategic improvements to elevate your story’s structure, character development, and narrative impact"
-    },
-    {
       id: "Line and Copyediting combo", // Same as the heading
       imgSrc: "../LineCopyeditngCombo.webp",
       heading: "Line and Copyediting Combo",
-      backgroundColor: "#7163DE80",
+      backgroundColor: "#F0195B33",
       description: "50-word sentences? Sticky phrasing? Dialogue tag or action beat? CMOS or New Hart’s? Manuscript mysteries got you stuck? Our line and copyediting combo cuts through the clutter of wordy drafts, transforming it into polished prose."
     },
+    {
+      id: "Developmental Edit",
+      imgSrc: "../Developmental Editing.webp",
+      heading: "Developmental Edit",
+      backgroundColor: "#7163DE80",
+      description: "Our developmental editing will dig deep, offering targeted feedback and strategic improvements to elevate your story’s structure, character development, and narrative impact"
+    },
+
     {
       id: "Proofreading",
       imgSrc: "../Proofreading.jpg",
@@ -44,8 +45,8 @@ export const cardContent = [
     {
       id: "Other services",
       imgSrc: "../Other Services (1).jpg",
-      heading: "Other services",
-      backgroundColor: "#F0195B33",
+      heading: "Other Services",
+      backgroundColor: "#7163DE80",
       description: "Need an Urdu to English translation? Transcribing or Subtitles? Drop us a line and ask us what else we can do. We got you!"
     },
   ];
