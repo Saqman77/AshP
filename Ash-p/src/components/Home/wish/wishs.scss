@@ -117,7 +117,7 @@
 
 .wish-head{
     font-size: var(--font-medium);
-    text-decoration: underline;
+    // text-decoration: underline;
     @media screen and (max-width:1250px) {
         font-size: var(--font-xlarge);
     }
@@ -156,7 +156,7 @@
     font-size: var(--font-small);
     font-weight: 700;
     margin-bottom: 6px;
-    text-decoration: underline;
+    // text-decoration: underline;
     list-style-type: square;
     margin-left: 1em;
     @media screen and (max-width:1250px) {

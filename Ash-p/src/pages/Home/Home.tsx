@@ -256,7 +256,7 @@ const Home = () => {
       <div className="wish-section">
         <div className="wish-header">
           <p>
-            Ash P Reads Manuscript <span className="color-text">Wish List</span>
+          Ash P Reads Editing Services <span className="color-text">Manuscript&nbsp;Wish&nbsp;List</span>
           </p>
         </div>
         <div className="wish-container ">
@@ -267,7 +267,7 @@ const Home = () => {
       <div className="test-section">
         <div className="tests-heading">
           <p>
-          Client’s <span className="color-text">Testimonials</span>
+          Client <span className="color-text">Testimonials</span>
           </p>
         </div>
         <div className="tests-wrapper">
