@@ -99,7 +99,10 @@
     backface-visibility: hidden;
     
     @media screen and (max-width: 1250px) {
-        padding: 1em 1em;
+        padding: 2em 2em;
+    }
+    @media screen and (max-width: 900px) {
+        padding: 1em 1em 2em;
     }
 }
 
@@ -133,6 +136,21 @@
     font-size: var(--font-small);
     font-weight:400;
     margin: 0em 0 1.5em;
+    @media screen and (max-width:1250px) {
+        font-size: var(--font-small);
+    }
+    @media screen and (max-width:1199px) {
+        font-size: var(--font-small);
+    }
+    @media screen and (max-width:900px) {
+        font-size: var(--font-small);
+    }
+    @media screen and (max-width:600px) {
+        font-size: var(--font-small);
+    }
+    @media screen and (max-width:400px) {
+        font-size: var(--font-small);
+    }
 }
 
 .wish-front.not{
@@ -144,7 +162,7 @@
 }
 
 .wish-head{
-    font-size: var(--font-large);
+    font-size: var(--font-xlarge);
     // text-decoration: underline;
     letter-spacing: 2px;
     font-family: "Euphorigenic";
@@ -157,13 +175,13 @@
 }
 
 .wish-desc, .wish-front.not .wish-desc{
-    font-size: var(--font-medium);
-    font-weight:600;
+    font-size: clamp(24px,2vw,30px);
+    font-weight:500;
     margin: 0em 0 .5em;
     flex: 1;
     // letter-spacing: 3px;
     @media screen and (max-width:1250px) {
-        font-size: var(--font-medium);
+        font-size: clamp(24px,2vw,30px);
     }
     @media screen and (max-width:900px) {
         font-size: var(--font-large);
@@ -171,9 +189,9 @@
 }
 
 .wish-front.not .wish-desc{
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
     margin: 0em 0 1.5em;
-    line-height: 1.5em;
+    // line-height: 1.5em;
 }
 
 .wish-back{
@@ -205,33 +223,49 @@
     justify-content: space-around;
     align-items: center;
     flex: 1;
+    row-gap: 5px;
     @media screen and (max-width:1250px) {
         // gap: 10px 10px;
     }
 }
 .wish-list ul li{
-    text-align: center;
+    // text-align: center;
     list-style-type: none;
     font-size: var(--font-small);
     font-weight: 700;
-    margin-bottom: 6px;
-    width: fit-content;
+    // margin-bottom: 6px;
+    // border: 2px solid black;
+    // width: fit-content;
     // text-decoration: underline;
     list-style-type: square;
     // margin-left: 1em;
+    // border-radius: 1em;
+    // padding: .3em;
     @media screen and (max-width:1250px) {
         font-size: var(--font-small);
         margin-bottom: 0px;
     }
-    @media screen and (max-width:400px) {
+    @media screen and (max-width:1199px) {
+        font-size: var(--font-medium);
+        margin-bottom: 0px;
+    }
+    @media screen and (max-width:600px) {
         font-size: var(--font-small);
+        margin-bottom: 0px;
+    }
+    @media screen and (max-width:400px) {
+        font-size: var(--font-xsmall);
         margin-bottom: 0px;
     }
 }
 
 .w-list-heading p{
     font-family: "Euphorigenic";
-    margin-bottom: auto;
+    margin: auto;
+    @media screen and (max-width:1250px){
+        margin: 0;
+        margin-bottom: auto;
+    }
 }
 .w-list-heading{
     font-size: var(--font-large);
@@ -256,13 +290,13 @@
     }
 }
 
-.wish-bottom p{
-    font-size: var(--font-medium);
-    font-weight: 400;
-    @media screen and (max-width:1250px) {
-        font-size: var(--font-medium);
-    }
-}
+// .wish-bottom p{
+//     font-size: var(--font-medium);
+//     font-weight: 400;
+//     @media screen and (max-width:1250px) {
+//         font-size: var(--font-medium);
+//     }
+// }
 
 @keyframes restoreShadow {
     0%{
@@ -360,11 +394,11 @@
     background-color: bisque;
     box-shadow: 1px 1px 0px 0px black;
     margin-left: auto;
-    width: 18px;
-    height: 18px;
+    width: 36px;
+    height: 36px;
     margin-bottom: auto;
     // padding: 1px;
-    @media screen and (min-width:1101px) {
+    @media screen and (min-width:1250px) {
         display: none;
     }
 

@@ -132,7 +132,7 @@ const Wishs = () => {
                             <li>Historical Fiction </li>
                             <li>Historical Romance</li>
                             <li>Bully Romance</li>
-                            <li>NSFW contentl</li>
+                            <li>NSFW content</li>
                             <li>LGBTQIAP+</li>
                             <li>Violent Horror </li>
                             <li>Gore</li>
