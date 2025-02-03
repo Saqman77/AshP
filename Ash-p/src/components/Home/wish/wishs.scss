@@ -8,14 +8,17 @@
     gap: 50px;
     position: relative;
     perspective: 1000px;
-    // max-height: 50vh;
+    min-height: 600px;
     // transform-style: preserve-3d;
     transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
-    @media screen and (max-width:800px) {
+    @media screen and (max-width:1250px) {
         // min-height: auto;
+        justify-content: center;
+        grid-auto-columns: max-content;
         grid-auto-flow: dense;
+        grid-auto-rows: 1fr;
         max-width: 500px;
-        gap: 20px;
+        gap: 50px;
         padding: 1em;
     }
 }
@@ -30,8 +33,15 @@
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 16px 17px 0px 0px black;
     max-height: fit-content;
+    perspective: 1000px;
     @media screen and (max-width:1250px) {
-        max-width:350px
+        max-width:450px;
+        min-height: 550px;
+    }
+
+    @media screen and (max-width:600px) {
+        max-width:300px;
+        min-height: 400px;
     }
 }
 
@@ -70,7 +80,7 @@
 .wish-main .wish-box {
     transition: box-shadow 0.3s ;
     animation: restoreShadow 0.6s forwards;
-//     transform: rotateY(-180deg);
+    // transform: rotateY(-180deg);
   }
   .wish-main .wish-box:not(:hover) {
     transition: box-shadow 0.3s ;
@@ -87,16 +97,23 @@
     padding: 2em;
     grid-area: 1/1;
     backface-visibility: hidden;
+    
     @media screen and (max-width: 1250px) {
-        padding: 2em 2em;
+        padding: 1em 1em;
     }
 }
 
 .wish-heading{
     display: flex;
     justify-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
+    align-items: center;
+    // margin-top: 5em;
+    text-align: center;
+    flex: 2;
+    // margin-bottom: auto;
+    @media screen and (max-width: 1250px) {
+        // margin-top: 4em;
+    }
 }
 
 .wish-main .wish-wrapper .flip-button, .wish-main .wish-wrapper .flip-button:active {
@@ -109,6 +126,13 @@
     flex-direction: column;
     transform: rotateY(0deg);
     background-color: #8CDE6380;
+    justify-content: space-evenly;
+}
+
+.wish-front .wish-desc:last-child{
+    font-size: var(--font-small);
+    font-weight:400;
+    margin: 0em 0 1.5em;
 }
 
 .wish-front.not{
@@ -116,52 +140,84 @@
     flex-direction: column;
     transform: rotateY(0deg);
     background-color: #FCCCC8;
+    justify-content: space-evenly;
 }
 
 .wish-head{
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     // text-decoration: underline;
-    
+    letter-spacing: 2px;
+    font-family: "Euphorigenic";
+    @media screen and (max-width:1250px) {
+        font-size: var(--font-large);
+    }
+    @media screen and (max-width:900px) {
+        font-size: var(--font-xlarge);
+    }
+}
+
+.wish-desc, .wish-front.not .wish-desc{
+    font-size: var(--font-medium);
+    font-weight:600;
+    margin: 0em 0 .5em;
+    flex: 1;
+    // letter-spacing: 3px;
     @media screen and (max-width:1250px) {
         font-size: var(--font-medium);
     }
+    @media screen and (max-width:900px) {
+        font-size: var(--font-large);
+    }
 }
 
-.wish-desc{
-    font-size: var(--font-small);
-    font-weight:400;
-    margin: 0em 0 0.5em;
-    // letter-spacing: 3px;
-    @media screen and (max-width:1250px) {
-        font-size: var(--font-small);
-    }
-    @media screen and (max-width:900px) {
-        font-size: var(--font-small);
-    }
+.wish-front.not .wish-desc{
+    letter-spacing: 2px;
+    margin: 0em 0 1.5em;
+    line-height: 1.5em;
 }
 
 .wish-back{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
     transform: rotateY(180deg);
     background-color: #8CDE6380;
 }
 .wish-back.not{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     transform: rotateY(180deg);
     background-color:  #FCCCC8;
 }
 
+.wish-list{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+}
+.wish-list ul{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: max-content max-content;
+    // gap: 10px 50px;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    @media screen and (max-width:1250px) {
+        // gap: 10px 10px;
+    }
+}
 .wish-list ul li{
+    text-align: center;
     list-style-type: none;
     font-size: var(--font-small);
     font-weight: 700;
     margin-bottom: 6px;
+    width: fit-content;
     // text-decoration: underline;
-    // list-style-type: square;
+    list-style-type: square;
     // margin-left: 1em;
     @media screen and (max-width:1250px) {
         font-size: var(--font-small);
@@ -173,14 +229,30 @@
     }
 }
 
+.w-list-heading p{
+    font-family: "Euphorigenic";
+    margin-bottom: auto;
+}
 .w-list-heading{
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     font-weight: 700;
-    margin-bottom: 2em;
+    // margin-bottom: 2em;
+    letter-spacing: 2px;
     display: flex;
+    justify-content: center;
+    text-align: center;
+    // margin-top: auto;
+    // margin-bottom: auto;
+    // align-items: center;
+    flex-direction: column-reverse;
+    flex: 2;
     @media screen and (max-width:1250px) {
-        font-size: var(--font-medium);
-        margin-bottom: 0.5em;
+        font-size: var(--font-large);
+        // margin-bottom: 0.5em;
+    }
+    @media screen and (max-width:800px) {
+        font-size: var(--font-xlarge);
+        // margin-bottom: 0.5em;
     }
 }
 
@@ -242,10 +314,11 @@
     align-items: center;
     @media screen and (max-width: 1100px) {
         justify-content: space-evenly;
-        padding: 7px 19px;
+        padding: 10px 19px;
         background-color: #d54973e1;
         border-radius: 7px;
         box-shadow: 2px 3px 0px 0px black;
+        // max-width: 300px;
     }
 }
 
@@ -254,7 +327,7 @@
     font-weight: 600;
     color: black;
     display: flex;
-    font-family: 'Euphorigenic', sans-serif;
+    // font-family: 'Euphorigenic', sans-serif;
     @media screen and (min-width: 1250px) {
         display: none;
     }
@@ -289,6 +362,7 @@
     margin-left: auto;
     width: 18px;
     height: 18px;
+    margin-bottom: auto;
     // padding: 1px;
     @media screen and (min-width:1101px) {
         display: none;
@@ -314,9 +388,9 @@
 
 .wish-box.restore-shadow{
     transition: box-shadow 0.3s ;
-    animation: restoreShadow 0.6s forwards ease-in 0.2s;
+    animation: restoreShadow 0.3s forwards ;
 }
 .wish-box.unhover-shadow{
     transition: box-shadow 0.3s ;
-    animation: unHoverShadow 0.6s forwards ease-in 0.2s;
+    animation: unHoverShadow 0.3s forwards;
 }

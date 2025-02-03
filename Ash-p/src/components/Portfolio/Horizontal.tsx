@@ -140,7 +140,7 @@ const Horizontal: React.FC = () => {
         <section className='h-wrapper'
             ref={wrapper}
         >
-            <h1 className='h-heading'>Who we are?</h1>
+            <h1 className='h-heading'>Who Are We?</h1>
 
             <div className="h-card" id='h-card1'>
                 <img src="../Frame 21.svg" alt="card-img" />

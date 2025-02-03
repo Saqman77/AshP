@@ -56,7 +56,7 @@ const Wishs = () => {
                 <div className="wish-list">
                         <div className="w-list-heading">
                             <p>
-                                Compatible Genres:
+                                Compatible Genres
                             </p>
 
                             <div className="flip-back" onClick={handleFlip}>
@@ -119,7 +119,7 @@ const Wishs = () => {
                 <div className="wish-list">
                         <div className="w-list-heading">
                             <p>
-                                Incompatible Genres:
+                                Incompatible Genres
                             </p>
 
                             <div className="flip-back" onClick={handleFlip}>
