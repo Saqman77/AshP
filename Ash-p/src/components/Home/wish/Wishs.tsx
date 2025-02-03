@@ -81,11 +81,11 @@ const Wishs = () => {
                             <li>Horror (MG only)</li>
                         </ul>
                     </div>
-                    <div className="wish-bottom">
+                    {/* <div className="wish-bottom">
                         <p>
                             Ideally, manuscripts ranging between 50k-80k words.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -138,11 +138,11 @@ const Wishs = () => {
                             <li>Gore</li>
                         </ul>
                     </div>
-                    <div className="wish-bottom">
+                    {/* <div className="wish-bottom">
                         <p>
                         Manuscripts of 100k words or more.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

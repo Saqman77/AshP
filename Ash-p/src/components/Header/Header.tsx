@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                   to="/freedie"
                   className={({ isActive }) => (isActive ? 'header-active' : '')}
                 >
-                  Freedie
+                  FrEdiBuddies
                 </NavLink>
               </li>
             </ul>
@@ -123,7 +123,7 @@ const Header: React.FC = () => {
                 to="/freedie"
                 className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
               >
-                Freedie
+                FrEdiBuddies
               </NavLink>
             </li>
           </ul>

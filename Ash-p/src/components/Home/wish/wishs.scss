@@ -30,6 +30,9 @@
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 16px 17px 0px 0px black;
     max-height: fit-content;
+    @media screen and (max-width:1250px) {
+        max-width:350px
+    }
 }
 
 .wish-wrapper{
@@ -91,11 +94,13 @@
 
 .wish-heading{
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .wish-main .wish-wrapper .flip-button, .wish-main .wish-wrapper .flip-button:active {
-    margin-top: auto;
+    // margin-top: auto;
 }
 
 
@@ -116,15 +121,16 @@
 .wish-head{
     font-size: var(--font-medium);
     // text-decoration: underline;
+    
     @media screen and (max-width:1250px) {
-        font-size: var(--font-large);
+        font-size: var(--font-medium);
     }
 }
 
 .wish-desc{
     font-size: var(--font-small);
-    font-weight: 700;
-    margin: 1em 0 2em;
+    font-weight:400;
+    margin: 0em 0 0.5em;
     // letter-spacing: 3px;
     @media screen and (max-width:1250px) {
         font-size: var(--font-small);
@@ -137,7 +143,7 @@
 .wish-back{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     transform: rotateY(180deg);
     background-color: #8CDE6380;
 }
@@ -155,8 +161,8 @@
     font-weight: 700;
     margin-bottom: 6px;
     // text-decoration: underline;
-    list-style-type: square;
-    margin-left: 1em;
+    // list-style-type: square;
+    // margin-left: 1em;
     @media screen and (max-width:1250px) {
         font-size: var(--font-small);
         margin-bottom: 0px;
@@ -173,7 +179,7 @@
     margin-bottom: 2em;
     display: flex;
     @media screen and (max-width:1250px) {
-        font-size: var(--font-large);
+        font-size: var(--font-medium);
         margin-bottom: 0.5em;
     }
 }
