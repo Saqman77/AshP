@@ -47,16 +47,26 @@ const Footer: React.FC = () => {
         <nav className="footer-nav">
           <ul>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact"
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Contact Us
+              </Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"
+                onClick={() => window.scrollTo(0, 0)}
+              >Home</Link>
             </li>
             <li>
-              <Link to="/portfolio">About</Link>
+              <Link to="/portfolio"
+                onClick={() => window.scrollTo(0, 0)}
+              >About</Link>
             </li>
             <li>
-              <Link to="/freedie">FrEdiBuddies</Link>
+              <Link to="/freedie"
+                onClick={() => window.scrollTo(0, 0)}
+              >FrEdiBuddies</Link>
             </li>
           </ul>
         </nav>
