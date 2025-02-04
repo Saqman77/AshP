@@ -103,7 +103,9 @@ svg, path{
     height: fit-content;
     gap: 20px;
     width: fit-content;
-    background-color: #c1bbf5;
+    // background-color: #fff9e3;
+    background-image: linear-gradient(to right, #fff9e30a, #fff9e3);
+    border: 2px solid white;
     padding: 2em;
     border-radius: 20px;
     // @media screen and (min-width:1550px) {

@@ -24,15 +24,20 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         {/* Logo Section */}
         <div className="footer-logo">
-          <Link to="/" className=' reads'>
+          <Link to="/" className='reads'>
             <img src={logo} alt="main-logo" className="main-logo" />
           </Link>
           <div className='members'>
             <p
               style={{
                 fontSize:'24px',
-                fontWeight:'700',
-                margin:'auto'
+                // fontWeight:'700',
+                color:'white',
+                textDecorationColor:'white',
+                textDecoration:'underline',
+                textUnderlineOffset:'10px',
+                letterSpacing:'2px'
+                // margin:'auto'
               }}
             >Memberships:</p>
             <a href="https://www.the-efa.org/chapters/bipoc" className='logos'><img src={logo1} alt="" /></a>
