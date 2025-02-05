@@ -1,11 +1,12 @@
 
 .h-container{
     width: 100%;
-    height: 250vh;
+    min-height: 1200vh;
     overflow-x: hidden;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
+    height: auto;
     // position: relative;
     // top: 0;
 }

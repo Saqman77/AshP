@@ -72,14 +72,16 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: '+=400vh',
+          end: '+=1000vh',
           scrub: 1,
-          pin: true,
+          pinType: "fixed",
+          pin:boxRef.current,
+          // pinSpacer: ,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
               x: `${-350 * self.progress}vw`,
               duration: 0.5,
-              ease: 'power1.out',
+              ease: 'power2.out',
             });
           },
         });
@@ -89,14 +91,14 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: 'card.id',
           start: 'top top',
-          end: '+=500vh',
+          end: '+=600vh',
           scrub: 1,
           onUpdate: (self) => {
             gsap.to(card.id, {
               x: `${card.endTranslateX * self.progress}px`,
               rotate: `${card.rotate * self.progress * 2}`,
               duration: 0.5,
-              ease: 'power3.out',
+              ease: 'power2.out',
             });
           },
         });
