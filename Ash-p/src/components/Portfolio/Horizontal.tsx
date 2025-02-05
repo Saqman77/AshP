@@ -1,6 +1,6 @@
 import './horizontal.scss'
 // import ace from '../../assets/freedi/Spark 82.svg'
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
