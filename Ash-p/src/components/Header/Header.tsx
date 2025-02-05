@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import logo from '/src/assets/header/ash p logo.svg';
+import logo from '/src/assets/header/toplogo (1).svg';
 import ContactUs from '../get-in-touch-button/ContactUs';
 import { useThemeContext } from '../../utils/ThemeContextProvider';
 
