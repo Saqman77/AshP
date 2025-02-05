@@ -54,35 +54,39 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 end: 'clamp(top center)',
                 scrub: 1,
                 refreshPriority: 1,
-                preventOverlaps:true,
+                // preventOverlaps:true,
                 // onEnter: tl.revert ,
                 // once:true,
                 // markers: true,
                 // toggleActions: 'restart none restart none',
-                onLeave:()=>{
-                    tl.to('.ash .s-text ,.ash .s-heading',{
-                        x: '-100%',
-                        stagger: 0.1,
-                        scale: 0,
-                        opacity: 0,
-                        ease: 'Power2.easeIn',
-                        scrollTrigger: {
-                            trigger: '.ash',
-                            start: 'clamp(30% top)',
-                            end: 'clamp(+=400px)',
-                            scrub:true,
-                            preventOverlaps:true,
-                            // onScrubComplete:tl.revert,
-                            // once:true,
-                            // toggleActions: 'restart none restart none',
-                            // markers:true
-                        }
-                    })
-                }
+                // onLeave:()=>{
+                //     tl.to('.ash .s-text ',{
+                //         x: '-100%',
+                //         stagger: 0.1,
+                //         scale: 0,
+                //         opacity: 0,
+                //         ease: 'Power2.easeIn',
+                //         scrollTrigger: {
+                //             trigger: '.ash',
+                //             start: 'clamp(30% top)',
+                //             end: 'clamp(+=200px)',
+                //             scrub:true,
+                //             preventOverlaps:true,
+                //             // onScrubComplete:tl.revert,
+                //             // once:true,
+                //             // toggleActions: 'restart none restart none',
+                //             markers:true
+                //         }
+                //     })
+                // }
               },
             }
           );
-            tl.fromTo('.ash .cert-text',{ x:'100%', scale: 0, opacity:0},
+
+          const certs = document.querySelectorAll('.ash .cert-text')
+
+          certs.forEach((cert) =>{       
+            gsap.fromTo(cert,{ x:'100%', scale: 0, opacity:0},
             {
               x: '0%',
               scale: 1,
@@ -91,29 +95,63 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             //   yoyo: true,
             //   repeat:2,
               scrollTrigger: {
-                trigger: ".ash",
-                start: 'clamp(-30% top)',
-                end: 'clamp(+=100px )',
-                // markers: true,
+                trigger: cert,
+                start: '-70% bottom',
+                end: '+=100px',
+                markers: true,
                 scrub: true,
                 onLeave:()=>{
-                    tl.to(".ash .cert-text",{
+                    tl.to(cert,{
                          x:'100%',
                          scale: 0,
                          opacity:0,
                         stagger:0.1,
                         scrollTrigger:{
-                            trigger:'.ash .cert-list',
-                            start:'-20% top',
-                            end:'+=600px',
-                            scrub: true
+                            trigger:cert,
+                            start:'bottom 30%',
+                            end:'+=100px',
+                            scrub: true,
+                            // markers: true
                         }
                         })
                 }
 
-    }})
+            }})
+        }) 
+            gsap.fromTo('.ash .q-text',{ x:'100%', scale: 0, opacity:0},
+            {
+              x: '0%',
+              scale: 1,
+              opacity:1,
+              stagger: 0.1,
+            //   yoyo: true,
+            //   repeat:2,
+              scrollTrigger: {
+                trigger: '.ash .q-text',
+                start: '-70% bottom',
+                end: '+=100px',
+                markers: true,
+                scrub: true,
+                onLeave:()=>{
+                    tl.to('.ash ..q-text',{
+                         x:'100%',
+                         scale: 0,
+                         opacity:0,
+                        stagger:0.1,
+                        scrollTrigger:{
+                            trigger:'.ash .q-text',
+                            start:'bottom 30%',
+                            end:'+=100px',
+                            scrub: true,
+                            // markers: true
+                        }
+                        })
+                }
+
+            }})
+        })
           tl2.fromTo(
-            '.hira .s-text ,.hira .s-heading',
+            '.hira .s-heading',
             {
               x: '-100%',
               stagger: 0.1,
@@ -387,7 +425,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                                          Qualifications
                                     </h3>
                                     <ul className='cert-list2'>
-                                        <li id='list1'><p className='cert-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
+                                        <li id='list1'><p className='q-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
                                         
                                     </ul>
                             </div>
@@ -547,7 +585,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                                     Qualifications
                                 </h3>
                                 <ul className='cert-list2'>
-                                    <li id='list1'><p className='cert-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
+                                    <li id='list1'><p className='q-text'>B.A. in Mass Communication, English Literature, and Education.</p></li>
                                     
                                 </ul>
                         </div>
