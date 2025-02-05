@@ -373,11 +373,14 @@ section.our-work .work-wrapper{
     grid-column: 1;
     grid-row: 1;
     position: relative;
-    z-index: 99;
+    z-index: 9999;
     background-color: #FFF9E3;
     display: flex;
     flex-direction: column;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100svh;
     // animation: coming 0.1s linear forwards;
 
 }

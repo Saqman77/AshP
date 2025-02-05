@@ -35,7 +35,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
         const tl2 = gsap.timeline();
         const tl = gsap.timeline();
           tl.fromTo(
-            '.ash .s-text ,.ash .s-heading',
+            '.ash .s-heading',
             {
                 x: '-100%',
                 scale: 0,
@@ -53,7 +53,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                   end: 'top 20%',   // Adjust when it should fully appear
                   scrub: 1,         // Smooth animation on scroll
                   toggleActions: "play reverse play reverse", // This ensures reverse on leave
-                  refreshPriority: 1,
+                //   refreshPriority: 1,
                 },
               }
           );
@@ -154,7 +154,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             },
         })
         tl2.fromTo(
-            '.hira .s-text, .hira .s-heading',
+            '.hira .s-heading',
             {
               x: '-100%',
               scale: 0,
@@ -170,9 +170,8 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 trigger: '.hira',
                 start: 'top 80%', // Adjust based on when you want it to start
                 end: 'top 20%',   // Adjust when it should fully appear
-                scrub: 1,         // Smooth animation on scroll
-                toggleActions: "play reverse play reverse", // This ensures reverse on leave
-                refreshPriority: 1,
+                scrub: 1,         // Smooth animation on scroll // This ensures reverse on leave
+                // refreshPriority: 1,
               },
             }
           );
@@ -181,33 +180,33 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
 
           hCerts.forEach((cert) =>{       
             gsap.fromTo(cert,{ x:'100%', scale: 0, opacity:0},
-            {
-              x: '0%',
-              scale: 1,
-              opacity:1,
-              stagger: 0.1,
-              scrollTrigger: {
-                trigger: cert,
-                start: '-70% bottom',
-                end: '+=200px',
-                scrub: 1,
-                onLeave:()=>{
-                    gsap.to(cert,{
-                         x:'100%',
-                         scale: 0,
-                         opacity:0,
-                        stagger:0.1,
-                        scrollTrigger:{
-                            trigger: cert,
-                            start:'bottom 30%',
-                            end:'+=200px',
-                            scrub: 1,
-                            // markers: true
-                        }
-                    })
-                }
-                }
-            })
+                {
+                  x: '0%',
+                  scale: 1,
+                  opacity:1,
+                  stagger: 0.1,
+                  scrollTrigger: {
+                    trigger: cert,
+                    start: '-70% bottom',
+                    end: '+=200px',
+                    scrub: true,
+                    onLeave:()=>{
+                        gsap.to(cert,{
+                             x:'100%',
+                             scale: 0,
+                             opacity:0,
+                            stagger:0.1,
+                            scrollTrigger:{
+                                trigger: cert,
+                                start:'bottom 30%',
+                                end:'+=200px',
+                                scrub: true,
+                                // markers: true
+                            }
+                        })
+                    }
+                    }
+                })
         }) 
             gsap.fromTo('.hira .q-text',{ x:'100%', scale: 0, opacity:0},
             {
