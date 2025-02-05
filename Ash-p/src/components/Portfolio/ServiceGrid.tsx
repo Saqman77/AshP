@@ -34,9 +34,9 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
     setActiveFilter(filter);
   };
 
-  const handleBackClick = () => {
-    setActiveScreen('service');
-  }
+  // const handleBackClick = () => {
+  //   setActiveScreen('service');
+  // }
 
   const handleClientClick = (client: Client) => {
     setSelectedClient(client);

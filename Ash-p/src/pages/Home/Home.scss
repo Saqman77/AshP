@@ -395,7 +395,7 @@ $font-xSmall: 12px;
 }
 
 .test-carousel{
-    padding: 44px;
+    padding: 0;
     // display: flex;
     display: grid;
     grid-auto-flow: column;
@@ -409,10 +409,10 @@ $font-xSmall: 12px;
     width: 100%;
     // transition: scroll-snap-type  ease-in-out;
     @media screen and (max-width:1250px){
-        padding: 2em;
+        // padding: 2em;
     }
     @media screen and (max-width:900px){
-        padding: 1em;
+        // padding: 1em;
     }
 
 }
@@ -685,16 +685,19 @@ $font-xSmall: 12px;
     }
 
     .carousel{
-        grid-auto-columns: calc(100% / 1 - 10px);
-        // padding: 10px 30px 30px 30px;
+        grid-auto-columns: calc(100% / 1 - 5px);
+        padding: 10px 30px 30px 0;
+        gap: 40px;
+        // overflow-x: auto;
     }
 
     .cards-wrapper{
         width: 60vw;
-        max-width: 250px;
+        max-width: 400px;
+        padding-left: 30px;
     }
     .card-wrapper{
-        margin: auto;
+        margin: 0;
     }
 
     .left-btn, .right-btn{
@@ -728,6 +731,11 @@ $font-xSmall: 12px;
 }
 
 @media screen and (max-width: 500px) {
+    .cards-wrapper{
+        padding-left: 15px ;
+        max-width: 500px;
+    }
+
     .home-content-top{
         margin-bottom: 40px;
     }
@@ -735,6 +743,10 @@ $font-xSmall: 12px;
         justify-content: left;
         padding-left: 10px;
         // margin-bottom: 40px;
+    }
+
+    .carousel{
+        padding: 10px 10px 10px 0;
     }
 
     // .left-btn{
@@ -750,6 +762,18 @@ $font-xSmall: 12px;
     .home-content-top{
         margin-bottom: 10px;
     }
+
+    .cards-wrapper{
+        padding-left: 10px ;
+        max-width: 500px;
+        width: 70vw;
+    }
+
+    .carousel{
+        padding: 10px 10px 10px 0;
+    }
+
+
     .services-heading{
         justify-content: left;
         padding-left: 10px;

@@ -28,15 +28,15 @@ const Footer: React.FC = () => {
             <img src={logo} alt="main-logo" className="main-logo" />
           </Link>
           <div className='members'>
-            <p
+            <p className='head-members'
               style={{
-                fontSize:'24px',
+                // fontSize:'24px',
                 // fontWeight:'700',
-                color:'white',
-                textDecorationColor:'white',
-                textDecoration:'underline',
-                textUnderlineOffset:'10px',
-                letterSpacing:'2px'
+                // color:'white',
+                // textDecorationColor:'white',
+                // textDecoration:'underline',
+                // textUnderlineOffset:'10px',
+                // letterSpacing:'2px'
                 // margin:'auto'
               }}
             >Memberships:</p>
