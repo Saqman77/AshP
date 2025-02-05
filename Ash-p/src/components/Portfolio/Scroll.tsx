@@ -175,30 +175,9 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 // once:true,
                 // markers: true,
                 // toggleActions: 'restart none restart none',
-                onLeave:()=>{
-                    tl2.to('.hira .s-text ,.hira .s-heading',{
-                        x: '-100%',
-                        stagger: 0.1,
-                        scale: 0,
-                        opacity: 0,
-                        ease: 'Power2.easeIn',
-                        scrollTrigger: {
-                            trigger: '.hira',
-                            start: 'clamp(-10% 20%)',
-                            end: 'clamp(+=400px)',
-                            scrub:true,
-                            preventOverlaps:true,
-                            // onScrubComplete:tl.revert,
-                            // once:true,
-                            // toggleActions: 'restart none restart none',
-                            // markers:true
-                        }
-                    })
-                }
               },
             }
           );
-            tl2.fromTo('.hira .cert-text',{ x:'100%', scale: 0, opacity:0},
             {
               x: '0%',
               scale: 1,
@@ -208,7 +187,6 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             //   repeat:2,
               scrollTrigger: {
                 trigger: ".hira",
-                start: 'clamp(-40% top)',
                 end: 'clamp(+=100px )',
                 // markers: true,
                 // onEnter: tl.revert,
@@ -217,19 +195,15 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                 // refreshPriority: 1,
                 // toggleActions: 'play reverse play reverse',
                 onLeave:()=>{
-                    tl2.to(".hira .cert-text",{
                          x:'100%',
                          scale: 0,
                          opacity:0,
                         stagger:0.1,
                         scrollTrigger:{
                             trigger:'.hira .cert-list',
-                            start:'-40% top',
-                            end:'+=600px',
                             scrub: true
                         }
                         })
-                }
                     // tl.revert()
             //         gsap.fromTo('.cert-text',{ x: '0%', scale: 1, opacity:2 },{
             //             x: '100%',
@@ -248,7 +222,6 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
             //             }
             //         })
             //    },
-            },
             
         
 
