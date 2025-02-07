@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Project {
   name: string;
@@ -13,6 +13,7 @@ interface Client {
 
 interface Service {
   service: string;
+  id: string;
   genres: {
     Fiction: Client[];
     Nonfiction: Client[];
@@ -23,13 +24,19 @@ interface ServiceGridProps {
   isVisible: boolean;
   service: Service;
   close: () => void;
+  start: () => void;
+  end: () => void;
+  next: string|null;
+  last: string|null;
+  currentIndex: number;
+  length: number;
 }
 
-const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) => {
+const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, start, end, close, next, last, currentIndex: mainIndex, length }) => {
   const [activeFilter, setActiveFilter] = useState<'All' | 'Fiction' | 'Nonfiction'>('All');
   const [activeScreen, setActiveScreen] = useState<'service' | 'client'>('service');
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
-
+  const [currentIndex, setCurrentIndex] = useState(mainIndex);
   const handleFilterClick = (filter: 'All' | 'Fiction' | 'Nonfiction') => {
     setActiveFilter(filter);
   };
@@ -49,6 +56,12 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
     close();
   }
 
+      useEffect(() => {
+          setCurrentIndex(mainIndex);
+        }, [mainIndex]);
+
+  
+
   if (!isVisible) return null;
 
   const filteredGenres =
@@ -65,11 +78,13 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
          {
          
           activeScreen !== 'service' ?
-          <div className="past-heading-wrapper">
+          <div className="past-heading-wrapper"
+          onClick={handleBackClick}
+          >
           <button
 
             className="past-toggle"
-            onClick={handleBackClick}
+            // onClick={handleBackClick}
           >
             
             <span
@@ -77,13 +92,13 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
             >
          
             </span>
-              {<p className="back-heading">{service.service}</p>}
+              {/* {<p className="back-heading">{service.service}</p>} */}
             </button>
          </div>
           :('')
          
           }
-          <h3 className="s-heading" onClick={handleBackClick}>{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
+          <h3 className="s-heading" >{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
        
         <div className="past-close">
           <button
@@ -125,7 +140,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
       </div>
 
       {/* Filter Buttons */}
-      {activeScreen == 'service' ?(
+      {activeScreen == 'service' && service.id != 'other-services' ?(
         <div className="filter-buttons">
           <button
             className={activeFilter === 'All' ? 'filter-button active' : 'filter-button'}
@@ -147,7 +162,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
           </button>
         </div>
       ) : (<div className="filter-buttons">
-        {activeFilter === 'All' ? <p className="genre-heading">All</p> : (activeFilter === 'Fiction' ? <p className="genre-heading">Fiction</p> : <p className="genre-heading">Nonfiction</p>)}
+        {}
         </div>
       )}
       
@@ -183,8 +198,22 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
           ))}
         </div>
       )}
-
+                 {activeScreen !== 'client' && <div className="page-wrapper">
+                    <button
+                      className={`paging ${currentIndex === 0 ? "disabled" : ""}`}
+                      onClick={end}
+                    >
+                      {last}
+                    </button>
+                    <button
+                      className={`paging ${currentIndex === length - 1 ? "disabled" : ""}`}
+                      onClick={start}
+                    >
+                      {next}
+                    </button>
+                  </div>}
     </div>
+    
   );
 };
 
