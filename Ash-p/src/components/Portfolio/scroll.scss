@@ -976,3 +976,36 @@ section.our-work .work-wrapper{
     margin: 1em auto;
 }
 
+.past-heading-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.past-toggle{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    align-items: center;
+}
+
+.back-arrow{
+    display: inline-block;
+    position: relative;
+    width: 40px; /* Length of the arrow shaft */
+    height: 5px; /* Thickness of the line */
+    background-color: #7163de;
+}
+
+.back-arrow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 10px; /* Arrowhead length */
+    height: 10px; /* Arrowhead size */
+    border-left: 5px solid #7163de;
+    border-bottom: 5px solid #7163de;
+    transform: translateY(-50%) rotate(45deg);
+  }

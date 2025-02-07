@@ -34,9 +34,9 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
     setActiveFilter(filter);
   };
 
-  // const handleBackClick = () => {
-  //   setActiveScreen('service');
-  // }
+  const handleBackClick = () => {
+    setActiveScreen('service');
+  }
 
   const handleClientClick = (client: Client) => {
     setSelectedClient(client);
@@ -61,7 +61,32 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
   return (
     <div className="past-wrapper">
       <div className="past-heading">
-        <h3 className="s-heading">{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
+       <div
+          className="past-heading-wrapper"
+       >
+         {
+         
+          activeScreen !== 'service' ?
+         
+          <button
+
+            className="past-toggle"
+            onClick={handleBackClick}
+          >
+            
+            <span
+              className="back-arrow"
+            >
+         
+            </span>
+         
+            </button>
+         
+          :('')
+         
+          }
+          <h3 className="s-heading" onClick={handleBackClick}>{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
+       </div>
         <div className="past-close">
           <button
             onClick={() => {closeService()}}
@@ -136,7 +161,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
               onClick={() => {handleClientClick(client)}}
             >
               <h4>{client.name}</h4>
-              <div>Projects: {client.projects.length}</div>
+              {/* <div>Projects: {client.projects.length}</div> */}
               {/* <ServProject genre={client} /> */}
             </button>
           ))}
