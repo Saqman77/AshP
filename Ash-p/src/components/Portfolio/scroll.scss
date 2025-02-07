@@ -422,7 +422,7 @@ section.our-work .work-wrapper{
 
 .filter-buttons .filter-button {
         font-size: var(--font-medium);
-        font-weight: 500;
+        font-weight: 700;
         box-shadow: 6px 7px 0px 0px black;
         flex: 1;
         max-width: 277px;
@@ -979,23 +979,39 @@ section.our-work .work-wrapper{
 .past-heading-wrapper{
     display: flex;
     align-items: center;
+    cursor: pointer;
+    background-color: #7163DE;
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 6px 7px 0px 0px rgba(0, 0, 0, 0.944);
+}
+
+.past-heading-wrapper:hover{
+    box-shadow: 6px 7px 0px 0px rgba(0, 0, 0, 0);
 }
 
 .past-toggle{
     display: flex;
-    width: 30px;
-    height: 30px;
+    // width: 30px;
+    // height: 30px;
     background: transparent;
     border: none;
     align-items: center;
+    cursor: pointer;
+    // flex-direction:column-reverse;
 }
 
 .back-arrow{
     display: inline-block;
     position: relative;
     width: 40px; /* Length of the arrow shaft */
-    height: 5px; /* Thickness of the line */
-    background-color: #7163de;
+    height: 2px; /* Thickness of the line */
+    background-color: white;;
+    margin-right: 1em;
+    // margin-top: 1em;
+    // margin-bottom: 1em;
+    
 }
 
 .back-arrow::after {
@@ -1005,7 +1021,30 @@ section.our-work .work-wrapper{
     top: 50%;
     width: 10px; /* Arrowhead length */
     height: 10px; /* Arrowhead size */
-    border-left: 5px solid #7163de;
-    border-bottom: 5px solid #7163de;
+    border-left: 2px solid white;;
+    border-bottom: 2px solid white;
     transform: translateY(-50%) rotate(45deg);
+  }
+
+  .genre-heading{
+    font-size: var(--font-medium);
+    font-weight: 700;
+    box-shadow: 6px 7px 0px 0px rgba(0, 0, 0, 0);
+    flex: 1;
+    color: #7163DE;
+    text-align: center;
+    max-width: 277px;
+    // background-color: #7163DE;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    // border: 2px solid black;
+  }
+
+  .back-heading{
+    // font-weight: 700;
+    font-size: var(--font-small);
+    color: white;
+    font-family: "Euphorigenic";
+    width: min-content;
   }

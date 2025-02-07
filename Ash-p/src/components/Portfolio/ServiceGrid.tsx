@@ -61,13 +61,11 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
   return (
     <div className="past-wrapper">
       <div className="past-heading">
-       <div
-          className="past-heading-wrapper"
-       >
+       
          {
          
           activeScreen !== 'service' ?
-         
+          <div className="past-heading-wrapper">
           <button
 
             className="past-toggle"
@@ -79,14 +77,14 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
             >
          
             </span>
-         
+              {<p className="back-heading">{service.service}</p>}
             </button>
-         
+         </div>
           :('')
          
           }
           <h3 className="s-heading" onClick={handleBackClick}>{activeScreen == 'service' ? service.service : selectedClient?.name}</h3>
-       </div>
+       
         <div className="past-close">
           <button
             onClick={() => {closeService()}}
@@ -127,7 +125,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
       </div>
 
       {/* Filter Buttons */}
-      {activeScreen == 'service' && (
+      {activeScreen == 'service' ?(
         <div className="filter-buttons">
           <button
             className={activeFilter === 'All' ? 'filter-button active' : 'filter-button'}
@@ -147,6 +145,9 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
           >
             Nonfiction
           </button>
+        </div>
+      ) : (<div className="filter-buttons">
+        {activeFilter === 'All' ? <p className="genre-heading">All</p> : (activeFilter === 'Fiction' ? <p className="genre-heading">Fiction</p> : <p className="genre-heading">Nonfiction</p>)}
         </div>
       )}
       
@@ -175,7 +176,7 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, close }) 
               <div>{project.name}</div>
               {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  go to link
+                  
                 </a>
               )}
             </div>
