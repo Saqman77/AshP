@@ -103,37 +103,22 @@ const ServiceGrid: React.FC<ServiceGridProps> = ({ isVisible, service, start, en
         <div className="past-close">
           <button
             onClick={() => {closeService()}}
-            style={{
-              position: "relative",
-              width: "40px",
-              height: "40px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              padding:"1.5rem"
-            }}
+            // style={{
+            //   position: "relative",
+            //   width: "40px",
+            //   height: "40px",
+            //   background: "transparent",
+            //   border: "none",
+            //   cursor: "pointer",
+            //   padding:"1.5rem"
+            // }}
           >
             <span
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "0",
-                width: "100%",
-                height: "4px",
-                backgroundColor: "black",
-                transform: "rotate(45deg) translateY(-50%)",
-              }}
+              className="close first"
             />
             <span
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "0",
-                width: "100%",
-                height: "4px",
-                backgroundColor: "black",
-                transform: "rotate(-45deg) translateY(-50%)",
-              }}
+              className="close second"
+
             />
           </button>
         </div>
