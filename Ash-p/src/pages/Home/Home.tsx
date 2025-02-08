@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0,
+      duration: 1.2,
       easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
     const step = (timestamp: number) => {
       if (start === null) start = timestamp;
       const progress = (timestamp - start) / duration;
-      const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 1) : 1;
+      const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
       carouselRef.current!.scrollLeft = startPos + distance * easedProgress;
 
       if (progress < 1) {
@@ -78,13 +78,14 @@ const Home: React.FC = () => {
     e.preventDefault()
     e.stopPropagation()
     if (!carouselRef.current) return;
-    setIsDragging(true);
-    // isScrolling.current = false;
-    
+
+    isScrolling.current = false;
     lastX.current = e.clientX;
     lastTime.current = performance.now();
     setStartX(e.clientX);
     setScrollStart(carouselRef.current.scrollLeft);
+    setIsDragging(true);
+    
     
   };
 
@@ -92,7 +93,7 @@ const Home: React.FC = () => {
     if (!isDragging || !carouselRef.current) return;
       // setStartX(e.clientX);
     // setScrollStart(carouselRef.current.scrollLeft);
-    const deltaX = e.clientX - startX;
+    const deltaX =  e.clientX - startX;
     carouselRef.current.scrollLeft = scrollStart - deltaX;
     
     // Calculate velocity
@@ -108,7 +109,9 @@ const Home: React.FC = () => {
   const handleMouseUp = () => {
   
      
-    
+    setTimeout(() => {
+      setIsDragging(false);
+    }, 200);
     // Start inertia scrolling
     let momentum = velocity * 20; // Scale velocity for more natural feel
     const friction = 0.95;
@@ -118,14 +121,14 @@ const Home: React.FC = () => {
       momentum *= friction;
       carouselRef.current.scrollLeft += momentum;
 
-      if (Math.abs(momentum) > 0.5) {
+      if (momentum >= 0.5) {
         requestAnimationFrame(inertiaScroll);
       }
     };
 
     requestAnimationFrame(inertiaScroll);
     
-    setIsDragging(false);
+
   };
 
   // const snapToNearest = (ref: React.RefObject<HTMLDivElement>) => {
@@ -201,12 +204,14 @@ const Home: React.FC = () => {
           <span className='left-btn-span'></span>
         </div>
         <div
-          className={!isDragging ? 'cards-wrapper' : 'cards-wrapper dragging'}
-          onMouseDown={handleMouseDown}
-          ref={carouselRef}
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          className="cards-wrapper"
+
         >
-          <div className="carousel">
+          <div className={!isDragging ? 'carousel' : 'carousel dragging'}
+                      onMouseDown={handleMouseDown}
+                      ref={carouselRef}
+                      style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          >
             {cardContent.map((card,) => (
               <Cards
                 key={card.id}
