@@ -12,7 +12,7 @@ type Props = {
   isDragging: boolean;
 };
 
-const Cards = ({ id, head, backGround, cardImg, desc, isDragging }: Props) => {
+const Cards = ({ id, head, backGround, cardImg, desc, isDragging, }: Props) => {
   const [rotate, setRotate] = useState(false);
   const [animationClass, setAnimationClass] = useState('');
 

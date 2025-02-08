@@ -340,7 +340,7 @@ $font-xSmall: 12px;
 
 .cards-wrapper{
     width: 100%;
-    max-width: 1400px;
+    // max-width: 1400px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -348,21 +348,26 @@ $font-xSmall: 12px;
     animation: appear  ease-in-out forwards;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
+    overflow-x: auto;
+    // scrollbar-width: none;
+    // scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; 
+    z-index: inherit;
+    // scroll-behavior: smooth;
+    contain: paint;
 }
 
 .carousel{
     // padding: 44px;
     // display: flex;
     width: 100%;
+
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc(100% / 3 - 32px);
     gap: 32px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    overflow-y: hidden;
+    padding: 2em 1em;
+    // overflow-y: hidden;
     @media screen and (max-width:1250px) {
         // padding: 20px;
         // gap: 16px;
@@ -404,11 +409,12 @@ $font-xSmall: 12px;
     grid-auto-columns: 100%;
     gap: 100px;
     overflow-x: auto;
-    scrollbar-width: none;
+    // scrollbar-width: none;
     scroll-snap-type:x mandatory;
     scroll-behavior: smooth;
     overflow-y: hidden;
     width: 100%;
+    // scroll-margin-right: 1em;
     // transition: scroll-snap-type  ease-in-out;
     @media screen and (max-width:1250px){
         // padding: 2em;
@@ -419,16 +425,16 @@ $font-xSmall: 12px;
 
 }
 .test-carousel.dragging{
-    scroll-behavior: auto;
+//     scroll-behavior: auto;
     scroll-snap-type:none;
 }
-.carousel.dragging{
+.cards-wrapper.dragging{
     scroll-snap-type: none;
     scroll-behavior: auto; 
 }
 
 
-.carousel::-webkit-scrollbar{
+.cards-wrapper::-webkit-scrollbar{
     display: none;
 }
 
@@ -463,6 +469,11 @@ $font-xSmall: 12px;
     @media screen and (max-width:1350px) {
         left: 50px;
     }
+    @media screen and (max-width:700px) {
+        left: 50px;
+        width: 25px;
+        height: 25px;
+    }
 }
 .right-btn{
     width: 40px;
@@ -495,6 +506,11 @@ $font-xSmall: 12px;
     @media screen and (max-width:1350px) {
         right: 10px;
     }
+    @media screen and (max-width:1000px) {
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
 }
 
 .right-btn-span{
@@ -504,6 +520,10 @@ $font-xSmall: 12px;
     width: 15px;
     display: inline-block;
     // transform: tra;
+    @media screen and (max-width:1000px) {
+        width: 8px;
+        height: 8px;
+    }
 }
 .left-btn-span{
     border-left: 2px solid rgb(255, 255, 255);
@@ -511,14 +531,18 @@ $font-xSmall: 12px;
     height: 15px;
     width: 15px;
     display: inline-block;
+    @media screen and (max-width:1000px) {
+        width: 8px;
+        height: 8px;
+    }
     // transform: tra;
 }
 
-.left-btn:hover,.right-btn:hover{
+.left-btn:hover,.right-btn:active{
     background-color: #9C98BD;
     color: #ffffff;
     @media screen and (max-width:1101px) {
-        background-color: #9C98BD;
+        // background-color: #9C98BD;
     }
 }
 
@@ -656,31 +680,23 @@ $font-xSmall: 12px;
   }
 
 @media screen and (max-width: 1250px) {
-    .cards-wrapper{
-        max-width: 1100px;
-    }
 
     
 }
 
 @media screen and (max-width: 1350px) {
     
-    .left-btn, .right-btn{
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-        line-height: 55px;
-    }
+
 
     .carousel{
         grid-auto-columns: calc(100% / 2 - 30px);
         gap:30px;
     }
 
-    .cards-wrapper{
-        width: 70vw;
-        max-width: 1000px;
-    }
+    // .cards-wrapper{
+    //     // width: 70vw;
+    //     // max-width: 1000px;
+    // }
 
 
 }
@@ -737,44 +753,15 @@ $font-xSmall: 12px;
         margin-bottom: 6vh;
     }
 
-    .carousel{
-        grid-auto-columns: calc(100% / 1 - 5px);
-        padding: 10px 30px 30px 0;
-        gap: 40px;
-        // overflow-x: auto;
-    }
 
-    .cards-wrapper{
-        width: 60vw;
-        max-width: 600px;
-        padding-left: 30px;
-    }
-    .card-wrapper{
-        margin: 0;
-    }
 
-    .left-btn, .right-btn{
-        width: 45px;
-        height: 45px;
-    }
 
-    .left-btn{
-        left: 5%;
-    }
 
-    .right-btn{
-        right: 5%;
-    }
 }
 
 @media screen and (max-width: 900px) {
 
-    .left-btn, .right-btn{
-        width: 45px;
-        height: 45px;
-        font-size: 18px ;
-        line-height: 45px;
-    }
+
 
     // .left-btn{
         // left: 10px;
@@ -784,31 +771,22 @@ $font-xSmall: 12px;
 }
 
 @media screen and (max-width: 500px) {
-    .cards-wrapper{
-        padding-left: 15px ;
-        max-width: 500px;
-    }
+    // .cards-wrapper{
+    //     padding-left: 15px ;
+    //     max-width: 500px;
+    // }
 
     .home-content-top{
         margin-bottom: 40px;
     }
     .services-heading{
-        justify-content: left;
+        justify-content: center;
         padding-left: 10px;
         // margin-bottom: 40px;
     }
 
-    .carousel{
-        padding: 10px 10px 10px 0;
-    }
 
-    .left-btn{
-        left: 5%;
-    }
 
-    .right-btn{
-        right: 5%;
-    }
 
     // .left-btn{
     //     left: 25px;
@@ -824,15 +802,13 @@ $font-xSmall: 12px;
         margin-bottom: 10px;
     }
 
-    .cards-wrapper{
-        padding-left: 10px ;
-        max-width: 500px;
-        width: 70vw;
-    }
+    // .cards-wrapper{
+    //     padding-left: 10px ;
+    //     max-width: 500px;
+    //     width: 70vw;
+    // }
 
-    .carousel{
-        padding: 10px 10px 10px 0;
-    }
+
 
 
     .services-heading{
@@ -840,17 +816,5 @@ $font-xSmall: 12px;
         padding-left: 10px;
         // margin-bottom: 10px;
     }
-    .left-btn, .right-btn{
-        width: 35px;
-        height: 35px;
-        font-size: 16px ;
-        line-height: 37px;
-    }
-    .left-btn{
-        left: 10px;
-    }
 
-    .right-btn{
-        right: 5px
-    }
 }

@@ -101,7 +101,7 @@
     }
 }
 
-.wish-heading{
+.wish-front .wish-heading{
     display: flex;
     justify-content: center;
     align-items: start;
@@ -154,6 +154,10 @@
     transform: rotateY(0deg);
     background-color: #FCCCC8;
     justify-content: space-evenly;
+}
+
+.wish-front.not .wish-heading{
+    flex: 1;
 }
 
 .wish-head{
