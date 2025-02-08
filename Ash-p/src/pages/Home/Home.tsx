@@ -2,14 +2,16 @@ import './Home.scss';
 import reading from '/src/assets/home/image 9.png';
 import Cards from '../../components/Home/cards/Cards';
 import { cardContent } from '../../components/Home/cards/cardContent';
-// import { testContent } from '../../components/Home/testimonial/testContent';
+import { testContent } from '../../components/Home/testimonial/testContent';
 import { useEffect, useRef, useState } from 'react';
 import Wishs from '../../components/Home/wish/Wishs';
 // import Tests from '../../components/Home/testimonial/Tests';
 import Lenis from '@studio-freight/lenis';
+import Tests from '../../components/Home/testimonial/Tests';
 
 const Home: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
+  const testCarouselRef = useRef<HTMLDivElement | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -23,7 +25,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      // easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
     lenisRef.current = lenis;
@@ -73,6 +75,20 @@ const Home: React.FC = () => {
 
     smoothScroll(newScrollLeft);
   };
+  const moveTestCarousel = (direction: "left" | "right") => {
+    if (!testCarouselRef.current) return;
+
+    const card = testCarouselRef.current.querySelector<HTMLElement>(".test-wrapper");
+    if (!card) return;
+
+    const cardWidth = card.offsetWidth;
+    const newScrollLeft =
+      direction === "right"
+        ? testCarouselRef.current.scrollLeft + cardWidth
+        : testCarouselRef.current.scrollLeft - cardWidth;
+
+    smoothScroll(newScrollLeft);
+  };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
@@ -88,7 +104,37 @@ const Home: React.FC = () => {
     
     
   };
+  const handleTestMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (!testCarouselRef.current) return;
 
+    isScrolling.current = false;
+    lastX.current = e.clientX;
+    lastTime.current = performance.now();
+    setStartX(e.clientX);
+    setScrollStart(testCarouselRef.current.scrollLeft);
+    setIsDragging(true);
+    
+    
+  };
+
+  const handleTestMouseMove = (e: MouseEvent) => {
+    if (!isDragging || !testCarouselRef.current) return;
+      // setStartX(e.clientX);
+    // setScrollStart(carouselRef.current.scrollLeft);
+    const deltaX =  e.clientX - startX;
+    testCarouselRef.current.scrollLeft = scrollStart - deltaX;
+    
+    // Calculate velocity
+    const now = performance.now();
+    const elapsed = now - lastTime.current;
+    const deltaMove = e.clientX - lastX.current;
+    setVelocity(deltaMove / elapsed);
+    
+    lastX.current = e.clientX;
+    lastTime.current = now;
+  };
   const handleMouseMove = (e: MouseEvent) => {
     if (!isDragging || !carouselRef.current) return;
       // setStartX(e.clientX);
@@ -111,7 +157,7 @@ const Home: React.FC = () => {
      
     setTimeout(() => {
       setIsDragging(false);
-    }, 200);
+    }, 400);
     // Start inertia scrolling
     let momentum = velocity * 20; // Scale velocity for more natural feel
     const friction = 0.95;
@@ -120,6 +166,30 @@ const Home: React.FC = () => {
       if (!carouselRef.current) return;
       momentum *= friction;
       carouselRef.current.scrollLeft += momentum;
+
+      if (momentum >= 0.5) {
+        requestAnimationFrame(inertiaScroll);
+      }
+    };
+
+    requestAnimationFrame(inertiaScroll);
+    
+
+  };
+  const handleTestMouseUp = () => {
+  
+     
+    setTimeout(() => {
+      setIsDragging(false);
+    }, 400);
+    // Start inertia scrolling
+    let momentum = velocity * 20; // Scale velocity for more natural feel
+    const friction = 0.95;
+
+    const inertiaScroll = () => {
+      if (!testCarouselRef.current) return;
+      momentum *= friction;
+      testCarouselRef.current.scrollLeft += momentum;
 
       if (momentum >= 0.5) {
         requestAnimationFrame(inertiaScroll);
@@ -150,15 +220,21 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (isDragging) {
+      document.addEventListener("mousemove", handleTestMouseMove);
       document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleTestMouseUp);
       document.addEventListener("mouseup", handleMouseUp);
     } else {
+      document.removeEventListener("mousemove", handleTestMouseMove);
       document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleTestMouseUp);
       document.removeEventListener("mouseup", handleMouseUp);
     }
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", handleTestMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mousemove", handleTestMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current); // Clear timeout on cleanup
@@ -212,15 +288,17 @@ const Home: React.FC = () => {
                       ref={carouselRef}
                       style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
           >
-            {cardContent.map((card,) => (
+            {cardContent.map((card) => (
               <Cards
-                key={card.id}
-                head={card.heading}
-                backGround={card.backgroundColor}
-                cardImg={card.imgSrc}
-                desc={card.description}
-                isDragging={isDragging}
-                {...card}
+              key={card.id}
+              head={card.heading}
+              backGround={card.backgroundColor}
+              cardImg={card.imgSrc}
+              desc={card.description}
+              isDragging={isDragging}
+              ref={carouselRef}
+              x={lastX.current}
+              {...card}
               />
             ))}
           </div>
@@ -241,7 +319,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* <div className="test-section">
+      <div className="test-section">
         <div className="tests-heading">
           <p>
             Client <span className="color-text">Testimonials</span>
@@ -251,7 +329,7 @@ const Home: React.FC = () => {
           <div
             className={!isDragging ? 'test-carousel' : 'test-carousel dragging'}
             ref={testCarouselRef}
-            onMouseDown={(e) => handleMouseDown(e, testCarouselRef)}
+            onMouseDown={handleTestMouseDown}
             style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
           >
             {testContent.map((card) => (
@@ -272,7 +350,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
