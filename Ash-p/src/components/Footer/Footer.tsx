@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 // letterSpacing:'2px'
                 // margin:'auto'
               }}
-            >Memberships:</p>
+            >Memberships</p>
             <a href="https://www.the-efa.org/chapters/bipoc" className='logos'><img src={logo1} alt="" /></a>
             <a href="https://www.editorsteaclub.org" className='logos'><img src={logo2} alt="" /></a>
             <a href="https://www.netgalley.com/member/profile" className='logos'><img src={logo3} alt="" /></a>
