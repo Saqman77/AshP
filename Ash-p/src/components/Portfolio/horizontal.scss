@@ -54,7 +54,8 @@
     will-change: transform;
     grid-area: 1/1;
     z-index: 2;
-    @media screen and (max-width: 1250px) {
+    padding-top: 10em;
+    @media screen and (max-width: 1450px) {
         padding-top: 20em;
     }
     @media screen and (max-width: 900px) {
@@ -186,10 +187,10 @@
     height: 100vh;
     z-index: 3;
     @media screen and (max-width:1250px) {
-        top:150vh
+        top:100vh
     }
-    @media screen and (max-width:600px) {
-        top:150vh
+    @media screen and (max-width:900px) {
+        top:100vh
     }
 }
 
@@ -213,7 +214,7 @@
         
     }
     @media screen and (max-width:400px) {
-        font-size: var(--font-large);
+        font-size: var(--font-xlarge);
         padding: .5em;
     }
 }

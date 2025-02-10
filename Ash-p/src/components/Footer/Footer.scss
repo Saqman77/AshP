@@ -100,7 +100,16 @@ svg, path{
     overflow: hidden;
     // height: 150px;
 }
-
+.copyright{
+    font-size: var(--font-medium);
+    font-weight: 700;
+    // color: #d54973;
+    @media screen and (min-width: 1250px) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
 .members{
     display: grid;
     grid-auto-flow: row dense;

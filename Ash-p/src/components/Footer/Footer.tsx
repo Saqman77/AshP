@@ -106,7 +106,11 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
+        <p className='copyright'>
+            © {new Date().getFullYear()} Ash P. All rights reserved. Designed & developed by <strong>Saqlain Haider</strong>. Illustrations by <strong>Amna Riaz</strong>.
+       </p>
       </div>
+
     </footer>
   );
 };

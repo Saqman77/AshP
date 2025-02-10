@@ -73,7 +73,7 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: window.innerWidth < 1250 ? '+=900vh':'+=800vh',
+          end: '+=600vh',
           scrub: 1,
           pinType: "fixed",
           pin: true,
@@ -93,7 +93,7 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: 'card.id',
           start: 'top top',
-          end: window.innerWidth < 1250 ? '+=1200vh':'+=900vh',
+          end: '+=600vh',
           scrub: 1,
           // markers: true,
           onUpdate: (self) => {
