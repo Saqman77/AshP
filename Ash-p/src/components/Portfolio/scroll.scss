@@ -617,6 +617,10 @@ section.our-work .work-wrapper{
     display: block;
     margin: 0;
     visibility: collapse;
+    @media screen and (max-width:1250px){
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 .past-card .yes{
@@ -628,6 +632,7 @@ section.our-work .work-wrapper{
     justify-content: center;
     align-items: center;
     transform: rotate(-90deg);
+
     // margin-left: 1rem;
 }
 
@@ -640,6 +645,9 @@ section.our-work .work-wrapper{
     background-color: #7163de00;
     display: inline-block;
     opacity: 0;
+    @media screen and (max-width:1250px){
+        opacity: 1;
+    }
 }
 
 .unreleased{
@@ -647,6 +655,9 @@ section.our-work .work-wrapper{
     font-weight: 700;
     color: #ffffff;
     opacity: 0;
+        @media screen and (max-width:1250px){
+        opacity: 1;
+    }
 }
 
 

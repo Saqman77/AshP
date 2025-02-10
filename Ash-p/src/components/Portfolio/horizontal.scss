@@ -184,19 +184,19 @@
     position: absolute;
     top: 150vh;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     z-index: 3;
     @media screen and (max-width:1250px) {
-        top:100vh
+        top:125vh
     }
     @media screen and (max-width:900px) {
-        top:100vh
+        top:130vh
     }
 }
 
 .outro h3{
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -206,12 +206,13 @@
     padding: 1em;
     font-family: 'Euphorigenic', sans-serif;
     // letter-spacing: 2px;
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1250px) {
         font-size: var(--font-large);
+        top: 30%;
     }
     @media screen and (max-width:500px) {
         font-size: var(--font-xlarge);
-        
+        top: 40%;
     }
     @media screen and (max-width:400px) {
         font-size: var(--font-xlarge);
@@ -258,7 +259,7 @@
     // padding: 1em;
     @media  screen and (max-width: 390px){
         // height: 100px;
-        font-size: var(--font-large);
+        font-size: var(--font-xlarge);
     }
 }
 
