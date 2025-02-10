@@ -157,7 +157,7 @@ const Home: React.FC = () => {
      
     setTimeout(() => {
       setIsDragging(false);
-    }, 400);
+    }, 100);
     // Start inertia scrolling
     let momentum = velocity * 20; // Scale velocity for more natural feel
     const friction = 0.95;
