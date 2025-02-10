@@ -28,7 +28,7 @@ const ServiceParallaxe = forwardRef<HTMLDivElement, ParallaxImageProps>(
       const scrollableDiv = ref as React.RefObject<HTMLDivElement>;
       if (!scrollableDiv.current) return;
 
-      initialScrollLeft.current = scrollableDiv.current.scrollLeft ;// Store initial scroll position
+      initialScrollLeft.current = 0 ;// Store initial scroll position
 
 
     //   const mouseMove = (e: MouseEvent) => {
@@ -40,30 +40,35 @@ const ServiceParallaxe = forwardRef<HTMLDivElement, ParallaxImageProps>(
       const onScroll = () => {
         if (isResetting.current) return; // Ignore scroll while resetting
 
-        targetTranslateX.current =  scrollableDiv.current!.scrollLeft *0.02; // Update the target translation based on mouse position
+        let off =   scrollableDiv.current!.scrollLeft - initialScrollLeft.current 
+        
+        targetTranslateX.current =  -off * 2  ; // Update the target translation based on mouse position
+
+        initialScrollLeft.current = scrollableDiv.current!.scrollLeft
 
         if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
 
         // Detect when scrolling stops
-        // scrollTimeout.current = setTimeout(() => {
-        //   isResetting.current = true;
+        scrollTimeout.current = setTimeout(() => {
+          isResetting.current = true;
 
         //   // Apply smooth reset animation
-        //   if (imageRef.current) {
-        //     imageRef.current.style.transition = "transform 1s ease-out";
-        //   }
+          if (imageRef.current) {
+            // imageRef.current.style.transition = "transform 1s ease-out";
+          }
 
         //   // Reset after animation completes
-        //   setTimeout(() => {
-        //     targetTranslateX.current = 0; // Reset translation
-        //     // currentTranslateX.current = 0;
-        //     isResetting.current = false;
+          setTimeout(() => {
+            
+            targetTranslateX.current = 0; // Reset translation
+            // currentTranslateX.current = initialScrollLeft.current * 0.5;
+            isResetting.current = false;
 
-        //     if (imageRef.current) {
-        //       imageRef.current.style.transition = "none"; // Remove transition for smooth resume
-        //     }
-        //   }, 50); // Match transition time
-        // }, 100);
+            if (imageRef.current) {
+              imageRef.current.style.transition = "none"; // Remove transition for smooth resume
+            }
+          }, 10); // Match transition time
+        }, 50);
       };
 
       scrollableDiv.current.addEventListener("scroll", onScroll);
@@ -72,7 +77,7 @@ const ServiceParallaxe = forwardRef<HTMLDivElement, ParallaxImageProps>(
       return () => {
         scrollableDiv.current?.removeEventListener("scroll", onScroll);
         // scrollableDiv.current?.removeEventListener("mousemove", mouseMove);
-        if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+        // if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
       };
     }, [ref]);
 
@@ -82,7 +87,7 @@ const ServiceParallaxe = forwardRef<HTMLDivElement, ParallaxImageProps>(
           currentTranslateX.current = lerp(
             currentTranslateX.current,
             targetTranslateX.current,
-            0.1
+            0.05
           );
           imageRef.current.style.transform = `translateX(${currentTranslateX.current}px) scale(1.25)`; // Smooth translate
         }

@@ -329,7 +329,7 @@ $font-xSmall: 12px;
     // top: -50%;
     // left: -25%;
     transform: translateY(50%);
-    transition: scale 0.3s ease-out 2ms, transform .1s ;
+    transition: scale 0.3s ease-out 2ms, transform 0.1s ease-out 0.1s  ;
 }
 
 .flip-button{
@@ -404,19 +404,32 @@ $font-xSmall: 12px;
 
 .card-bottoms{
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: space-between;
     margin-top: .5em;
+    flex-direction: column;
+    @media screen and (max-width:1250px) {
+        // align-items: unset;
+    }
 }
+.tapper{
+    display: grid;
+    row-gap: 10px;
+}
+
 
 .back-flipper{
     display: flex;
     align-items: center;
+    @media screen and (max-width:1250px) {
+        margin-left: auto;
+    }
 }
 
 .back-text{
     font-size: var(--font-medium);
     font-weight: 700;
+    margin-left: auto;
     @media screen and (min-width:1250px) {
         display: none;
     }

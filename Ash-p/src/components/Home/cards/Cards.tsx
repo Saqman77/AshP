@@ -1,4 +1,5 @@
 import ContactUs from '../../get-in-touch-button/ContactUs';
+import Schedule from '../../schedule/Schedule';
 import ServiceParallaxe from '../serviceParallaxe/serviceParallaxe';
 import './cards.scss';
 import flip from '/src/assets/home/uis_flip-v.png';
@@ -11,10 +12,10 @@ type Props = {
   cardImg: string;
   desc: string;
   isDragging: boolean;
-  x: number;
+
 };
 
-const Cards = forwardRef<HTMLDivElement, Props>(({ id, head, backGround, cardImg, desc, isDragging, x }, ref) => {
+const Cards = forwardRef<HTMLDivElement, Props>(({ id, head, backGround, cardImg, desc, isDragging,  }, ref) => {
   const [rotate, setRotate] = useState(false);
   const [animationClass, setAnimationClass] = useState('');
 
@@ -79,7 +80,7 @@ const Cards = forwardRef<HTMLDivElement, Props>(({ id, head, backGround, cardImg
             </p>
           </div>
           <div className='card-bottoms'>
-            <ContactUs />
+            {id == "Consultation" ? (<div className='tapper'><Schedule/> <ContactUs /></div>):(<ContactUs />)}
             <div className='back-flipper'>
               <p className='back-text'>Back</p>
               <div className="flip-back" onClick={handleFlip}>

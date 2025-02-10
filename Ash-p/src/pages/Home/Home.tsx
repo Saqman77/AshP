@@ -6,38 +6,28 @@ import { testContent } from '../../components/Home/testimonial/testContent';
 import { useEffect, useRef, useState } from 'react';
 import Wishs from '../../components/Home/wish/Wishs';
 // import Tests from '../../components/Home/testimonial/Tests';
-import Lenis from '@studio-freight/lenis';
+
 import Tests from '../../components/Home/testimonial/Tests';
 
 const Home: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const testCarouselRef = useRef<HTMLDivElement | null>(null);
-  const lenisRef = useRef<Lenis | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isTestDragging, setIsTestDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [startTestX, setStartTestX] = useState(0);
   const [scrollStart, setScrollStart] = useState(0);
+  const [scrollTestStart, setScrollTestStart] = useState(0);
   const [velocity, setVelocity] = useState(0);
+  const [velocityTest, setVelocityTest] = useState(0);
   const isScrolling = useRef(false);
+  const isScrollingTest = useRef(false);
   const lastX = useRef(0);
+  const lastTestX = useRef(0);
   const lastTime = useRef(0);
+  const lastTestTime = useRef(0);
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      // easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
 
-    lenisRef.current = lenis;
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
-  }, []);
 
   const smoothScroll = (targetScroll: number) => {
     if (!carouselRef.current) return;
@@ -51,7 +41,28 @@ const Home: React.FC = () => {
       if (start === null) start = timestamp;
       const progress = (timestamp - start) / duration;
       const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
-      carouselRef.current!.scrollLeft = startPos + distance * easedProgress;
+      carouselRef.current!.scrollLeft = startPos + distance * easedProgress ;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+  const testSmoothScroll = (targetScroll: number) => {
+    if (!testCarouselRef.current) return;
+
+    let start: number | null = null;
+    const startPos = testCarouselRef.current.scrollLeft;
+    const distance = targetScroll - startPos;
+    const duration = 600;
+
+    const step = (timestamp: number) => {
+      if (start === null) start = timestamp;
+      const progress = (timestamp - start) / duration;
+      const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
+      testCarouselRef.current!.scrollLeft = startPos + distance * easedProgress ;
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -64,7 +75,7 @@ const Home: React.FC = () => {
   const moveCarousel = (direction: "left" | "right") => {
     if (!carouselRef.current) return;
 
-    const card = carouselRef.current.querySelector<HTMLElement>(".card-wrapper");
+   const card = carouselRef.current.querySelector<HTMLElement>(".card-wrapper");
     if (!card) return;
 
     const cardWidth = card.offsetWidth;
@@ -87,7 +98,7 @@ const Home: React.FC = () => {
         ? testCarouselRef.current.scrollLeft + cardWidth
         : testCarouselRef.current.scrollLeft - cardWidth;
 
-    smoothScroll(newScrollLeft);
+    testSmoothScroll(newScrollLeft);
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -109,38 +120,37 @@ const Home: React.FC = () => {
     e.stopPropagation()
     if (!testCarouselRef.current) return;
 
-    isScrolling.current = false;
-    lastX.current = e.clientX;
-    lastTime.current = performance.now();
-    setStartX(e.clientX);
-    setScrollStart(testCarouselRef.current.scrollLeft);
-    setIsDragging(true);
+    isScrollingTest.current = false;
+    lastTestX.current = e.clientX;
+    lastTestTime.current = performance.now();
+    setStartTestX(e.clientX);
+    setScrollTestStart(testCarouselRef.current.scrollLeft);
+    setIsTestDragging(true);
     
     
   };
 
   const handleTestMouseMove = (e: MouseEvent) => {
-    if (!isDragging || !testCarouselRef.current) return;
+    if (!isTestDragging || !testCarouselRef.current) return;
       // setStartX(e.clientX);
     // setScrollStart(carouselRef.current.scrollLeft);
-    const deltaX =  e.clientX - startX;
-    testCarouselRef.current.scrollLeft = scrollStart - deltaX;
+    const deltaX =  e.clientX - startTestX;
+    testCarouselRef.current.scrollLeft = scrollTestStart - deltaX;
     
     // Calculate velocity
     const now = performance.now();
-    const elapsed = now - lastTime.current;
-    const deltaMove = e.clientX - lastX.current;
-    setVelocity(deltaMove / elapsed);
+    const elapsed = now - lastTestTime.current;
+    const deltaMove = e.clientX - lastTestX.current;
+    setVelocityTest(deltaMove / elapsed);
     
-    lastX.current = e.clientX;
-    lastTime.current = now;
+    lastTestX.current = e.clientX;
+    lastTestTime.current = now;
   };
   const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging || !carouselRef.current) return;
-      // setStartX(e.clientX);
-    // setScrollStart(carouselRef.current.scrollLeft);
-    const deltaX =  e.clientX - startX;
-    carouselRef.current.scrollLeft = scrollStart - deltaX;
+    if (!isDragging) return;
+    if(carouselRef.current){
+      const deltaX =  e.clientX - startX;
+      carouselRef.current.scrollLeft = scrollStart - deltaX;
     
     // Calculate velocity
     const now = performance.now();
@@ -150,14 +160,16 @@ const Home: React.FC = () => {
     
     lastX.current = e.clientX;
     lastTime.current = now;
+    }
+    
   };
 
   const handleMouseUp = () => {
   
-     
     setTimeout(() => {
       setIsDragging(false);
     }, 100);
+   
     // Start inertia scrolling
     let momentum = velocity * 20; // Scale velocity for more natural feel
     const friction = 0.95;
@@ -173,17 +185,17 @@ const Home: React.FC = () => {
     };
 
     requestAnimationFrame(inertiaScroll);
-    
+
 
   };
   const handleTestMouseUp = () => {
   
      
     setTimeout(() => {
-      setIsDragging(false);
+      setIsTestDragging(false);
     }, 400);
     // Start inertia scrolling
-    let momentum = velocity * 20; // Scale velocity for more natural feel
+    let momentum = velocityTest * 20; // Scale velocity for more natural feel
     const friction = 0.95;
 
     const inertiaScroll = () => {
@@ -219,7 +231,7 @@ const Home: React.FC = () => {
 
 
   useEffect(() => {
-    if (isDragging) {
+    if (isDragging || isTestDragging) {
       document.addEventListener("mousemove", handleTestMouseMove);
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleTestMouseUp);
@@ -229,22 +241,23 @@ const Home: React.FC = () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleTestMouseUp);
       document.removeEventListener("mouseup", handleMouseUp);
+      // handleMouseUp
     }
 
     return () => {
       document.removeEventListener("mousemove", handleTestMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("mousemove", handleTestMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current); // Clear timeout on cleanup
-      }
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleTestMouseUp);
+      // if (timeoutRef.current) {
+      //   clearTimeout(timeoutRef.current); // Clear timeout on cleanup
+      // }
 
       // if (carouselRef.current) {
       //   snapToNearest({ current: carouselRef.current });
       // }
     };
-  }, [isDragging]);
+  }, [isDragging, isTestDragging]);
 
   return (
     <div className="home-wrapper">
@@ -297,7 +310,6 @@ const Home: React.FC = () => {
               desc={card.description}
               isDragging={isDragging}
               ref={carouselRef}
-              x={lastX.current}
               {...card}
               />
             ))}
@@ -327,10 +339,10 @@ const Home: React.FC = () => {
         </div>
         <div className="tests-wrapper">
           <div
-            className={!isDragging ? 'test-carousel' : 'test-carousel dragging'}
+            className={!isTestDragging ? 'test-carousel' : 'test-carousel dragging'}
             ref={testCarouselRef}
             onMouseDown={handleTestMouseDown}
-            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            style={{ cursor: isTestDragging ? 'grabbing' : 'grab' }}
           >
             {testContent.map((card) => (
               <Tests
