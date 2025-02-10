@@ -264,12 +264,12 @@ const Home: React.FC = () => {
       <div className="home-content-top">
         <div className="left-content">
           <div className="main-heading">
-            <p className="heading-text">
-              We are a sibling duo with more than<span> </span>
+            <p className="heading-text"> 
+            We are Ash P and Hira P, a sibling duo with more than <span> </span>
               <span className="strong">two decades</span>
-              <span> </span>of freelance<span> </span>
-              <span className="color-text">editing experience</span>
-              <span> </span>between us.
+              <span> </span> of editing <span> </span>
+              <span className="color-text">experience</span>
+              <span> </span> between us.
             </p>
           </div>
           <div className="left-desc">
