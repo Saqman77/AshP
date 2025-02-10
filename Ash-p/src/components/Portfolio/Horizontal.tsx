@@ -93,7 +93,7 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: 'card.id',
           start: 'top top',
-          end: '+=800vh',
+          end: '+=700vh',
           scrub: 1,
           // markers: true,
           onUpdate: (self) => {
