@@ -40,8 +40,8 @@ const Home: React.FC = () => {
     const step = (timestamp: number) => {
       if (start === null) start = timestamp;
       const progress = (timestamp - start) / duration;
-      const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
-      carouselRef.current!.scrollLeft = startPos + distance * easedProgress ;
+      // const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
+      carouselRef.current!.scrollLeft = startPos + distance  ;
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -61,8 +61,8 @@ const Home: React.FC = () => {
     const step = (timestamp: number) => {
       if (start === null) start = timestamp;
       const progress = (timestamp - start) / duration;
-      const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
-      testCarouselRef.current!.scrollLeft = startPos + distance * easedProgress ;
+      // const easedProgress = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1;
+      testCarouselRef.current!.scrollLeft = startPos + distance  ;
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -193,7 +193,7 @@ const Home: React.FC = () => {
      
     setTimeout(() => {
       setIsTestDragging(false);
-    }, 400);
+    }, 100);
     // Start inertia scrolling
     let momentum = velocityTest * 20; // Scale velocity for more natural feel
     const friction = 0.95;
