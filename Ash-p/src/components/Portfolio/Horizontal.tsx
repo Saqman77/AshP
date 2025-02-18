@@ -73,7 +73,7 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: '+=700vh',
+          end: '+=800vh',
           scrub: 1,
           pinType: "fixed",
           pin: true,
@@ -81,7 +81,7 @@ const Horizontal: React.FC = () => {
           // pinSpacer: ,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
-              x: `${-350 * self.progress}vw`,
+              x: `${-150 * self.progress}vw`,
               duration: 0.5,
               ease: 'power2.out',
             });
