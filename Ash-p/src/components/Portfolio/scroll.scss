@@ -233,6 +233,7 @@ h3.s-heading{
     font-family: 'Euphorigenic', sans-serif;
     letter-spacing: 8px;
     font-weight: 600;
+    // opacity: 0;
     @media screen and (max-width:400px) {
         font-size: var(--font-xxlarge);
     }

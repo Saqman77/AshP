@@ -42,7 +42,7 @@ const ServiceParallaxe = forwardRef<HTMLDivElement, ParallaxImageProps>(
         if (isResetting.current) return; // Ignore scroll while resetting
 
         let off =  scrollableDiv.current!.scrollLeft - initialScrollLeft.current 
-        console.log(off)
+        // console.log(off)
         targetTranslateX.current =  off * 2  ; // Update the target translation based on mouse position
         off = 0
         initialScrollLeft.current = scrollableDiv.current!.scrollLeft
