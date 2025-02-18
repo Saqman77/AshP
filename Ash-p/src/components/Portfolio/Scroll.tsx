@@ -66,7 +66,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
               stagger: 1,
               scrollTrigger: {
                 trigger: '.ash',
-                start: 'top 80%',
+                start: 'top 50%',
                 end: '+=200px',
                 scrub: 1,
                 // onLeave:()=>{
@@ -203,16 +203,15 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
           );
        
 
-        gsap.fromTo('.projects-hira .panel-front',{ x:'100%', scale: 0, opacity:0},
+        gsap.fromTo('.projects-hira .panel-front',{  opacity:0},
             {
-                x: '0%',
-                scale: 1,
+
                 opacity:1,
-                stagger: 1,
+
                 scrollTrigger: {
-                  trigger: '.hira',
-                  start: 'top 80%',
-                  end: '+=200px',
+                  trigger: '.projects-hira',
+                  start:'-30% center',
+                  end:'10%',
                   scrub: 1,   
                 // }
             }
@@ -355,7 +354,7 @@ const Scroll = ({ startIndex, isVisible, onClose, onItemClick }: ScrollProps) =>
                             <span>
 
                                 Ash is a volunteer editor for #RevPit, a verified editor on IAX, and as a member of the Comic Book Editors Alliance, she is being mentored in comic book editing.
-                                She is an active participant in several supportive social spaces and networks for editors like the Neurodivergent Publishing Lounge and the Editors' Lair on Discord,
+                                She is an active participant in several supportive social spaces and networks for&nbsp;editors&nbsp;like the Neurodivergent Publishing Lounge and the Editors' Lair on Discord,
                                 and the Editors Tea Club and EFA BIPOC Chapter on Slack.
 
 
