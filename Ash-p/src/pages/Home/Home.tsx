@@ -273,7 +273,7 @@ const Home: React.FC = () => {
             </p>
           </div>
           <div className="left-desc">
-               We want your message to resonate clearly with your readers, so all our editing services are available at flexible rates and payment plans fit all budgets
+              Quality editing shouldn't break the bank. With our flexible rates and payment plans, we'll help your words shine while respecting your budget.
           </div>
         </div>
         <div className="right-content">

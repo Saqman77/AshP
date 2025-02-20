@@ -137,7 +137,8 @@ $font-xSmall: 12px;
     animation: scroll-reveal 1s linear forwards;
     // animation-timeline: view();
     // animation-range:  contain 20vh;
-     @media screen and (max-width:1101px) {
+     @media screen and (min-width:1601px) {
+        font-size: var(--font-large);
         // animation: none;
         // background-image: linear-gradient(90deg, #d5497300, #d5497300);
      }
@@ -255,7 +256,7 @@ $font-xSmall: 12px;
 
 @media  screen and (max-width: 900px) {
     .img-container{
-        width:150px;
+        width:100%;
     }
     .right-content{
         margin-left: auto;
@@ -756,7 +757,7 @@ $font-xSmall: 12px;
     .home-wrapper{
         width: 100%;
         // height: 100%;
-        padding: 10px 10px 80px;
+        padding: 10px 20px 80px;
     }
 
     .home-content-top{
