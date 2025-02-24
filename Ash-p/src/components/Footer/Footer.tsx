@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
         <div className="footer-social">
           <div className="footer-contact">
           <p className='head-Contact'>
-            Contact Us
+            {/* Contact Us */}
           </p>
           <ContactUs/>
           </div>
