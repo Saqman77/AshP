@@ -55,7 +55,7 @@ const Freedie: React.FC = () => {
         isVisible={isCarouselVisible}
         onClose={handleCloseCarousel}
       />
-            <h1
+            {/* <h1
         style={{
           position:'fixed',
           color: 'red',
@@ -70,7 +70,7 @@ const Freedie: React.FC = () => {
 
       >
         Under construction
-      </h1>
+      </h1> */}
       <div className="f-container">
         <div className="f-wrapper">
           <div className="f-top">

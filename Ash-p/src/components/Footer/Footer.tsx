@@ -11,6 +11,7 @@ import instagram from '/src/assets/footer/newInsta.svg'
 // import twitter from '/src/assets/footer/twitter.png'
 import FB from '/src/assets/footer/newFacebook.svg'
 import Blue from '/src/assets/footer/Bluesky_Logo.svg.png'
+import AI from '/src/assets/footer/Graduate Website Badge_AI for Editors.png'
 // import favR from '/src/assets/footer/favorited_reviews.png'
 import threads from '/src/assets/footer/threads-app-icon.png'
 import ContactUs from '../get-in-touch-button/ContactUs';
@@ -38,6 +39,7 @@ const Footer: React.FC = () => {
               <a href="https://www.netgalley.com/member/profile" className='logos'><img src={logo3} alt="" /></a>
               <a href="https://www.indieauthorconnect.com" className='logos'><img src={logo4} alt="" /></a>
               <a href="https://reviseresub.com/" className='logos'><img src={logo5} alt="" /></a>
+              <a href="https://www.aiforeditors.com/" className='logos'><img src={AI} alt="" /></a>
             </div>
           </div>
         </div>
