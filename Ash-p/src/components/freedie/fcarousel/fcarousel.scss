@@ -50,6 +50,9 @@
     @media screen and (max-width:1100px) {
         padding: 0px 15px;
     }
+    @media screen and (max-width:400px) {
+        padding: 0px 0.5em;
+    }
 }
 
 .pop-wrapper{
@@ -76,6 +79,10 @@
     }
     @media screen and (max-width:1500px) {
         padding: 15px;
+        font-size: var(--font-medium);
+    }
+    @media screen and (max-width:400px) {
+        padding: .5em;
         font-size: var(--font-medium);
     }
 }
@@ -132,6 +139,11 @@
     }
     @media screen and (max-width:1100px) {
         padding: 20px 15px;
+        border-top: 1px solid white;
+        
+    }
+    @media screen and (max-width:400px) {
+        padding:1em;
         border-top: 1px solid white;
         
     }
