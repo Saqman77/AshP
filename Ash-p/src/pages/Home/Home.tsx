@@ -26,6 +26,32 @@ const Home: React.FC = () => {
   const lastTestX = useRef(0);
   const lastTime = useRef(0);
   const lastTestTime = useRef(0);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
+
+  const handleCourserMove = (e: MouseEvent) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleCourserEnter = () => {
+    setShowCursor(true);
+  };
+
+  const handleCourserLeave = () => {
+    setShowCursor(false);
+  };
+
+  useEffect(() => {
+    if (showCursor) {
+      document.addEventListener("mousemove", handleCourserMove);
+    } else {
+      document.removeEventListener("mousemove", handleCourserMove);
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleCourserMove);
+    };
+  }, [showCursor]);
 
 
 
@@ -283,7 +309,10 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="services-section">
+      <div className="services-section"
+        onMouseEnter={handleCourserEnter}
+        onMouseLeave={handleCourserLeave}
+      >
         <div className="services-heading">
           <p>
             Our <span className="color-text">Services</span>
@@ -320,7 +349,10 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="wish-section">
+      <div className="wish-section"
+        onMouseEnter={handleCourserEnter}
+        onMouseLeave={handleCourserLeave}
+      >
         <div className="wish-header">
           <p>
             Ash P Reads Editing Services <span className="color-text">Manuscript&nbsp;Wish&nbsp;List</span>
@@ -330,7 +362,14 @@ const Home: React.FC = () => {
           <Wishs />
         </div>
       </div>
-
+      {showCursor && (
+        <div
+          className="custom-cursor"
+          style={{ left: cursorPosition.x, top: cursorPosition.y }}
+        >
+          Hover
+        </div>
+      )}
       <div className="test-section">
         <div className="tests-heading">
           <p>
@@ -363,6 +402,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
