@@ -64,8 +64,8 @@ const Freedie: React.FC = () => {
         // opacity:1,
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 80%', // Starts when .fredie-bg enters the viewport
-          end: 'top 20%', // Completes near the top
+          start: window.innerWidth > 1250 ? 'top 80%' : 'top 40%', // Starts when .fredie-bg enters the viewport
+          end: window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
       });
