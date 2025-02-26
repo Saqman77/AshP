@@ -90,14 +90,7 @@ const Freedie: React.FC = () => {
                 <span>
                 Ash P Reads FrEdiBuddies is a collective of verified and authenticated Independent Service Providers
                 </span>
-                <span className="spacer"></span>
-                <span>
-                When Ash P started out as an independent service provider, 20 or so years ago, the market was fairly new in Pakistan. The learning curve was steep and much was learned through trial and error. Now that independent services and working remotely is recognized as a “real” job, it is an option that many prefer to a regular 9-5 career.
-                </span>
-                <span className="spacer"></span>
-                <span>
-                Keeping that in mind, Ash P Reads FrEdiBuddies was created to give budding independent service providers a platform to hone their skills and a safe space where projects and clients are vetted, to prevent them from falling victim to fakes and scam artists.  
-                </span>
+                {/* <span className="spacer"></span> */}
               </div>
             </div>
             <div className="f-right">
@@ -106,6 +99,17 @@ const Freedie: React.FC = () => {
               </div>
             </div>
           </div>
+          <section className='fredie-section'>
+            <div className='fredi-desc'>
+            <span>
+                When Ash P started out as an independent service provider, 20 or so years ago, the market was fairly new in Pakistan. The learning curve was steep and much was learned through trial and error. Now that independent services and working remotely is recognized as a “real” job, it is an option that many prefer to a regular 9-5 career.
+                </span>
+                <span className="spacer"></span>
+                <span>
+                Keeping that in mind, Ash P Reads FrEdiBuddies was created to give budding independent service providers a platform to hone their skills and a safe space where projects and clients are vetted, to prevent them from falling victim to fakes and scam artists.  
+                </span>
+            </div>
+          </section>
           <div className="f-bottom">
             <div className="f-headingb">
               <p className="f-hb">Meet Our FrEdiBuddies</p>

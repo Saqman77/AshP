@@ -520,7 +520,7 @@ section.our-work .work-wrapper{
 }
 
 
-.past-wrapper .s-heading{
+.past-wrapper .s-heading, .past-wrapper .s-heading span{
     color: rgb(113, 99, 222); ;
     font-size: var(--font-xlarge);
     font-weight: 600;
@@ -688,6 +688,10 @@ section.our-work .work-wrapper{
     // box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
     // background-clip:content-box
     // justify-content: space-between;
+}
+
+.past-card:hover h4{
+    color: #F4F9E9;
 }
 
 .past-card:hover .yes .yesarrow, .past-card:hover .unreleased, .past-card:hover .linker{
@@ -1317,7 +1321,7 @@ section.our-work .work-wrapper{
   .paging:hover{
     color: #ffffff;
     background-color: #7163DE;
-    // scale:1.2;
+    scale:1.2;
     // box-shadow: 6px 7px 0px 0px rgba(0, 0, 0, 0);
   }
 
