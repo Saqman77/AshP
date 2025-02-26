@@ -8,7 +8,8 @@ import frediebg from '../../assets/freedi/FrEdiBuddies without title.webp'
 import './Freedie.scss';
 import FCarousel from '../../components/freedie/fcarousel/FCarousel';
 import { useThemeContext } from '../../utils/ThemeContextProvider';
-import ParallaxImage from '../../components/Portfolio/ParallaxImage';
+// import ParallaxImage from '../../components/Portfolio/ParallaxImage';
+import FreediePara from '../../components/freedie/freedie-para';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,27 +56,27 @@ const Freedie: React.FC = () => {
     gsap.fromTo('.fredie-bg', 
       {
          clipPath: 'polygon(0 0, 0 0, 0 0, 0 0)',
-         opacity:0.5, 
+        //  opacity:0.5, 
       }, // Fully hidden
       { 
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', // Full rectangle
         ease: 'none',
-        opacity:1,
+        // opacity:1,
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 70%', // Starts when .fredie-bg enters the viewport
+          start: 'top 80%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
       });
 
-      tl.to('.fredie-content',{
-        background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%)',
-        backdropFilter:'blur(5px)',
-        webkitBackdropFilter:'blur(5px)',
+      tl.fromTo('.fredie-content',{background:'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0/ .0%) 50%, rgba(0, 0, 0, 0) 100%)'},{
+        background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0/ .28%) 50%, rgba(0, 0, 0, 0.8) 100%)',
+        backdropFilter:'blur(2px)',
+        webkitBackdropFilter:'blur(2px)',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 30%', // Starts when .fredie-bg enters the viewport
+          start: 'top 10%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
@@ -85,27 +86,30 @@ const Freedie: React.FC = () => {
         // backgroundColor:'#33333365',
         // backdropFilter:'blur(5px)',
         // webkitBackdropFilter:'blur(5px)',
+        textShadow:'2px 2px #000000',
+        opacity:1,
         color:'#f9f9f9',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 30%', // Starts when .fredie-bg enters the viewport
+          start: 'top 10%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
       })
-      tl.fromTo('.fredie-text',{
-        transform:'translateY(200%)'
+      tl.fromTo('.fredie-text, .seperator',{
+        transform:'translateY(-50%)'
       },{
         // backgroundColor:'#33333365',
         // backdropFilter:'blur(5px)',
         // webkitBackdropFilter:'blur(5px)',
-        transform:'translateY(0%)',
+        transform:'translateY(10%)',
         // color:'#f9f9f9',
+        opacity:1,
         scrollTrigger: {
           trigger: '.fredie-bg',
           start: 'top 70%', // Starts when .fredie-bg enters the viewport
-          end: 'center 20%', // Completes near the top
-          scrub: 1, // Smoothly linked to scrolling
+          end: 'bottom bottom', // Completes near the top
+          scrub: 2, // Smoothly linked to scrolling
         }
       })
       tl.to('.fredie-section',{
@@ -121,6 +125,7 @@ const Freedie: React.FC = () => {
           scrub: 1, // Smoothly linked to scrolling
         }
       })
+      
   }, { scope: bgref });
   
 
@@ -188,7 +193,7 @@ const Freedie: React.FC = () => {
                     When Ash P started out as an independent service provider, 20 or so years ago, the market was fairly new in Pakistan. The learning curve was steep and much was learned through trial and error. Now that independent services and working remotely is recognized as a “real” job, it is an option that many prefer to a regular 9-5 career.
                 </span>                  
               </p>
-              <span className='seperator'></span>
+              {/* <span className='seperator'></span> */}
               <p className='fredie-text'>
                 <span>
                     Keeping that in mind, Ash P Reads FrEdiBuddies was created to give budding independent service providers a platform to hone their skills and a safe space where projects and clients are vetted, to prevent them from falling victim to fakes and scam artists.
@@ -199,7 +204,7 @@ const Freedie: React.FC = () => {
 
             >
               <div className="fredie-img">
-                <ParallaxImage
+                <FreediePara
                   src={frediebg}
                   alt='background'
                 />
