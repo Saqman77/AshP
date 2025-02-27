@@ -64,54 +64,85 @@ const Freedie: React.FC = () => {
         // opacity:1,
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: window.innerWidth > 1250 ? 'top 60%' : 'top 40%', // Starts when .fredie-bg enters the viewport
-          end: window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Completes near the top
+          start: window.innerWidth < 700 ? 'top 50%' : window.innerWidth > 1250 ? 'top 50%' : 'top 30%', // Starts when .fredie-bg enters the viewport
+          end: window.innerWidth < 700 ? 'top 45%' : window.innerWidth > 1250 ? 'top 45%' : 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
+          markers: true
         }
       });
 
       tl.fromTo('.fredie-content',{background:'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0/ .0%) 50%, rgba(0, 0, 0, 0) 100%)'},{
-        background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0/ .28%) 50%, rgba(0, 0, 0, 0.8) 100%)',
-        backdropFilter:'blur(2px)',
-        webkitBackdropFilter:'blur(2px)',
+        background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0%, #d5497473 15%, rgba(113, 99, 222, 0.97) 100%)',
+        backdropFilter:'blur(5px)',
+        webkitBackdropFilter:'blur(5px)',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 20%', // Starts when .fredie-bg enters the viewport
-          end: 'top 20%', // Completes near the top
+          start: window.innerWidth < 700 ? 'top 35%' : window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Starts when .fredie-bg enters the viewport
+          end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
-        }
-      })
-      tl.to('.fredie-text span',
+        //   onLeaveBack:()=>{
+        //     gsap.to('.fredie-content',{
+        //       background:'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 181, 251, 0) 15%, rgba(113, 99, 222, 0) 100%)',
+        //       backdropFilter:'blur(0px)',
+        //       webkitBackdropFilter:'blur(0px)',
+        //     })
+        //   },
+        //   onEnter:()=>{
+        //     gsap.to('.fredie-content',{
+        //       background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0%, #d5497473 15%, rgba(113, 99, 222, 0.97) 100%)',
+        //       backdropFilter:'blur(5px)',
+        //       webkitBackdropFilter:'blur(5px)',
+        //     })
+        //   // end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
+        //   // scrub: 1, // Smoothly linked to scrolling
+        // }
+      }})
+      tl.to('.fredie-text, .fredie-text span',
       {
         // backgroundColor:'#33333365',
         // backdropFilter:'blur(5px)',
         // webkitBackdropFilter:'blur(5px)',
-        textShadow:'2px 2px #000000',
+        textShadow:'2px 2px rgb(113, 99, 222)',
         opacity:1,
         color:'#f9f9f9',
+        duration:0.5,
+        ease:'power2.inOut',
         scrollTrigger: {
-          trigger: '.fredie-bg',
-          start: 'top 20%', // Starts when .fredie-bg enters the viewport
-          end: 'top 20%', // Completes near the top
+          trigger: '.fredie-content',
+          start: window.innerWidth < 700 ? 'top 35%' : window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Starts when .fredie-bg enters the viewport
+          // onLeaveBack:()=>{
+          //   gsap.to('.fredie-text span',{
+          //     color:'',
+          //     textShadow:'2px 2px rgba(113, 99, 222, 0)',
+          //   })
+          // },
+          // onEnter:()=>{
+          //   gsap.to('.fredie-text span',{
+          //     color:'#f9f9f9',
+          //     textShadow:'2px 2px rgb(113, 99, 222)',
+          //     duration:0.5,
+          //     ease:'power2.inOut',
+          //   })
+          // },
+          end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
       })
-      tl.fromTo('.fredie-text, .seperator',{
-        transform:'translateY(-50%)'
-      },{
-        // backgroundColor:'#33333365',
-        // backdropFilter:'blur(5px)',
-        // webkitBackdropFilter:'blur(5px)',
-        transform:'translateY(10%)',
-        // color:'#f9f9f9',
-        opacity:1,
-        scrollTrigger: {
-          trigger: '.fredie-bg',
-          start: 'top 70%', // Starts when .fredie-bg enters the viewport
-          end: 'bottom bottom', // Completes near the top
-          scrub: 2, // Smoothly linked to scrolling
-        }
-      })
+      // tl.to('.fredie-text',{
+      //   // backgroundColor:'#33333365',
+      //   // backdropFilter:'blur(5px)',
+      //   // webkitBackdropFilter:'blur(5px)',
+      //   // transform:'translateY(0%)',
+      //   // color:'#f9f9f9',
+      //   opacity:1,
+      //   scrollTrigger: {
+      //     trigger: '.fredie-content',
+      //     start: 'top 20%', // Starts when .fredie-bg enters the viewport
+      //     end: 'top 20%', // Completes near the top
+      //     scrub: 1, // Smoothly linked to scrolling
+      //     // markers: true
+      //   }
+      // })
       tl.to('.fredie-section',{
         // backgroundColor:'#33333365',
         // backdropFilter:'blur(5px)',
@@ -120,7 +151,7 @@ const Freedie: React.FC = () => {
         // color:'#f9f9f9',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 30%', // Starts when .fredie-bg enters the viewport
+          start: 'top 20%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
@@ -192,9 +223,9 @@ const Freedie: React.FC = () => {
                 <span>
                     When Ash P started out as an independent service provider, 20 or so years ago, the market was fairly new in Pakistan. The learning curve was steep and much was learned through trial and error. Now that independent services and working remotely is recognized as a “real” job, it is an option that many prefer to a regular 9-5 career.
                 </span>                  
-              </p>
-              {/* <span className='seperator'></span> */}
-              <p className='fredie-text'>
+              {/* </p> */}
+              <span className='space'></span>
+              {/* <p className='fredie-text'> */}
                 <span>
                     Keeping that in mind, Ash P Reads FrEdiBuddies was created to give budding independent service providers a platform to hone their skills and a safe space where projects and clients are vetted, to prevent them from falling victim to fakes and scam artists.
                 </span>
