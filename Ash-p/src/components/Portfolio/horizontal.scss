@@ -1,8 +1,8 @@
 
 .h-container{
     width: 100%;
-    min-height: 250vh;
-    min-height: 250svh;
+    min-height: 300vh;
+    min-height: 300svh;
     overflow-x: hidden;
     display: grid;
     grid-template-columns: 100%;
@@ -229,14 +229,14 @@
     @media screen and (max-width:500px) {
         top:110vh
     }
-    @media screen and (max-width:400px) {
-        top:140vh
-    }
+    // @media screen and (max-width:400px) {
+    //     top:140vh
+    // }
 }
 
 .outro h3{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;

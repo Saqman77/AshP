@@ -26,7 +26,7 @@ const Horizontal: React.FC = () => {
       // color: '#FFF9E3',
       scrollTrigger: {
         trigger: '.h-heading',
-        start: window.innerWidth < 1250 ? 'center 30%':'top 30%',
+        start: window.innerWidth < 1250 ? 'center 30%':'top 20%',
         end: '+=20vh',
         scrub: 1,
         // markers:true,
@@ -74,15 +74,15 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: wrapper.current,
           start: 'top top',
-          end: window.innerWidth < 1250 ? '+=1000vh':'+=1400vh',
+          end: window.innerWidth < 1250 ? '+=1000vh':'+=1500vh',
           scrub: 1,
           pinType: "fixed",
           pin: true,
-          pinSpacing: true,
+          // pinSpacing: true,
           // pinSpacer: ,
           onUpdate: (self) => {
             gsap.to(wrapper.current, {
-              x: `${-350 * self.progress}vw`,
+              x: window.innerWidth < 600 ? `${-550 * self.progress}vw` : window.innerWidth < 1250 ? `${-350 * self.progress}vw` : `${-250 * self.progress}vw`,
               duration: 0.5,
               ease: 'power2.out',
             });
@@ -94,7 +94,7 @@ const Horizontal: React.FC = () => {
         ScrollTrigger.create({
           trigger: 'card.id',
           start: 'top top',
-          end: window.innerWidth < 1250 ? '+=1000vh':'+=400vh',
+          end: window.innerWidth < 1250 ? '+=1000vh':'+=1400vh',
           scrub: 1,
           // markers: true,
           onUpdate: (self) => {
