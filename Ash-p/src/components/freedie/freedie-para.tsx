@@ -39,7 +39,7 @@ const FreediePara: React.FC<ParallaxImageProps> = ({ src, alt, className }) => {
           0.1
         );
         if (Math.abs(currentTranslateY.current - targetTranslateY.current) > 0.01) {
-          imageRef.current.style.transform = `translateY(${currentTranslateY.current}px) scale(1.25)`;
+          imageRef.current.style.transform = `translateY(${currentTranslateY.current}px) scale(1)`;
         }
       }
       rafId.current = requestAnimationFrame(animate);
