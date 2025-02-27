@@ -64,7 +64,7 @@ const Freedie: React.FC = () => {
         // opacity:1,
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: window.innerWidth > 1250 ? 'top 80%' : 'top 40%', // Starts when .fredie-bg enters the viewport
+          start: window.innerWidth > 1250 ? 'top 60%' : 'top 40%', // Starts when .fredie-bg enters the viewport
           end: window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
@@ -76,7 +76,7 @@ const Freedie: React.FC = () => {
         webkitBackdropFilter:'blur(2px)',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 10%', // Starts when .fredie-bg enters the viewport
+          start: 'top 20%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
@@ -91,7 +91,7 @@ const Freedie: React.FC = () => {
         color:'#f9f9f9',
         scrollTrigger: {
           trigger: '.fredie-bg',
-          start: 'top 10%', // Starts when .fredie-bg enters the viewport
+          start: 'top 20%', // Starts when .fredie-bg enters the viewport
           end: 'top 20%', // Completes near the top
           scrub: 1, // Smoothly linked to scrolling
         }
@@ -135,7 +135,7 @@ const Freedie: React.FC = () => {
       {showDisclaimer && (
         <div className="f-modal">
           <div className="f-modal-content">
-            <p>
+            <p className='modal-p'>
             While Ash P Reads Editing Services carefully vets all FrEdiBuddies also known as Independent Service Providers for reliability, professionalism, and quality standards, our role is strictly limited to providing referrals between Independent Service Providers and clients seeking their services.
               <span className="spacer"></span>
               Ash P Reads Editing Services makes no guarantee that our FrEdiBuddies will accept recommended projects, nor do we guarantee that our FrEdiBuddies will be awarded any projects for which they are referred. We do not provide or manage service contracts; all contractual arrangements must be established directly between the Independent Service Providers and clients.

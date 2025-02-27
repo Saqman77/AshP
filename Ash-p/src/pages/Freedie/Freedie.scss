@@ -239,19 +239,26 @@
 //   }
   
   .f-modal-content {
-    background: white;
+    background: #7163DE;
     padding: 2rem;
     text-align: justify;
     font-weight: 700;
+    
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 600px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative; /* Ensures it stays on top */
     z-index: 1; /* Keeps modal content in front */
     font-size: 16px;
     @media screen  and (max-width:1250px){
         font-size: 10px;
+        max-width: 400px;
+        padding: 1rem;
     }
+  }
+
+  .modal-p{
+    color: #f9f9f9;
   }
   
   
@@ -264,7 +271,7 @@
   .f-modal-buttons button {
     padding: 0.8rem 1.5rem;
     border: none;
-    background: #333;
+    background: #D54974;
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -283,6 +290,16 @@
     display: grid;
     grid-template-columns: 1fr;
     // box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.514);
+    margin-bottom: 124px;
+    @media screen and (max-width:1250px) {
+        min-height: 50vh;
+        min-height: 50lvh;
+    }
+    @media screen and (max-width: 900px) {
+        // flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
   }
 
   .fredie-content{
@@ -318,13 +335,13 @@
     text-align: center;
   }
 
-  .seperator{
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    will-change: transform;
-  }
+//   .seperator{
+//     display: block;
+//     width: 100%;
+//     height: 4px;
+//     background-color: white;
+//     will-change: transform;
+//   }
 
   .fredie-bg{
     grid-area: 1/1;
@@ -347,6 +364,9 @@
     position: absolute;
     left: -50%;
     top: 0;
+    @media screen and (max-width:1450px) {
+        left: -70%;
+    }
     @media screen and (max-width:1250px) {
         position: absolute;
     left: 0;
