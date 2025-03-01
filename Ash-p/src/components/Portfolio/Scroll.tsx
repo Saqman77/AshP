@@ -5,6 +5,13 @@ import img2 from "../../assets/about/AshPReads-EditingServices-Logo.png";
 import img3 from "../../assets/about/Ash P bio.png";
 import img4 from "../../assets/about/Hira P Bio .png";
 import img5 from "../../assets/about/Hira.jpg";
+import logo1 from '../../assets/footer/BIPOC-Chapter-300x300.png';
+import logo2 from '../../assets/footer/ETC+Member+Circle.png';
+import logo3 from '../../assets/footer/pro_reader.png';
+import logo4 from '../../assets/footer/Simple_Logo_ALT.png';
+import logo5 from '../../assets/footer/R&R logo final-03 (1).png';
+import AI from '/src/assets/footer/Graduate Website Badge_AI for Editors.png'
+import favR from '/src/assets/footer/favorited_reviews.png'
 import ParallaxImage from "./ParallaxImage";
 import "./scroll.scss";
 import { gsap } from "gsap";
@@ -405,6 +412,29 @@ const Scroll = ({
                 </span>
               </span>
             </p>
+            <div className="members">
+                <p className="members-heading">Memberships</p>
+                <ul className="member-list">
+                    <li className="member">
+                        <a href="https://www.the-efa.org/chapters/bipoc" className='member-logo'><img src={logo1} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.editorsteaclub.org" className='member-logo'><img src={logo2} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.netgalley.com/member/profile" className='member-logo'><img src={logo3} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.indieauthorconnect.com" className='member-logo'><img src={logo4} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://reviseresub.com/" className='member-logo'><img src={logo5} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.aiforeditors.com/" className='member-logo'><img src={AI} alt="" /></a>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
 
@@ -534,7 +564,29 @@ const Scroll = ({
                 </span>
               </span>
             </p>
-            <div className="members"></div>
+            <div className="members">
+                <p className="members-heading">Memberships</p>
+                <ul className="member-list">
+                    <li className="member">
+                        <a href="https://www.the-efa.org/chapters/bipoc" className='member-logo'><img src={logo1} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.editorsteaclub.org" className='member-logo'><img src={logo2} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.netgalley.com/member/profile" className='member-logo'><img src={logo3} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.indieauthorconnect.com" className='member-logo'><img src={logo4} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://reviseresub.com/" className='member-logo'><img src={logo5} alt="" /></a>
+                    </li>
+                    <li className="member">
+                        <a href="https://www.aiforeditors.com/" className='member-logo'><img src={AI} alt="" /></a>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
 
