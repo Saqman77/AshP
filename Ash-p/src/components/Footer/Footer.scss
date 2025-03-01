@@ -267,6 +267,7 @@ svg, path{
     height: max-content;
     display: grid;
     column-gap: 1em;
+    row-gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(50px, min-content));
 }
 
@@ -456,6 +457,7 @@ svg, path{
         // grid-template-columns: max-content max-content max-content ;
         // grid-auto-columns: min-content;
         column-gap: .5em;
+        row-gap: .5em;
         width: 100%;
     }
 

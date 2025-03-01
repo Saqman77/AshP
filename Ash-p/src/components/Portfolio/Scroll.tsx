@@ -11,7 +11,7 @@ import logo3 from '../../assets/footer/pro_reader.png';
 import logo4 from '../../assets/footer/Simple_Logo_ALT.png';
 import logo5 from '../../assets/footer/R&R logo final-03 (1).png';
 import AI from '/src/assets/footer/Graduate Website Badge_AI for Editors.png'
-import favR from '/src/assets/footer/favorited_reviews.png'
+import EFA from '/src/assets/footer/EFA-Member-Logo-Transparent.png'
 import ParallaxImage from "./ParallaxImage";
 import "./scroll.scss";
 import { gsap } from "gsap";
@@ -433,6 +433,9 @@ const Scroll = ({
                     <li className="member">
                         <a href="https://www.aiforeditors.com/" className='member-logo'><img src={AI} alt="" /></a>
                     </li>
+                    <li className="member">
+                        <a href="https://www.the-efa.org/memberinfo/aisha-panjwaneey-38931/" className='member-logo'><img src={EFA} alt="" /></a>
+                    </li>
                 </ul>
             </div>
           </div>
@@ -568,22 +571,10 @@ const Scroll = ({
                 <p className="members-heading">Memberships</p>
                 <ul className="member-list">
                     <li className="member">
-                        <a href="https://www.the-efa.org/chapters/bipoc" className='member-logo'><img src={logo1} alt="" /></a>
-                    </li>
-                    <li className="member">
                         <a href="https://www.editorsteaclub.org" className='member-logo'><img src={logo2} alt="" /></a>
                     </li>
                     <li className="member">
-                        <a href="https://www.netgalley.com/member/profile" className='member-logo'><img src={logo3} alt="" /></a>
-                    </li>
-                    <li className="member">
                         <a href="https://www.indieauthorconnect.com" className='member-logo'><img src={logo4} alt="" /></a>
-                    </li>
-                    <li className="member">
-                        <a href="https://reviseresub.com/" className='member-logo'><img src={logo5} alt="" /></a>
-                    </li>
-                    <li className="member">
-                        <a href="https://www.aiforeditors.com/" className='member-logo'><img src={AI} alt="" /></a>
                     </li>
                 </ul>
             </div>

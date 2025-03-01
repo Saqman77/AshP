@@ -1100,24 +1100,41 @@ section.our-work .work-wrapper{
 }
 
 .members-heading{
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     // font-weight: 700;
     color: #F4F9E9;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     font-family: "Euphorigenic";
+    @media screen and (max-width:1250px) {
+        font-size: 24px;
+    }
 }
 
 .member-list{
     display: flex;
     flex-wrap:wrap ;
     justify-content: center;
+    @media screen and (max-width:650px) {
+        justify-content: left;
+    }
 }
+ @media screen and (min-width:1400px) {
+    .member-list:hover .member{
+        scale: 0.5;
+        opacity: 0.5;
+    }
 
-.member-list:hover .member{
-    scale: 0.5;
-    opacity: 0.5;
-}
+    .member-list:hover .member:hover{
+        scale: 1.2;
+        opacity: 1;
+        margin-right: 2.5em;
+        margin-left: 1em;
+        background-color: #FEFFFE;
+        box-shadow: 0px 0px 5px 2px white;
+    }
+ }
+
 
 .member{
     height: 80px;
@@ -1125,18 +1142,20 @@ section.our-work .work-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1em;
+    margin-right: 2em;
     transition: scale 0.2s ease-out 1ms, opacity 0.2s ease-out 1ms, margin 0.5s, background-color 0.5s ease-out 1ms;
+    @media screen and (max-width:1250px) {
+        margin-bottom: 1em;
+    }
+    @media screen and (max-width:650px) {
+        margin-bottom: 1.5em;
+        margin-right: 1em;
+        height: 60px;
+        width: 60px;
+    }
 }
 
-.member-list:hover .member:hover{
-    scale: 1.2;
-    opacity: 1;
-    margin-right: 2em;
-    margin-left: 1em;
-    background-color: #FEFFFE;
-    box-shadow: 0px 0px 5px 2px white;
-}
+
 
 .member-logo, .member-logo img{
     width: 100%;
