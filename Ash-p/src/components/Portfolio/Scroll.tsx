@@ -5,7 +5,7 @@ import img2 from "../../assets/about/AshPReads-EditingServices-Logo.png";
 import img3 from "../../assets/about/Ash P bio.png";
 import img4 from "../../assets/about/Hira P Bio .png";
 import img5 from "../../assets/about/Hira.jpg";
-import img6 from "../../assets/about/TheTeam.webp";
+// import img6 from "../../assets/about/TheTeam.webp";
 import logo1 from "../../assets/footer/BIPOC-Chapter-300x300.png";
 import logo2 from "../../assets/footer/ETC+Member+Circle.png";
 import logo3 from "../../assets/footer/pro_reader.png";
@@ -629,7 +629,7 @@ const Scroll = ({
         </div>
       </section>
 
-      <section className="panel">
+      {/* <section className="panel">
         <div className="team-front">
           <div className="team-wrapper">
             <div className="team-top">
@@ -671,7 +671,7 @@ const Scroll = ({
             <ParallaxImage src={img6} alt="" className="s-imgs" />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="our-work">
         <div className="work-wrapper">
