@@ -8,7 +8,7 @@ const ContactUs = ({}) => {
    const { closeMenu } = useThemeContext();
   return (
     <Link to="/contact" className="navigate-button" onClick={closeMenu}>
-      <button>Get in touch!</button>
+      <button>Contact Us!</button>
     </Link>
   );
 };

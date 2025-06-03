@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import logo from '/src/assets/header/toplogo (2).svg';
+import logo from '/src/assets/header/NewLogo.png';
 import ContactUs from '../get-in-touch-button/ContactUs';
 import { useThemeContext } from '../../utils/ThemeContextProvider';
 
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const header = useRef<HTMLDivElement | null>(null);
 
 
-    useEffect(() => {
+  useEffect(() => {
     const adjustBodyPadding = () => {
       if (header.current) {
         const navbarHeight = header.current.getBoundingClientRect().height;
@@ -43,8 +43,8 @@ const Header: React.FC = () => {
 
       const currentScrollY = window.scrollY;
 
-        // Prevent header from hiding on iOS bounce effect
-        if (currentScrollY < 0) return; 
+      // Prevent header from hiding on iOS bounce effect
+      if (currentScrollY < 0) return;
 
       // Check if the user is scrolling up or down
       if (currentScrollY > lastScrollY) {
@@ -77,50 +77,58 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-      ref={header}
-        className={`header ${isHidden ? 'header-hidden' : ''} ${
-          isScrolled ? 'header-blur' : 'header-transparent'
-        }`}
+        ref={header}
+        className={`header ${isHidden ? 'header-hidden' : ''} ${isScrolled ? 'header-blur' : 'header-transparent'
+          }`}
       >
         <div className="nav-wrapper">
-                    <nav className="nav">
-            <ul>
-              <li>
-                <NavLink
-                  to="/"
-                  end
-                  className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/fredibuddies"
-                  className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  
-                >
-                  FrEdiBuddies
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
+          <div className='menu-wrapper'>
+            <nav className="nav">
+              <ul>
+                <li>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) => (isActive ? 'header-active' : '')}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) => (isActive ? 'header-active' : '')}
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/fredibuddies"
+                    className={({ isActive }) => (isActive ? 'header-active' : '')}
+                  >
+                    FrEdiBuddies
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) => (isActive ? 'header-active' : '')}
+                  >
+                    Contact
+                  </NavLink>
+                </li>
+              </ul>
+            
+            </nav>
+            <ContactUs />
+          </div>
           <div className='main-logo-wrapper'>
             <NavLink to="/" className="logo">
-              <img src={logo} alt="Logo" className="header-logo" onClick={closeMenu}/>
+              <img src={logo} alt="Logo" className="header-logo" onClick={closeMenu} />
             </NavLink>
           </div>
-                      <ContactUs />
+          
           <div className="mob-nav">
             <ContactUs />
             <button
@@ -133,7 +141,7 @@ const Header: React.FC = () => {
             </button>
           </div>
         </div>
-          <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
+        <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
           <ul className="mob-list"
             onClick={toggleMenu}
           >
@@ -142,7 +150,7 @@ const Header: React.FC = () => {
                 to="/"
                 end
                 className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-                
+
               >
                 Home
               </NavLink>
@@ -151,7 +159,7 @@ const Header: React.FC = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-                
+
               >
                 About
               </NavLink>
@@ -160,13 +168,13 @@ const Header: React.FC = () => {
               <NavLink
                 to="/fredibuddies"
                 className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-                
+
               >
                 FrEdiBuddies
               </NavLink>
             </li>
           </ul>
-          </nav>
+        </nav>
       </header>
     </>
   );
