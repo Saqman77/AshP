@@ -83,10 +83,7 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="nav-wrapper">
-          <NavLink to="/" className="logo">
-            <img src={logo} alt="Logo" className="header-logo" onClick={closeMenu}/>
-          </NavLink>
-          <nav className="nav">
+                    <nav className="nav">
             <ul>
               <li>
                 <NavLink
@@ -117,8 +114,13 @@ const Header: React.FC = () => {
                 </NavLink>
               </li>
             </ul>
-            <ContactUs />
           </nav>
+          <div className='main-logo-wrapper'>
+            <NavLink to="/" className="logo">
+              <img src={logo} alt="Logo" className="header-logo" onClick={closeMenu}/>
+            </NavLink>
+          </div>
+                      <ContactUs />
           <div className="mob-nav">
             <ContactUs />
             <button
