@@ -55,7 +55,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // font-family: "Candara";
+  font-family:"poppins", sans-serif;
   letter-spacing: 1px;
   color: #555;
   -webkit-tap-highlight-color: transparent; 
@@ -64,5 +64,6 @@
 a {
   color: inherit; /* Inherits the text color from the parent element */
   text-decoration: none; /* Removes the underline */
+  font-family: inherit;
 }
 

@@ -148,19 +148,34 @@ $font-xSmall: 12px;
     // font-family: "quicksand";
 }
 
-.nav ul li{
+.nav ul li {
+  position: relative;
   padding-right: 16px;
-   font-family: "quicksand";
-   font-weight: 500;
-   color: #4B3B74;
-  //  position: relative;
-  //  width: 100px;
-  //  transition: font-weight 0.5s ease-out 0.1s;
+  font-family: "Quicksand";
+  font-weight: 500;
+  color: #4B3B74;
+  display: inline-block;
+  // transition: color 0.3s ease, font-weight 0.3s ease;
+  // width: 120px;
+  // text-align: center;
 }
-.nav ul li:hover{
-  color: #D54974;
-  font-weight: 600;
-  font-family: "quicksand";
+
+.nav ul li::after {
+  content: attr(data-text);
+  font-weight: 700;
+  font-family: "Quicksand";
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nav ul li:hover {
+  color: #C9549D;
+  font-weight: 700;
+  // text-shadow: #C9549D 0px 0px 1px;
 }
 
 .nav ul li a{

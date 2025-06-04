@@ -85,7 +85,7 @@ const Header: React.FC = () => {
           <div className='menu-wrapper'>
             <nav className="nav">
               <ul>
-                <li>
+                <li data-text="Home">
                   <NavLink
                     to="/"
                     end
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                     Home
                   </NavLink>
                 </li>
-                <li>
+                <li data-text="About">
                   <NavLink
                     to="/about"
                     className={({ isActive }) => (isActive ? 'header-active' : '')}
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
                     About
                   </NavLink>
                 </li>
-                <li>
+                <li data-text="FrEdiBuddies">
                   <NavLink
                     to="/fredibuddies"
                     className={({ isActive }) => (isActive ? 'header-active' : '')}
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
                     FrEdiBuddies
                   </NavLink>
                 </li>
-                <li>
+                <li data-text="Contact">
                   <NavLink
                     to="/contact"
                     className={({ isActive }) => (isActive ? 'header-active' : '')}
