@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import logo from '/src/assets/header/NewLogo.png';
+import logo from '/src/assets/header/newLogo.svg';
+import mobileLogo from '/src/assets/header/mobile-logo.svg';
 import ContactUs from '../get-in-touch-button/ContactUs';
 import { useThemeContext } from '../../utils/ThemeContextProvider';
 
@@ -119,7 +120,7 @@ const Header: React.FC = () => {
                   </NavLink>
                 </li>
               </ul>
-            
+
             </nav>
             <ContactUs />
           </div>
@@ -128,9 +129,12 @@ const Header: React.FC = () => {
               <img src={logo} alt="Logo" className="header-logo" onClick={closeMenu} />
             </NavLink>
           </div>
-          
+
           <div className="mob-nav">
-            <ContactUs />
+            <div className="mobile-logo-wrapper">
+              <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} />
+            </div>
+            {/* <ContactUs /> */}
             <button
               className={`menu-btn ${isMenuOpen ? 'active' : ''}`}
               onClick={toggleMenu}
@@ -140,41 +144,53 @@ const Header: React.FC = () => {
               <span></span>
             </button>
           </div>
+          <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
+            <ul className="mob-list"
+              
+            >
+              <div className="list-header">
+                <div className="mob-logo">
+                  <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} />
+                </div>
+                <button className="close-btn" onClick={toggleMenu}>
+                  <span className="close-icon"></span>
+                  <span className="close-icon"></span>
+                </button>
+              </div>
+              <ul className='mob-ul'>
+                <li>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/fredibuddies"
+                    className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                  >
+                    FrEdiBuddies
+                  </NavLink>
+                </li>
+                <li>
+                  <ContactUs />
+                </li>
+              </ul>
+            </ul>
+          </nav>
         </div>
-        <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
-          <ul className="mob-list"
-            onClick={toggleMenu}
-          >
-            <li>
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
 
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/fredibuddies"
-                className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-
-              >
-                FrEdiBuddies
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
       </header>
     </>
   );
