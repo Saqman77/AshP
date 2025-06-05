@@ -1,12 +1,37 @@
-body, .wishlist-section {
+body,
+.wishlist-section {
     // background: #fff9ed;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .wishlist-section {
     padding: 6.45vw 15.625vw;
+    position: relative;
     // background: #fff9ed;
     min-height: 100vh;
-    
+    overflow-x: visible;
+
+    .flower-wrapper {
+        position: absolute;
+        z-index: 0;
+        top: 178px;
+        left: -465px;
+        animation: rotate 60s linear infinite;
+        transform-origin: center;
+    }
+
+    .flower-wrapper path {
+        fill: #F4D6CD
+    }
+
     @media screen and (max-width: 1250px) {
         padding: 80px 40px;
     }
@@ -18,10 +43,14 @@ body, .wishlist-section {
         margin-bottom: 70px;
         // gap: 32px;
         flex-wrap: wrap;
+        z-index: 1;
     }
+
     .wishlist-header-title {
+        z-index: 1;
         flex: 1;
         min-width: 320px;
+
         h2 {
             font-size: 2.9vw;
             font-weight: 600;
@@ -29,13 +58,16 @@ body, .wishlist-section {
             line-height: 1.035;
             // margin: 0 0 8px 0;
             font-family: 'Poppins';
+
             .wishlist-main {
                 color: #7B6DDB;
                 display: block;
             }
+
             .wishlist-highlight {
                 color: #C9549D;
             }
+
             .wishlist-heading-sub {
                 display: block;
                 color: #7B6DDB;
@@ -43,19 +75,24 @@ body, .wishlist-section {
             }
         }
     }
+
     .wishlist-header-desc {
+        z-index: 1;
         flex: 1;
         min-width: 320px;
         height: 100%;
-        .desc-p{
+
+        .desc-p {
             margin-bottom: 14px;
             font-family: 'Poppins';
             font-size: 16px;
             font-weight: 500;
             color: #4B3B74;
             line-height: 1.5;
+            z-index: 1;
         }
-        .desc-p1{
+
+        .desc-p1 {
             font-family: 'Poppins';
             font-size: 16px;
             font-weight: 500;
@@ -63,17 +100,23 @@ body, .wishlist-section {
             line-height: 1.5;
         }
     }
+
     .wishlist-cards {
         // max-width: 1000px;
+        position: relative;
         margin-top: 24px;
+        z-index: 1;
     }
+
     .wishlist-section-title {
         font-size: 1.875vw;
         font-weight: 700;
         color: #4B3B74;
         margin-bottom: 24px;
         font-family: 'Quicksand';
+        z-index: 1;
     }
+
     .wishlist-highlight-wrapper {
         position: relative;
         display: inline-block;
@@ -94,4 +137,4 @@ body, .wishlist-section {
         z-index: 1;
         color: #C9549D;
     }
-} 
+}
