@@ -6,7 +6,12 @@ const Hero: React.FC = () => {
     const parts = text.split(/(two decades|editing)/);
     return parts.map((part, index) => {
       if (part === 'two decades' || part === 'editing') {
-        return <span key={index} className="highlight">{part}</span>;
+        return (
+          <span key={index} className="highlight-wrapper">
+            <span className="highlight-bg"></span>
+            <span className="highlight">{part}</span>
+          </span>
+        );
       }
       return <span key={index} className="normal">{part}</span>;
     });
