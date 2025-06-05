@@ -1,0 +1,94 @@
+body, .wishlist-section {
+    // background: #fff9ed;
+}
+
+.wishlist-section {
+    padding: 6.45vw 15.625vw;
+    // background: #fff9ed;
+    min-height: 100vh;
+    
+    @media screen and (max-width: 1250px) {
+        padding: 80px 40px;
+    }
+
+    .wishlist-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 70px;
+        // gap: 32px;
+        flex-wrap: wrap;
+    }
+    .wishlist-header-title {
+        flex: 1;
+        min-width: 320px;
+        h2 {
+            font-size: 2.5vw;
+            font-weight: 700;
+            color: #7B6DDB;
+            // margin: 0 0 8px 0;
+            font-family: 'Comfortaa';
+            .wishlist-main {
+                color: #7B6DDB;
+                display: block;
+            }
+            .wishlist-highlight {
+                color: #C9549D;
+            }
+            .wishlist-heading-sub {
+                display: block;
+                color: #7B6DDB;
+                // margin-top: 4px;
+            }
+        }
+    }
+    .wishlist-header-desc {
+        flex: 1;
+        min-width: 320px;
+        height: 100%;
+        .desc-p{
+            margin-bottom: 14px;
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-weight: 500;
+            color: #4B3B74;
+        }
+        .desc-p1{
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-weight: 500;
+            color: #4D4D4D;
+        }
+    }
+    .wishlist-cards {
+        // max-width: 1000px;
+        margin-top: 24px;
+    }
+    .wishlist-section-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #4B3B74;
+        margin: 32px 0 12px 0;
+        font-family: 'Quicksand';
+    }
+    .wishlist-highlight-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .wishlist-highlight-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #F3E8FF;
+        z-index: 0;
+    }
+
+    .wishlist-highlight {
+        position: relative;
+        z-index: 1;
+        color: #C9549D;
+    }
+} 
