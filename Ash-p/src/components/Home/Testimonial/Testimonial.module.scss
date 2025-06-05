@@ -1,33 +1,26 @@
-// Variables
-$text-dark: #333;
-$text-light: #666;
-$background-light: #f8f9fa;
-$primary-color: #007bff;
-$white: #fff;
-$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
 // Breakpoints
-$mobile: 768px;
-
 .testimonialSection {
-    padding: 4rem 2rem;
-    background-color: $background-light;
+    padding: 6.45vw 15.625vw;
 
     .testimonialHeader {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 3.33vw;
 
         h2 {
-            font-size: 2.5rem;
-            color: $text-dark;
-            margin-bottom: 1rem;
+            font-size: 2.9vw;
+            font-weight: 600;
+            color: #7B6DDB;
+            line-height: 1.035;
+            font-family: 'Poppins';
+            margin-bottom: 24px;
         }
 
         p {
-            font-size: 1.1rem;
-            color: $text-light;
-            max-width: 600px;
-            margin: 0 auto;
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-weight: 500;
+            color: #4D4D4D;
+            line-height: 1.5;
         }
     }
 
@@ -44,14 +37,14 @@ $mobile: 768px;
             background: none;
             border: none;
             font-size: 2rem;
-            color: $text-dark;
+            color: #333333;
             cursor: pointer;
             padding: 0.5rem;
             transition: color 0.3s ease;
             z-index: 2;
 
             &:hover {
-                color: $primary-color;
+                color: #7B6DDB;
             }
         }
 
@@ -63,9 +56,8 @@ $mobile: 768px;
         .slide {
             text-align: center;
             padding: 2rem;
-            background: $white;
             border-radius: 10px;
-            box-shadow: $shadow;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             min-height: 300px;
             display: flex;
             flex-direction: column;
@@ -74,13 +66,13 @@ $mobile: 768px;
 
             .quoteIcon {
                 font-size: 3rem;
-                color: $primary-color;
+                color: #7B6DDB;
                 margin-bottom: 1rem;
             }
 
             .quote {
                 font-size: 1.2rem;
-                color: $text-dark;
+                color: #333333;
                 line-height: 1.6;
                 margin-bottom: 1.5rem;
                 font-style: italic;
@@ -90,13 +82,13 @@ $mobile: 768px;
                 margin-top: auto;
 
                 h4 {
-                    color: $text-dark;
+                    color: #333333;
                     font-size: 1.1rem;
                     margin-bottom: 0.5rem;
                 }
 
                 p {
-                    color: $text-light;
+                    color: #666666;
                     font-size: 0.9rem;
                 }
             }
@@ -105,7 +97,7 @@ $mobile: 768px;
 }
 
 // Media Queries
-@media (max-width: $mobile) {
+@media (max-width: 768px) {
     .testimonialSection {
         padding: 2rem 1rem;
 
