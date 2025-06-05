@@ -1,4 +1,6 @@
-export const wishListContent = {
+import { WishListContent } from './types';
+
+export const wishListContent: WishListContent = {
     headingMain: "Ash P Reads",
     headingSub: "Manuscript",
     highlight: "Wishlist",
@@ -13,16 +15,28 @@ export const wishListContent = {
     categories: {
         wishingFor: {
             title: "Wishing For",
-            icon: "🎯",
+            icon: {
+                type: "svg" as const,
+                path: "/icons/check-circle.svg"
+            },
             label: "Compatible",
-            labelIcon: "✔️",
+            labelIcon: {
+                type: "svg" as const,
+                path: "/src/assets/home/greenTick.svg"
+            },
             labelColor: "green"
         },
         notWishingFor: {
             title: "Not Wishing For",
-            icon: "⛔",
+            icon: {
+                type: "svg" as const,
+                path: "/icons/stop-circle.svg"
+            },
             label: "Incompatible",
-            labelIcon: "❌",
+            labelIcon: {
+                type: "svg" as const,
+                path: "/src/assets/home/redCross.svg"
+            },
             labelColor: "red"
         }
     },

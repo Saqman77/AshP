@@ -3,6 +3,7 @@ import './Wishlist.scss';
 import { wishListContent } from './wishListContent';
 import { wishlistCardContent } from './wishlistCardContent';
 import WishlistCard from './WishlistCard/WishlistCard';
+import { WishListContent } from './types';
 
 const Wishlist: React.FC = () => {
     return (

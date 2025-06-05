@@ -23,11 +23,12 @@ body, .wishlist-section {
         flex: 1;
         min-width: 320px;
         h2 {
-            font-size: 2.5vw;
-            font-weight: 700;
+            font-size: 2.9vw;
+            font-weight: 600;
             color: #7B6DDB;
+            line-height: 1.035;
             // margin: 0 0 8px 0;
-            font-family: 'Comfortaa';
+            font-family: 'Poppins';
             .wishlist-main {
                 color: #7B6DDB;
                 display: block;
@@ -52,12 +53,14 @@ body, .wishlist-section {
             font-size: 16px;
             font-weight: 500;
             color: #4B3B74;
+            line-height: 1.5;
         }
         .desc-p1{
             font-family: 'Poppins';
             font-size: 16px;
             font-weight: 500;
             color: #4D4D4D;
+            line-height: 1.5;
         }
     }
     .wishlist-cards {
@@ -65,10 +68,10 @@ body, .wishlist-section {
         margin-top: 24px;
     }
     .wishlist-section-title {
-        font-size: 1.3em;
+        font-size: 1.875vw;
         font-weight: 700;
         color: #4B3B74;
-        margin: 32px 0 12px 0;
+        margin-bottom: 24px;
         font-family: 'Quicksand';
     }
     .wishlist-highlight-wrapper {

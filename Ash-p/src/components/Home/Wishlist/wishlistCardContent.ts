@@ -1,7 +1,22 @@
-export const wishlistCardContent = {
+import { WishlistCardContent } from './types';
+
+interface IconConfig {
+    type: 'svg';
+    path: string;
+}
+
+interface CategorySection {
+    icon: IconConfig;
+    items: string[];
+}
+
+export const wishlistCardContent: WishlistCardContent = {
     wishingFor: {
         fiction: {
-            icon: "📚",
+            icon: {
+                type: "svg" as const,
+                path: "/src/assets/home/green-open.svg"
+            },
             items: [
                 "Contemporary Literary Fiction",
                 "Historical Fiction",
@@ -22,7 +37,10 @@ export const wishlistCardContent = {
             ]
         },
         nonfiction: {
-            icon: "📖",
+            icon: {
+                type: "svg" as const,
+                path: "/src/assets/home/greenClosed.svg"
+            },
             items: [
                 "Biographies & Memoirs",
                 "History",
@@ -35,7 +53,10 @@ export const wishlistCardContent = {
     },
     notWishingFor: {
         "All genres": {
-            icon: "❌",
+            icon: {
+                type: "svg" as const,
+                path: "/icons/close.svg"
+            },
             items: [
                 "Erotica",
                 "Fan Fiction",
