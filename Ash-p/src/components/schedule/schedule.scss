@@ -19,31 +19,21 @@
 
 .schedule-button button{
     width: max-content;
-    padding: 10px;
-    background: #EEE38E;
+    padding: clamp(10px,0.781vw, 15px) clamp(11px,0.833vw, 16px);
+    background: #C9549D;
     border: 1px solid #201D06;
-    box-shadow: 3px 6px 0px 1px black;
-    color: #000000;
+    box-shadow: 4px 4px 0px 1px rgba(26, 26, 26, 0.7);
+    color: #F3E8FF;
     font-size: var(--font-small);
     font-weight: 600;
-    @media screen and (max-width: 1100px) {
-      padding: 8px;
-      // font-size: 10px;
-      box-shadow: 2.5px 2px 0px 1px black;
-    }
-    @media screen and (max-width: 600px) {
-        padding: 6px;
-        // font-size: 9px;
-        box-shadow: 2.5px 2px 0px 1px black;
-        // width: 108px;
-    
-    }
+    display: flex;
+    align-items: center;
+    font-family: 'Quicksand';
+ 
 }
 
 .schedule-button button:hover{
-    box-shadow: 1px 3px 0px 1px black;
+  box-shadow: 2px 2px 0px 1px rgba(26, 26, 26, 0.7);
     transform: translate3d(2px, 2px, 0px);
-    @media screen and (max-width: 1100px) {
-      box-shadow: 1px 1px 0px 1px black;
-    }
+
 }
