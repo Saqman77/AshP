@@ -3,6 +3,7 @@ import Hero from '../../components/Home/Hero/Hero';
 import Results from '../../components/Home/Results/Results';
 import ThirdSection from '../../components/Home/ThirdSection/ThirdSection';
 import Wishlist from '../../components/Home/Wishlist/Wishlist';
+import Services from '../../components/Home/Services/Services';
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <Results />
       <ThirdSection />
       <Wishlist />
+      <Services />
     </div>
   );
 };
