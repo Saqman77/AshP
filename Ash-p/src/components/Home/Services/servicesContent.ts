@@ -1,4 +1,4 @@
 export const servicesContent = {
     heading: "Our Services",
-    description: "We offer a comprehensive range of services to help your business grow and succeed in the digital world."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, Lorem ipsum dolor sit amet, consectetur"
 }; 

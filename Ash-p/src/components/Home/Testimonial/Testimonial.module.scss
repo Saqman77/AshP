@@ -1,0 +1,134 @@
+// Variables
+$primary-color: #007bff;
+$text-dark: #333;
+$text-light: #666;
+$background-light: #f8f9fa;
+$white: #fff;
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$transition-speed: 0.3s;
+
+// Breakpoints
+$mobile: 768px;
+
+.testimonialSection {
+    padding: 4rem 2rem;
+    background-color: $background-light;
+
+    .testimonialHeader {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2.5rem;
+            color: $text-dark;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $text-light;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    .carouselContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .navButton {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: $text-dark;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color $transition-speed ease;
+            z-index: 2;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .carouselContent {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: grab;
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            .quoteIcon {
+                font-size: 3rem;
+                color: $primary-color;
+                margin-bottom: 1rem;
+            }
+
+            .testimonialCard {
+                display: flex;
+                width: 100%;
+
+                .testimonialSlide {
+                    min-width: 100%;
+                    padding: 0 1rem;
+                }
+
+                .quote {
+                    font-size: 1.2rem;
+                    color: $text-dark;
+                    line-height: 1.6;
+                    margin-bottom: 1.5rem;
+                    font-style: italic;
+                }
+
+                .authorInfo {
+                    margin-top: 1.5rem;
+
+                    h4 {
+                        color: $text-dark;
+                        font-size: 1.1rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    p {
+                        color: $text-light;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media (max-width: $mobile) {
+    .testimonialSection {
+        padding: 2rem 1rem;
+
+        .testimonialHeader {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .carouselContainer {
+            gap: 1rem;
+
+            .carouselContent {
+                .testimonialCard {
+                    .testimonialSlide {
+                        padding: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+} 
