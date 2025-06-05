@@ -13,27 +13,27 @@ export const resultsContent = {
     heading: "The Results",
     cards: [
         {
-            title: "40%",
-            description: "Our Clients",
+            title: "200+",
+            description: "EDITED PROJECTS",
             icon: {
                 type: "svg" as const,
-                path: "/src/assets/home/growth.svg"
+                path: "/src/assets/home/ep.svg"
             }
         },
         {
-            title: "98%",
-            description: "Our Clients",
+            title: "20+",
+            description: "YEARS OF EXPERIENCE",
             icon: {
                 type: "svg" as const,
-                path: "/src/assets/home/star.svg"
+                path: "/src/assets/home/yoe.svg"
             }
         },
         {
-            title: "35%",
-            description: "Our Clients",
+            title: "300+",
+            description: "HAPPY CLIENTS",
             icon: {
                 type: "svg" as const,
-                path: "/src/assets/home/rocket.svg"
+                path: "/src/assets/home/happy.svg"
             }
         }
     ]
