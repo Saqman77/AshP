@@ -4,6 +4,6 @@ interface TestimonialContent {
 }
 
 export const testimonialContent: TestimonialContent = {
-    heading: "What Our Clients Say",
-    description: "Discover what our valued clients have to say about their experience working with us. Their feedback drives us to deliver excellence."
+    heading: "Partner feedback",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, Lorem ipsum dolor sit amet, "
 }; 

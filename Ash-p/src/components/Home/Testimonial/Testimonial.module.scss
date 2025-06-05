@@ -1,11 +1,10 @@
 // Variables
-$primary-color: #007bff;
 $text-dark: #333;
 $text-light: #666;
 $background-light: #f8f9fa;
+$primary-color: #007bff;
 $white: #fff;
 $shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-$transition-speed: 0.3s;
 
 // Breakpoints
 $mobile: 768px;
@@ -39,6 +38,7 @@ $mobile: 768px;
         gap: 2rem;
         max-width: 1000px;
         margin: 0 auto;
+        position: relative;
 
         .navButton {
             background: none;
@@ -47,7 +47,7 @@ $mobile: 768px;
             color: $text-dark;
             cursor: pointer;
             padding: 0.5rem;
-            transition: color $transition-speed ease;
+            transition: color 0.3s ease;
             z-index: 2;
 
             &:hover {
@@ -55,16 +55,22 @@ $mobile: 768px;
             }
         }
 
-        .carouselContent {
+        .carousel {
             flex: 1;
-            text-align: center;
-            position: relative;
             overflow: hidden;
-            cursor: grab;
+        }
 
-            &:active {
-                cursor: grabbing;
-            }
+        .slide {
+            text-align: center;
+            padding: 2rem;
+            background: $white;
+            border-radius: 10px;
+            box-shadow: $shadow;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             .quoteIcon {
                 font-size: 3rem;
@@ -72,36 +78,26 @@ $mobile: 768px;
                 margin-bottom: 1rem;
             }
 
-            .testimonialCard {
-                display: flex;
-                width: 100%;
+            .quote {
+                font-size: 1.2rem;
+                color: $text-dark;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                font-style: italic;
+            }
 
-                .testimonialSlide {
-                    min-width: 100%;
-                    padding: 0 1rem;
-                }
+            .authorInfo {
+                margin-top: auto;
 
-                .quote {
-                    font-size: 1.2rem;
+                h4 {
                     color: $text-dark;
-                    line-height: 1.6;
-                    margin-bottom: 1.5rem;
-                    font-style: italic;
+                    font-size: 1.1rem;
+                    margin-bottom: 0.5rem;
                 }
 
-                .authorInfo {
-                    margin-top: 1.5rem;
-
-                    h4 {
-                        color: $text-dark;
-                        font-size: 1.1rem;
-                        margin-bottom: 0.5rem;
-                    }
-
-                    p {
-                        color: $text-light;
-                        font-size: 0.9rem;
-                    }
+                p {
+                    color: $text-light;
+                    font-size: 0.9rem;
                 }
             }
         }
@@ -122,12 +118,9 @@ $mobile: 768px;
         .carouselContainer {
             gap: 1rem;
 
-            .carouselContent {
-                .testimonialCard {
-                    .testimonialSlide {
-                        padding: 0 0.5rem;
-                    }
-                }
+            .slide {
+                padding: 1.5rem;
+                min-height: 250px;
             }
         }
     }
