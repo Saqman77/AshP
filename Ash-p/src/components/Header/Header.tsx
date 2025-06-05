@@ -4,6 +4,7 @@ import './Header.scss';
 import logo from '/src/assets/header/newLogo.svg';
 import mobileLogo from '/src/assets/header/mobile-logo.svg';
 import ContactUs from '../get-in-touch-button/ContactUs';
+import { navLinks } from './navLinks'; // Importing navLinks object
 import { useThemeContext } from '../../utils/ThemeContextProvider';
 
 const Header: React.FC = () => {
@@ -86,39 +87,25 @@ const Header: React.FC = () => {
           <div className='menu-wrapper'>
             <nav className="nav">
               <ul>
-                <li data-text="Home">
-                  <NavLink
-                    to="/"
-                    end
-                    className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li data-text="About">
-                  <NavLink
-                    to="/about"
-                    className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  >
-                    About
-                  </NavLink>
-                </li>
-                <li data-text="FrEdiBuddies">
-                  <NavLink
-                    to="/fredibuddies"
-                    className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  >
-                    FrEdiBuddies
-                  </NavLink>
-                </li>
-                <li data-text="Contact">
-                  <NavLink
-                    to="/contact"
-                    className={({ isActive }) => (isActive ? 'header-active' : '')}
-                  >
-                    Contact
-                  </NavLink>
-                </li>
+                {Object.entries(navLinks).map(([key, path]) => {
+                  const label =
+                    key === 'fredibuddies'
+                      ? 'FrEdiBuddies'
+                      : key.charAt(0).toUpperCase() + key.slice(1);
+
+                  return (
+                    <li key={key} data-text={label}>
+                      <NavLink
+                        data-text={label}
+                        to={path}
+                        end={path === '/'}
+                        className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                      >
+                        {label}
+                      </NavLink>
+                    </li>
+                  );
+                })}
               </ul>
 
             </nav>
@@ -132,7 +119,9 @@ const Header: React.FC = () => {
 
           <div className="mob-nav">
             <div className="mobile-logo-wrapper">
-              <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} />
+              <NavLink to="/" className="mobile-logo">
+                <img src={mobileLogo} alt="Logo" className="mobile-logo" onClick={closeMenu} />
+              </NavLink>
             </div>
             {/* <ContactUs /> */}
             <button
@@ -146,18 +135,21 @@ const Header: React.FC = () => {
           </div>
           <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
             <ul className="mob-list"
-              
+
             >
               <div className="list-header">
                 <div className="mob-logo">
-                  <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} />
+                  <NavLink to="/" className="mobile-logo">
+                    <img src={mobileLogo} alt="Logo" className="mobile-logo" onClick={closeMenu} />
+                  </NavLink>
+                  {/* <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} /> */}
                 </div>
                 <button className="close-btn" onClick={toggleMenu}>
                   <span className="close-icon"></span>
                   <span className="close-icon"></span>
                 </button>
               </div>
-              <ul className='mob-ul'>
+              {/* <ul className='mob-ul'>
                 <li>
                   <NavLink
                     to="/"
@@ -184,8 +176,26 @@ const Header: React.FC = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <ContactUs />
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                  >
+                    Contact
+                  </NavLink>
                 </li>
+              </ul> */}
+              <ul className="mob-ul" onClick={toggleMenu}>
+                {(Object.entries(navLinks) as [string, string][]).map(([label, path]) => (
+                  <li key={label}>
+                    <NavLink
+                      to={path}
+                      end={path === '/'} // Only apply `end` to the home route
+                      className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                    >
+                      {label === 'fredibuddies' ? 'FrEdiBuddies' : label.charAt(0).toUpperCase() + label.slice(1)}
+                    </NavLink>
+                  </li>
+                ))}
               </ul>
             </ul>
           </nav>

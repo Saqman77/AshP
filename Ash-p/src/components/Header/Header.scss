@@ -172,7 +172,7 @@ $font-xlarge: 80px;
   // font-family: "quicksand";
 }
 
-.nav ul li {
+.nav ul li .link,.nav ul li .header-active.link  {
   position: relative;
   padding-right: 16px;
   font-family: "Quicksand";
@@ -182,6 +182,7 @@ $font-xlarge: 80px;
   // visibility: hidden;
   transition: color 0.3s ease, font-weight 0.3s ease;
 
+
   @media screen and (max-width: 1650px) {
     padding-right: 8px;
   }
@@ -190,7 +191,7 @@ $font-xlarge: 80px;
   // text-align: center;
 }
 
-.nav ul li::after {
+.nav ul li .link::after {
   content: attr(data-text);
   font-weight: 500;
   font-family: "Quicksand";
@@ -203,12 +204,26 @@ $font-xlarge: 80px;
   transition: color 0.3s ease, font-weight 0.1s ease-in 0.5ms;
   pointer-events: none;
 }
+.nav ul li .header-active.link::after {
+  content: attr(data-text);
+  font-weight: 700;
+  font-family: "Quicksand";
+  // visibility: hidden;
+  position: absolute;
+  color: #C9549D;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  transition: color 0.3s ease, font-weight 0.1s ease-in 0.5ms;
+  pointer-events: none;
+}
 
-.nav ul li:hover::after {
+.nav ul li .link:hover::after{
   color: #C9549D;
   font-weight: 700;
   // text-shadow: #C9549D 0px 0px 1px;
 }
+
 
 .nav ul li a {
   // position: absolute;
@@ -255,8 +270,8 @@ $font-xlarge: 80px;
   background: #4B3B74;
   // backdrop-filter: blur(10px);
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0), inset 0px 0px 2px 1px #00000000;
-  border: 1px solid #201D06;
-  height: max-content;
+  // border: 1px solid #201D06;
+  // height: max-content;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 1s ease-in-out, opacity 1s;
   opacity: 0;
@@ -306,15 +321,19 @@ $font-xlarge: 80px;
   // height: max-content;
   transform: translateX(0px);
   opacity: 1;
+  @media screen and (max-width: 900px) {
+    padding: 0 20px;
+    
+  }
 }
 
 .list-header {
   width: 100%;
-  // height: 70px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  // padding: 40px 0;
 }
 
 .mob-ul {
@@ -345,7 +364,8 @@ $font-xlarge: 80px;
 }
 
 .nav-list ul li {
-  padding: 10px;
+  padding-bottom: 24px;
+  padding-top: 24px;
   color: #F3E8FF;
   // letter-spacing: 4px;
   font-size: 24px;
@@ -361,7 +381,8 @@ $font-xlarge: 80px;
 }
 
 .nav-list.open ul li {
-  padding: 10px;
+  padding-bottom: 24px;
+  padding-top: 24px;
   // letter-spacing: 4px;
   // color: #7163DE;
   font-size: 24px;
@@ -375,23 +396,40 @@ $font-xlarge: 80px;
   // transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.5s ease-in-out;
 }
 
+.nav-list.open ul li:nth-last-child(1) {
+  border-bottom: none;
+  text-align: center;
+  background-color: #7B6DDB;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 40px;
+  border: 1px solid black;
+  box-shadow: 4px 4px 0px 1px rgba(26, 26, 26, 0.7);
+}
+
 .link {
   width: 100%;
   display: block;
 }
 
+.header-active.link {
+  color: #C9549D;
+  font-weight: 700;
+}
+
 .menu-btn {
   background: none;
-  border: none;
+  border: 1px solid #201D06;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
-  width: 50px;
-  height: 42px;
-  padding: 7px;
-  margin: 0px 0 0 12px;
+  width: 40px;
+  height: 28px;
+  padding: 8px 12px;
+  background-color: #7B6DDB;
+  // margin: 0px 0 0 12px;
   position: relative;
   z-index: 9999;
 }
@@ -401,8 +439,8 @@ $font-xlarge: 80px;
 .menu-btn span {
   display: block;
   width: 100%;
-  height: 3px;
-  background-color: black;
+  height: 1px;
+  background-color: #F3E8FF;
   // border-radius: 1px;
   transition: all 0.3s ease-in-out;
 }
@@ -417,21 +455,24 @@ $font-xlarge: 80px;
 }
 
 .menu-btn span:nth-child(3) {
-  width: 70%;
+  width: 100%;
 }
 
 /* Active state */
 .menu-btn.active span:nth-child(1) {
-  width: 70%;
+  width: 100%;
+  transform: scaleX(0.7);
   /* Top becomes the shortest */
 }
 
 .menu-btn.active span:nth-child(2) {
   width: 100%;
+  // transform: scaleX(0.7);
 }
 
 .menu-btn.active span:nth-child(3) {
   width: 100%;
+  transform: scaleX(0.7);
   /* Middle and bottom become the longest */
 }
 
