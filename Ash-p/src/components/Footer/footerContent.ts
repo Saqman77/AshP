@@ -4,10 +4,10 @@ export const footerContent = {
         part2: "Talking About Our Editing Services.",
     },
     navigationLinks: [
-        { text: "Home", href: "#" },
-        { text: "About Us", href: "#" },
-        { text: "Freediebuddies", href: "#" },
-        { text: "Contact Us", href: "#" },
+        { text: "Home", href: "/" },
+        { text: "About Us", href: "/about" },
+        { text: "Freediebuddies", href: "/fredibuddies" },
+        { text: "Contact Us", href: "/contact" },
     ],
     copyright: "2024 Digital Joe Mama Agency",
     socialLinks: [

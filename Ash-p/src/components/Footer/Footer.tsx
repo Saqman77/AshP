@@ -1,6 +1,7 @@
 import './Footer.scss';
 import { footerContent } from './footerContent';
 import CTA from './CTA/CTA';
+import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +15,15 @@ const Footer: React.FC = () => {
         <nav className="footer__nav">
           <ul>
             {footerContent.navigationLinks.map((link, index) => (
-              <li key={index}><a href={link.href}>{link.text}</a></li>
+              <li key={index}>
+                <NavLink 
+                  to={link.href}
+                  end={link.href === '/'}
+                  className={({ isActive }) => isActive ? 'active' : ''}
+                >
+                  {link.text}
+                </NavLink>
+              </li>
             ))}
           </ul>
         </nav>
