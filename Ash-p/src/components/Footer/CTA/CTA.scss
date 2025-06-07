@@ -1,11 +1,36 @@
 .cta-container {
-    padding: 5.2vw 24.47vw;
+    padding: 5.2vw 15.625vw;
     background-color: #F3E8FF;
     text-align: center;
+    position: relative;
+    .lets-svg{
+        position: absolute;
+        top: 20px;
+        left: 333px;
+        width:18.33vw;
+        height:18.33vw;
+        z-index: 0;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .together-svg{
+        position: absolute;
+        top: 106px;
+        right: 316px;
+        width:18.9vw;
+        height:16.4vw;
+        z-index: 0;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
 
     .cta-content {
         margin: 0 auto;
-
+        z-index: 1;
         h2 {
             font-size: clamp(80px, 5vw, 96px);
             margin-bottom: 8px;
@@ -50,7 +75,8 @@
             display: flex;
             margin-top: clamp(25px, 2.6vw, 50px);
             justify-content: center;
-
+            z-index: 1;
+            position: relative;
             .navigate-button {
                 margin-right: clamp(16px, 1.25vw, 24px);
             }
