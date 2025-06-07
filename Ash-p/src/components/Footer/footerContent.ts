@@ -1,0 +1,19 @@
+export const footerContent = {
+    heading: {
+        part1: "Discover Why Everyone Is",
+        part2: "Talking About Our Editing Services.",
+    },
+    navigationLinks: [
+        { text: "Home", href: "#" },
+        { text: "About Us", href: "#" },
+        { text: "Freediebuddies", href: "#" },
+        { text: "Contact Us", href: "#" },
+    ],
+    copyright: "2024 Digital Joe Mama Agency",
+    socialLinks: [
+        { src: "/path/to/youtube.png", alt: "YouTube", href: "#" },
+        { src: "/path/to/facebook.png", alt: "Facebook", href: "#" },
+        { src: "/path/to/instagram.png", alt: "Instagram", href: "#" },
+        { src: "/path/to/linkedin.png", alt: "LinkedIn", href: "#" },
+    ]
+}; 

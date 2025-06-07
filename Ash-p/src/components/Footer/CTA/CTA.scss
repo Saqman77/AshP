@@ -1,0 +1,105 @@
+.cta-container {
+    padding: 5.2vw 24.47vw;
+    background-color: #F3E8FF;
+    text-align: center;
+
+    .cta-content {
+        margin: 0 auto;
+
+        h2 {
+            font-size: clamp(80px, 5vw, 96px);
+            margin-bottom: 8px;
+            color: #7B6DDB;
+            position: relative;
+            display: inline-block;
+            line-height: 1.2;
+            font-family: "Poppins";
+            font-weight: 600;
+
+            .highlight-lets-work {
+                color: #7B6DDB;
+            }
+
+            .highlight-together {
+                color: #C9549D;
+                position: relative;
+                display: inline-block;
+                z-index: 1;
+
+                .highlight-bg-together {
+                    background-color: #F5F5F5;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    z-index: -1;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        p {
+            font-size: 20px;
+            color: #4B3B74;
+            font-weight: 700;
+            font-family: "Quicksand";
+        }
+
+        .cta-wrapper {
+            display: flex;
+            margin-top: clamp(25px, 2.6vw, 50px);
+            justify-content: center;
+
+            .navigate-button {
+                margin-right: clamp(16px, 1.25vw, 24px);
+            }
+
+            .navigate-button button {
+                padding: clamp(10px, 0.781vw, 15px) clamp(11px, 0.833vw, 16px);
+            }
+
+            .contact-us-text p {
+                color: #F3E8FF;
+                font-size: clamp(20px, 1.25vw, 24px);
+                font-weight: 600;
+                font-family: 'Quicksand';
+                margin-top: 0;
+                margin-left: 0;
+                margin-bottom: 0;
+                margin-right: 10px;
+                line-height: 1em;
+            }
+
+            .contact-us-arrow {
+                width: clamp(16px, 1.04vw, 20px);
+                height: clamp(16px, 1.04vw, 20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .contact-us-arrow img {
+                width: 100%;
+                height: 100%;
+                fill: #F3E8FF;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        padding: 3rem 1rem;
+
+        .cta-content {
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+} 
