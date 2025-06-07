@@ -57,6 +57,7 @@
 
     .cta-content {
         margin: 0 auto;
+        position: relative;
         z-index: 1;
         h2 {
             font-size: clamp(80px, 5vw, 96px);
@@ -96,6 +97,7 @@
             color: #4B3B74;
             font-weight: 700;
             font-family: "Quicksand";
+            z-index: 1;
         }
 
         .cta-wrapper {
