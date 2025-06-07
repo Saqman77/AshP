@@ -34,17 +34,34 @@
         position: relative;
 
         .navButton {
-            background: none;
-            border: none;
-            font-size: 2rem;
+            background: #FFFFFF;
+            border: 1px solid #E5E5E5;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #333333;
             cursor: pointer;
-            padding: 0.5rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             z-index: 2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
             &:hover {
                 color: #7B6DDB;
+                border-color: #7B6DDB;
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(123, 109, 219, 0.2);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
             }
         }
 
