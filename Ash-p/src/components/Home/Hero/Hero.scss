@@ -60,6 +60,9 @@
                 line-height: 1.111;
                 font-family: 'Poppins', sans-serif;
                 text-align: center;
+                @media screen and (max-width: 1250px) {
+                    font-size: clamp(30px, 8.5vw, 40px)
+                }
 
                 .normal {
                     color: #4B3B74;
@@ -90,13 +93,24 @@
             .cta-wrapper {
                 display: flex;
                 margin-top: clamp(25px, 2.6vw, 50px);
+                @media screen and (max-width:1250px){
+                    flex-direction: column-reverse;
+                    align-items: center;
+                }
 
                 .navigate-button {
                     margin-right: clamp(16px, 1.25vw, 24px);
+                    @media screen and (max-width:1250px){
+                        margin-right: 0;
+                        margin-top: 16px;
+                    }
                 }
 
                 .navigate-button button {
                     padding: clamp(10px, 0.781vw, 15px) clamp(11px, 0.833vw, 16px);
+                    @media screen and (max-width:1250px){
+                        padding: 8px 10px;
+                    }
                 }
 
                 .contact-us-text p {
@@ -106,6 +120,11 @@
                     font-family: 'Quicksand';
                     // margin-right: 10px;
                     line-height: 1em;
+                    @media screen and (max-width:1250px){
+                        font-size: 16px;
+                        margin-right: 5px;
+                        
+                    }
                 }
 
                 .contact-us-arrow {
@@ -114,6 +133,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    @media screen and (max-width:1250px){
+                        width: 10px;
+                        height: 10px;
+                    }
                 }
 
                 .contact-us-arrow img {
