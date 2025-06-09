@@ -4,22 +4,21 @@ import './CTA.scss';
 import { ctaContent } from './ctaContent';
 
 const CTA: React.FC = () => {
-    const highlightWords = (text: string) => {
-        const parts = text.split(/(together\.)/);
-        return parts.map((part, index) => {
-            if (part === 'together.') {
-                return (
-                    <span key={index} className="highlight-together">
-                        {part}
-                        <span className="highlight-bg-together"></span>
-                    </span>
-                );
-            } else if (part === 'let\'s work ') {
-                return <span key={index} className="highlight-lets-work">{part}</span>;
-            }
-            return <span key={index}>{part}</span>;
-        });
+    const splitHeading = (text: string) => {
+        // Split the text into words
+        const words = text.split(' ');
+        // Get the last word (which will be highlighted)
+        const highlightedWord = words.pop();
+        // Join the remaining words for the main text
+        const mainText = words.join(' ');
+
+        return {
+            mainText,
+            highlightedWord
+        };
     };
+
+    const { mainText, highlightedWord } = splitHeading(ctaContent.heading);
 
     return (
         <div className="cta-container">
@@ -34,7 +33,13 @@ const CTA: React.FC = () => {
                 </svg>
             </div>
             <div className="cta-content">
-                <h2>{highlightWords(ctaContent.heading)}</h2>
+                <h2>
+                    <span className="main-text">{mainText}</span>
+                    <span className="highlight-together">
+                        {highlightedWord}
+                        <span className="highlight-bg-together"></span>
+                    </span>
+                </h2>
                 <p>{ctaContent.description}</p>
                 <div className="cta-wrapper">
                     <ContactUs />
