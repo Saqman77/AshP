@@ -16,7 +16,8 @@
     transition: all 0.3s ease;
     transform-origin: center;
     @media screen and (max-width:1250px) {
-        
+        padding: 40px 30px;
+        margin-bottom: 40px;
     }
     @media screen and (max-width:768px) {
         padding: 40px 20px;
@@ -38,14 +39,14 @@
 
     .card-header-row {
         display: flex;
-        align-items: center;
+        align-items: start;
         @media screen and (max-width:1250px) {
+            align-items: start;
+        }
+        @media screen and (max-width:768px) {
             flex-direction: row-reverse;
             align-items: start;
             justify-content: space-between;
-        }
-        @media screen and (max-width:768px) {
-
         }
 
         .label-icon {
@@ -77,6 +78,7 @@
                 margin-left: 10px;
                 @media screen and (max-width:1250px) {
                     margin-left: 0px;
+                    font-size: clamp(50px, 4vw, 64px);
                 }
                 @media screen and (max-width:768px) {
                     font-size: clamp(40px, 10.6vw, 50px);
@@ -90,6 +92,7 @@
                 margin-left: 10px;
                 @media screen and (max-width:1250px) {
                     margin-left: 0px;
+                    font-size: clamp(50px, 4vw, 64px);
                 }
                 @media screen and (max-width:768px) {
                     font-size: clamp(40px, 10.6vw, 50px);
