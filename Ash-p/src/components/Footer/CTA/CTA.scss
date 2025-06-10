@@ -27,6 +27,12 @@
     background-color: #F3E8FF;
     text-align: center;
     position: relative;
+    @media screen and (max-width: 1250px) {
+        padding: 80px 40px;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 80px 20px;
+    }
     .lets-svg{
         position: absolute;
         top: 20px;
@@ -69,8 +75,20 @@
             font-family: "Poppins";
             font-weight: 600;
 
+            @media screen and (max-width:1250px) {
+                margin-bottom: 16px;
+                
+            }
+            @media screen and (max-width:768px) {
+                font-size: clamp(40px, 13.86vw, 70px);
+                
+            }
+
             .main-text {
                 color: #7B6DDB;
+                @media screen and (max-width:768px) {
+                    text-wrap: nowrap;
+                }
             }
 
             .highlight-together {
@@ -98,6 +116,15 @@
             font-weight: 700;
             font-family: "Quicksand";
             z-index: 1;
+
+            @media screen and (max-width:1250px) {
+                font-size: 16px;
+                
+            }
+            @media screen and (max-width:768px) {
+                font-size: 14px;
+                
+            }
         }
 
         .cta-wrapper {
@@ -106,8 +133,15 @@
             justify-content: center;
             z-index: 1;
             position: relative;
+            @media screen and (max-width:1250px) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
             .navigate-button {
                 margin-right: clamp(16px, 1.25vw, 24px);
+                @media screen and (max-width:1250px) {
+                    margin-top: 24px;
+                }
             }
 
             .navigate-button button {
@@ -143,18 +177,3 @@
     }
 }
 
-@media (max-width: 768px) {
-    .cta-container {
-        padding: 3rem 1rem;
-
-        .cta-content {
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
-} 
