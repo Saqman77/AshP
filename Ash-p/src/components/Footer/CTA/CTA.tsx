@@ -34,7 +34,7 @@ const CTA: React.FC = () => {
             </div>
             <div className="cta-content">
                 <h2>
-                    <span className="main-text">{mainText}</span>
+                    <span className="main-text">{mainText}</span>{' '}
                     <span className="highlight-together">
                         {highlightedWord}
                         <span className="highlight-bg-together"></span>
