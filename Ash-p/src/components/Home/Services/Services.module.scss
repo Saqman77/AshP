@@ -39,7 +39,7 @@
 @media (max-width: 1400px) {
     .cardsContainer {
         gap: 10px; /* Reduce gap */
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns */
+        grid-template-columns: 1fr 1fr; /* Flexible columns */
         /* Remove specific placement for the 7th child in this view */
         & :nth-child(7) {
             grid-column: auto; /* Reset grid column property */

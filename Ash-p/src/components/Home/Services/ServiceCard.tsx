@@ -23,11 +23,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             <div className={`${styles.card} ${isFlipped ? styles.flipped : ''} ${isFlipping ? styles.flipping : ''}`}>
                 {/* Front of card */}
                 <div className={styles.cardFront} style={{ backgroundColor: service.backgroundColor }}>
-                    <div className={styles.iconContainer}>
-                        <img src={service.icon} alt={service.title} className={styles.icon} />
+                    <div className={styles['serv-header']}>
+                        <div className={styles.iconContainer}>
+                            <img src={service.icon} alt={service.title} className={styles.icon} />
+                        </div>
+                        <h3 className={styles.title}>{service.title}</h3>
+                        <p className={styles.subtitle}>{service.subtitle}</p>
                     </div>
-                    <h3 className={styles.title}>{service.title}</h3>
-                    <p className={styles.subtitle}>{service.subtitle}</p>
                     <button className={styles.readMore} onClick={handleFlip}>
                         {service.readMoreText}
                         <img src={service.readMoreIcon} alt="Read More" className={styles.readMoreIcon} />

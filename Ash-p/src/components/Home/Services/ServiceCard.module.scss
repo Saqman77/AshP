@@ -1,7 +1,10 @@
 .cardContainer {
-    width: 22.083vw;
-    height: 17.5vw;
+    width: clamp(350px,22.083vw,500px);
+    height: clamp(336px,17.5vw,336px);
     perspective: 1000px;
+    @media screen and (max-width:1450px) {
+        width: 100%;
+    }
 }
 
 .card {
@@ -53,6 +56,12 @@
 
 .flipped .cardBack {
     box-shadow: 12px 12px 0px 0px rgba(26, 26, 26, 0.8);
+}
+
+.serv-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .iconContainer {
