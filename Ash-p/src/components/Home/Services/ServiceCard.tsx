@@ -27,8 +27,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
                         <div className={styles.iconContainer}>
                             <img src={service.icon} alt={service.title} className={styles.icon} />
                         </div>
-                        <h3 className={styles.title}>{service.title}</h3>
-                        <p className={styles.subtitle}>{service.subtitle}</p>
+                        <div className={styles['s-header-text']}>
+                            <h3 className={styles.title}>{service.title}</h3>
+                            <p className={styles.subtitle}>{service.subtitle}</p>
+                        </div>
                     </div>
                     <button className={styles.readMore} onClick={handleFlip}>
                         {service.readMoreText}

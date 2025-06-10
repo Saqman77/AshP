@@ -46,11 +46,24 @@
         }
     }
 }
+@media (max-width: 1250px) {
+    .servicesSection {
+        padding: 80px 40px;
+    }
+    .cardsContainer {
+        gap: 40px; /* Reduce gap */
+        grid-template-columns: 1fr; /* Flexible columns */
+        /* Remove specific placement for the 7th child in this view */
+        & :nth-child(7) {
+            grid-column: auto; /* Reset grid column property */
+        }
+    }
+}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .servicesSection {
-        padding: 40px 10px;
+        padding: 40px 20px;
     }
 
     .heading {
@@ -63,7 +76,7 @@
 
     .cardsContainer {
         grid-template-columns: repeat(1, 1fr); /* Stack cards in a single column */
-        gap: 20px; /* Add gap between stacked cards */
+        gap: 40px; /* Add gap between stacked cards */
          /* Remove specific placement for the 7th child in this view */
          & :nth-child(7) {
             grid-column: auto; /* Reset grid column property */

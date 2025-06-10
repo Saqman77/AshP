@@ -23,7 +23,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0e0f2", // Example color 1
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -38,7 +38,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2e0e0", // Example color 2
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -53,7 +53,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0f2e0", // Example color 3
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -68,7 +68,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2f2e0", // Example color 4
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -83,7 +83,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0e0f2", // Example color 1
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -98,7 +98,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2e0e0", // Example color 2
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     },
     {
@@ -113,7 +113,7 @@ export const servicesCardsContent: ServiceCard[] = [
         icon: "/src/assets/home/services.svg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0f2e0", // Example color 3
-        readMoreText: "REAR MORE",
+        readMoreText: "READ MORE",
         backText: "Back"
     }
 ]; 
