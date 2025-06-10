@@ -10,18 +10,18 @@
     background: #f7f3ff;
     // border-radius: 8px;
     padding: 30px;
-    margin-bottom: 24px;
+    margin-bottom: 80px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     border: 2px solid #bcb6e5;
     transition: all 0.3s ease;
     transform-origin: center;
     @media screen and (max-width:1250px) {
         padding: 40px 30px;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
     }
     @media screen and (max-width:768px) {
         padding: 40px 20px;
-        margin-bottom: 40px;
+        margin-bottom: 64px;
     }
 
     &:hover {
