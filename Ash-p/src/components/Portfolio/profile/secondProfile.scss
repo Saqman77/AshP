@@ -1,12 +1,15 @@
 .second-profile {
     padding: 124px 300px;
     background-color: #F3E8FF;
+    position: relative;
 
     &__wrapper {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
+        position: relative;
+        z-index: 1;
     }
 
     &__top {
@@ -20,8 +23,9 @@
             border-radius: 12px;
             margin-right: 24px;
             overflow: hidden;
+
             // Image will be added later
-            img{
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -33,6 +37,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+
             .name {
                 font-size: 40px;
                 font-weight: 600;
@@ -135,5 +140,36 @@
         height: 1px;
         background-color: #C2BFD6;
         margin-bottom: 50px;
+    }
+
+    .element {
+        position: absolute;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .top-left {
+        width: 20.3vw;
+        height: 20.3vw;
+        top: -5vw;
+        left: -2vw;
+    }
+
+    .top-right {
+        width: 19.21vw;
+        height: 19.21vw;
+        right: 10vw;
+        top: 1vw;
+    }
+
+    .bottom-right {
+        width: 30.9vw;
+        height: 30.9vw;
+        bottom: 9vw;
+        right: -12vw;
     }
 }

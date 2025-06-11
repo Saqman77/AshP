@@ -1,6 +1,9 @@
 import React from 'react';
 import { secondProfileContent } from './secondProfileContent';
 import tick from "/src/assets/home/greenTick.svg"
+import tL from "/src/assets/about/hira-top-left-about.svg"
+import tR from "/src/assets/about/hira-top-right-about.svg"
+import bR from "/src/assets/about/hira-bottom-right-about.svg"
 import './secondProfile.scss';
 
 const SecondProfile: React.FC = () => {
@@ -41,6 +44,15 @@ const SecondProfile: React.FC = () => {
                         ))}
                     </div>
                 </div>
+            </div>
+            <div className="element top-left">
+                <img src={tL} alt="background-elemnt" />
+            </div>
+            <div className="element top-right">
+                <img src={tR} alt="background-elemnt" />
+            </div>
+            <div className="element bottom-right">
+                <img src={bR} alt="background-elemnt" />
             </div>
         </div>
     );
