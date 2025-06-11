@@ -1,13 +1,14 @@
 
 // import { useEffect } from "react";
-import Horizontal from "../../components/Portfolio/Horizontal"
-import Scroll from "../../components/Portfolio/Scroll"
+import Horizontal from "../../components/Portfolio/aboutHero/Horizontal"
+import Scroll from "../../components/Portfolio/pastwork/Scroll"
 import './Portfolio.scss'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect, useState } from "react";
 import { useThemeContext } from "../../utils/ThemeContextProvider";
+import AboutSection from "../../components/Portfolio/aboutSection/AboutSection";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -100,6 +101,7 @@ const handleCloseServ = () => {
         Under construction
       </h1> */}
       <Horizontal/>
+      <AboutSection/>
       <Scroll
             startIndex={selectedIndex}
             isVisible={isServVisible}

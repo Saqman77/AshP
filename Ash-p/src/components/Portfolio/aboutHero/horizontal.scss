@@ -150,6 +150,14 @@
         font-family: 'Euphorigenic', sans-serif;
         position: relative;
         z-index: 2;
+        @media screen and (max-width:1250px) {
+            font-size: clamp(100px,17vw,200px);
+            text-shadow: 0px 3px 4px  hsla(0, 0%, 0%, 0);
+        }
+        @media screen and (max-width:900px) {
+            font-size: clamp(50px,17vw,80px);
+            text-shadow: 0px 1px 4px  hsla(0, 0%, 0%, 0);
+        }
     
     }
     

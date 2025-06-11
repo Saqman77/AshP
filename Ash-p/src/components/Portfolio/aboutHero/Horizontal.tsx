@@ -29,13 +29,13 @@ const Horizontal: React.FC = () => {
           onEnter: () => {
             gsap.to('.h-heading', {
               color: '#DD8DA1',
-              textShadow: '0px 5px 4px  hsla(0, 0%, 0%, 0.61)'
+              textShadow: window.innerWidth < 1250 ? '0px 3px 4px  hsla(0, 0%, 0%, 0.61)':'0px 5px 4px  hsla(0, 0%, 0%, 0.61)',
             })
           },
           onEnterBack: () => {
             gsap.to('.h-heading', {
               color: '#dd8da100',
-              textShadow: 'text-shadow: 0px 5px 4px  hsla(0, 0%, 0%, 0);'
+              textShadow: window.innerWidth < 1250 ? 'text-shadow: 0px 3px 4px  hsla(0, 0%, 0%, 0);' : 'text-shadow: 0px 5px 4px  hsla(0, 0%, 0%, 0);',
             })
           },
           // markers: true,

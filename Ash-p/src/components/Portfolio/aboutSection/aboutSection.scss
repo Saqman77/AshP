@@ -1,0 +1,76 @@
+.aboutSection {
+    padding: 6.45vw 15.625vw;
+    @media screen and (max-width: 1250px){
+        padding: 100px 40px;
+    }
+    @media screen and (max-width: 768px){
+        padding: 80px 20px;
+    }
+
+    .smallHeading {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        color: #4B3B74;
+        margin-bottom: 20px;
+    }
+
+    .mainHeading {
+        font-size: clamp(40px, 2.9vw, 64px);
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        .since {
+            color: #4B3B74;
+        }
+
+        .year {
+            color: #7B6DDB;
+        }
+    }
+
+    .firstParagraph {
+        font-size: clamp(24px, 1.8vw, 40px);
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        margin-bottom: 50px;
+        @media screen and (max-width:1250px) {
+            margin-bottom: 40px;
+        }
+
+        .companyName {
+            color: #C9549D;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .serviceName {
+            color: #7B6DDB;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .description {
+            color: #4D4D4D;
+            font-family: "Quicksand", sans-serif;
+        }
+    }
+
+    .secondParagraph {
+        font-size: clamp(16px, 1.25vw, 32px);
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        color: #4D4D4D;
+
+        .familyRun,
+        .bestSelling,
+        .awardWinning {
+            color: #C9549D;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .publisher {
+            color: #7B6DDB;
+            font-family: "Quicksand", sans-serif;
+        }
+    }
+} 
