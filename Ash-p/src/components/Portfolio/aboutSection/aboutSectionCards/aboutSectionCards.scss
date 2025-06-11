@@ -6,7 +6,7 @@
     font-family: 'Nunito Sans', sans-serif;
     width: 100%;
     height: 100%;
-    min-height: 500px;
+    min-height: 300px;
     @media screen and (max-width: 1250px) {
         grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
         gap: 80px;
@@ -16,6 +16,7 @@
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 64px;
         padding: 80px 0 0;
+        
     }
     @media screen and (max-width: 600px) {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -42,6 +43,11 @@
             font-size: 20px;
             padding: 20px;
         }
+        @media screen and (max-width: 900px){
+            font-size: 20px;
+            padding: 20px;
+            min-height: 250px;
+        }
 
         p {
             color: #4D4D4D;
@@ -64,11 +70,15 @@
             gap: -10px;
 
             .circularImage {
-                width: 70px;
-                height: 70px;
+                width: clamp(50px, 3.6vw, 80px);
+                height: clamp(50px, 3.6vw, 80px);
                 border: 2px solid #C9549D;
                 border-radius: 50%;
                 background-color: white;
+                @media screen and (max-width:900px) {
+                    width: 40px;
+                    height: 40px;
+                }
 
                 &.left {
                     position: relative;
