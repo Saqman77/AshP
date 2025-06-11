@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useThemeContext } from "../../utils/ThemeContextProvider";
 import AboutSection from "../../components/Portfolio/aboutSection/AboutSection";
 import Profile from "../../components/Portfolio/profile/Profile";
+import SecondProfile from "../../components/Portfolio/profile/SecondProfile";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -103,6 +104,7 @@ const handleCloseServ = () => {
       <Horizontal/>
       <AboutSection/>
       <Profile/>
+      <SecondProfile/>
       <Scroll
             startIndex={selectedIndex}
             isVisible={isServVisible}

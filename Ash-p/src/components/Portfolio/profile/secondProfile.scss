@@ -1,4 +1,4 @@
-.first-profile {
+.second-profile {
     padding: 124px 300px;
     background-color: #F3E8FF;
 
@@ -12,6 +12,7 @@
     &__top {
         display: flex;
         margin-bottom: 50px;
+        flex-direction: row-reverse;
 
         &-left {
             width: 424px;
@@ -98,7 +99,7 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
             gap: 24px;
 
             .certification-item {
