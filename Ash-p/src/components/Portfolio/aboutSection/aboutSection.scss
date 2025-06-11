@@ -130,6 +130,10 @@
         font-weight: 700;
         font-family: "Quicksand", sans-serif;
         color: #4D4D4D;
+        margin-bottom: 124px;
+        @media screen and (max-width:1250px) {
+            margin-bottom: 80px;
+        }
 
         .familyRun,
         .bestSelling,
