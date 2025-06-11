@@ -90,7 +90,7 @@ const AboutSection: React.FC = () => {
 
             
             <AboutSectionCards spark={spark} />
-            <AboutHeading/>
+            <AboutHeading spark={spark}/>
         </section>
     );
 };
