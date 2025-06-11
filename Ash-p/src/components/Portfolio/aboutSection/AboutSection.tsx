@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { aboutSectionContent } from './aboutSectionContent';
 import AboutSectionCards from './aboutSectionCards/AboutSectionCards';
+import AboutHeading from './aboutHeading/AboutHeading';
 import spark from '../../../../src/assets/about/sparkle.svg'
 import './aboutSection.scss';
 import { gsap } from 'gsap';
@@ -11,10 +12,10 @@ const AboutSection: React.FC = () => {
 
     useGSAP(() => {
         const sparkles = gsap.utils.toArray<HTMLElement>('.sparkle img');
-        
+
         sparkles.forEach((sparkle) => {
             // Scale animation
-            gsap.fromTo(sparkle, 
+            gsap.fromTo(sparkle,
                 {
                     scale: 0,
                     opacity: 0,
@@ -50,9 +51,12 @@ const AboutSection: React.FC = () => {
 
     return (
         <section className="aboutSection" ref={sectionRef}>
-            <h2 className="smallHeading"><div className="sparkle big">
-                <img src={spark} alt="" /></div>{aboutSectionContent.smallHeading}</h2>
-            
+            <h2 className="smallHeading">
+                <div className="sparkle big">
+                    <img src={spark} alt="" />
+                </div>
+                {aboutSectionContent.smallHeading}</h2>
+
             <h1 className="mainHeading">
                 <div className="sparkle small">
                     <img src={spark} alt="" />
@@ -70,9 +74,9 @@ const AboutSection: React.FC = () => {
             <p className="secondParagraph">
                 {aboutSectionContent.secondParagraph.start}
                 <span className="familyRun">
-                <div className="sparkle medium">
-                    <img src={spark} alt="" />
-                </div>
+                    <div className="sparkle medium">
+                        <img src={spark} alt="" />
+                    </div>
                     {aboutSectionContent.secondParagraph.familyRun}
                 </span>
                 {aboutSectionContent.secondParagraph.middle}
@@ -84,7 +88,9 @@ const AboutSection: React.FC = () => {
                 <span className="publisher">{aboutSectionContent.secondParagraph.publisher}</span>
             </p>
 
+            
             <AboutSectionCards spark={spark} />
+            <AboutHeading/>
         </section>
     );
 };

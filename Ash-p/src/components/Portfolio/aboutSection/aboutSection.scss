@@ -85,6 +85,9 @@
             height: 10px;
             bottom: 3.2vw;
             left: 0;
+            @media screen and (max-width:1250px) {
+                display: none;
+            }
         }
 
         .since {
@@ -145,6 +148,9 @@
             .sparkle.medium {
                 right: -5px;
                 top: -18px;
+                @media screen and (max-width:1250px) {
+                    display: none;
+                }
             }
         }
 
@@ -152,12 +158,18 @@
             .sparkle.medium {
                 left: -5px;
                 top: -18px;
+                @media screen and (max-width:1250px) {
+                    display: none;
+                }
             }
         }
         .awardWinning {
             .sparkle.small {
                 left: -5px;
                 top: -5px;
+                @media screen and (max-width:1250px) {
+                    display: none;
+                }
             }
         }
     }
