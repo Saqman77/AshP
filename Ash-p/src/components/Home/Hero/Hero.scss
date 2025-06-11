@@ -192,7 +192,8 @@
                 flex-direction: column;
 
                 @media screen and (max-width:1250px) {
-                    margin-top: auto;
+                    justify-content: start;
+                    margin-top: 100px;
                     margin-bottom: 0;
                     background-color: #f3e8ff00;
                     border-radius: 0;

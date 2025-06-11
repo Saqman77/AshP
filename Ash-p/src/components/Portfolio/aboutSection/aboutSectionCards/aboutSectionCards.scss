@@ -32,19 +32,28 @@
         padding: 20px 40px;
         position: relative;
         font-size: clamp(16px,1vw, 24px);
+        font-family: 'Nunito Sans';
+        .sparkle.big {
+            left: -9px;
+            top: -26px;
+        }
+        
         @media screen and (max-width: 1250px){
             font-size: 20px;
+            padding: 20px;
         }
 
         p {
             color: #4D4D4D;
             font-weight: 500;
             margin: 0 0 24px 0;
+             font-family: 'Nunito Sans';
         }
 
         .highlighted {
             color: #C9549D;
             font-weight: 700;
+             font-family: 'Nunito Sans';
         }
 
         .imageContainer {

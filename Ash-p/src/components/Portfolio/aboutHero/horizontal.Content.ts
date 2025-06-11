@@ -15,7 +15,7 @@ export interface HorizontalContent {
 }
 
 export const horizontalContent: HorizontalContent = {
-  heading: "Who are we?",
+  heading: "Who Are We?",
   scrollDown: "scroll down",
   image1:"/src/assets/about/about-bottom.svg",
   image2:"/src/assets/about/about-bottom-left.svg",
