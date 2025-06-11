@@ -19,7 +19,7 @@ const Horizontal: React.FC = () => {
       scrollTrigger: {
         trigger: wrapper.current,
         start: 'center center',
-        end: '+=400px',
+        end: '+=200px',
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
