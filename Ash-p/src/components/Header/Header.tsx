@@ -133,23 +133,24 @@ const Header: React.FC = () => {
               <span></span>
             </button>
           </div>
-          <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
-            <ul className="mob-list"
+        </div>
+      </header>
 
-            >
-              <div className="list-header">
-                <div className="mob-logo">
-                  <NavLink to="/" className="mobile-logo">
-                    <img src={mobileLogo} alt="Logo" className="mobile-logo" onClick={closeMenu} />
-                  </NavLink>
-                  {/* <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} /> */}
-                </div>
-                <button className="close-btn" onClick={toggleMenu}>
-                  <span className="close-icon"></span>
-                  <span className="close-icon"></span>
-                </button>
-              </div>
-              {/* <ul className='mob-ul'>
+      <nav className={`nav-list ${isMenuOpen ? 'open' : ''}`}>
+        <ul className="mob-list">
+          <div className="list-header">
+            <div className="mob-logo">
+              <NavLink to="/" className="mobile-logo">
+                <img src={mobileLogo} alt="Logo" className="mobile-logo" onClick={closeMenu} />
+              </NavLink>
+              {/* <img src={mobileLogo} alt="Mobile Logo" className="mobile-logo" onClick={closeMenu} /> */}
+            </div>
+            <button className="close-btn" onClick={toggleMenu}>
+              <span className="close-icon"></span>
+              <span className="close-icon"></span>
+            </button>
+          </div>
+          {/* <ul className='mob-ul'>
                 <li>
                   <NavLink
                     to="/"
@@ -184,24 +185,21 @@ const Header: React.FC = () => {
                   </NavLink>
                 </li>
               </ul> */}
-              <ul className="mob-ul" onClick={toggleMenu}>
-                {(Object.entries(navLinks) as [string, string][]).map(([label, path]) => (
-                  <li key={label}>
-                    <NavLink
-                      to={path}
-                      end={path === '/'} // Only apply `end` to the home route
-                      className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
-                    >
-                      {label === 'fredibuddies' ? 'FrEdiBuddies' : label.charAt(0).toUpperCase() + label.slice(1)}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </ul>
-          </nav>
-        </div>
-
-      </header>
+          <ul className="mob-ul" onClick={toggleMenu}>
+            {(Object.entries(navLinks) as [string, string][]).map(([label, path]) => (
+              <li key={label}>
+                <NavLink
+                  to={path}
+                  end={path === '/'} // Only apply `end` to the home route
+                  className={({ isActive }) => (isActive ? 'header-active link' : 'link')}
+                >
+                  {label === 'fredibuddies' ? 'FrEdiBuddies' : label.charAt(0).toUpperCase() + label.slice(1)}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </ul>
+      </nav>
     </>
   );
 };
