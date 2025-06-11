@@ -13,63 +13,47 @@ const Horizontal: React.FC = () => {
   const boxRef = useRef<HTMLDivElement | null>(null);
   const wrapper = useRef<HTMLDivElement | null>(null);
 
-
   useGSAP(() => {
-    const ctx = gsap.context(() => {
-      gsap.to('.main', {
-        // backgroundColor: '#7163DE',
-        // color: '#FFF9E3',
-        scrollTrigger: {
-          trigger: 'body',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1,
-          // markers:true,
-          // duration: 2,
-          onEnter: () => {
-            gsap.to('.h-heading', {
-              color: '#DD8DA1',
-              textShadow: window.innerWidth < 1250 ? '0px 3px 4px  hsla(0, 0%, 0%, 0.61)':'0px 5px 4px  hsla(0, 0%, 0%, 0.61)',
-            })
-          },
-          onEnterBack: () => {
-            gsap.to('.h-heading', {
-              color: '#dd8da100',
-              textShadow: window.innerWidth < 1250 ? 'text-shadow: 0px 3px 4px  hsla(0, 0%, 0%, 0);' : 'text-shadow: 0px 5px 4px  hsla(0, 0%, 0%, 0);',
-            })
-          },
-          // markers: true,
+    // Create main timeline
+    const mainTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapper.current,
+        start: 'center center',
+        end: '+=400px',
+        scrub: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          gsap.to('.h-heading', {
+            color: `rgba(221, 141, 161, ${progress})`,
+            textShadow: window.innerWidth < 1250 
+              ? `0px 3px 4px hsla(0, 0%, 0%, ${0.61 * progress})`
+              : `0px 5px 4px hsla(0, 0%, 0%, ${0.61 * progress})`,
+            duration: 0.1
+          });
+        }
+      },
+    });
+
+    // Create horizontal scroll timeline
+    const horizontalTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapper.current,
+        start: 'center center',
+        end: '+=500px',
+        scrub: 1,
+        pin: true,
+        onUpdate: (self) => {
+          gsap.to(wrapper.current, {
+            duration: 0.5,
+            ease: 'power2.out',
+          });
         },
-      });
+      },
+    });
 
-
-      // })
-
-      // useLayoutEffect(() => {
-      //   
-      const spans = document.querySelectorAll('.outro-span')
-      if (wrapper.current) {
-        ScrollTrigger.create({
-          trigger: wrapper.current,
-          start: 'top top',
-          end: window.innerWidth < 1250 ? '+=100vh' : '+=100vh',
-          scrub: 1,
-          pinType: "fixed",
-          pin: true,
-          // pinSpacing: true,
-          // pinSpacer: ,
-          onUpdate: (self) => {
-            gsap.to(wrapper.current, {
-              // x: window.innerWidth < 600 ? `${-550 * self.progress}vw` : window.innerWidth < 1250 ? `${-350 * self.progress}vw` : `${-250 * self.progress}vw`,
-              duration: 0.5,
-              ease: 'power2.out',
-            });
-          },
-        });
-      }
-
-      // Create a single ScrollTrigger for all cards
-      ScrollTrigger.create({
+    // Create cards animation timeline
+    const cardsTimeline = gsap.timeline({
+      scrollTrigger: {
         trigger: 'body',
         start: 'top top',
         end: window.innerWidth < 1250 ? '+=100vh' : '+=100vh',
@@ -79,23 +63,21 @@ const Horizontal: React.FC = () => {
             gsap.to(card.id, {
               x: `${card.endTranslateX * self.progress}px`,
               rotate: `${card.rotate * self.progress * 2}`,
-              // duration: 0.5,
               ease: 'power3.out',
             });
           });
         },
-      });
+      },
+    });
 
-
-
-
-    },);
-
-
-
-    return () => ctx.revert(); // Cleanup animations and ScrollTriggers
+    // Cleanup function
+    return () => {
+      mainTimeline.kill();
+      horizontalTimeline.kill();
+      cardsTimeline.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
-
 
   return (
     <div className="h-container"
