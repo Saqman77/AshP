@@ -1,4 +1,5 @@
 export const profileContent = {
+    img:"/src/assets/about/Ash P.jpg",
     name: "Ash P",
     title: "B.A. in Mass Communication, English Literature, and Education.",
     description: `Ash P brings over two decades of experience in literary editing across diverse genres and online content. Known among peers as "the book surgeon", she specializes in safe-for-work nonfiction and fiction for all ages. 
@@ -12,8 +13,54 @@ She is an active participant in several supportive social spaces and networks fo
         { id: 3, url: "#", icon: "" },
         { id: 4, url: "#", icon: "" }
     ],
-    certifications: Array(12).fill({
-        title: "Communication and soft skills",
-        icon: ""
-    })
+    certifications: [
+        {
+            title: "Digital Marketing",
+            icon: ""
+        },
+        {
+            title: "Freelancing",
+            icon: ""
+        },
+        {
+            title: "Video Editing",
+            icon: ""
+        },
+        {
+            title: "Graphic Design",
+            icon: ""
+        },
+        {
+            title: "Communication and Soft Skills",
+            icon: ""
+        },
+        {
+            title: "Creative Writing",
+            icon: ""
+        },
+        {
+            title: "Digital Literacy",
+            icon: ""
+        },
+        {
+            title: "AI in Teaching",
+            icon: ""
+        },
+        {
+            title: "Google Soft Skills Certification",
+            icon: ""
+        },
+        {
+            title: "Pathways to Publishing (Sweet Cherry Publishing)",
+            icon: ""
+        },
+        {
+            title: "AI for Editors",
+            icon: ""
+        },
+        {
+            title: "AI in Teaching",
+            icon: ""
+        }
+    ]
 }; 

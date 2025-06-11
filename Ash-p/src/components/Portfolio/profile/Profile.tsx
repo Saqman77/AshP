@@ -1,5 +1,6 @@
 import React from 'react';
 import { profileContent } from './firstProfileContent';
+import tick from "/src/assets/home/greenTick.svg"
 import './Profile.scss';
 
 const Profile: React.FC = () => {
@@ -8,7 +9,7 @@ const Profile: React.FC = () => {
             <div className='first-profile__wrapper'>
                 <div className="first-profile__top">
                     <div className="first-profile__top-left">
-                        {/* Image will be added later */}
+                        <img src={profileContent.img} alt="Ash's-profile" />
                     </div>
                     <div className="first-profile__top-right">
                         <div className="first-profile__header">
@@ -33,7 +34,7 @@ const Profile: React.FC = () => {
                         {profileContent.certifications.map((cert, index) => (
                             <div key={index} className="certification-item">
                                 <div className="icon">
-                                    {/* Icon will be added later */}
+                                    <img src={tick} alt="check-mark-logo" />
                                 </div>
                                 <h4 className="title">{cert.title}</h4>
                             </div>
