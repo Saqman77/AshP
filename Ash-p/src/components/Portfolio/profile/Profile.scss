@@ -205,6 +205,10 @@
         top: 3vw;
         left: 10vw;
         animation: rotate 70s linear infinite;
+        @media screen and (max-width:768px) {
+          width: 240px;  
+          height: 240px;  
+        }
     }
 
     .top-right {
@@ -221,5 +225,12 @@
         bottom: 7vw;
         right: 5vw;
         animation: rotate 45s linear infinite;
+        @media screen and (max-width:768px) {
+            width: 240px;  
+            height: 240px;
+            right: 37vw;
+            bottom: auto;
+            top: 146vh;
+          }
     }
 }
