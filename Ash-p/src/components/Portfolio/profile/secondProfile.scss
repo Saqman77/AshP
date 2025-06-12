@@ -152,11 +152,21 @@
         }
     }
 
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
     .top-left {
         width: 20.3vw;
         height: 20.3vw;
         top: -5vw;
         left: -2vw;
+        animation: rotate 70s linear infinite;
     }
 
     .top-right {
@@ -164,6 +174,7 @@
         height: 19.21vw;
         right: 10vw;
         top: 1vw;
+        animation: rotate 50s linear infinite reverse;
     }
 
     .bottom-right {
@@ -171,5 +182,6 @@
         height: 30.9vw;
         bottom: 9vw;
         right: -12vw;
+        animation: rotate 45s linear infinite;
     }
 }

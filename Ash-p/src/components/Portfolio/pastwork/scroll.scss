@@ -121,11 +121,8 @@
     justify-content: space-between;
     font-family: 'Euphorigenic', sans-serif;
     align-items: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
     color: rgb(113, 99, 222); 
+    margin-bottom: 124px;
     @media screen and (max-width: 1250px) {
         padding: 1rem;
         // padding-bottom: 4rem;
@@ -228,15 +225,14 @@
 }
 
 h3.s-heading{
-    color: rgb(113, 99, 222); 
-    font-size: var(--font-xxlarge);
+    color: #7163de; 
+    font-size: 3.75vw;
     line-height: 1;
-    font-family: 'Euphorigenic', sans-serif;
-    letter-spacing: 8px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     // opacity: 0;
     @media screen and (max-width:400px) {
-        font-size: var(--font-xxlarge);
+        
     }
 }
 h3.q-heading{
@@ -272,37 +268,34 @@ h3.cert-heading{
 
 .services-list{
     list-style-type: none;
-    color: #F4F9E9;
+    color: #4B3B74;
     // display: flex;
     // flex-wrap: wrap;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
     // margin-top: 1em;
     width: 100%;
     transition: opacity 0.4s ease-in-out ;
     opacity: 1;
     align-items: center;
     justify-content: center;
+    font-family: "Comfortaa";
+    text-transform: capitalize;
     
 }
 
-.services-list li{
+.services-list li *{
     color: #F4F9E9;
-    height: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0) ;
-    border-bottom: 1px solid rgba(255, 255, 255, 0) ;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    font-family: "Comfortaa";
+    text-transform: capitalize;
     @media screen and (max-width: 1250px) {
-        border-bottom: 1px solid white ;
+
     }
 
 }
-.services-list li:hover{
-    height: 100%;
-    border-top: 1px solid white ;
-    border-bottom: 1px solid white ;
+.services-list li .s-text:hover{
+    color: #C9549D;
 
 }
 
@@ -311,24 +304,27 @@ h3.cert-heading{
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
+    text-transform: capitalize;
 }
 
 .services-list:hover *, .services-list:active *{
     transition: opacity 0.2s ease-in-out ;
     opacity: 1;
     // color: rgb(113, 99, 222);
+    color: #C9549D;
 }
 
 .services-list li .s-text{
-    font-size: var(--font-large);
-    font-family: "Euphorigenic";
+    font-size: 3.33vw;
+    font-family: "Comfortaa";
     font-weight: 600;
-    color: rgb(113, 99, 222); 
+    color: #4B3B74; 
     // color: #F4F9E9;
     cursor: pointer;
     display: flex;
     // height: 100%;
     align-items: center;
+    text-transform: capitalize;
     // padding: 4vw;
     // text-decoration: underline;
     // transform: translateX(-100%);
@@ -358,7 +354,7 @@ h3.cert-heading{
 .services-list *:hover, .services-list *:active{
     transition: opacity 0.2s ease-in-out ;
     opacity: 1 ;
-    // color: rgb(113, 99, 222);
+    color: #C9549D;
     // background-color: #FEFFFE;
     
 }
@@ -368,7 +364,7 @@ h3.cert-heading{
     align-items: center;
     color: rgb(113, 99, 222); 
     width: 100%;
-    padding-left: 4rem;
+    text-transform: capitalize;
     @media screen and (max-width: 1250px) {
         padding: 1rem;
     }
@@ -385,7 +381,7 @@ h3.cert-heading{
     border-top: 30px solid rgb(113, 99, 222);
     margin-left: 1.2em;
     margin-right: auto;
-
+    display: none;
     opacity: 0;
     
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in;
@@ -393,21 +389,14 @@ h3.cert-heading{
         opacity: 1;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 15px solid rgb(255, 255, 255);
+        border-top: 15px solid rgb(113, 99, 222);
         transform: rotate(-90deg);
     }
   }
 
-  .services-list li:hover .s-text .services-indicator{
-    opacity: 1;
-    
-  }
+ 
 
-  .services-list li.s-text:active .services-indicator, .services-list li:hover .services-indicator{
-    transform: rotate(-90deg);
-    // border-top: 10px solid rgb(113, 99, 222);
-    opacity: 1;
-  }
+  
 
   .client-text{
     font-size: 16px;
@@ -444,19 +433,18 @@ section.our-work{
 
 section.our-work .work-wrapper{
     width: 100%;
-    min-height: 100vh;
-    min-height: 100lvh;
-    height: auto;
     grid-column: 1;
     grid-row: 1;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-bottom: 6rem;
-    color: rgb(113, 99, 222); 
+    padding: 124px 300px;
+    color: #7B6DDB; 
     @media screen and (max-width:1250px) {
-        padding-top: 11vh;
-        padding-bottom: 11vh;
+        padding: 80px 40px;
+    }
+    @media screen and (max-width:768px) {
+        padding: 80px 20px;
     }
     
 }
@@ -528,6 +516,7 @@ section.our-work .work-wrapper{
     font-size: var(--font-xlarge);
     font-weight: 600;
     letter-spacing: 2px;
+    font-family: "Euphorigenic";
     @media screen and (max-width:600px) {
         font-size: var(--font-large);
     }
