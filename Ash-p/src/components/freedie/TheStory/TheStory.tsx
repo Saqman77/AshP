@@ -6,7 +6,7 @@ const TheStory = () => {
   return (
     <div className="the-story-wrapper">
       <div className="the-story-image-container">
-        {/* Add your image here, e.g. <img src={theStoryContent.image} alt="The Story" /> */}
+         <img src={theStoryContent.image} alt="The Story" />
       </div>
       <div className="the-story-content">
         <h2 className="the-story-heading">{theStoryContent.heading}</h2>

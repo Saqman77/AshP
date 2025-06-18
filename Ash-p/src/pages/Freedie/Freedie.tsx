@@ -12,7 +12,7 @@ import { useThemeContext } from '../../utils/ThemeContextProvider';
 import FreediePara from '../../components/freedie/freedie-para';
 import { useGSAP } from '@gsap/react';
 import FreedieHero from '../../components/freedie/FreedieHero/FreedieHero';
-import TheStory from '../../components/freedie/TheStory';
+import TheStory from '../../components/freedie/TheStory/TheStory';
 gsap.registerPlugin(ScrollTrigger);
 
 const Freedie: React.FC = () => {

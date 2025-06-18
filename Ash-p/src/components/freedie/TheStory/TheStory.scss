@@ -5,18 +5,27 @@
 
 .the-story-image-container {
   height: 535px;
-  width: 544px;
+  min-width: 544px;
   margin-right: 249px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .the-story-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  flex: 1;
 }
 
 .the-story-heading {
@@ -24,12 +33,12 @@
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
   color: #4B3B74;
-  margin-bottom: 197px;
+  margin-bottom: auto;
 }
 
 .the-story-description {
   font-size: 18px;
   font-family: 'Nunito Sans', sans-serif;
-  color: #000;
+  color: #2E2E2E;
   white-space: pre-line;
 } 
