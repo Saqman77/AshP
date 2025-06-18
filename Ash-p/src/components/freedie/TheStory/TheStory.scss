@@ -1,0 +1,35 @@
+.the-story-wrapper {
+  display: flex;
+  padding: 124px 300px;
+}
+
+.the-story-image-container {
+  height: 535px;
+  width: 544px;
+  margin-right: 249px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.the-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.the-story-heading {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #4B3B74;
+  margin-bottom: 197px;
+}
+
+.the-story-description {
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000;
+  white-space: pre-line;
+} 
