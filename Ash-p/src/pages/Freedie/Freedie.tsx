@@ -11,6 +11,7 @@ import { useThemeContext } from '../../utils/ThemeContextProvider';
 // import ParallaxImage from '../../components/Portfolio/ParallaxImage';
 import FreediePara from '../../components/freedie/freedie-para';
 import { useGSAP } from '@gsap/react';
+import FreedieHero from '../../components/freedie/FreedieHero/FreedieHero';
 gsap.registerPlugin(ScrollTrigger);
 
 const Freedie: React.FC = () => {
@@ -162,6 +163,7 @@ const Freedie: React.FC = () => {
 
   return (
     <>
+            <FreedieHero/>
       {/* Disclaimer Modal */}
       {showDisclaimer && (
         <div className="f-modal">
