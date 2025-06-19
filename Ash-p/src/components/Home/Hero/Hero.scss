@@ -39,6 +39,8 @@
     padding-left: 15.625vw;
     padding-right: 15.625vw;
     height: calc(100vh - 8.33vw);
+    position: relative;
+    z-index: 1;
 
     @media screen and (max-width:1250px) {
         padding: 8vw 40px 0;

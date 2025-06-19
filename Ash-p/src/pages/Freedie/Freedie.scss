@@ -7,6 +7,7 @@
     grid-template-columns: 1fr;
     position: relative;
     overflow-X: clip;
+    z-index: 1;
 }
 
 .f-wrapper{
