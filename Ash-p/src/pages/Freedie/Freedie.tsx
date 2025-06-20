@@ -235,14 +235,14 @@ const Freedie: React.FC = () => {
                   className=""
                   onClick={() => setViewMode('slider')}
                 >
-                  Slider View
+                  Discover
                 </button>
                 <span></span>
                 <button
                   className="active"
                   onClick={() => setViewMode('list')}
                 >
-                  List View
+                  List
                 </button>
                 </div>
               </div>

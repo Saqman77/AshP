@@ -127,14 +127,14 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                         className={viewMode === 'slider' ? 'active' : ''}
                         onClick={() => setViewMode('slider')}
                     >
-                        Slider View
+                        Discover
                     </button>
                     <span></span>
                     <button
                         className={viewMode === 'list' ? 'active' : ''}
                         onClick={() => setViewMode('list')}
                     >
-                        List View
+                        List
                     </button>
                 </div>
             </div>
@@ -160,8 +160,8 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                                 left,
                                 transform: `translateX(-50%) translateY(-50%) translateZ(${z}px)`,
                                 opacity,
-                                width: '400px',
-                                height: '500px',
+                                // width: '400px',
+                                // height: '500px',
                                 overflow: 'hidden',
                             }}
                             onClick={() => onItemClick(idx)}

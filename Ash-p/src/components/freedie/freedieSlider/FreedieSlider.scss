@@ -3,7 +3,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: #4B3B74;
+    // background: #4B3B74;
 
     .f-toggle-header{
         // margin-top: 200px;
@@ -69,6 +69,14 @@
         overflow: hidden;
         cursor: pointer;
         // Positioning, transform, and opacity are set dynamically via inline styles in FreedieSlider.tsx
+        @media screen and (max-width:1250px) {
+            width: 200px;
+            height: 250px;
+        }
+        @media screen and (max-width:600px) {
+            width: 150px;
+            height: 190px;
+        }
     }
 
     .slide-copy p{
