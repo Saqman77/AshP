@@ -43,6 +43,7 @@
         width: 400px;
         height: 500px;
         overflow: hidden;
+        // Positioning, transform, and opacity are set dynamically via inline styles in FreedieSlider.tsx
     }
 
     .slide-copy p{
@@ -57,74 +58,7 @@
         margin-bottom: 0.75em;
     }
 
-    #slide-1{
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-22500px);
-        opacity: 0;
-    }
-    #slide-2{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-20000px);
-        opacity: 0;
-    }
-    #slide-3{
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-17500px);
-        opacity: 0;
-    }
-    #slide-4{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-15000px);
-        opacity: 0;
-    }
-    #slide-5{
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-12500px);
-        opacity: 0;
-    }
-    #slide-6{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-10000px);
-        opacity: 0;
-    }
-    #slide-7{
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-7500px);
-        opacity: 0;
-    }
-    #slide-8{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-5000px);
-        opacity: 0;
-    }
-    #slide-9{
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translateX(-50%) translateY(-50%) translateZ(-2500px);
-        opacity: 0.5;
-    }
-    #slide-10{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translateX(-50%) translateY(-50%) translateZ(0px);
-        opacity: 1;
-    }
+    /* Slide positioning is now handled dynamically in the React component. */
+    /* The following static rules are no longer needed and are removed for scalability. */
+    // #slide-1, #slide-2, ... #slide-10
 }

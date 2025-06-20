@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './FreedieSlider.scss'
+import { freedie } from '../freedyContent'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,11 +11,9 @@ const FreedieSlider = () => {
     // Create refs for the container elements
     const containerRef = useRef(null);
     const activeSlideRef = useRef(null);
-    const [activeIndex, setActiveIndex] = React.useState(0);
-    const imageSources = [
-        './dan.jpg', './dan.jpg', './dan.jpg', './dan.jpg', './dan.jpg',
-        './dan.jpg', './dan.jpg', './dan.jpg', './dan.jpg', './dan.jpg'
-    ];
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [bgImage, setBgImage] = useState(freedie.map(member => member.imgSrc)[0]);
+    const imageSources = freedie.map(member => member.imgSrc);
 
     useGSAP(() => {
         // Get all slides and active slide images using refs and gsap.utils.toArray
@@ -38,8 +37,8 @@ const FreedieSlider = () => {
 
         // Set the container height based on the scroll duration needed for all slides
         if (containerRef.current) {
-            // 2250px per slide as an example, adjust as needed
-            (containerRef.current as HTMLElement).style.height = `${slides.length * 2250}px`;
+            // 2250px per transition between slides
+            (containerRef.current as HTMLElement).style.height = `${(slides.length - 1) * 2250}px`;
         }
 
         // Pin the .slider element, not the full container
@@ -78,7 +77,7 @@ const FreedieSlider = () => {
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: "top top",
-                end: "bottom bottom",
+                end: `+=${slides.length * 2250}`,
                 scrub: true,
                 onUpdate: (self) => {
                     const progress = self.progress;
@@ -94,25 +93,60 @@ const FreedieSlider = () => {
 
                     slide.style.opacity = String(opacity)
                     slide.style.transform = `translateX(-50%) translateY(-50%) translateZ(${currentZ}px)`
-
-                    if (currentZ < 100) {
-                        gsap.to(activeSlideImages[index], 1.5, {
-                            opacity: 1,
-                            ease: "power3.out"
-                        })
-                        setActiveIndex(index);
-                    } else {
-                        gsap.to(activeSlideImages[index], 1.5, {
-                            opacity: 0,
-                            ease: "power3.out"
-                        })
-                    }
                 }
             })
         })
+
+        // New: Track which slide is closest to the camera and setActiveIndex accordingly
+        ScrollTrigger.create({
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            onUpdate: (self) => {
+                let maxZ = -Infinity;
+                let activeIdx = 0;
+                slides.forEach((slide, idx) => {
+                    const style = window.getComputedStyle(slide);
+                    const matrix = style.transform.match(/matrix3d\((.+)\)/);
+                    let z = 0;
+                    if (matrix) {
+                        const values = matrix[1].split(", ");
+                        z = values[14] ? parseFloat(values[14]) : 0;
+                    }
+                    // Find the slide with the highest z (closest to camera, but not behind)
+                    if (z > maxZ && z < 100) {
+                        maxZ = z;
+                        activeIdx = idx;
+                    }
+                });
+                setActiveIndex(activeIdx);
+            }
+        });
+
         // Your GSAP animations can go here
         // The context will be maintained within this component
     }, { scope: containerRef }); // Scope the animations to the entire container
+
+    // Smooth background image transition
+    useEffect(() => {
+        let timeout: NodeJS.Timeout;
+        if (bgImage !== imageSources[activeIndex]) {
+            // Fade out, then change image, then fade in
+            const activeSlide = activeSlideRef.current as HTMLElement | null;
+            if (activeSlide) {
+                activeSlide.style.transition = 'opacity 0.6s';
+                activeSlide.style.opacity = '0';
+                timeout = setTimeout(() => {
+                    setBgImage(imageSources[activeIndex]);
+                    activeSlide.style.opacity = '0.35';
+                }, 600);
+            } else {
+                setBgImage(imageSources[activeIndex]);
+            }
+        }
+        return () => clearTimeout(timeout);
+    }, [activeIndex, imageSources, bgImage]);
 
     return (
         <div className="slider-container" ref={containerRef}>
@@ -120,7 +154,7 @@ const FreedieSlider = () => {
                 className="active-slide"
                 ref={activeSlideRef}
                 style={{
-                    backgroundImage: `url(${imageSources[activeIndex]})`,
+                    backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     width: '100%',
@@ -131,6 +165,7 @@ const FreedieSlider = () => {
                     zIndex: 0,
                     opacity: 0.35,
                     overflow: 'hidden',
+                    transition: 'opacity 0.6s',
                 }}
             >
                 {/* Blur overlay for background image */}
@@ -158,96 +193,41 @@ const FreedieSlider = () => {
                 ))}
             </div>
             <div className="slider">
-                <div className='slide' id="slide-1">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-2">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-3">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-4">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-5">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-6">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-7">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-8">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-9">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
-                <div className='slide' id="slide-10">
-                    <div className="slide-copy">
-                        <p>Neo Elegance</p>
-                        <p id="index">(es 9342 yaba)</p>
-                    </div>
-                    <div className="slide-img">
-                        <img src="./dan.jpg" alt="" />
-                    </div>
-                </div>
+                {freedie.map((member, idx) => {
+                    // First slide is frontmost (Z=0), last is farthest back
+                    const left = idx % 2 === 0 ? '70%' : '30%';
+                    const zSpacing = 2500;
+                    const z = -(idx * zSpacing);
+                    let opacity = 0;
+                    if (idx === 0) opacity = 1;
+                    else if (idx === 1) opacity = 0.5;
+                    const slideId = `slide-${idx + 1}`;
+                    return (
+                        <div
+                            className="slide"
+                            id={slideId}
+                            key={member.id}
+                            style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left,
+                                transform: `translateX(-50%) translateY(-50%) translateZ(${z}px)`,
+                                opacity,
+                                width: '400px',
+                                height: '500px',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            <div className="slide-copy">
+                                <p>{member.name}</p>
+                                <p id="index">{member.role}</p>
+                            </div>
+                            <div className="slide-img">
+                                <img src={member.imgSrc} alt={member.name} />
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     )
