@@ -38,7 +38,7 @@ const FreedieSlider = () => {
         // Set the container height based on the scroll duration needed for all slides
         if (containerRef.current) {
             // 2250px per transition between slides
-            (containerRef.current as HTMLElement).style.height = `${(slides.length - 1) * 2250}px`;
+            (containerRef.current as HTMLElement).style.height = `${(slides.length - 1) * 2250 + 1}px`;
         }
 
         // Pin the .slider element, not the full container
@@ -50,7 +50,7 @@ const FreedieSlider = () => {
             ScrollTrigger.create({
                 trigger: sliderEl,
                 start: "top top",
-                end: `+=${slides.length * 2250}`,
+                end: `+=${(slides.length - 1) * 2250}`,
                 pin: true,
                 scrub: true,
             });
@@ -65,7 +65,7 @@ const FreedieSlider = () => {
             ScrollTrigger.create({
                 trigger: activeSlideEl,
                 start: "top top",
-                end: `+=${slides.length * 2250}`,
+                end: `+=${(slides.length - 1) * 2250}`,
                 pin: true,
                 scrub: true,
             });
@@ -77,7 +77,7 @@ const FreedieSlider = () => {
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: "top top",
-                end: `+=${slides.length * 2250}`,
+                end: `+=${(slides.length - 1) * 2250}`,
                 scrub: true,
                 onUpdate: (self) => {
                     const progress = self.progress;
@@ -101,7 +101,7 @@ const FreedieSlider = () => {
         ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top top",
-            end: "bottom bottom",
+            end: `+=${(slides.length - 1) * 2250}`,
             scrub: true,
             onUpdate: (self) => {
                 let maxZ = -Infinity;
@@ -140,7 +140,7 @@ const FreedieSlider = () => {
                 timeout = setTimeout(() => {
                     setBgImage(imageSources[activeIndex]);
                     activeSlide.style.opacity = '0.35';
-                }, 600);
+                }, 200);
             } else {
                 setBgImage(imageSources[activeIndex]);
             }
@@ -194,10 +194,11 @@ const FreedieSlider = () => {
             </div>
             <div className="slider">
                 {freedie.map((member, idx) => {
-                    // First slide is frontmost (Z=0), last is farthest back
-                    const left = idx % 2 === 0 ? '70%' : '30%';
+                    // First slide is frontmost (Z=-2000), last is farthest back
+                    const left = idx % 2 === 0 ? '30%' : '70%';
                     const zSpacing = 2500;
-                    const z = -(idx * zSpacing);
+                    const zOffset = -2000;
+                    const z = zOffset - (idx * zSpacing);
                     let opacity = 0;
                     if (idx === 0) opacity = 1;
                     else if (idx === 1) opacity = 0.5;

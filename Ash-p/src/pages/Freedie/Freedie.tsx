@@ -167,7 +167,7 @@ const Freedie: React.FC = () => {
     <>
             <FreedieHero/>
             <TheStory/>
-            <FreedieSlider/>
+
       {/* Disclaimer Modal */}
       {showDisclaimer && (
         <div className="f-modal">
@@ -199,7 +199,7 @@ const Freedie: React.FC = () => {
         ref={bgref}
       >
         <div className="f-wrapper">
-          <div className="f-top">
+          {/* <div className="f-top">
             <div className="f-left">
               <h2 className="f-heading">
                 Ash P Reads &nbsp;
@@ -213,7 +213,6 @@ const Freedie: React.FC = () => {
                 <span>
                 Ash P Reads FrEdiBuddies is a collective of verified and authenticated Independent Service Providers
                 </span>
-                {/* <span className="spacer"></span> */}
               </div>
             </div>
             <div className="f-right">
@@ -221,37 +220,13 @@ const Freedie: React.FC = () => {
                 <img src={wheel} alt="wheel-image" className="wheel-img" />
               </div>
             </div>
-          </div>
-          <section className='fredie-section'>
-            
-            <div className='fredie-content'>
-              <p className='fredie-text'>
-                <span>
-                    When Ash P started out as an independent service provider, 20 or so years ago, the market was fairly new in Pakistan. The learning curve was steep and much was learned through trial and error. Now that independent services and working remotely is recognized as a “real” job, it is an option that many prefer to a regular 9-5 career.
-                </span>                  
-              {/* </p> */}
-              <span className='space'></span>
-              {/* <p className='fredie-text'> */}
-                <span>
-                    Keeping that in mind, Ash P Reads FrEdiBuddies was created to give budding independent service providers a platform to hone their skills and a safe space where projects and clients are vetted, to prevent them from falling victim to fakes and scam artists.
-                </span>
-              </p>
-            </div>
-            <div className="fredie-bg"
+          </div> */}
 
-            >
-              <div className="fredie-img">
-                <FreediePara
-                  src={frediebg}
-                  alt='background'
-                />
-              </div>
-            </div>
-          </section>
           <div className="f-bottom">
             <div className="f-headingb">
               <p className="f-hb">Meet Our FrEdiBuddies</p>
             </div>
+            <FreedieSlider/>
             <FLists onItemClick={handleItemClick} />
           </div>
         </div>
