@@ -23,6 +23,7 @@ const Freedie: React.FC = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(true); // Show disclaimer initially
   const bgref = useRef<HTMLDivElement>(null)
   const { isActive, removeClass } = useThemeContext();
+  const [viewMode, setViewMode] = useState<'slider' | 'list'>('slider');
 
   useEffect(() => {
     if (isActive) {
@@ -226,8 +227,29 @@ const Freedie: React.FC = () => {
             <div className="f-headingb">
               {/* <p className="f-hb">Meet Our FrEdiBuddies</p> */}
             </div>
-            <FreedieSlider onItemClick={handleItemClick} />
-            <FLists onItemClick={handleItemClick} />
+            <div className="f-toggle-wrapper">
+              <div className="f-toggle-header">
+                <button
+                  className={viewMode === 'slider' ? 'active' : ''}
+                  onClick={() => setViewMode('slider')}
+                >
+                  Slider View
+                </button>
+                <button
+                  className={viewMode === 'list' ? 'active' : ''}
+                  onClick={() => setViewMode('list')}
+                >
+                  List View
+                </button>
+              </div>
+              <div className="f-toggle-content">
+                {viewMode === 'slider' ? (
+                  <FreedieSlider onItemClick={handleItemClick} />
+                ) : (
+                  <FLists onItemClick={handleItemClick} />
+                )}
+              </div>
+            </div>
           </div>
         </div>
         <div className="back-gear">

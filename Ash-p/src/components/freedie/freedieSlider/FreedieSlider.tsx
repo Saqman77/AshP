@@ -16,15 +16,12 @@ interface FreedieSliderProps {
 const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
     // Create refs for the container elements
     const containerRef = useRef(null);
-    const activeSlideRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [bgImage, setBgImage] = useState(freedie.map(member => member.imgSrc)[0]);
     const imageSources = freedie.map(member => member.imgSrc);
 
     useGSAP(() => {
         // Get all slides and active slide images using refs and gsap.utils.toArray
         const slides = gsap.utils.toArray<HTMLElement>(".slide", containerRef.current);
-        const activeSlideImages = gsap.utils.toArray<HTMLImageElement>("img", activeSlideRef.current);
 
         const getInitialTranslateZ = (slide: HTMLElement): number => {
             const style = window.getComputedStyle(slide);
@@ -55,21 +52,6 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
         if (sliderEl) {
             ScrollTrigger.create({
                 trigger: sliderEl,
-                start: "top top",
-                end: `+=${(slides.length - 1) * 2250}`,
-                pin: true,
-                scrub: true,
-            });
-        }
-
-        // Pin the .active-slide as well
-        let activeSlideEl: HTMLElement | null = null;
-        if (containerRef.current && 'querySelector' in containerRef.current) {
-            activeSlideEl = (containerRef.current as HTMLElement).querySelector('.active-slide');
-        }
-        if (activeSlideEl) {
-            ScrollTrigger.create({
-                trigger: activeSlideEl,
                 start: "top top",
                 end: `+=${(slides.length - 1) * 2250}`,
                 pin: true,
@@ -134,70 +116,8 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
         // The context will be maintained within this component
     }, { scope: containerRef }); // Scope the animations to the entire container
 
-    // Smooth background image transition
-    useEffect(() => {
-        let timeout: NodeJS.Timeout;
-        if (bgImage !== imageSources[activeIndex]) {
-            // Fade out, then change image, then fade in
-            const activeSlide = activeSlideRef.current as HTMLElement | null;
-            if (activeSlide) {
-                activeSlide.style.transition = 'opacity 0.6s';
-                activeSlide.style.opacity = '0';
-                timeout = setTimeout(() => {
-                    setBgImage(imageSources[activeIndex]);
-                    activeSlide.style.opacity = '0.35';
-                }, 200);
-            } else {
-                setBgImage(imageSources[activeIndex]);
-            }
-        }
-        return () => clearTimeout(timeout);
-    }, [activeIndex, imageSources, bgImage]);
-
     return (
         <div className="slider-container" ref={containerRef}>
-            <div
-                className="active-slide"
-                ref={activeSlideRef}
-                style={{
-                    backgroundImage: `url(${bgImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    width: '100%',
-                    height: '100vh',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    zIndex: 0,
-                    opacity: 0.35,
-                    overflow: 'hidden',
-                    transition: 'opacity 0.6s',
-                }}
-            >
-                {/* Blur overlay for background image */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        backdropFilter: 'blur(50px)',
-                        WebkitBackdropFilter: 'blur(50px)',
-                        zIndex: 1,
-                        pointerEvents: 'none',
-                    }}
-                />
-                {/* Pre-render images for performance, but keep them hidden */}
-                {imageSources.map((src, idx) => (
-                    <img
-                        key={idx}
-                        src={src}
-                        alt=""
-                        style={{ display: 'none' }}
-                    />
-                ))}
-            </div>
             <div className="slider">
                 {freedie.map((member, idx) => {
                     // First slide is frontmost (Z=-2000), last is farthest back
