@@ -7,7 +7,13 @@ import { freedie } from '../freedyContent'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const FreedieSlider = () => {
+// Add prop type for onItemClick
+interface FreedieSliderProps {
+    onItemClick: (index: number) => void;
+}
+
+// Update component signature to accept the prop
+const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
     // Create refs for the container elements
     const containerRef = useRef(null);
     const activeSlideRef = useRef(null);
@@ -218,6 +224,7 @@ const FreedieSlider = () => {
                                 height: '500px',
                                 overflow: 'hidden',
                             }}
+                            onClick={() => onItemClick(idx)}
                         >
                             <div className="slide-copy">
                                 <p>{member.name}</p>

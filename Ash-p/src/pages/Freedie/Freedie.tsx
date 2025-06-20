@@ -224,9 +224,9 @@ const Freedie: React.FC = () => {
 
           <div className="f-bottom">
             <div className="f-headingb">
-              <p className="f-hb">Meet Our FrEdiBuddies</p>
+              {/* <p className="f-hb">Meet Our FrEdiBuddies</p> */}
             </div>
-            <FreedieSlider/>
+            <FreedieSlider onItemClick={handleItemClick} />
             <FLists onItemClick={handleItemClick} />
           </div>
         </div>
