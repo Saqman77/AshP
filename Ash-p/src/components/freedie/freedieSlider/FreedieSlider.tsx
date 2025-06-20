@@ -10,10 +10,12 @@ gsap.registerPlugin(ScrollTrigger)
 // Add prop type for onItemClick
 interface FreedieSliderProps {
     onItemClick: (index: number) => void;
+    viewMode: 'slider' | 'list';
+    setViewMode: (mode: 'slider' | 'list') => void;
 }
 
 // Update component signature to accept the prop
-const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
+const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, setViewMode }) => {
     // Create refs for the container elements
     const containerRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -91,6 +93,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
             start: "top top",
             end: `+=${(slides.length - 1) * 2250}`,
             scrub: true,
+            pin: true,
             onUpdate: (self) => {
                 let maxZ = -Infinity;
                 let activeIdx = 0;
@@ -118,6 +121,23 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick }) => {
 
     return (
         <div className="slider-container" ref={containerRef}>
+            <div className="f-toggle-header">
+                <div className='toggle-box'>
+                    <button
+                        className={viewMode === 'slider' ? 'active' : ''}
+                        onClick={() => setViewMode('slider')}
+                    >
+                        Slider View
+                    </button>
+                    <span></span>
+                    <button
+                        className={viewMode === 'list' ? 'active' : ''}
+                        onClick={() => setViewMode('list')}
+                    >
+                        List View
+                    </button>
+                </div>
+            </div>
             <div className="slider">
                 {freedie.map((member, idx) => {
                     // First slide is frontmost (Z=-2000), last is farthest back

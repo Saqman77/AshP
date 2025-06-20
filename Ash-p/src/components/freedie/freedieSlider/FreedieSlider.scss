@@ -3,7 +3,48 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    // background: #000;
+    background: #4B3B74;
+
+    .f-toggle-header{
+        // margin-top: 200px;
+        margin: 0;
+        height: auto;
+        position: absolute;
+        width: 100%;
+        gap: 0;
+        top: 200px;
+        z-index: 9999;
+        padding-left: 15.625vw;
+        padding-right: 15.625vw;
+        padding-top: 0;
+        justify-content: right;
+        @media screen and (max-width:1250px) {
+            padding: 0px 40px 0;
+        }
+        @media screen and (max-width:600px) {
+            padding: 0px 20px;
+        }
+        .toggle-box{
+            display: flex;
+            span{
+                background-color: aqua;
+                width: 1px;
+                height: 100%;
+                margin: 0 24px;
+            }
+            button{
+                padding: 0;
+                background: none;
+                border: none;
+                border-radius: none;
+                color: #F5F5F5;
+                &.active{
+                    color: #C9549D;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
 
     img{
         width: 100%;

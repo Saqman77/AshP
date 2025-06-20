@@ -228,23 +228,28 @@ const Freedie: React.FC = () => {
               {/* <p className="f-hb">Meet Our FrEdiBuddies</p> */}
             </div>
             <div className="f-toggle-wrapper">
+            {viewMode === 'list' && (
               <div className="f-toggle-header">
+                <div className='toggle-box'>
                 <button
-                  className={viewMode === 'slider' ? 'active' : ''}
+                  className=""
                   onClick={() => setViewMode('slider')}
                 >
                   Slider View
                 </button>
+                <span></span>
                 <button
-                  className={viewMode === 'list' ? 'active' : ''}
+                  className="active"
                   onClick={() => setViewMode('list')}
                 >
                   List View
                 </button>
+                </div>
               </div>
+            )}
               <div className="f-toggle-content">
                 {viewMode === 'slider' ? (
-                  <FreedieSlider onItemClick={handleItemClick} />
+                  <FreedieSlider onItemClick={handleItemClick} viewMode={viewMode} setViewMode={setViewMode} />
                 ) : (
                   <FLists onItemClick={handleItemClick} />
                 )}
