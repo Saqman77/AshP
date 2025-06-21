@@ -19,9 +19,26 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
     // Create refs for the container elements
     const containerRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isReady, setIsReady] = useState(false);
     const imageSources = freedie.map(member => member.imgSrc);
 
+    // Ensure component is ready before initializing ScrollTriggers
+    useEffect(() => {
+        if (containerRef.current) {
+            setIsReady(true);
+        }
+    }, []);
+
     useGSAP(() => {
+        // Only run if component is ready
+        if (!isReady || !containerRef.current) return;
+
+        // Kill all existing ScrollTriggers first
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+        // Create main timeline for potential future animations
+        const mainTimeline = gsap.timeline();
+
         // Get all slides and active slide images using refs and gsap.utils.toArray
         const slides = gsap.utils.toArray<HTMLElement>(".slide", containerRef.current);
 
@@ -46,11 +63,12 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             (containerRef.current as HTMLElement).style.height = `${(slides.length - 1) * 2250 + 1}px`;
         }
 
-        // Pin the .slider element, not the full container
+        // Create slider pin ScrollTrigger
         let sliderEl: HTMLElement | null = null;
         if (containerRef.current && 'querySelector' in containerRef.current) {
             sliderEl = (containerRef.current as HTMLElement).querySelector('.slider');
         }
+        
         if (sliderEl) {
             ScrollTrigger.create({
                 trigger: sliderEl,
@@ -61,6 +79,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             });
         }
 
+        // Create slide animation ScrollTriggers
         slides.forEach((slide, index) => {
             const intialZ = getInitialTranslateZ(slide);
 
@@ -84,10 +103,10 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                     slide.style.opacity = String(opacity)
                     slide.style.transform = `translateX(-50%) translateY(-50%) translateZ(${currentZ}px)`
                 }
-            })
-        })
+            });
+        });
 
-        // New: Track which slide is closest to the camera and setActiveIndex accordingly
+        // Create active index tracking ScrollTrigger
         ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top top",
@@ -115,9 +134,15 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             }
         });
 
-        // Your GSAP animations can go here
-        // The context will be maintained within this component
-    }, { scope: containerRef }); // Scope the animations to the entire container
+        // Play the main timeline (for any future animations)
+        mainTimeline.play();
+
+        // Return cleanup function
+        return () => {
+            mainTimeline.kill();
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, { scope: containerRef, dependencies: [isReady, viewMode] }); // Scope the animations to the entire container and refresh when ready or viewMode changes
 
     return (
         <div className="slider-container" ref={containerRef}>
