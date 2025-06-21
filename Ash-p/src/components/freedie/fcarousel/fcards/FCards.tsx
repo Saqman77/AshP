@@ -17,6 +17,7 @@ import BEHANCE from "../../../../assets/freedi/behance-svgrepo-com.svg";
 
 interface FCardsProps {
   id: string;
+  name: string;
   img: string;
   desc: string;
   role: string;
@@ -69,6 +70,7 @@ const ShoutoutPopup: React.FC<{ message: string }> = ({ message }) => {
 
 const FCards: React.FC<FCardsProps> = ({
   id,
+  name,
   img,
   desc,
   role,
@@ -119,6 +121,9 @@ const FCards: React.FC<FCardsProps> = ({
         </div>
         <div className="right-main">
           <div className="right-role">
+            <h3 className="main-name">
+              {name}
+            </h3>
             <p className="main-role">{role}</p>
           </div>
           <div className="right-desc">

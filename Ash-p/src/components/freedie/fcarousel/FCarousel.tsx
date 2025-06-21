@@ -119,6 +119,7 @@ const FCarousel: React.FC<CarouselProps> = ({ startIndex, isVisible, onClose }) 
                 return( */}
                 <FCards
                 id={freedie[currentIndex].id}
+                name={freedie[currentIndex].name}
                 img={freedie[currentIndex].imgSrc}
                 desc={freedie[currentIndex].desc}
                 role={freedie[currentIndex].role}
