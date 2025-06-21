@@ -47,7 +47,7 @@
     
     height: 100%;
     @media screen and (max-width:900px) {
-        height: auto;
+        // height: auto;
     }
 }
 
@@ -87,7 +87,7 @@
     font-size: 2vw;
     display: flex;
     width: 100%;
-    padding: 4.16vw 4.16vw 0;
+    padding: 40px 4.16vw 0 ;
     align-items: center;
     margin-bottom: 16px;
     // @media screen and (max-width:1600px) {
