@@ -1,0 +1,23 @@
+import React from 'react'
+import { contactHeroContent } from './contactHeroContent'
+import './contactHero.scss'
+import ContactForm from './contactForm/ContactForm'
+
+const ContactHero = () => {
+  return (
+    <div className='c-hero-container'>
+        <div className="c-heading">
+          {contactHeroContent.icon && (
+            <img src={contactHeroContent.icon} alt={contactHeroContent.iconAlt || "Heading Icon"} className="c-heading-icon" />
+          )}
+          <h1 className="c-heading-title">
+            <span style={{ color: '#4B3B74' }}>{contactHeroContent.headingLeft}</span>
+            <span style={{ color: '#C9549D' }}>{contactHeroContent.headingRight}</span>
+          </h1>
+        </div>
+        <ContactForm/>
+    </div>
+  )
+}
+
+export default ContactHero

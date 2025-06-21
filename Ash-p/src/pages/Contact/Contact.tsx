@@ -6,6 +6,7 @@ import './Contact.scss'
 // import TREE from '../../assets/freedi/linktree-logo-icon.svg'
 import Schedule from '../../components/schedule/Schedule'
 import Email from '../../components/email/Email'
+import ContactHero from '../../components/contact/contactHero/ContactHero'
 // import { useThemeContext } from '../../utils/ThemeContextProvider'
 // import { useEffect } from 'react'
 
@@ -24,7 +25,7 @@ const Contact = () => {
     
   return (
     <div className="c-wrapper">
-
+      <ContactHero/>
     </div>
   )
 }

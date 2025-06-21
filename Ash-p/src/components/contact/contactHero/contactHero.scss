@@ -1,0 +1,34 @@
+.c-hero-container {
+  padding: 124px 300px;
+}
+
+.c-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.c-heading-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.c-heading-title {
+  font-size: 120px;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+}
+
+.c-heading-title span:first-child {
+  color: #4B3B74;
+}
+
+.c-heading-title span:last-child {
+  color: #C9549D;
+}
