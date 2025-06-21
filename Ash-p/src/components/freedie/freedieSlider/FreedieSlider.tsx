@@ -71,10 +71,13 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
         }
 
-        // Set the container height based on the scroll duration needed for all slides
+        // Set the container height based on the scroll duration needed for all slides, plus viewport height
+        const viewportHeight = window.innerHeight;
+        // Pin should end after the last slide is visible and has reached 10% of its final position
+        // Reduce scrollDuration to half
+        const scrollDuration = ((slides.length - 1 + 0.1) * 2250) / 2;
         if (containerRef.current) {
-            // 2250px per transition between slides
-            (containerRef.current as HTMLElement).style.height = `${(slides.length - 1) * 2250 + 1}px`;
+            (containerRef.current as HTMLElement).style.height = `${scrollDuration + viewportHeight}px`;
         }
 
         // Create slider pin ScrollTrigger
@@ -87,9 +90,10 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             ScrollTrigger.create({
                 trigger: sliderEl,
                 start: "top top",
-                end: `+=${(slides.length - 1) * 2250}`,
+                end: `+=${scrollDuration}`,
                 pin: true,
                 scrub: true,
+                pinSpacing:false,
                 onEnter: () => {
                     // Capture initial scroll position when ScrollTrigger starts
                     const currentScrollPosition = window.scrollY;
@@ -108,7 +112,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             ScrollTrigger.create({
                 trigger: containerRef.current,
                 start: "top top",
-                end: `+=${(slides.length - 1) * 2250}`,
+                end: `+=${scrollDuration}`,
                 scrub: true,
                 onUpdate: (self) => {
                     const progress = self.progress;
@@ -132,10 +136,10 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
         ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top top",
-            end: `+=${(slides.length - 1) * 2250}`,
+            end: `+=${scrollDuration}`,
             scrub: true,
             pin: true,
-            pinSpacing:false,
+            pinSpacing: false,
             onUpdate: (self) => {
                 let maxZ = -Infinity;
                 let activeIdx = 0;
@@ -169,6 +173,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
 
     return (
         <div className="slider-container" ref={containerRef}>
+
             <div className="f-toggle-header">
                 <div className='toggle-box'>
                     <button
@@ -193,6 +198,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                 </div>
             </div>
             <div className="slider">
+
                 {freedie.map((member, idx) => {
                     // First slide is frontmost (Z=-2000), last is farthest back
                     const left = idx % 2 === 0 ? '30%' : '70%';

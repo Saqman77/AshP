@@ -164,7 +164,11 @@ const Freedie: React.FC = () => {
             <div className="f-headingb">
               {/* <p className="f-hb">Meet Our FrEdiBuddies</p> */}
             </div>
-            <div className="f-toggle-wrapper" ref={listContainerRef}>
+            <div
+              className="f-toggle-wrapper"
+              ref={listContainerRef}
+              style={{ backgroundColor: viewMode === 'slider' ? '#2E2E2E' : '#4B3B74' }}
+            >
             {viewMode === 'list' && (
               <div className="f-toggle-header">
                 <div className='toggle-box'>
@@ -185,7 +189,10 @@ const Freedie: React.FC = () => {
               </div>
             )}
               <div className="f-toggle-content">
+                
+
                 {viewMode === 'slider' ? (
+                  
                   <FreedieSlider onItemClick={handleItemClick} viewMode={viewMode} setViewMode={handleViewModeChange} onScrollPositionChange={handleScrollPositionChange} />
                 ) : (
                   <FLists onItemClick={handleItemClick} />
