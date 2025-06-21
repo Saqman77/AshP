@@ -95,7 +95,7 @@ const Freedie: React.FC = () => {
         }, 0); // Timeout to ensure ScrollTrigger animation has settled
       }
       setViewModeState(mode);
-    }, 400);
+    }, 800);
   };
 
 
