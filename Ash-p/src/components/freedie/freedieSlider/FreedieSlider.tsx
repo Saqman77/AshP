@@ -12,20 +12,34 @@ interface FreedieSliderProps {
     onItemClick: (index: number) => void;
     viewMode: 'slider' | 'list';
     setViewMode: (mode: 'slider' | 'list') => void;
+    onScrollPositionChange?: (position: number) => void; // New prop for scroll position tracking
 }
 
 // Update component signature to accept the prop
-const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, setViewMode }) => {
+const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, setViewMode, onScrollPositionChange }) => {
     // Create refs for the container elements
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isReady, setIsReady] = useState(false);
+    const [initialScrollPosition, setInitialScrollPosition] = useState<number | null>(null);
     const imageSources = freedie.map(member => member.imgSrc);
 
     // Ensure component is ready before initializing ScrollTriggers
     useEffect(() => {
         if (containerRef.current) {
             setIsReady(true);
+            
+            // Check if user is already at the slider area and capture scroll position
+            const sliderElement = containerRef.current.querySelector('.slider');
+            if (sliderElement && onScrollPositionChange) {
+                const rect = sliderElement.getBoundingClientRect();
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    // User is already at the slider area, capture current scroll position
+                    const currentScrollPosition = window.scrollY;
+                    setInitialScrollPosition(currentScrollPosition);
+                    onScrollPositionChange(currentScrollPosition);
+                }
+            }
         }
     }, []);
 
@@ -76,6 +90,14 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                 end: `+=${(slides.length - 1) * 2250}`,
                 pin: true,
                 scrub: true,
+                onEnter: () => {
+                    // Capture initial scroll position when ScrollTrigger starts
+                    const currentScrollPosition = window.scrollY;
+                    setInitialScrollPosition(currentScrollPosition);
+                    if (onScrollPositionChange) {
+                        onScrollPositionChange(currentScrollPosition);
+                    }
+                }
             });
         }
 
@@ -113,6 +135,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             end: `+=${(slides.length - 1) * 2250}`,
             scrub: true,
             pin: true,
+            pinSpacing:false,
             onUpdate: (self) => {
                 let maxZ = -Infinity;
                 let activeIdx = 0;
@@ -142,7 +165,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             mainTimeline.kill();
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
-    }, { scope: containerRef, dependencies: [isReady, viewMode] }); // Scope the animations to the entire container and refresh when ready or viewMode changes
+    }, { scope: containerRef, dependencies: [isReady] }); // Scope the animations to the entire container and refresh when ready
 
     return (
         <div className="slider-container" ref={containerRef}>
@@ -150,14 +173,24 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                 <div className='toggle-box'>
                     <button
                         className={viewMode === 'slider' ? 'active' : ''}
-                        onClick={() => setViewMode('slider')}
+                        onClick={() => {
+                            console.log('FreedieSlider: Discover button clicked');
+                            setTimeout(() => {
+                                setViewMode('slider');
+                            }, 200);
+                        }}
                     >
                         Discover
                     </button>
                     <span></span>
                     <button
                         className={viewMode === 'list' ? 'active' : ''}
-                        onClick={() => setViewMode('list')}
+                        onClick={() => {
+                            console.log('FreedieSlider: List button clicked');
+                            setTimeout(() => {
+                                setViewMode('list');
+                            }, 400);
+                        }}
                     >
                         List
                     </button>

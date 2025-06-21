@@ -23,7 +23,9 @@ const Freedie: React.FC = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(true); // Show disclaimer initially
   const bgref = useRef<HTMLDivElement>(null)
   const { isActive, removeClass } = useThemeContext();
-  const [viewMode, setViewMode] = useState<'slider' | 'list'>('slider');
+  const [viewMode, setViewModeState] = useState<'slider' | 'list'>('slider');
+  const [sliderScrollPosition, setSliderScrollPosition] = useState<number | null>(null);
+  const listContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isActive) {
@@ -55,113 +57,52 @@ const Freedie: React.FC = () => {
   const handleCloseCarousel = () => {
     setCarouselVisible(false);
   };
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    gsap.fromTo('.fredie-bg', 
-      {
-         clipPath: 'polygon(0 0, 0 0, 0 0, 0 0)',
-        //  opacity:0.5, 
-      }, // Fully hidden
-      { 
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)', // Full rectangle
-        ease: 'none',
-        // opacity:1,
-        scrollTrigger: {
-          trigger: '.fredie-bg',
-          start: window.innerWidth < 700 ? 'top 40%' : window.innerWidth > 1250 ? 'top 50%' : 'top 30%', // Starts when .fredie-bg enters the viewport
-          end: window.innerWidth < 700 ? 'top 20%' : window.innerWidth > 1250 ? 'top 45%' : 'top 20%', // Completes near the top
-          scrub: 1, // Smoothly linked to scrolling
-          // markers: true
-        }
-      });
 
-      tl.fromTo('.fredie-content',{background:'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0/ .0%) 50%, rgba(0, 0, 0, 0) 100%)'},{
-        background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0%, #d5497473 15%, rgba(113, 99, 222, 0.97) 100%)',
-        backdropFilter:'blur(5px)',
-        webkitBackdropFilter:'blur(5px)',
-        scrollTrigger: {
-          trigger: '.fredie-bg',
-          start: window.innerWidth < 700 ? 'top 25%' : window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Starts when .fredie-bg enters the viewport
-          end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
-          scrub: 1, // Smoothly linked to scrolling
-        //   onLeaveBack:()=>{
-        //     gsap.to('.fredie-content',{
-        //       background:'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 181, 251, 0) 15%, rgba(113, 99, 222, 0) 100%)',
-        //       backdropFilter:'blur(0px)',
-        //       webkitBackdropFilter:'blur(0px)',
-        //     })
-        //   },
-        //   onEnter:()=>{
-        //     gsap.to('.fredie-content',{
-        //       background:'linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0%, #d5497473 15%, rgba(113, 99, 222, 0.97) 100%)',
-        //       backdropFilter:'blur(5px)',
-        //       webkitBackdropFilter:'blur(5px)',
-        //     })
-        //   // end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
-        //   // scrub: 1, // Smoothly linked to scrolling
-        // }
-      }})
-      tl.to('.fredie-text, .fredie-text span',
-      {
-        // backgroundColor:'#33333365',
-        // backdropFilter:'blur(5px)',
-        // webkitBackdropFilter:'blur(5px)',
-        textShadow:'2px 2px rgb(113, 99, 222)',
-        opacity:1,
-        color:'#f9f9f9',
-        duration:0.5,
-        ease:'power2.inOut',
-        scrollTrigger: {
-          trigger: '.fredie-content',
-          start: window.innerWidth < 700 ? 'top 25%' : window.innerWidth > 1250 ? 'top 20%' : 'top 20%', // Starts when .fredie-bg enters the viewport
-          // onLeaveBack:()=>{
-          //   gsap.to('.fredie-text span',{
-          //     color:'',
-          //     textShadow:'2px 2px rgba(113, 99, 222, 0)',
-          //   })
-          // },
-          // onEnter:()=>{
-          //   gsap.to('.fredie-text span',{
-          //     color:'#f9f9f9',
-          //     textShadow:'2px 2px rgb(113, 99, 222)',
-          //     duration:0.5,
-          //     ease:'power2.inOut',
-          //   })
-          // },
-          end: window.innerWidth < 700 ? '30% 30%' : window.innerWidth > 1250 ? 'top 20%' : '20% 20%', // Completes near the top
-          scrub: 1, // Smoothly linked to scrolling
-        }
-      })
-      // tl.to('.fredie-text',{
-      //   // backgroundColor:'#33333365',
-      //   // backdropFilter:'blur(5px)',
-      //   // webkitBackdropFilter:'blur(5px)',
-      //   // transform:'translateY(0%)',
-      //   // color:'#f9f9f9',
-      //   opacity:1,
-      //   scrollTrigger: {
-      //     trigger: '.fredie-content',
-      //     start: 'top 20%', // Starts when .fredie-bg enters the viewport
-      //     end: 'top 20%', // Completes near the top
-      //     scrub: 1, // Smoothly linked to scrolling
-      //     // markers: true
-      //   }
-      // })
-      tl.to('.fredie-section',{
-        // backgroundColor:'#33333365',
-        // backdropFilter:'blur(5px)',
-        // webkitBackdropFilter:'blur(5px)',
-        boxShadow:'0px 0px 4px 3px rgba(0, 0, 0, 0.514)',
-        // color:'#f9f9f9',
-        scrollTrigger: {
-          trigger: '.fredie-bg',
-          start: 'top 20%', // Starts when .fredie-bg enters the viewport
-          end: 'top 20%', // Completes near the top
-          scrub: 1, // Smoothly linked to scrolling
-        }
-      })
-      
-  }, { scope: bgref });
+  const handleScrollPositionChange = (position: number) => {
+    setSliderScrollPosition(position);
+  };
+
+  const handleViewModeChange = (mode: 'slider' | 'list') => {
+    console.log('handleViewModeChange called with mode:', mode);
+    if (mode === 'list') {
+      // Add timeout to ensure ScrollTrigger animation has settled
+      setTimeout(() => {
+        console.log('Switching to list view, killing ScrollTriggers...');
+        
+        // Kill all ScrollTriggers to unpin the slider
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        
+        // Force a complete page reset by removing any pinned content
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        // Force scroll to top and wait for it to complete
+        window.scrollTo(0, 0);
+        
+        // Use a longer timeout to ensure everything is reset
+        setTimeout(() => {
+          console.log('setTimeout executing...');
+          console.log('Current scrollY after reset:', window.scrollY);
+          
+          // Get the list container position
+          const listContainer = listContainerRef.current;
+          if (listContainer) {
+            // Use scrollIntoView to scroll to the list component
+            listContainer.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          } else {
+            console.log('List container not found!');
+          }
+        }, 300); // Longer timeout to ensure complete reset
+      }, 400); // Timeout to ensure ScrollTrigger animation has settled
+    }
+    setViewModeState(mode);
+  };
+
+
   
 
   return (
@@ -227,20 +168,20 @@ const Freedie: React.FC = () => {
             <div className="f-headingb">
               {/* <p className="f-hb">Meet Our FrEdiBuddies</p> */}
             </div>
-            <div className="f-toggle-wrapper">
+            <div className="f-toggle-wrapper" ref={listContainerRef}>
             {viewMode === 'list' && (
               <div className="f-toggle-header">
                 <div className='toggle-box'>
                 <button
                   className=""
-                  onClick={() => setViewMode('slider')}
+                  onClick={() => handleViewModeChange('slider')}
                 >
                   Discover
                 </button>
                 <span></span>
                 <button
                   className="active"
-                  onClick={() => setViewMode('list')}
+                  onClick={() => handleViewModeChange('list')}
                 >
                   List
                 </button>
@@ -249,7 +190,7 @@ const Freedie: React.FC = () => {
             )}
               <div className="f-toggle-content">
                 {viewMode === 'slider' ? (
-                  <FreedieSlider onItemClick={handleItemClick} viewMode={viewMode} setViewMode={setViewMode} />
+                  <FreedieSlider onItemClick={handleItemClick} viewMode={viewMode} setViewMode={handleViewModeChange} onScrollPositionChange={handleScrollPositionChange} />
                 ) : (
                   <FLists onItemClick={handleItemClick} />
                 )}
