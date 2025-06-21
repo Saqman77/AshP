@@ -174,10 +174,8 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                     <button
                         className={viewMode === 'slider' ? 'active' : ''}
                         onClick={() => {
-                            console.log('FreedieSlider: Discover button clicked');
-                            setTimeout(() => {
-                                setViewMode('slider');
-                            }, 200);
+                            if (viewMode === 'slider') return;
+                            setViewMode('slider');
                         }}
                     >
                         Discover
@@ -186,10 +184,8 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                     <button
                         className={viewMode === 'list' ? 'active' : ''}
                         onClick={() => {
-                            console.log('FreedieSlider: List button clicked');
-                            setTimeout(() => {
-                                setViewMode('list');
-                            }, 400);
+                            if (viewMode === 'list') return;
+                            setViewMode('list');
                         }}
                     >
                         List

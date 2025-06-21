@@ -64,42 +64,38 @@ const Freedie: React.FC = () => {
 
   const handleViewModeChange = (mode: 'slider' | 'list') => {
     console.log('handleViewModeChange called with mode:', mode);
-    if (mode === 'list') {
-      // Add timeout to ensure ScrollTrigger animation has settled
-      setTimeout(() => {
-        console.log('Switching to list view, killing ScrollTriggers...');
-        
-        // Kill all ScrollTriggers to unpin the slider
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        
-        // Force a complete page reset by removing any pinned content
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        
-        // Force scroll to top and wait for it to complete
-        window.scrollTo(0, 0);
-        
-        // Use a longer timeout to ensure everything is reset
+    if (mode === viewMode) return;
+    setTimeout(() => {
+      if (mode === 'list') {
+        // Add timeout to ensure ScrollTrigger animation has settled
         setTimeout(() => {
-          console.log('setTimeout executing...');
-          console.log('Current scrollY after reset:', window.scrollY);
-          
-          // Get the list container position
-          const listContainer = listContainerRef.current;
-          if (listContainer) {
-            // Use scrollIntoView to scroll to the list component
-            listContainer.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          } else {
-            console.log('List container not found!');
-          }
-        }, 300); // Longer timeout to ensure complete reset
-      }, 400); // Timeout to ensure ScrollTrigger animation has settled
-    }
-    setViewModeState(mode);
+          console.log('Switching to list view, killing ScrollTriggers...');
+          // Kill all ScrollTriggers to unpin the slider
+          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+          // Force a complete page reset by removing any pinned content
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.width = '';
+          // Use a longer timeout to ensure everything is reset
+          setTimeout(() => {
+            console.log('setTimeout executing...');
+            console.log('Current scrollY after reset:', window.scrollY);
+            // Get the list container position
+            const listContainer = listContainerRef.current;
+            if (listContainer) {
+              // Use scrollIntoView to scroll to the list component
+              listContainer.scrollIntoView({
+                behavior: 'auto',
+                block: 'start'
+              });
+            } else {
+              console.log('List container not found!');
+            }
+          }, 0); // Longer timeout to ensure complete reset
+        }, 0); // Timeout to ensure ScrollTrigger animation has settled
+      }
+      setViewModeState(mode);
+    }, 400);
   };
 
 
