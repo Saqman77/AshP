@@ -166,12 +166,12 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
                             }}
                             onClick={() => onItemClick(idx)}
                         >
+                            <div className="slide-img">
+                                <img src={member.imgSrc} alt={member.name} />
+                            </div>
                             <div className="slide-copy">
                                 <p>{member.name}</p>
                                 <p id="index">{member.role}</p>
-                            </div>
-                            <div className="slide-img">
-                                <img src={member.imgSrc} alt={member.name} />
                             </div>
                         </div>
                     );

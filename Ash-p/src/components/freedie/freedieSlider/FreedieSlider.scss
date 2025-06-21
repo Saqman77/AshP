@@ -67,30 +67,59 @@
     .slide{
         position: absolute;
         width: 400px;
-        height: 500px;
+        min-height: 500px;
         overflow: hidden;
         cursor: pointer;
         // Positioning, transform, and opacity are set dynamically via inline styles in FreedieSlider.tsx
         @media screen and (max-width:1250px) {
             width: 200px;
-            height: 250px;
+            min-height: 250px;
         }
         @media screen and (max-width:600px) {
             width: 150px;
-            height: 190px;
+            min-height: 190px;
+        }
+    }
+
+    .slide-img{
+        margin-bottom: 40px;
+        @media screen and (max-width:1250px) {
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width:900px) {
+            
         }
     }
 
     .slide-copy p{
-        text-transform: uppercase;
-        font-size: 13px;
-        text-align: center;
-        line-height: 150%;
+        font-size: clamp(32px, 2.5vw, 50px);
+        font-weight: 400;
+        font-family: "Poppins";
+        line-height: 1;
+        color: #F5F5F5;
+        margin-bottom: 20px;
+        @media screen and (max-width: 1250px) {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        @media screen and (max-width: 900px) {
+            font-size: 18px;
+        }
     }
     .slide-copy p#index{
-        text-transform: uppercase;
-        font-size: 11px;
-        margin-bottom: 0.75em;
+        font-size: clamp(16px, 1vw, 28px );
+        line-height: 1.2;
+        color: #F5F5F5;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-family: "Quicksand";
+        @media screen and (max-width: 1250px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 900px) {
+            font-size: 10px;
+        }
     }
 
     /* Slide positioning is now handled dynamically in the React component. */
