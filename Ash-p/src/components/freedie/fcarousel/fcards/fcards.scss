@@ -94,9 +94,13 @@
     flex: 1;
     @media screen and (max-width:1250px) {
         margin-bottom: 40px;
+        max-height: 400px;
+        padding-top: clamp(200px, 15.25vh, 500px);
     }
     @media screen and (max-width:900px) {
+        max-height: 250px;
         margin-bottom: 32px;
+        padding-top: clamp(200px, 20.25vh, 500px);
     }
 
     // backdrop-filter: brightness(0%);
@@ -149,7 +153,11 @@
     // max-height: 453px;
     // justify-content: ;
     @media screen and (max-width:1250px) {
-        padding: 0px 0px 0px 0px;
+        padding: 0px 40px;
+        // overflow-y: auto;
+    }
+    @media screen and (max-width:900px) {
+        padding: 0px 20px;
     }
 
     // @media screen and (max-width:1200px) {
@@ -237,12 +245,18 @@
 
     font-size: 1.041vw;
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 200;
     font-family: "Nunito Sans";
     justify-content: center;
+    
 
     @media screen and (max-width:1250px) {
         font-size: 16px;
+        height: min-content;
+    }
+    @media screen and (max-width:400px) {
+        font-size: 14px;
+        line-height: 1.15;
         height: min-content;
     }
 
@@ -321,6 +335,13 @@
     display: flex;
     align-items: center;
     margin-top: 24px;
+    @media screen and (max-width:1250px) {
+        padding: 0px 40px;
+        
+    }
+    @media screen and (max-width:900px) {
+        padding: 0px 20px;
+    }
 }
 
 .f-contact {
