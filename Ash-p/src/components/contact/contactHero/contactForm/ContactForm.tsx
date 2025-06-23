@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './contactForm.module.scss';
+import right from "../../../../assets/buttons/right-arrow.svg"
 import content from './contactFormContent';
 
 const ContactForm = () => {
@@ -61,6 +62,7 @@ const ContactForm = () => {
       <div className={styles.buttonRow}>
         <button className={styles.sendButton} type="submit">
           {content.sendButton}
+          <div className={styles.arrow}><img src={right} alt="" /></div>
         </button>
       </div>
     </form>

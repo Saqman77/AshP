@@ -1,5 +1,29 @@
 .c-hero-container {
   padding: 124px 300px;
+  position: relative;
+}
+
+.fanner{
+  width: 9.7vw;
+  height: 9.7vw;
+  display: flex;
+  position: absolute;
+  top: 0vw;
+  left: 15.59vw;
+  animation: rotate-fanner 15s linear infinite;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes rotate-fanner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .c-heading {

@@ -2,10 +2,14 @@ import React from 'react'
 import { contactHeroContent } from './contactHeroContent'
 import './contactHero.scss'
 import ContactForm from './contactForm/ContactForm'
+import fan from '../../../assets/contact/contactfan.svg'
 
 const ContactHero = () => {
   return (
     <div className='c-hero-container'>
+        <div className="fanner">
+          <img src={fan} alt="" />
+        </div>
         <div className="c-heading">
           {contactHeroContent.icon && (
             <img src={contactHeroContent.icon} alt={contactHeroContent.iconAlt || "Heading Icon"} className="c-heading-icon" />
