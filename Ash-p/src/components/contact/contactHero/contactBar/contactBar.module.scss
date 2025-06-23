@@ -1,0 +1,38 @@
+.contactBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  justify-content: center;
+}
+
+.emailSection {
+  display: flex;
+  align-items: center;
+  height: 61px;
+  width: 358px;
+  margin-right: 10px;
+}
+
+.emailIcon {
+  margin-right: 16px;
+}
+
+.copyButton {
+  height: 61px;
+  width: 61px;
+  margin-right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.phoneSection {
+  display: flex;
+  align-items: center;
+}
+
+.phoneIcon {
+  margin-right: 16px;
+} 

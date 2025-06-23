@@ -3,6 +3,7 @@ import { contactHeroContent } from './contactHeroContent'
 import './contactHero.scss'
 import ContactForm from './contactForm/ContactForm'
 import fan from '../../../assets/contact/contactfan.svg'
+import ContactBar from './contactBar/ContactBar'
 
 const ContactHero = () => {
   return (
@@ -19,7 +20,10 @@ const ContactHero = () => {
             <span style={{ color: '#C9549D' }}>{contactHeroContent.headingRight}</span>
           </h1>
         </div>
-        <ContactForm/>
+        <div className='c-form-wrapper'>
+          <ContactForm/>
+          <ContactBar/>
+        </div>
     </div>
   )
 }
