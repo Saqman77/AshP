@@ -1,4 +1,4 @@
-import Icon from '../../../assets/contact/Vector.svg';
+import Icon from '../../../assets/contact/tele.svg';
 
 export const contactHeroContent = {
   icon: Icon,
