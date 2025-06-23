@@ -9,6 +9,7 @@ import Email from '../../components/email/Email'
 import ContactHero from '../../components/contact/contactHero/ContactHero'
 import backg from '../../assets/contact/backg.svg'
 import ContactBar from '../../components/contact/contactHero/contactBar/ContactBar'
+import Communities from '../../components/contact/communities/Communities'
 // import { useThemeContext } from '../../utils/ThemeContextProvider'
 // import { useEffect } from 'react'
 
@@ -31,6 +32,7 @@ const Contact = () => {
         <img src={backg} alt="" />
       </div>
       <ContactHero/>
+      <Communities/>
     </div>
   )
 }
