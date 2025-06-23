@@ -15,6 +15,9 @@
   max-width: 1330px;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width:1250px) {
+    padding: 20px;
+   }
 }
 
 .topRow {
@@ -23,18 +26,26 @@
   margin-bottom: 48px;
   width: 100%;
   justify-content: space-between;
+  @media screen and (max-width:1250px) {
+    flex-direction: column;
+    align-items: start;
+  }
   // flex-wrap: wrap;
 }
 
 .fromLabel {
   font-size: 1.25vw;
   margin-right: 42px;
+  @media screen and (max-width:1250px) {
+    margin-bottom: 24px;
+   }
+ 
 }
 
 .input {
   // height: 40px;
   font-size: 1.25vw;
-  padding: 8px 16px;
+  padding: 8px 16px 8px 0;
   margin-right: 2vw;
   border-top: none;
   border-left: none;
@@ -45,6 +56,9 @@
   background: none;
   outline: none;
   width: 100%;
+  @media screen and (max-width:1250px) {
+   margin-bottom: 24px;
+  }
 }
 
 .input:last-child {
