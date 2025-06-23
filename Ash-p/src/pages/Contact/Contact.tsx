@@ -7,6 +7,7 @@ import './Contact.scss'
 import Schedule from '../../components/schedule/Schedule'
 import Email from '../../components/email/Email'
 import ContactHero from '../../components/contact/contactHero/ContactHero'
+import backg from '../../assets/contact/backg.svg'
 // import { useThemeContext } from '../../utils/ThemeContextProvider'
 // import { useEffect } from 'react'
 
@@ -25,6 +26,9 @@ const Contact = () => {
     
   return (
     <div className="c-wrapper">
+      <div className="backgear">
+        <img src={backg} alt="" />
+      </div>
       <ContactHero/>
     </div>
   )
