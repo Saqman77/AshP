@@ -37,7 +37,14 @@
   font-size: 1.25vw;
   margin-right: 42px;
   @media screen and (max-width:1250px) {
+    margin-bottom: 40px;
+    margin-right: 0;
+    font-size:36px ;
+   }
+  @media screen and (max-width:900px) {
     margin-bottom: 24px;
+    margin-right: 0;
+    font-size: 18px ;
    }
  
 }
@@ -57,7 +64,12 @@
   outline: none;
   width: 100%;
   @media screen and (max-width:1250px) {
+   margin-bottom: 40px;
+   font-size:36px ;
+  }
+  @media screen and (max-width:900px) {
    margin-bottom: 24px;
+   font-size:18px ;
   }
 }
 
@@ -75,6 +87,12 @@
 .messageLabel {
   font-size: 1.25vw;
   margin-bottom: 8px;
+  @media screen and (max-width:1250px) {
+    font-size:36px ;
+   }
+  @media screen and (max-width:900px) {
+    font-size:18px ;
+   }
 }
 
 .textarea {
@@ -90,6 +108,12 @@
   resize: none;
   background: none;
   outline: none;
+  @media screen and (max-width:1250px) {
+    font-size:36px ;
+   }
+  @media screen and (max-width:900px) {
+    font-size:18px ;
+   }
 }
 
 .buttonRow {

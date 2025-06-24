@@ -4,6 +4,9 @@
   position: relative;
   z-index: 3;
   justify-content: center;
+  @media screen and (max-width:1250px) {
+    flex-direction: column;
+  }
 }
 
 .emailSection {
@@ -21,6 +24,10 @@
     font-family: "Nunito Sans";
     font-weight: 400;
     color: #C9549D;
+  }
+  @media screen and (max-width:1250px) {
+    margin-right: 0px;
+    margin-bottom: 24px;
   }
 }
 
@@ -64,6 +71,10 @@
     transition: background-color 0.01s ease-out 0.1ms, scale 0.5s ease-out 0.5ms;
     background-color: #C9549D;
    }
+   @media screen and (max-width:1250px) {
+    display: none;
+
+  }
 }
 
 .phoneSection {

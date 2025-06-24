@@ -1,6 +1,12 @@
 .c-hero-container {
   padding: 6.45vw 15.6vw;
   position: relative;
+  @media screen and (max-width:1250px) {
+    padding: 80px 40px;
+   }
+  @media screen and (max-width:900px) {
+    padding: 80px 20px;
+   }
 }
 
 .fanner{
@@ -15,6 +21,7 @@
     width: 100%;
     height: 100%;
   }
+
 }
 
 @keyframes rotate-fanner {
@@ -41,6 +48,14 @@
   position: absolute;
   top: -2.5vw;
   right: 14vw;
+  @media screen and (max-width:1250px) {
+    right: 28vw;
+  }
+  @media screen and (max-width:900px) {
+    width: 5.33vw;
+    height: 5.33vw;
+    right: 13.5vw;
+  }
 }
 
 .c-heading-title {
@@ -48,6 +63,12 @@
   font-weight: 300;
   font-family: 'Poppins', sans-serif;
   line-height: 1;
+  @media screen and (max-width:1250px) {
+    font-size: 5.7vw;
+  }
+  @media screen and (max-width:900px) {
+    font-size: clamp(40px, 10.6vw, 80px);
+  }
 }
 
 .c-heading-title span:first-child {
