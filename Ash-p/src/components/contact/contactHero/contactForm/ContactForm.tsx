@@ -30,6 +30,7 @@ const ContactForm = () => {
     if (isSuccess) {
       setSuccess(true);
       setError(false);
+      setForm({ name: '', email: '', number: '', message: '' });
     } else {
       setError(true);
       setSuccess(false);
