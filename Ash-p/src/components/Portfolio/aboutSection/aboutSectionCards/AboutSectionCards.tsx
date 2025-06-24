@@ -9,6 +9,7 @@ interface AboutSectionCardsProps {
 interface CardContent {
     paragraph: string;
     highlightedText?: string;
+    image:string;
 }
 
 interface Card {
@@ -47,7 +48,9 @@ const AboutSectionCards: React.FC<AboutSectionCardsProps> = ({ spark }) => {
                                 <div className="circularImage right"></div>
                             </>
                         ) : (
-                            <div className="circularImage"></div>
+                            <div className="circularImage">
+                                <img src={card.content.image} alt="" />
+                            </div>
                         )}
                     </div>
                 </div>
