@@ -5,6 +5,10 @@
   .communities-header {
     padding: 72px 0;
     border: 1px solid #7B6DDB;
+    @media screen and (max-width:1250px) {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
     
     .header-content {
       display: flex;
@@ -14,7 +18,7 @@
       .header-icon {
         width: 44px;
         height: 44px;
-        margin-bottom: 16px;
+        margin-right: 12px;
       }
       
       .header-heading {
@@ -24,6 +28,9 @@
         margin: 0;
         text-align: center;
         color: #4B3B74;
+        @media screen and (max-width:1250px) {
+          font-size: 24px;
+        }
       }
     }
   }
@@ -44,6 +51,16 @@
       font-weight: 500;
       color: #4D4D4D;
       border-bottom: 1px solid #7B6DDB;
+      @media screen and (max-width:1250px) {
+        font-size: 24px;
+        justify-content: left;
+        padding: 24px 40px;
+      }
+      @media screen and (max-width:900px) {
+        font-size: 24px;
+        justify-content: left;
+        padding: 24px 20px;
+      }
       
       &:hover {
         background-color: #7B6DDB; // You can customize this color

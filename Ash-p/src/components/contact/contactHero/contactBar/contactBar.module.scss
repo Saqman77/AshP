@@ -28,6 +28,7 @@
   @media screen and (max-width:1250px) {
     margin-right: 0px;
     margin-bottom: 24px;
+    box-shadow: 4px 4px 0 0 hsla(0, 0%, 10%, 0.699);
   }
 }
 
@@ -92,6 +93,9 @@
     font-family: "Nunito Sans";
     font-weight: 400;
     color: #C9549D;
+  }
+  @media screen and (max-width:1250px) {
+    box-shadow: 4px 4px 0 0 hsla(0, 0%, 10%, 0.699);
   }
 }
 
