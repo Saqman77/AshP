@@ -13,14 +13,14 @@ export interface ServiceCard {
 export const servicesCardsContent: ServiceCard[] = [
     {
         id: 1,
-        title: "Web Development",
-        subtitle: "Custom Web Solutions",
+        title: "Consultation",
+        subtitle: "",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "You have a manuscript, but you aren’t sure what comes next",
+            "Book a complimentary 30-minute video consultation call to discuss your editing needs.",
+            "Book your free 30-minute video consultation."
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Consultaion.jpg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0e0f2", // Example color 1
         readMoreText: "READ MORE",
@@ -28,14 +28,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 2,
-        title: "Mobile Development",
-        subtitle: "Native & Cross-Platform Apps",
+        title: "Manuscript Evaluation",
+        subtitle: "Is your manuscript feeling incomplete? ",
         description: [
             "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
             "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "Rates are determined by the health of the manuscript, your budget, and the word count"
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Manuscript Evaluation.webp", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2e0e0", // Example color 2
         readMoreText: "READ MORE",
@@ -43,14 +43,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 3,
-        title: "UI/UX Design",
-        subtitle: "User-Centered Design",
+        title: "Developmental Edit",
+        subtitle: "Plot inconsistencies? Flawed character development? Weak story arcs?",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
+            "Our developmental editing will dig deep, offering targeted feedback and strategic improvements to elevate your story’s structure, character development, and narrative impact.",
+            "Our Developmental Editing Service includes annotations in the manuscript, a detailed editorial letter and one (1) post-revision review.",
             "Rates are determined by the health of the manuscript, your budget, and the word count."
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Developmental Editing.webp", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0f2e0", // Example color 3
         readMoreText: "READ MORE",
@@ -58,14 +58,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 4,
-        title: "Digital Marketing",
-        subtitle: "Growth Strategies",
+        title: "Line and Copy Editing Combo",
+        subtitle: "50-word sentences? Sticky phrasing? Manuscript mysteries got you stuck?",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "Our line and copy editing combo cuts through the clutter of wordy drafts, transforming it into polished prose.",
+            "Our Line and Copy Editing Combo Service includes annotations, edits with Tracked Changes. One (1) post-revision review may be included at half-price only if new material is introduced to the edited manuscript.",
+            "Rates are determined by the health of the manuscript, your budget, and the word count"
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/LineCopyeditngCombo.webp", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2f2e0", // Example color 4
         readMoreText: "READ MORE",
@@ -73,14 +73,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 5,
-        title: "Cloud Solutions",
-        subtitle: "Scalable Infrastructure",
+        title: "Proofreading",
+        subtitle: "Typos hiding in plain sight? Punctuation playing tricks",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "Our proofreading ensures your manuscript is as error-free as is humanly possible. Only the Creator is perfect!",
+            "Our Proofreading Service includes annotations and edits with Tracked Changes.",
+            "Rates are determined by your budget and the word count."
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Proofreading.jpg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0e0f2", // Example color 1
         readMoreText: "READ MORE",
@@ -88,14 +88,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 6,
-        title: "E-commerce Solutions",
-        subtitle: "Online Store Development",
+        title: "Reader Services",
+        subtitle: "",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "Does your manuscript need a Beta Reader? Maybe you require a Sensitivity or Authenticity Reader?",
+            "Our team of readers can help you.",
+            "Rates are determined by the health of the manuscript, your  budget, and the word count."
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Reading Services.jpg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#f2e0e0", // Example color 2
         readMoreText: "READ MORE",
@@ -103,14 +103,14 @@ export const servicesCardsContent: ServiceCard[] = [
     },
     {
         id: 7,
-        title: "IT Consulting",
-        subtitle: "Strategic Technology Advice",
+        title: "Other Services",
+        subtitle: "",
         description: [
-            "Our manuscript evaluation provides a roadmap to transform your draft from promising to powerful.",
-            "Our Manuscript Evaluation Service includes annotations in manuscript and a basic editorial letter.",
-            "Rates are determined by the health of the manuscript, your budget, and the word count."
+            "Need an Urdu to English translation? Transcribing or subtitles?",
+            "Drop us a line and ask us what else we do. We got you!",
+            ""
         ],
-        icon: "/src/assets/home/services.svg", // Add icon path
+        icon: "/Other Services (1).jpg", // Add icon path
         readMoreIcon: "/src/assets/home/readmore.svg", // Add REAR MORE icon path
         backgroundColor: "#e0f2e0", // Example color 3
         readMoreText: "READ MORE",
