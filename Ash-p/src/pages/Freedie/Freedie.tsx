@@ -20,7 +20,13 @@ const Freedie: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isCarouselVisible, setCarouselVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [showDisclaimer, setShowDisclaimer] = useState(true); // Show disclaimer initially
+  const [showDisclaimer, setShowDisclaimer] = useState(() => {
+    // Check localStorage for disclaimer state
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('freedieDisclaimerAccepted') !== 'true';
+    }
+    return true;
+  }); // Show disclaimer initially
   const bgref = useRef<HTMLDivElement>(null)
   const { isActive, removeClass } = useThemeContext();
   const [viewMode, setViewModeState] = useState<'slider' | 'list'>('slider');
@@ -32,6 +38,15 @@ const Freedie: React.FC = () => {
       removeClass();
       document.documentElement.classList.remove('active');
       document.body.classList.remove('active');
+    }
+  }, []);
+
+  // Ensure disclaimer state is synced with localStorage on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('freedieDisclaimerAccepted') === 'true') {
+        setShowDisclaimer(false);
+      }
     }
   }, []);
 
@@ -98,8 +113,13 @@ const Freedie: React.FC = () => {
     }, 800);
   };
 
-
-  
+  // Handler for closing disclaimer and persisting state
+  const handleDisclaimerClose = () => {
+    setShowDisclaimer(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('freedieDisclaimerAccepted', 'true');
+    }
+  };
 
   return (
     <>
@@ -120,8 +140,8 @@ const Freedie: React.FC = () => {
               This disclaimer outlines the complete scope of our service and limitations of our responsibility. All parties agree to these terms when using our referral service.
             </p>
             <div className="f-modal-buttons">
-              <button onClick={() => setShowDisclaimer(false)}>Agree</button>
-              <button onClick={() => setShowDisclaimer(false)}>Disagree</button>
+              <button onClick={handleDisclaimerClose}>Agree</button>
+              <button onClick={handleDisclaimerClose}>Disagree</button>
             </div>
           </div>
         </div>
