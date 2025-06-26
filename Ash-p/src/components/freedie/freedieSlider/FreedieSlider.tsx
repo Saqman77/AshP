@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './FreedieSlider.scss'
 import { freedie } from '../freedyContent'
+import { freedieSliderHeading } from './FreedieSliderContent'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -175,6 +176,9 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
         <div className="slider-container" ref={containerRef}>
 
             <div className="f-toggle-header">
+                <h3 className='f-toggle-heading'>
+                    {freedieSliderHeading}
+                </h3>
                 <div className='toggle-box'>
                     <button
                         className={viewMode === 'slider' ? 'active' : ''}

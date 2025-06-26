@@ -40,6 +40,21 @@
             padding: 0px 20px;
             top:80px;
         }
+
+        .f-toggle-heading{
+            font-size: 20px;
+            font-family: "Quicksand";
+            font-weight: 600;
+            color: #F3E8FF;
+            margin-right: auto;
+            text-transform: capitalize;
+            @media screen and (max-width:1250px) {
+                font-size: 18px;
+            }
+            @media screen and (max-width:600px) {
+                font-size: 16px;
+            }
+        }
         .toggle-box{
             display: flex;
             span{
