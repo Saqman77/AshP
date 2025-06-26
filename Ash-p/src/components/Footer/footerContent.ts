@@ -9,11 +9,13 @@ export const footerContent = {
         { text: "Freediebuddies", href: "/fredibuddies" },
         { text: "Contact Us", href: "/contact" },
     ],
-    copyright: "2024 Digital Joe Mama Agency",
+    copyright: "© 2025 Ash P Reads Editing Services. All Rights Reserved. Designed & Developed by Saqlain Haider. Illustrations by Amna Ali.",
     socialLinks: [
-        { src: "/path/to/youtube.png", alt: "YouTube", href: "#" },
-        { src: "/path/to/facebook.png", alt: "Facebook", href: "#" },
-        { src: "/path/to/instagram.png", alt: "Instagram", href: "#" },
-        { src: "/path/to/linkedin.png", alt: "LinkedIn", href: "#" },
+        { src: "/src/assets/footer/threads-app-icon.png", alt: "YouTube", href: "#" },
+        { src: "/src/assets/footer/newFacebook.svg", alt: "Facebook", href: "#" },
+        { src: "/src/assets/footer/newInsta.svg", alt: "Instagram", href: "#" },
+        { src: "/src/assets/footer/newLinkedin.svg", alt: "LinkedIn", href: "#" },
+        { src: "/src/assets/footer/substack-icon.svg", alt: "LinkedIn", href: "#" },
+        { src: "/src/assets/footer/Bluesky_Logo.svg.png", alt: "LinkedIn", href: "#" },
     ]
 }; 
