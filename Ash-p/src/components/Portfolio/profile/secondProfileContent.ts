@@ -9,10 +9,8 @@ Her professional journey includes extensive experience in curriculum design, and
 This has led Hira to have a passion for language and a keen eye for detail. She is committed to delivering excellence and helping clients achieve their vision through well-crafted written materials. Hira P is a verified reader on IAX.
 `,
     socialLinks: [
-        { id: 1, url: "#", icon: "" },
-        { id: 2, url: "#", icon: "" },
-        { id: 3, url: "#", icon: "" },
-        { id: 4, url: "#", icon: "" }
+        { id: 1, url: "#", icon: "/src/assets/footer/Simple_Logo_ALT.png" },
+        { id: 2, url: "#", icon: "/src/assets/footer/ETC+Member+Circle.png" }
     ],
     certifications: [
         {

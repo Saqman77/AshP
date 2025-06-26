@@ -96,12 +96,44 @@
                 margin-top: auto;
 
                 a {
-                    width: 20px;
-                    height: 20px;
+                    width: 40px;
+                    height: 40px;
                     margin-right: 32px;
-
+                    overflow: visible;
+                    position: relative;
+                    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
                     &:last-child {
                         margin-right: 0;
+                    }
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        overflow: visible;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -4px;
+                        height: 1px;
+                        border-radius: 2px;
+                        background: linear-gradient(90deg, #C9549D 0%, #C9549D 100%);
+                        opacity: 0;
+                        box-shadow: 0 0 8px 2px #C9549D;
+                        transition: opacity 0.2s, box-shadow 0.2s;
+                        pointer-events: none;
+                    }
+                    &:hover {
+                        transform: scale(1.5);
+                        z-index: 2;
+                        &::after {
+                            opacity: 1;
+                            box-shadow: 0 0 16px 4px #C9549D, 0 0 8px 2px #C9549D;
+                        }
                     }
                 }
             }

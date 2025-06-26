@@ -23,7 +23,7 @@ const SecondProfile: React.FC = () => {
                         <div className="social-links">
                             {secondProfileContent.socialLinks.map((link) => (
                                 <a key={link.id} href={link.url}>
-                                    {/* Icon will be added later */}
+                                    <img src={link.icon} alt={`social-icon-${link.id}`} />
                                 </a>
                             ))}
                         </div>
