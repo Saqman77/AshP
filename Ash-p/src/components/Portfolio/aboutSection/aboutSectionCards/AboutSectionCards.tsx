@@ -10,6 +10,7 @@ interface CardContent {
     paragraph: string;
     highlightedText?: string;
     image:string;
+    image2?: string;
 }
 
 interface Card {
@@ -44,8 +45,12 @@ const AboutSectionCards: React.FC<AboutSectionCardsProps> = ({ spark }) => {
                     <div className="imageContainer">
                         {card.className === 'thirdCard' ? (
                             <>
-                                <div className="circularImage left"></div>
-                                <div className="circularImage right"></div>
+                                <div className="circularImage left">
+                                    <img src={card.content.image} alt="" />
+                                </div>
+                                <div className="circularImage right">
+                                <img src={card.content.image2} alt="" />
+                                </div>
                             </>
                         ) : (
                             <div className="circularImage">

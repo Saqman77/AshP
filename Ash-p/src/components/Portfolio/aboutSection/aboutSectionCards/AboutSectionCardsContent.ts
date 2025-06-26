@@ -7,11 +7,11 @@ export const aboutSectionCardsContent = {
     secondCard: {
         paragraph: "Hira has extensive knowledge of neurodivergence and this gives her a unique insight when working with manuscripts on related subjects.",
         highlightedText: "Hira",
-        image:"../../src/assets/about/Ash P bio.png"
+        image:"../../src/assets/about/Hira P Bio .png"
     },
     thirdCard: {
         paragraph: "Both editors bring valuable backgrounds in early childhood education and special education, making them well suited for manuscripts related to children and education.",
-        image:"../../src/assets/about/Ash P bio.png",
-        image2:"../../src/assets/about/Ash P bio.png"
+        image:"../../src/assets/about/AshPReads-EditingServices-Paid BR.png",
+        image2:"../../src/assets/about/TheTeam.webp"
     }
 }; 
