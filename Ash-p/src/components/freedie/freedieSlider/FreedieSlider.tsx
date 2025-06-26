@@ -178,6 +178,7 @@ const FreedieSlider: React.FC<FreedieSliderProps> = ({ onItemClick, viewMode, se
             <div className="f-toggle-header">
                 <h3 className='f-toggle-heading'>
                     {freedieSliderHeading}
+                    
                 </h3>
                 <div className='toggle-box'>
                     <button

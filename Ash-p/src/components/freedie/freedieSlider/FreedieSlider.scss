@@ -48,12 +48,21 @@
             color: #F3E8FF;
             margin-right: auto;
             text-transform: capitalize;
+            position: relative;
             @media screen and (max-width:1250px) {
                 font-size: 18px;
             }
             @media screen and (max-width:600px) {
                 font-size: 16px;
             }
+        }
+
+        .f-indicator{
+            font-size: 16px;
+            color: #F3E8FF;
+            position: absolute;
+            left: 50%;
+            top: 50vh;
         }
         .toggle-box{
             display: flex;
