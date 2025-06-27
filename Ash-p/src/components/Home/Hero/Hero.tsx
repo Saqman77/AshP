@@ -3,6 +3,7 @@ import Schedule from '../../schedule/Schedule';
 import './Hero.scss';
 import { heroContent } from './heroContent';
 import downArrow from '/src/assets/home/arrow-down.svg';
+import React, { useEffect, useState } from 'react';
 
 const Hero: React.FC = () => {
     const highlightWords = (text: string) => {
@@ -20,8 +21,40 @@ const Hero: React.FC = () => {
         });
     };
 
+    // Message box animation state
+    const [msgStage, setMsgStage] = useState<'hidden' | 'icon' | 'expand' | 'retract'>('hidden');
+
+    useEffect(() => {
+        // Animation sequence: icon -> expand -> retract -> hidden
+        setMsgStage('icon');
+        const expandTimeout = setTimeout(() => setMsgStage('expand'), 300); // show icon, then expand
+        const retractTimeout = setTimeout(() => setMsgStage('retract'), 2300); // show message, then retract
+        const hideTimeout = setTimeout(() => setMsgStage('hidden'), 4000); // hide after total 4s
+        return () => {
+            clearTimeout(expandTimeout);
+            clearTimeout(retractTimeout);
+            clearTimeout(hideTimeout);
+        };
+    }, []);
+
     return (
         <div className="hero-container">
+            {/* Animated Message Box */}
+            <div
+                className={`hero-message-box ${msgStage} left`}
+                aria-live="polite"
+                style={{ pointerEvents: 'none' }}
+            >
+                <span className="hero-message-icon">
+                    {/* Replace with your preferred icon */}
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="14" cy="14" r="14" fill="#C2BFD6" />
+                        <path d="M14 8V15" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                        <circle cx="14" cy="19" r="1" fill="#fff" />
+                    </svg>
+                </span>
+                <span className="hero-message-text">Welcome to AshP Reads!</span>
+            </div>
             <div className="hero-main">
                 <div className="content-wrapper">
                     <h1>{highlightWords(heroContent.heading)}</h1>

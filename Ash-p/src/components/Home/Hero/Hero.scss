@@ -321,3 +321,109 @@
         }
     }
 }
+
+.hero-message-box {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(76, 58, 116, 0.10);
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 1.25rem 0 0.35rem;
+  z-index: 10;
+  transition:
+    width 0.5s cubic-bezier(0.4,0,0.2,1),
+    opacity 0.3s,
+    box-shadow 0.3s,
+    padding 0.5s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+  opacity: 1;
+  width: 44px;
+  pointer-events: none;
+
+  .hero-message-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    background: #C2BFD6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.7rem;
+    box-shadow: 0 2px 8px rgba(76, 58, 116, 0.08);
+  }
+  .hero-message-text {
+    opacity: 0;
+    white-space: nowrap;
+    font-size: 1.05rem;
+    color: #4B3B74;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-left: 0.1rem;
+    transition: opacity 0.3s 0.1s;
+  }
+}
+
+.hero-message-box.icon {
+  width: 44px;
+  min-width: 44px;
+  padding: 0 0.35rem 0 0.35rem;
+  .hero-message-text {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+}
+
+.hero-message-box.expand {
+  width: 260px;
+  padding-right: 1.5rem;
+  box-shadow: 0 6px 32px rgba(76, 58, 116, 0.13);
+  .hero-message-text {
+    opacity: 1;
+    transition: opacity 0.3s 0.2s;
+  }
+}
+
+.hero-message-box.retract {
+  width: 44px;
+  min-width: 44px;
+  padding: 0 0.35rem 0 0.35rem;
+  .hero-message-text {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+}
+
+.hero-message-box.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 600px) {
+  .hero-message-box {
+    top: 1rem;
+    left: 1rem;
+    width: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    .hero-message-icon {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
+    }
+    .hero-message-text {
+      font-size: 0.95rem;
+    }
+  }
+  .hero-message-box.expand {
+    width: 180px;
+  }
+}
