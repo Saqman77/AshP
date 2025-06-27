@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
                         <circle cx="14" cy="19" r="1" fill="#fff" />
                     </svg>
                 </span>
-                <span className="hero-message-text">Welcome to AshP Reads!</span>
+                <span className="hero-message-text">Accessibility Enabled!</span>
             </div>
             <div className="hero-main">
                 <div className="content-wrapper">
