@@ -41,7 +41,7 @@ export const freedie = [
         github:'https://github.com/Saqman77',
         behance:'https://www.behance.net/saqlainhaider77',
         dribble:'https://dribbble.com/saqlain_haider?onboarding=true&designer=true ',
-        portfolio:'https://www.linkedin.com/in/saqlainhaider77?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        portfolio:'https://www.brightmattr.com',
         cv:'https://docs.google.com/document/d/1Z15r6VH9_M_oTBcu0B6lj_p9_iRMT1BQkuUpAe_JGnM/edit?usp=sharing',
         shout:'A shout out to Saqlain. Thank you for developing this whimsically fun-tastic website for us. Your coding skills are genius-level.'
     },
