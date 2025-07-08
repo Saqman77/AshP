@@ -4,8 +4,16 @@ import right from "../../../../assets/buttons/right-arrow.svg"
 import content from './contactFormContent';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { useFormspark } from "@formspark/use-formspark";
+
+const FORMSPARK_FORM_ID = "ahPomVgzX";
+
 
 const ContactForm = () => {
+   const [submit, submitting] = useFormspark({
+    formId: FORMSPARK_FORM_ID,
+  });
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -23,18 +31,33 @@ const ContactForm = () => {
     setForm({ ...form, number: value || '' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate random success/failure
-    const isSuccess = Math.random() > 0.5;
-    if (isSuccess) {
+    try {
+      await submit({ ...form });
+      // if successful
       setSuccess(true);
       setError(false);
       setForm({ name: '', email: '', number: '', message: '' });
-    } else {
+    } catch (e) {
+      // if failed
       setError(true);
       setSuccess(false);
+      console.error(e);
     }
+
+
+
+    // Simulate random success/failure
+    // const isSuccess = Math.random() > 0.5;
+    // if (isSuccess) {
+    //   setSuccess(true);
+    //   setError(false);
+    //   setForm({ name: '', email: '', number: '', message: '' });
+    // } else {
+    //   setError(true);
+    //   setSuccess(false);
+    // }
   };
 
   const handleRetry = () => {
@@ -112,7 +135,7 @@ const ContactForm = () => {
         />
       </div>
       <div className={styles.buttonRow}>
-        <button className={styles.sendButton} type="submit" disabled={success || error || isFormIncomplete}>
+        <button className={styles.sendButton} type="submit" disabled={submitting || isFormIncomplete}>
           {content.sendButton}
           <div className={styles.arrow}><img src={right} alt="" /></div>
         </button>
