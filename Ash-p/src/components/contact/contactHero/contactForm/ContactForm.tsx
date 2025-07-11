@@ -6,8 +6,9 @@ import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useFormspark } from "@formspark/use-formspark";
 
-const FORMSPARK_FORM_ID = "ahPomVgzX";
 
+// import FORMSPARK_FORM_ID from .env
+const FORMSPARK_FORM_ID = import.meta.env.VITE_FORMSPARK_FORM_ID || '';
 
 const ContactForm = () => {
    const [submit, submitting] = useFormspark({
